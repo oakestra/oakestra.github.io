@@ -237,7 +237,7 @@ The Root Orchestrator manages different clusters of resources. The root only see
 
 
                 <time class="article-time--reading">
-                    7 minute read
+                    11 minute read
                 </time>
             </div>
         
@@ -509,9 +509,13 @@ The Root Orchestrator manages different clusters of resources. The root only see
 Do you want to give your Cluster Orchestrator computational capabilities for the deployment? Deploy there the NodeEngine+Netmanager components, and you&rsquo;re done. You don&rsquo;t want to use a separate node for the Root Orchestrator? Simply deploy it all together with a cluster orchestrator.</p>
 <h2 id="deploy-your-first-application">Deploy your first application</h2>
 <p>Let&rsquo;s try deploying an Nginx server and a client. Then we&rsquo;ll enter inside the client container and try to curl Nginx.</p>
-<p>All we need to do to deploy an application is to create a deployment descriptor and submit it to the platform using the CLI.</p>
-<h3 id="deployment-descriptors">Deployment descriptors</h3>
-<p><strong>1)</strong> Let&rsquo;s create the Nginx deployment descriptor. Create a file named <code>nginx.yaml</code> and insert the following.</p>
+<p>All we need to do to deploy an application is to create a deployment descriptor and submit it to the platform using the APIs.</p>
+<h3 id="deployment-descriptor">Deployment descriptor</h3>
+<p>In order to deploy a container a deployment descriptor must be passed to the deployment command.
+The deployment descriptor contains all the information that Oakestra needs in order to achieve a complete
+deploy in the system.</p>
+<p>Since version 0.4, Oakestra (previously, EdgeIO) uses the following deployment descriptor format.</p>
+<p><code>deploy_curl_application.yaml</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -527,78 +531,278 @@ Do you want to give your Cluster Orchestrator computational capabilities for the
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">api_version: v0.1
-</span></span><span class="line"><span class="cl">app_name: Nginx
-</span></span><span class="line"><span class="cl">app_ns: default
-</span></span><span class="line"><span class="cl">service_name: server
-</span></span><span class="line"><span class="cl">service_ns: default
-</span></span><span class="line"><span class="cl">image: docker.io/library/nginx:latest
-</span></span><span class="line"><span class="cl">image_runtime: docker
-</span></span><span class="line"><span class="cl">RR_ip: 10.30.30.30
-</span></span><span class="line"><span class="cl">port: 80:80
-</span></span><span class="line"><span class="cl">cmd: []
-</span></span><span class="line"><span class="cl">requirements:
-</span></span><span class="line"><span class="cl">    cpu: 1 # cores
-</span></span><span class="line"><span class="cl">    memory: 200  # in MB
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">{<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;sla_version&#34;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;v2.0&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;customerID&#34;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Admin&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;applications&#34;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>{<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s2">&#34;applicationID&#34;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s2">&#34;application_name&#34;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;clientsrvr&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s2">&#34;application_namespace&#34;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;test&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s2">&#34;application_desc&#34;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Simple demo with curl client and Nginx server&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s2">&#34;microservices&#34;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>{<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;microserviceID&#34;: </span><span class="s2">&#34;&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;microservice_name&#34;: </span><span class="s2">&#34;curl&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;microservice_namespace&#34;: </span><span class="s2">&#34;test&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;virtualization&#34;: </span><span class="s2">&#34;container&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;cmd&#34;: </span><span class="p">[</span><span class="s2">&#34;sh&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;-c&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;tail -f /dev/null&#34;</span><span class="p">],</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;memory&#34;: </span><span class="m">100</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;vcpus&#34;: </span><span class="m">1</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;vgpus&#34;: </span><span class="m">0</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;vtpus&#34;: </span><span class="m">0</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;bandwidth_in&#34;: </span><span class="m">0</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;bandwidth_out&#34;: </span><span class="m">0</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;storage&#34;: </span><span class="m">0</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;code&#34;: </span><span class="s2">&#34;docker.io/curlimages/curl:7.82.0&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;state&#34;: </span><span class="s2">&#34;&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;port&#34;: </span><span class="s2">&#34;9080&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;added_files&#34;: </span><span class="p">[]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>}<span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>{<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;microserviceID&#34;: </span><span class="s2">&#34;&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;microservice_name&#34;: </span><span class="s2">&#34;nginx&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;microservice_namespace&#34;: </span><span class="s2">&#34;test&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;virtualization&#34;: </span><span class="s2">&#34;container&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;cmd&#34;: </span><span class="p">[],</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;memory&#34;: </span><span class="m">100</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;vcpus&#34;: </span><span class="m">1</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;vgpus&#34;: </span><span class="m">0</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;vtpus&#34;: </span><span class="m">0</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;bandwidth_in&#34;: </span><span class="m">0</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;bandwidth_out&#34;: </span><span class="m">0</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;storage&#34;: </span><span class="m">0</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;code&#34;: </span><span class="s2">&#34;docker.io/library/nginx:latest&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;state&#34;: </span><span class="s2">&#34;&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;port&#34;: </span><span class="s2">&#34;6080:60/tcp&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;addresses&#34;: </span>{<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">&#34;rr_ip&#34;: </span><span class="s2">&#34;10.30.30.30&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>}<span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">&#34;added_files&#34;: </span><span class="p">[]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>}<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>}<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>}<span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>2)</strong> Let&rsquo;s create a client container using the curl image. Create a file named <code>client.yaml</code> and insert the following.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">api_version: v0.1
-</span></span><span class="line"><span class="cl">app_name: Client
-</span></span><span class="line"><span class="cl">app_ns: default
-</span></span><span class="line"><span class="cl">service_name: client
-</span></span><span class="line"><span class="cl">service_ns: default
-</span></span><span class="line"><span class="cl">image: docker.io/curlimages/curl:7.82.0
-</span></span><span class="line"><span class="cl">image_runtime: docker
-</span></span><span class="line"><span class="cl">commands: [&#34;sh&#34;, &#34;-c&#34;, &#34;tail -f /dev/null&#34;]
-</span></span><span class="line"><span class="cl">requirements:
-</span></span><span class="line"><span class="cl">    cpu: 1 # cores
-</span></span><span class="line"><span class="cl">    memory: 100  # in MB
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>A detailed description of these fields can be found in the <strong>Deployment descriptors</strong> section of the Wiki.</p>
-<h3 id="deployment-cli">Deployment CLI</h3>
-<p>On the root orchestrator&rsquo;s node use the following commands to deploy the Nginx container and then the Client container.</p>
+</div><p>This deployment descriptor example generates one application named <em>clientserver</em> with the <code>test</code> namespace and two microservices:</p>
+<ul>
+<li>nginx server with test namespace, namely <code>clientserver.test.nginx.test</code></li>
+<li>curl client with test namespace, namely <code>clientserver.test.curl.test</code></li>
+</ul>
+<p>This is a detailed description of the deployment descriptor fields currently implemented:</p>
+<ul>
+<li>sla_version: the current version is v0.2</li>
+<li>customerID: id of the user, default is Admin
+<ul>
+<li>
+<p>application list, in a single deployment descriptor is possible to define multiple applications, each containing:</p>
+<ul>
+<li>Fully qualified app name: A fully qualified name in Oakestra is composed of
+<ul>
+<li>application_name: unique name representing the application (max 10 char, no symbols)</li>
+<li>application_namespace: namespace of the app, used to reference different deployment of the same application. Examples of namespace name can be <code>default</code> or <code>production</code> or <code>test</code> (max 10 char, no symbols)</li>
+<li>applicationID: leave it empty for new deployments, this is needed only to edit an existing deployment.</li>
+</ul>
+</li>
+<li>application_desc: Short description of the application</li>
+<li>microservice list, a list of the microservices composing the application. For each microservice the user can specify:
+<ul>
+<li>microserviceID: leave it empty for new deployments, this is needed only to edit an existing deployment.</li>
+<li>Fully qualified service name:
+<ul>
+<li>microservice_name: name of the service (max 10 char, no symbols)</li>
+<li>microservice_namespace: namespace of the service, used to reference different deployment of the same service. Examples of namespace name can be <code>default</code> or <code>production</code> or <code>test</code> (max 10 char, no symbols)</li>
+</ul>
+</li>
+<li>virtualization: currently the only uspported virtualization is <code>container</code></li>
+<li>cmd: list of the commands to be executed inside the container at startup</li>
+<li>vcpu,vgpu,memory: minimum cpu/gpu vcores and memory amount needed to run the container</li>
+<li>vtpus: currently not implemented</li>
+<li>storage: minimum storage size required (currently the scheduler does not take this value into account)</li>
+<li>bandwidth_in/out: minimum required bandwith on the worker node. (currently the scheduler does not take this value into account)</li>
+<li>port: port mapping for the container in the syntax hostport_1:containerport_1[/protocol];hostport_2:containerport_2[/protocol] (default protocol is tcp)</li>
+<li>addresses: allows to specify a custom ip address to be used to balance the traffic across all the service instances.
+<ul>
+<li>rr_ip: [optional filed] This field allows you to setup a custom Round Robin network address to reference all the instances belonging to this service. This address is going to be permanently bounded to the service. The address MUST be in the form <code>10.30.x.y</code> and must not collide with any other Instance Address or Service IP in the system, otherwise an error will be returned. If you don&rsquo;t specify a RR_ip and you don&rsquo;t set this field, a new address will be generated by the system.</li>
+</ul>
+</li>
+<li>constraints: array of constraints regarding the service.
+<ul>
+<li>type: constraint type
+<ul>
+<li><code>direct</code>: Send a deployment to a specific cluster and a specific list of eligible nodes. You can specify <code>&quot;node&quot;:&quot;node1;node2;...;noden&quot;</code> a list of node&rsquo;s hostnames. These are the only eligible worker nodes.  <code>&quot;cluster&quot;:&quot;cluster_name&quot;</code> The name of the cluster where this service must be scheduled. E.g.:</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">curl -F file=@&#39;nginx.yaml&#39; http://localhost:10000/api/deploy -v
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">curl -F file=@&#39;client.yaml&#39; http://localhost:10000/api/deploy -v
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;constraints&#34;:[
+</span></span><span class="line"><span class="cl">            {
+</span></span><span class="line"><span class="cl">              &#34;type&#34;:&#34;direct&#34;,
+</span></span><span class="line"><span class="cl">              &#34;node&#34;:&#34;xavier1&#34;,
+</span></span><span class="line"><span class="cl">              &#34;cluster&#34;:&#34;gpu&#34;
+</span></span><span class="line"><span class="cl">            }
+</span></span><span class="line"><span class="cl">          ]
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Check the status of the deployment:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">curl localhost:10000/api/jobs | json_pp
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>If both services show the status <strong>ACTIVE</strong> then everything went fine. Otherwise, there might be a configuration issue or a bug. Please debug it with <code>docker logs system_manager -f --tail=100</code> on the root orchestrator and with <code>docker logs cluster_manager -f --tail=100</code> on the cluster orchestrator and open an issue.</p>
-<p>If both services are ACTIVE is time to test the communication.</p>
+</div></li>
+</ul>
+</li>
+</ul>
+<h3 id="login-to-the-apis">Login to the APIs</h3>
+<p>After running a cluster you can use the debug OpenAPI page to interact with the apis and use the infrastructure</p>
+<p>connect to <code>&lt;root_orch_ip&gt;:10000/api/docs</code></p>
+<p>Authenticate using the following procedure:</p>
+<ol>
+<li>locate the login method and use the try-out button
+<img src="/getstarted/login-try.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="try-login"
+	
+	
+></li>
+<li>Use the default Admin credentials to login
+<img src="/getstarted/login-execute.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="execute-login"
+	
+	
+></li>
+<li>Copy the result login token
+<img src="/getstarted/login-token-copy.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="token-login"
+	
+	
+></li>
+<li>Go to the top of the page and authenticate with this token
+<img src="/getstarted/authorize.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="auth-login"
+	
+	
+>
+<img src="/getstarted/authorize-2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="auth2-login"
+	
+	
+></li>
+</ol>
+<h3 id="register-an-application-and-the-services">Register an application and the services</h3>
+<p>After you authenticate with the login function, you can try out to deploy the first application.</p>
+<ol>
+<li>Upload the deployment description to the system. You can try using the deployment descriptor above.
+<img src="/getstarted/post-app.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="post app"
+	
+	
+></li>
+</ol>
+<p>The response contains the Application id and the id for all the application&rsquo;s services. Now the application and the services are registered to the platform. It&rsquo;s time to deploy the service instances!</p>
+<p>You can always remove or create a new service for the application using the /api/services endpoints</p>
+<h3 id="deploy-an-instance-of-a-registered-service">Deploy an instance of a registered service</h3>
+<ol>
+<li>Trigger a deployment of a service&rsquo;s instance using <code>POST /api/service/{serviceid}/instance</code></li>
+</ol>
+<p>each call to this endpoint generates a new instance of the service</p>
+<h3 id="monitor-the-service-status">Monitor the service status</h3>
+<ol>
+<li>With <code>GET /api/aplications/&lt;userid&gt;</code> (or simply /api/aplications/ if you&rsquo;re admin) you can check the list of the deployed application.</li>
+<li>With <code>GET /api/services/&lt;appid&gt;</code> you can check the services attached to an application</li>
+<li>With <code>GET /api/service/&lt;serviceid&gt;</code> you can check the status for all the instances of <!-- raw HTML omitted --></li>
+</ol>
+<h3 id="undeploy">Undeploy</h3>
+<ul>
+<li>Use <code>DELETE /api/service/&lt;serviceid&gt;</code> to delete all the instances of a service</li>
+<li>Use <code>DELETE /api/service/&lt;serviceid&gt;/instance/&lt;instance number&gt;</code> to delete a specific instance of a service</li>
+<li>Use <code>DELETE /api/application/&lt;appid&gt;</code> to delete all together an application with all the services and instances</li>
+</ul>
+<h3 id="check-if-the-deployment-succeded">Check if the deployment succeded</h3>
+<p>If both services show the status <strong>ACTIVE</strong> then everything went fine. Otherwise, there might be a configuration issue or a bug. Please debug it with <code>docker logs system_manager -f --tail=100</code> on the root orchestrator and with <code>docker logs cluster_manager -f --tail=100</code> on the cluster orchestrator and open an issue.</p>
+<p>If both services are ACTIVE, it is time to test the communication.</p>
 <p>Move into the worker node hosting the client and use the following command to log into the container.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -809,8 +1013,13 @@ Do you want to give your Cluster Orchestrator computational capabilities for the
     </li>
     <li><a href="#deploy-your-first-application">Deploy your first application</a>
       <ol>
-        <li><a href="#deployment-descriptors">Deployment descriptors</a></li>
-        <li><a href="#deployment-cli">Deployment CLI</a></li>
+        <li><a href="#deployment-descriptor">Deployment descriptor</a></li>
+        <li><a href="#login-to-the-apis">Login to the APIs</a></li>
+        <li><a href="#register-an-application-and-the-services">Register an application and the services</a></li>
+        <li><a href="#deploy-an-instance-of-a-registered-service">Deploy an instance of a registered service</a></li>
+        <li><a href="#monitor-the-service-status">Monitor the service status</a></li>
+        <li><a href="#undeploy">Undeploy</a></li>
+        <li><a href="#check-if-the-deployment-succeded">Check if the deployment succeded</a></li>
       </ol>
     </li>
   </ol>
