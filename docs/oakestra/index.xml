@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Concepts on Oakestra</title>
+        <link>https://oakestra.io/docs/oakestra/</link>
+        <description>Recent content in Concepts on Oakestra</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 09 Aug 2022 15:56:27 +0200</lastBuildDate><atom:link href="https://oakestra.io/docs/oakestra/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>High level architecture</title>
+        <link>https://oakestra.io/docs/oakestra/architecture/</link>
+        <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+        
+        <guid>https://oakestra.io/docs/oakestra/architecture/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/wiki-banner-help.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;table-of-content&#34;&gt;Table of content&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#root-orchestrator&#34; &gt;Root Orchestrator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#cluster-orchestrator&#34; &gt;Cluster Orchestrator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#worker-node&#34; &gt;Worker Node&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;oakestra-detailed-architecture&#34;&gt;Oakestra Detailed Architecture&lt;/h1&gt;
+&lt;p&gt;As shown in our &lt;a class=&#34;link&#34; href=&#34;get-started.md&#34; &gt;Get Started&lt;/a&gt; guide, Oakestra uses 3-4 building blocks to operate.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Root Orchestrator&lt;/li&gt;
+&lt;li&gt;Cluster Orchestrator&lt;/li&gt;
+&lt;li&gt;Node Engine&lt;/li&gt;
+&lt;li&gt;NetManager (optional)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.&lt;/p&gt;
+&lt;h2 id=&#34;root-orchestrator&#34;&gt;Root Orchestrator&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/RootArch.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;The Root Orchestrator is a centralized control plane that is aware of the participating clusters.&lt;/p&gt;
+&lt;p&gt;This picture describes the containers that compose the Root Orchestrator. As you may have seen we use docker-compose to bring up the orchestrators. This is because each block of this picture is &lt;em&gt;currently&lt;/em&gt; a separated container.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The System Manager is the point of contact for users, developers, or operators to use the system as an application deployment platform. It exposes APIs to receive deployment commands from users (application management) and APIs to handle slave Cluster Orchestrators. Cluster Orchestrators send their information
+regularly, and the System Manager is aware of those clusters.&lt;/li&gt;
+&lt;li&gt;The scheduler calculates a placement for a given application within the available clusters.&lt;/li&gt;
+&lt;li&gt;Mongo is the interface we use to access the database. We store aggregated information about the participating clusters. We differentiate between static metadata and dynamic data. The former covers the IP address, port number, name, and location of each cluster. The latter can be data that is
+changing regularly, such as the number of worker nodes per cluster, total amount of CPU cores and memory size, total amount of disk space, GPU capabilities, etc.&lt;/li&gt;
+&lt;li&gt;The Root Network Components are detailed in the Oakestra-Net Wiki.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;system-manager-apis&#34;&gt;System Manager APIs&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&#34;jobs-db-structure&#34;&gt;Jobs DB Structure&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&#34;clusters-db-structure&#34;&gt;Clusters DB Structure&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&#34;scheduler-algorithms&#34;&gt;Scheduler Algorithms&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&#34;consideration-regarding-failure-and-scalability&#34;&gt;Consideration regarding failure and scalability:&lt;/h3&gt;
+&lt;p&gt;The main problem of a centralized control plane is that it can act as a single point of failure. By design without a Root Orchestrator, the clusters are able to satisfy the SLA for the deployed applications internally, the only affected functionalities are the deployment of new services and the intra-cluster migrations. To avoid failure and increase resiliency an idea is to make the component able to scale by introducing a load balancer in front of the replicated components. However, this feature is not implemented yet.&lt;/p&gt;
+&lt;h2 id=&#34;cluster-orchestrator&#34;&gt;Cluster Orchestrator&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/ClusterArch.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&#34;cluster-manager-apis&#34;&gt;Cluster Manager APIs&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&#34;mqtt-topics&#34;&gt;MQTT Topics&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&#34;jobs-db-structure-1&#34;&gt;Jobs DB structure&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&#34;nodes-db-structure&#34;&gt;Nodes DB structure&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&#34;schedulers-algorithms&#34;&gt;Schedulers Algorithms&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h2 id=&#34;worker-node&#34;&gt;Worker Node&lt;/h2&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Orchestration</title>
+        <link>https://oakestra.io/docs/oakestra/orchestrators/</link>
+        <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+        
+        <guid>https://oakestra.io/docs/oakestra/orchestrators/</guid>
+        <description>&lt;p&gt;#APIs&lt;/p&gt;
+&lt;p&gt;Root Orchestrator APIs &lt;a class=&#34;link&#34; href=&#34;https://app.swaggerhub.com/apis-docs/giobarty/oakestra-root_api/v1#/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OpenApi Spec&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Task Scheduling</title>
+        <link>https://oakestra.io/docs/oakestra/scheduling/</link>
+        <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+        
+        <guid>https://oakestra.io/docs/oakestra/scheduling/</guid>
+        <description>&lt;h2 id=&#34;how-does-the-scheduling-work-in-oakestra&#34;&gt;How does the scheduling work in Oakestra?&lt;/h2&gt;
+&lt;p&gt;Oakestra&amp;rsquo;s architecture is composed of two tiers. Resources are divided into clusters. A cluster is seen as the aggregation of all its resources. A job is first scheduled to a cluster, and then the cluster scheduler decides the target worker.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/cluster-worker-selection.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;scheduling algo&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;The scheduling component is as simple as a Celery worker. The scheduler receives a job description and gives back an allocation target. We differentiate between the Root scheduler and Cluster scheduler. The Root scheduler finds a suitable cluster (step 1), and the Cluster scheduler finds a suitable worker node (step 2).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/scheduling-celery-worker.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;scheduling algo&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;This scheduling algorithm does not ensure an absolute optimal deployment but consistently reduces the search space.&lt;/p&gt;
+&lt;h2 id=&#34;scheduling-algorithm&#34;&gt;Scheduling Algorithm&lt;/h2&gt;
+&lt;p&gt;At each layer, the scheduling decision consists of the creation of a &lt;code&gt;candidate_list&lt;/code&gt; of clusters (or workers), the exclusion of unsuitable candidates, and then the selection of the &amp;ldquo;best&amp;rdquo; candidate accordingly to a scheduling algorithm.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/scheduling-algo.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;scheduling algo&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;The scheduling algorithms are implemented in the &lt;code&gt;calculation.py&lt;/code&gt; component of each respective scheduler.&lt;/p&gt;
+&lt;p&gt;The current released version only implements a &lt;strong&gt;best fit&lt;/strong&gt; and &lt;strong&gt;first fit&lt;/strong&gt; calculation strategies. However, on its way to the release, we have our new LDP algorithm (check it out on our &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2207.01577.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;whitepaper&lt;/a&gt;).&lt;/p&gt;
+&lt;h2 id=&#34;job-constraints&#34;&gt;Job Constraints&lt;/h2&gt;
+&lt;p&gt;The Job deployment descriptor allows a developer to specify constraints of 4 types: node &lt;strong&gt;resources&lt;/strong&gt;, &lt;strong&gt;network&lt;/strong&gt; capabilities, &lt;strong&gt;geographical&lt;/strong&gt; positioning, and &lt;strong&gt;direct&lt;/strong&gt; mapping.&lt;/p&gt;
+&lt;h3 id=&#34;resources&#34;&gt;Resources&lt;/h3&gt;
+&lt;p&gt;The job resource requirements cause the immediate exclusion of a candidate from the candidate list. These resources represent the bare minimum required by the job to operate properly. Here there is a table of the supported resources and the state of development:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Resource type&lt;/th&gt;
+&lt;th&gt;Status&lt;/th&gt;
+&lt;th&gt;Comments&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Virtualization&lt;/td&gt;
+&lt;td&gt;🟢&lt;/td&gt;
+&lt;td&gt;Fully functional containers support. Unikernel support is under development.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CPU&lt;/td&gt;
+&lt;td&gt;🟢&lt;/td&gt;
+&lt;td&gt;Only number of CPU cores&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Memory&lt;/td&gt;
+&lt;td&gt;🟢&lt;/td&gt;
+&lt;td&gt;Memory requirements in MB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Storage&lt;/td&gt;
+&lt;td&gt;🟠&lt;/td&gt;
+&lt;td&gt;It is possible to specify it, but it is not &lt;strong&gt;yet&lt;/strong&gt; taken into account by the scheduler&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GPU&lt;/td&gt;
+&lt;td&gt;🟠&lt;/td&gt;
+&lt;td&gt;Possibility of specifying the GPU cores. But not yet the available GPU drivers. Right now, the support is only for CUDA.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TPU&lt;/td&gt;
+&lt;td&gt;🔴&lt;/td&gt;
+&lt;td&gt;Not yet under development&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Architecture&lt;/td&gt;
+&lt;td&gt;🔴&lt;/td&gt;
+&lt;td&gt;Not yet possible to filter out the architecture. With containers, it is possible to use the multi-platform build. This flag is coming out together with the Unikernel support.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;network--geo-constraints&#34;&gt;Network &amp;amp; Geo constraints&lt;/h3&gt;
+&lt;p&gt;The networking requirements selection and geographic constraints support are coming out in our next release &lt;strong&gt;v0.5&lt;/strong&gt; and are part of the LDP algorithm update. Stay tuned.&lt;/p&gt;
+&lt;h3 id=&#34;direct-mapping-positioning&#34;&gt;Direct mapping positioning&lt;/h3&gt;
+&lt;p&gt;It is possible to specify a &lt;strong&gt;direct mapping&lt;/strong&gt; constraint. Therefore, in the deployment description, a developer can specify a list of target clusters and nodes. The scheduling algorithm operates only on the active clusters (or nodes) among the given list.&lt;/p&gt;
+&lt;p&gt;This direct mapping approach is currently based on &lt;code&gt;cluster names&lt;/code&gt; and &lt;code&gt;worker hostnames&lt;/code&gt;. We are anyway considering adding a label-based positioning where it is possible to tag resources with custom-defined labels. Stay tuned for more.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
