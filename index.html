@@ -1,346 +1,167 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr">
-    <head>
-	<meta name="generator" content="Hugo 0.101.0" /><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=''><title>Oakestra</title>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
 
-<link rel='canonical' href='https://oakestra.io/'>
+<head>
+    <title>Oakestra</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/academicons.css" />
+    <link rel="stylesheet" href="assets/css/bibtext.css" />
+    <link rel="stylesheet" href="assets/css/zocial.css" />
+    <link rel="icon" href="img/favicon.ico" />
+    <link href="assets/fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/cmu-sans-serif" type="text/css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
 
-<link rel="stylesheet" href="/scss/style.min.38a22ec8067cb9166f6603b0cfdc934c60033aa56941cdb683c24c8f6741465c.css"><meta property='og:title' content='Oakestra'>
-<meta property='og:description' content=''>
-<meta property='og:url' content='https://oakestra.io/'>
-<meta property='og:site_name' content='Oakestra'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2022-08-10T11:28:03&#43;02:00 '/>
-<meta name="twitter:title" content="Oakestra">
-<meta name="twitter:description" content=""><link rel="alternate" type="application/rss&#43;xml" href="https://oakestra.io/index.xml">
-    </head>
-    <body class="">
-    <script>
-        (function() {
-            const colorSchemeKey = 'StackColorScheme';
-            if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "auto");
-            }
-        })();
-    </script><script>
-    (function() {
-        const colorSchemeKey = 'StackColorScheme';
-        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-
-        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
-            
-
-            document.documentElement.dataset.scheme = 'dark';
-        } else {
-            document.documentElement.dataset.scheme = 'light';
-        }
-    })();
-</script>
-<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-    </button>
-
-    <header>
-        
-            
-            <figure class="site-avatar">
-                <a href="/">
-                
-                    
-                    
-                    
-                        
-                        <img src="/img/avatar_hu7fc94d4596db6a879669a889061e6268_294933_300x0_resize_box_3.png" width="300"
-                            height="287" class="site-logo" loading="lazy" alt="Avatar">
-                    
-                
-                </a>
-                
-            </figure>
-            
-        
-        
-        <div class="site-meta">
-            <h1 class="site-name"><a href="/">Oakestra</a></h1>
-            <h2 class="site-description"></h2>
+<body>
+    <section class="header-logo">
+        <div name="logo-container">
+            <img src="img/logo/alt-color-full.png" class="logo">
         </div>
-    </header><ol class="social-menu">
-            
-                <li>
-                    <a 
-                        href='https://github.com/oakestra'
-                        target="_blank"
-                        title="GitHub"
-                    >
-                        
-                        
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-</svg>
-
-
-
-                        
-                    </a>
-                </li>
-            
-        </ol><ol class="menu" id="main-menu">
-        
-        
-        
-
-        <li >
-            <a href='/docs/' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
-  <circle cx="9" cy="9" r="2" />
-</svg>
-
-
-
-                
-                <span>Docs</span>
-            </a>
-        </li>
-        
-        
-
-        <li >
-            <a href='/about/' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="7" r="4" />
-  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-</svg>
-
-
-
-                
-                <span>About</span>
-            </a>
-        </li>
-        
-        
-
-        <li >
-            <a href='/docs/getstarted/get-started' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                
-                <span>Get Started</span>
-            </a>
-        </li>
-        
-
-        <div class="menu-bottom-section">
-            
-            
-                <li id="dark-mode-toggle">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                    <span>Dark Mode</span>
-                </li>
-            
+        <div class="logo-text">
+            An Orchestration Framework for Edge Computing
         </div>
-    </ol>
-</aside>
-<main class="main full-width">
-    
-    
-    
-    
 
-    <section class="article-list">
-        
-            
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image">
-                
-                    <img src="/cover.png" loading="lazy" alt="Featured image of post Welcome to Oakestra" />
-                
+        <div style="padding-top: 3em">
+            <a id="morebutton" class="morebutton" href="https://github.com/oakestra" target="_blank">
+                <div class="button github fontawesome-chevron-down">View on <i class="icon fa-github"></i></div>
+            </a>
         </div>
-    
 
-</header>
-
-    <section class="article-content">
-    
-    
-    <p>Oakestra is a hierarchical, lightweight, flexible, and scalable orchestration framework for edge computing.</p>
-<p>Through its novel federated cluster management, delegated task scheduling, and semantic overlay networking, Oakestra can flexibly consolidate multiple infrastructure providers and support applications over dynamic variations at the edge.</p>
-<p>Our comprehensive evaluation against the stateof-the-art demonstrates the significant benefits of Oakestra as it achieves approximately 10× resource usage reduction and 10% application performance improvement.</p>
-
-</section>
-
-</article>
-
-        
+        <div class="scroll-downs">
+            <div class="mousey">
+                <div class="scroller"></div>
+            </div>
+        </div>
     </section>
-<footer class="site-footer">
-    <section class="copyright">
-        &copy; 
-        
-            2020 - 
-        
-        2022 Oakestra
-    </section>
-    
-    <section class="powerby">
-        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.13.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
-    </section>
-</footer>
 
-            </main>
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-            
-        
-            
-                
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
+    <section name="pubs">
+        <div class="container-fluid">
+            <div style="padding-top: 10%; text-align: center; font-size: 3vh;">
+                <i class="fas fa-wrench"></i> This webpage is currently under construction. Please keep checking back
+                for
+                updates.
+                <br> <br>
+                In the meantime, read the associated publications to learn more about Oakestra.
+            </div>
 
+            <div style="padding-left: 3%; padding-top: 3%;">
+                <div class="decorated hr-text-container">
+                    <span>
+                        Peer-Reviewed Publications
+                    </span>
+                </div>
+            </div>
 
+            <table class="pubs-table">
 
-    </div>
-    <h2 class="widget-title section-title">Categories</h2>
+                <!--  next publication  -->
+                <tr style="background-color: #ffffff" id="cloudy-imc" class="conf">
+                    <td class="pubs-img-container"><a
+                            href="pubs/oakestraSigcommDemo2022.pdf" class="no-decoration" target="_blank">
+                            <img class="pubs_img" src="pubs/oakestraSigcommDemo2022.png">
+                        </a>
+                    </td>
+                    <td style="vertical-align: top">
+                        <div style="position: relative; min-height: 180px; padding-left: -2em">
+                            <span class="pubs_title">
+                                <a href="pubs/oakestraSigcommDemo2022.pdf"
+                                    style="text-decoration: none!important; border: none; font-family: CMUSansSerifMedium; color: inherit;"
+                                    target="_blank">
+                                    Oakestra: An Orchestration Framework for Edge Computing
+                                </a>
+                            </span>
+                            <br><br>
+                            <span style="font-family: CMUSansSerifMedium" class="pubs_authors">
+                                Giovanni Bartolomeo, Simon Bäurle, Nitinder Mohan, Jörg Ott
+                            </span>
+                            <br><br>
+                            <span style="font-family: CMUSansSerifMedium;" class="pubs_type">
+                                ACM <b>SIGCOMM</b> Demo, 2022
+                            </span>
+                            <br><br>
 
-    <div class="tagCloud-tags">
-        
-            <a href="/categories/docs/" class="font_size_2">
-                Docs
-            </a>
-        
-            <a href="/categories/blog/" class="font_size_1">
-                Blog
-            </a>
-        
-    </div>
-</section>
+                            <a class="btn-primary-overide btn-lg" href="https://dx.doi.org/10.1145/3546037.3546056"
+                                    target="_blank">
+                                    <i class="fas fa-globe"></i> DOI
+                            </a>
 
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
-  <circle cx="9" cy="9" r="2" />
-</svg>
+                        </div>
+                    </td>
+                </tr>
+            </table>
 
 
+            <div style="padding-left: 3%; padding-top: 3%;">
+                <div class="decorated hr-text-container">
+                    <span>
+                        White Papers
+                    </span>
+                </div>
+            </div>
 
-    </div>
-    <h2 class="widget-title section-title">Tags</h2>
+            <table class="pubs-table">
 
-    <div class="tagCloud-tags">
-        
-            <a href="/tags/docs/" class="font_size_4">
-                docs
-            </a>
-        
-            <a href="/tags/about/" class="font_size_1">
-                about
-            </a>
-        
-            <a href="/tags/architecture/" class="font_size_1">
-                Architecture
-            </a>
-        
-            <a href="/tags/concepts/" class="font_size_1">
-                concepts
-            </a>
-        
-            <a href="/tags/getsarted/" class="font_size_1">
-                GetSarted
-            </a>
-        
-            <a href="/tags/getstarted/" class="font_size_1">
-                getstarted
-            </a>
-        
-            <a href="/tags/operations/" class="font_size_1">
-                operations
-            </a>
-        
-            <a href="/tags/welcome/" class="font_size_1">
-                Welcome
-            </a>
-        
-    </div>
-</section>
-            
-        
-    </aside>
+                <!--  next publication  -->
+                <tr style="background-color: #ffffff" id="cloudy-imc" class="conf">
+                    <td class="pubs-img-container"><a
+                            href="pubs/oakestraWhitePaper.pdf" class="no-decoration" target="_blank">
+                            <img class="pubs_img" src="pubs/oakestraWhitePaper.png">
+                        </a>
+                    </td>
+                    <td style="vertical-align: top">
+                        <div style="position: relative; min-height: 180px; padding-left: -2em">
+                            <span class="pubs_title">
+                                <a href="pubs/oakestraWhitePaper.pdf"
+                                    style="text-decoration: none; border: none; font-family: CMUSansSerifMedium; color: inherit;"
+                                    target="_blank">
+                                    Oakestra white paper: An Orchestrator for Edge Computing
+                                </a>
+                            </span>
+                            <br><br>
+                            <span style="font-family: CMUSansSerifMedium" class="pubs_authors">
+                                Giovanni Bartolomeo, Mehdi Yosofie, Simon Bäurle, Oliver Haluszczynski, Nitinder Mohan,
+                                Jörg
+                                Ott
+                            </span>
+                            <br><br>
 
+                            <p style="font-size: 0.8em">
+                                <a href="https://arxiv.org/abs/2207.01577" target="_blank" class="links doi">DOI</a>
 
+                                <!--                                                <a href="https://youtu.be/zm7F2f186C0?t=2428" target="_blank" class="links video">IETF coverage</a>-->
+
+                                <!--                                                 -->
+                                <!--                                                <a href="https://youtu.be/ofr5vpHaYDI?t=10179" target="_blank" class="links video">Video</a>-->
+                            </p>
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
-        <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="/ts/main.js" defer></script>
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+    </section>
 
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
+    <div class="container-xl">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <p class="col-md-6 mb-0 ">&copy; 2022 The Oakestra Authors. All rights reserved.</p>
+            
+          <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="docs/index.html" target="_blank" class="nav-link px-2 no-decoration">Documentation</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted no-decoration">FAQs</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted no-decoration">About</a></li>
+          </ul>
+        </footer>
+      </div>
+</body>
 
-        document.head.appendChild(customFont);
-    }());
-</script>
-
-    </body>
 </html>
