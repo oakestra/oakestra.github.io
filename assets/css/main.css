@@ -78,7 +78,7 @@ input[type="button"],
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
-  font-size: 3vh;
+  font-size: 170%;
   /* box-shadow: 3px 3px 10px gray; */
 }
 
@@ -211,10 +211,14 @@ input[type="button"]:disabled,
   height: 2.5em;
 }
 .btn-primary-overide:hover, .btn-primary-overide:focus, .btn-primary-overide:active, .btn-primary-overide.active, .open>.dropdown-toggle.btn-primary-overide {
-  color: #fff;
+  color: #3c5d6e;
   background-color: #fff;
-  border-color: #fff; /*set the color you want here*/
+  border-color: #3c5d6e; /*set the color you want here*/
   text-decoration: none;
+}
+
+.github:hover {
+  background-color: #50a457;
 }
 
 /* Table */
@@ -317,7 +321,7 @@ table.alt tfoot {
 
 /* specific icons */
 
-.fa-github:before:before {
+.fa-github:before {
   font-family: FontAwesome;
   content: "\f09b";
 }
@@ -347,10 +351,10 @@ table.alt tfoot {
 }
 
 .logo-text {
-  font-size: 2.5vw;
+  font-size: 250%;
   /* margin-bottom: 2.0em;  */
   /* margin-top: 1.0em; */
-  margin-left: 1.3em;
+  margin-left: 2em;
 }
 
 .morebutton {
@@ -417,7 +421,7 @@ table.alt tfoot {
 }
 
 .hr-text-content {
-  font-size: 1.5vh;
+  font-size: 1vw;
   /* background-color: white; */
   /* padding-right: 10px; */
   /* color: #497286; */
@@ -580,21 +584,22 @@ table.alt tfoot {
 
 .pubs_title {
   text-decoration: none !important;
+  border: none; 
+  font-family: CMUSansSerifMedium;
   /* font-family: SegoeUILightWeb, Segoe UI Light, Helvetica, Verdana, Sans-Serif; */
-  font-size: 2em;
+  font-size: 180%;
   /* font-weight: bold; */
   color: #497286 !important;
-  padding-bottom: 1em;
 }
 
 .pubs_authors {
   font-family: SegoeUILightWeb, Segoe UI Light, Helvetica, Verdana, Sans-Serif;
-  font-size: 1.5em;
+  font-size: 150%;
 }
 
 .pubs_type {
   font-family: SegoeUILightWeb, Segoe UI Light, Helvetica, Verdana, Sans-Serif;
-  font-size: 1.5em;
+  font-size: 150%;
   color: #526873;
 }
 
@@ -610,7 +615,7 @@ table.alt tfoot {
   padding-right: 2px; 
   padding-top: 1em; 
   padding-right: 1.1em; 
-  width: 30em
+  width: 20vw
 }
 
 .pubs_img {
