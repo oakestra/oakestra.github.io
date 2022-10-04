@@ -414,9 +414,9 @@ The Root Orchestrator manages different clusters of resources. The root only see
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget -c https://github.com/oakestra/oakestra/releases/download/NodeEngine-v0.02/NodeEngine.tar.gz &amp;&amp; tar -xzf NodeEngine.tar.gz &amp;&amp; cd NodeEngine/build &amp;&amp; chmod +x install.sh &amp;&amp; ./install.sh &lt;arch&gt;
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget -c https://github.com/oakestra/oakestra/releases/download/v0.4.2/NodeEngine_$(dpkg --print-architecture).tar.gz &amp;&amp; tar -xzf NodeEngine_$(dpkg --print-architecture).tar.gz &amp;&amp; chmod +x install.sh &amp;&amp; ./install.sh
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.04-experimental/NetManager.tar.gz &amp;&amp; tar -xzf NetManager.tar.gz &amp;&amp; cd NetManager &amp;&amp; chmod +x install.sh &amp;&amp; ./install.sh &lt;arch&gt;
+</span></span><span class="line"><span class="cl">wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.2/NetManager_$(dpkg --print-architecture).tar.gz &amp;&amp; tar -xzf NetManager_$(dpkg --print-architecture).tar.gz &amp;&amp; chmod +x install.sh &amp;&amp; ./install.sh $(dpkg --print-architecture)
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>2.2) Edit <code>/etc/netmanager/netcfg.json</code> accordingly:</p>
