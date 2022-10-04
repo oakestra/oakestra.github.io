@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Getting started This document describes how to setup your development environment.
+Preparation Make sure the following software is installed:
+Git 2.13.2&#43; (installation manual) Docker 1.13.1&#43; (installation manual) Node.js 16&#43; and npm 8&#43; (installation with nvm) Clone the repository 1 git clone https://github.com/edgeIO/dashboard.git Install the dependencies: 1 npm install Running the Okakestra Framework To be able to log in to the dashboard and test all functions, at least the System Manager and MongoDB must be started.'><title>Getting started with the frontend</title>
+
+<link rel='canonical' href='https://oakestra.io/docs/guicli/frontend/developer/getting-started/'>
+
+<link rel="stylesheet" href="/scss/style.min.38a22ec8067cb9166f6603b0cfdc934c60033aa56941cdb683c24c8f6741465c.css"><meta property='og:title' content='Getting started with the frontend'>
+<meta property='og:description' content='Getting started This document describes how to setup your development environment.
+Preparation Make sure the following software is installed:
+Git 2.13.2&#43; (installation manual) Docker 1.13.1&#43; (installation manual) Node.js 16&#43; and npm 8&#43; (installation with nvm) Clone the repository 1 git clone https://github.com/edgeIO/dashboard.git Install the dependencies: 1 npm install Running the Okakestra Framework To be able to log in to the dashboard and test all functions, at least the System Manager and MongoDB must be started.'>
+<meta property='og:url' content='https://oakestra.io/docs/guicli/frontend/developer/getting-started/'>
+<meta property='og:site_name' content='Oakestra'>
+<meta property='og:type' content='article'><meta property='article:section' content='Docs' /><meta property='article:published_time' content='2022-08-09T15:56:27&#43;02:00'/><meta property='article:modified_time' content='2022-08-09T15:56:27&#43;02:00'/>
+<meta name="twitter:title" content="Getting started with the frontend">
+<meta name="twitter:description" content="Getting started This document describes how to setup your development environment.
+Preparation Make sure the following software is installed:
+Git 2.13.2&#43; (installation manual) Docker 1.13.1&#43; (installation manual) Node.js 16&#43; and npm 8&#43; (installation with nvm) Clone the repository 1 git clone https://github.com/edgeIO/dashboard.git Install the dependencies: 1 npm install Running the Okakestra Framework To be able to log in to the dashboard and test all functions, at least the System Manager and MongoDB must be started.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu7fc94d4596db6a879669a889061e6268_294933_300x0_resize_box_3.png" width="300"
+                            height="287" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Oakestra</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/oakestra'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/docs/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>Docs</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/docs/getstarted/get-started' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>Get Started</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/docs/guicli/frontend/developer/getting-started/">Getting started with the frontend</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 09, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    3 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="getting-started">Getting started</h1>
+<p>This document describes how to setup your development environment.</p>
+<h2 id="preparation">Preparation</h2>
+<p>Make sure the following software is installed:</p>
+<ul>
+<li>Git 2.13.2+ (<a class="link" href="https://git-scm.com/downloads"  target="_blank" rel="noopener"
+    >installation manual</a>)</li>
+<li>Docker 1.13.1+ (<a class="link" href="https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/"  target="_blank" rel="noopener"
+    >installation manual</a>)</li>
+<li>Node.js 16+ and npm 8+ (<a class="link" href="https://github.com/creationix/nvm#usage"  target="_blank" rel="noopener"
+    >installation with nvm</a>)</li>
+</ul>
+<ol>
+<li>Clone the repository</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone https://github.com/edgeIO/dashboard.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>Install the dependencies:</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npm install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="running-the-okakestra-framework">Running the Okakestra Framework</h2>
+<p>To be able to log in to the dashboard and test all functions, at least the System Manager and MongoDB must be started.
+How to start them is described in the README of the <code>edgeio</code> repository.</p>
+<h2 id="serving-dashboard-for-development">Serving Dashboard for Development</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npm start
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In the background, <code>npm start</code> starts the <code>angular</code> development server. By default, the server starts on <code>localhost:4200</code></p>
+<p>Once the angular server starts, it takes some time to pre-compile all assets before serving them. By default, the angular development server watches for file changes and will update accordingly.</p>
+<p>As stated in the <a class="link" href="https://angular.io/guide/i18n#generate-app-versions-for-each-locale"  target="_blank" rel="noopener"
+    >Angular documentation</a>, i18n does not work in the development mode.
+Follow <a class="link" href="#building-dashboard-for-production" >Building Dashboard for Production</a> section to test this feature.</p>
+<blockquote>
+<p>Due to the deployment complexities of i18n and the need to minimize rebuild time, the development server only supports localizing a single locale at a time. Setting the &ldquo;localize&rdquo; option to true will cause an error when using ng serve if more than one locale is defined. Setting the option to a specific locale, such as &ldquo;localize&rdquo;: [&ldquo;fr&rdquo;], can work if you want to develop against a specific locale (such as fr).</p>
+</blockquote>
+<h2 id="building-dashboard-for-production">Building Dashboard for Production</h2>
+<p>In the production environment you need the following files:</p>
+<ol>
+<li><code>dist</code> folder</li>
+<li><code>docker</code> folder</li>
+<li><code>Dockerfile</code></li>
+<li><code>docker-compose.yml</code></li>
+</ol>
+<h3 id="1-dist-folder">1. dist folder:</h3>
+<p>The dashboard project can be built for production by using the following task:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npm run build
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The code is compiled, compressed, i18n support is enabled and debug support removed. The dashboard binary can be found in the <code>dist</code> folder.</p>
+<h3 id="2-docker-folder">2. docker folder:</h3>
+<p>To use the environment variables of a Docker container in your Angular application we use the library <a class="link" href="https://www.npmjs.com/package/angular-server-side-configuration"  target="_blank" rel="noopener"
+    >angular-server-side-configuration</a>. For any problems you can consult the readme of that repository.</p>
+<p>This folder contains the angular-environment folder, the entrypoint.sh file and a Nginx configuration file.</p>
+<p>In the angular-environment folder is the code that needs to run every time you start your Docker container.
+It contains a package.json file that has a dependency on angular-server-side-configuration and runs the main.js file.</p>
+<p>The entrypoint.sh script is used to install NodeJS and the angular-server-side-configuration library. After that, it runs the main.js script to set the environment variables and at the end, all NodeJS-related stuff is deleted and the Nginx server can be started with the defined settings in the configuration file.</p>
+<h3 id="3-dockerfile">3. dockerfile</h3>
+<p>Copies all relevant files into the container and executes the <code>entrypoint.sh</code> script</p>
+<h3 id="4-docker-compose">4. docker compose</h3>
+<p>To start the Docker service the Ip address of the system manager should be defined in the <code>docker-compose.yml</code> file. If the dashboard cannot reach the system manager, the user cannot log in.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">API_ADDRESS</span><span class="o">=</span>IP:PORT <span class="c1">#ip and port of the system manager</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="starting-the-dashboard">Starting the dashboard</h2>
+<p>If you have all the above files, you can build and start the Dashboard using the following command.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker-compose.yml up –build -d
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 Oakestra
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.13.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#preparation">Preparation</a></li>
+    <li><a href="#running-the-okakestra-framework">Running the Okakestra Framework</a></li>
+    <li><a href="#serving-dashboard-for-development">Serving Dashboard for Development</a></li>
+    <li><a href="#building-dashboard-for-production">Building Dashboard for Production</a>
+      <ol>
+        <li><a href="#1-dist-folder">1. dist folder:</a></li>
+        <li><a href="#2-docker-folder">2. docker folder:</a></li>
+        <li><a href="#3-dockerfile">3. dockerfile</a></li>
+        <li><a href="#4-docker-compose">4. docker compose</a></li>
+      </ol>
+    </li>
+    <li><a href="#starting-the-dashboard">Starting the dashboard</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
