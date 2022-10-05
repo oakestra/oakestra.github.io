@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Oakestra</title>
-    <link>https://oakestra.io/</link>
+    <link>https://oakestra.io/docs/</link>
     <description>Recent content on Oakestra</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://oakestra.io/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://oakestra.io/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Your First Oakestra Cluster</title>
-      <link>https://oakestra.io/getstarted/get-started-cluster/</link>
+      <link>https://oakestra.io/docs/getstarted/get-started-cluster/</link>
       <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
       
-      <guid>https://oakestra.io/getstarted/get-started-cluster/</guid>
+      <guid>https://oakestra.io/docs/getstarted/get-started-cluster/</guid>
       <description>Table of content:
 High-level archtecture Create your first Oakestra cluster High-level architecture Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.
 The Root Orchestrator manages different clusters of resources. The root only sees aggregated cluster resources. The Cluster orchestrator manages your worker nodes.</description>
@@ -18,20 +18,20 @@ The Root Orchestrator manages different clusters of resources. The root only see
     
     <item>
       <title>Deploy your first App</title>
-      <link>https://oakestra.io/getstarted/get-started-app/</link>
+      <link>https://oakestra.io/docs/getstarted/get-started-app/</link>
       <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
       
-      <guid>https://oakestra.io/getstarted/get-started-app/</guid>
+      <guid>https://oakestra.io/docs/getstarted/get-started-app/</guid>
       <description>Table of content:
 Requirements Deploy your first applications Requirements You have a running Root Orchestrator with at least one Cluster Orchestrator registered. You have at least one Worker Node Registered (Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured. You can access the APIs at &amp;lt;root-orch-ip&amp;gt;:10000/api/docs Deploy your first application Let&amp;rsquo;s try deploying an Nginx server and a client. Then we&amp;rsquo;ll enter inside the client container and try to curl Nginx.</description>
     </item>
     
     <item>
       <title>Contacts</title>
-      <link>https://oakestra.io/about/contacts/</link>
+      <link>https://oakestra.io/docs/about/contacts/</link>
       <pubDate>Wed, 10 Aug 2022 11:28:03 +0200</pubDate>
       
-      <guid>https://oakestra.io/about/contacts/</guid>
+      <guid>https://oakestra.io/docs/about/contacts/</guid>
       <description>Our discussion group Join our github discussion group HERE
 Feel free to post questions and ideas or ask about any problem you have.
 In our team section, you can also find a list of people you can contact directly by email, socials, and, why not, carrier pigeons as well.</description>
@@ -39,38 +39,38 @@ In our team section, you can also find a list of people you can contact directly
     
     <item>
       <title>Team</title>
-      <link>https://oakestra.io/about/team/</link>
+      <link>https://oakestra.io/docs/about/team/</link>
       <pubDate>Wed, 10 Aug 2022 11:27:56 +0200</pubDate>
       
-      <guid>https://oakestra.io/about/team/</guid>
+      <guid>https://oakestra.io/docs/about/team/</guid>
       <description> Giovanni Bartolomeo giovanni.bartolomeo@tum.de Mehdi Yosofie Oliver Haluszczynsci Simon Bäurle Maximilian Eder Patrick Sabanic Sonia Klärmann Ralf Baun Daniel Mair Maria Vienalas Dr. Nitinder Mohan mohan@in.tum.de Prof. Jörg Ott </description>
     </item>
     
     <item>
       <title>Contributor Covenant Code of Conduct</title>
-      <link>https://oakestra.io/docs/contribute/coc/</link>
+      <link>https://oakestra.io/docs/docs/contribute/coc/</link>
       <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
       
-      <guid>https://oakestra.io/docs/contribute/coc/</guid>
+      <guid>https://oakestra.io/docs/docs/contribute/coc/</guid>
       <description>Contributor Covenant Code of Conduct Our Pledge In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to make participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
 Our Standards Examples of behavior that contributes to creating a positive environment include:</description>
     </item>
     
     <item>
       <title>Deploy your first application</title>
-      <link>https://oakestra.io/docs/operations/application-deployment/</link>
+      <link>https://oakestra.io/docs/docs/operations/application-deployment/</link>
       <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
       
-      <guid>https://oakestra.io/docs/operations/application-deployment/</guid>
+      <guid>https://oakestra.io/docs/docs/operations/application-deployment/</guid>
       <description> Documentation available soon. Stay tuned. </description>
     </item>
     
     <item>
       <title>High level architecture</title>
-      <link>https://oakestra.io/docs/oakestra/architecture/</link>
+      <link>https://oakestra.io/docs/docs/oakestra/architecture/</link>
       <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
       
-      <guid>https://oakestra.io/docs/oakestra/architecture/</guid>
+      <guid>https://oakestra.io/docs/docs/oakestra/architecture/</guid>
       <description>Table of content Root Orchestrator Cluster Orchestrator Worker Node Oakestra Detailed Architecture As shown in our Get Started guide, Oakestra uses 3-4 building blocks to operate.
 Root Orchestrator Cluster Orchestrator Node Engine NetManager (optional) This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.
 Root Orchestrator The Root Orchestrator is a centralized control plane that is aware of the participating clusters.</description>
@@ -78,39 +78,39 @@ Root Orchestrator The Root Orchestrator is a centralized control plane that is a
     
     <item>
       <title>Oakestra mesh network</title>
-      <link>https://oakestra.io/docs/networking/oakestra-mesh/</link>
+      <link>https://oakestra.io/docs/docs/networking/oakestra-mesh/</link>
       <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
       
-      <guid>https://oakestra.io/docs/networking/oakestra-mesh/</guid>
+      <guid>https://oakestra.io/docs/docs/networking/oakestra-mesh/</guid>
       <description>#Docs coming soon, stay tuned</description>
     </item>
     
     <item>
       <title>Orchestration</title>
-      <link>https://oakestra.io/docs/oakestra/orchestrators/</link>
+      <link>https://oakestra.io/docs/docs/oakestra/orchestrators/</link>
       <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
       
-      <guid>https://oakestra.io/docs/oakestra/orchestrators/</guid>
+      <guid>https://oakestra.io/docs/docs/oakestra/orchestrators/</guid>
       <description>#APIs
 Root Orchestrator APIs OpenApi Spec</description>
     </item>
     
     <item>
       <title>Task Scheduling</title>
-      <link>https://oakestra.io/docs/oakestra/scheduling/</link>
+      <link>https://oakestra.io/docs/docs/oakestra/scheduling/</link>
       <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
       
-      <guid>https://oakestra.io/docs/oakestra/scheduling/</guid>
+      <guid>https://oakestra.io/docs/docs/oakestra/scheduling/</guid>
       <description>How does the scheduling work in Oakestra? Oakestra&amp;rsquo;s architecture is composed of two tiers. Resources are divided into clusters. A cluster is seen as the aggregation of all its resources. A job is first scheduled to a cluster, and then the cluster scheduler decides the target worker.
 The scheduling component is as simple as a Celery worker. The scheduler receives a job description and gives back an allocation target. We differentiate between the Root scheduler and Cluster scheduler.</description>
     </item>
     
     <item>
       <title>Welcome to Oakestra</title>
-      <link>https://oakestra.io/post/welcome/</link>
+      <link>https://oakestra.io/docs/post/welcome/</link>
       <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
       
-      <guid>https://oakestra.io/post/welcome/</guid>
+      <guid>https://oakestra.io/docs/post/welcome/</guid>
       <description>Oakestra is a hierarchical, lightweight, flexible, and scalable orchestration framework for edge computing.
 Through its novel federated cluster management, delegated task scheduling, and semantic overlay networking, Oakestra can flexibly consolidate multiple infrastructure providers and support applications over dynamic variations at the edge.
 Our comprehensive evaluation against the stateof-the-art demonstrates the significant benefits of Oakestra as it achieves approximately 10× resource usage reduction and 10% application performance improvement.</description>
