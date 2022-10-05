@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /tags/*
 
-Sitemap: https://oakestra.io/docs/sitemap.xml
+Sitemap: https://oakestra.io/sitemap.xml

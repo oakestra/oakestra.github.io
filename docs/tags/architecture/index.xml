@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Architecture on Oakestra</title>
-    <link>https://oakestra.io/docs/tags/Architecture/</link>
+    <link>https://oakestra.io/tags/Architecture/</link>
     <description>Recent content in Architecture on Oakestra</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 09 Aug 2022 15:56:27 +0200</lastBuildDate><atom:link href="https://oakestra.io/docs/tags/Architecture/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Aug 2022 15:56:27 +0200</lastBuildDate><atom:link href="https://oakestra.io/tags/Architecture/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>High level architecture</title>
-      <link>https://oakestra.io/docs/docs/oakestra/architecture/</link>
+      <link>https://oakestra.io/docs/oakestra/architecture/</link>
       <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
       
-      <guid>https://oakestra.io/docs/docs/oakestra/architecture/</guid>
+      <guid>https://oakestra.io/docs/oakestra/architecture/</guid>
       <description>Table of content Root Orchestrator Cluster Orchestrator Worker Node Oakestra Detailed Architecture As shown in our Get Started guide, Oakestra uses 3-4 building blocks to operate.
 Root Orchestrator Cluster Orchestrator Node Engine NetManager (optional) This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.
 Root Orchestrator The Root Orchestrator is a centralized control plane that is aware of the participating clusters.</description>

@@ -2,94 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://oakestra.io/docs/getstarted/get-started-cluster/</loc>
+    <loc>https://oakestra.io/getstarted/get-started-cluster/</loc>
     <lastmod>2022-10-05T15:59:24+02:00</lastmod>
   </url><url>
-    <loc>https://oakestra.io/docs/getstarted/</loc>
+    <loc>https://oakestra.io/getstarted/</loc>
     <lastmod>2022-10-05T15:59:24+02:00</lastmod>
   </url><url>
-    <loc>https://oakestra.io/docs/getstarted/get-started-app/</loc>
+    <loc>https://oakestra.io/getstarted/get-started-app/</loc>
     <lastmod>2022-10-05T15:59:24+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/docs/</loc>
-    <lastmod>2022-10-05T15:59:24+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/post/</loc>
-    <lastmod>2022-10-05T15:59:24+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/tags/GetSarted/</loc>
-    <lastmod>2022-10-05T15:59:24+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/tags/</loc>
-    <lastmod>2022-10-05T15:59:24+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/about/contacts/</loc>
-    <lastmod>2022-08-10T12:02:27+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/about/team/</loc>
-    <lastmod>2022-08-10T12:02:27+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/tags/Architecture/</loc>
-    <lastmod>2022-08-09T19:48:53+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/docs/contribute/coc/</loc>
-    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/docs/operations/application-deployment/</loc>
-    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/docs/oakestra/architecture/</loc>
-    <lastmod>2022-08-09T19:48:53+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/docs/networking/oakestra-mesh/</loc>
-    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/docs/oakestra/orchestrators/</loc>
-    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/docs/oakestra/scheduling/</loc>
-    <lastmod>2022-08-10T12:02:27+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/tags/Welcome/</loc>
-    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/post/welcome/</loc>
-    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/</loc>
-    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/tags/about/</loc>
     <lastmod>2022-10-05T15:59:24+02:00</lastmod>
   </url><url>
-    <loc>https://oakestra.io/docs/about/</loc>
+    <loc>https://oakestra.io/post/</loc>
     <lastmod>2022-10-05T15:59:24+02:00</lastmod>
   </url><url>
-    <loc>https://oakestra.io/docs/docs/guicli/</loc>
-    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/tags/concepts/</loc>
-    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/docs/oakestra/</loc>
-    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/docs/contribute/</loc>
-    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/tags/docs/</loc>
+    <loc>https://oakestra.io/tags/GetSarted/</loc>
     <lastmod>2022-10-05T15:59:24+02:00</lastmod>
   </url><url>
-    <loc>https://oakestra.io/docs/tags/getstarted/</loc>
+    <loc>https://oakestra.io/tags/</loc>
     <lastmod>2022-10-05T15:59:24+02:00</lastmod>
   </url><url>
-    <loc>https://oakestra.io/docs/docs/networking/</loc>
+    <loc>https://oakestra.io/about/contacts/</loc>
+    <lastmod>2022-08-10T12:02:27+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/about/team/</loc>
+    <lastmod>2022-08-10T12:02:27+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/tags/Architecture/</loc>
+    <lastmod>2022-08-09T19:48:53+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/docs/contribute/coc/</loc>
     <lastmod>2022-08-09T19:05:48+02:00</lastmod>
   </url><url>
-    <loc>https://oakestra.io/docs/docs/operations/</loc>
+    <loc>https://oakestra.io/docs/operations/application-deployment/</loc>
     <lastmod>2022-08-09T19:05:48+02:00</lastmod>
   </url><url>
-    <loc>https://oakestra.io/docs/tags/operations/</loc>
+    <loc>https://oakestra.io/docs/oakestra/architecture/</loc>
+    <lastmod>2022-08-09T19:48:53+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/docs/networking/oakestra-mesh/</loc>
+    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/docs/oakestra/orchestrators/</loc>
+    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/docs/oakestra/scheduling/</loc>
+    <lastmod>2022-08-10T12:02:27+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/tags/Welcome/</loc>
+    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/post/welcome/</loc>
+    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/</loc>
+    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/tags/about/</loc>
+    <lastmod>2022-10-05T15:59:24+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/about/</loc>
+    <lastmod>2022-10-05T15:59:24+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/docs/guicli/</loc>
+    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/tags/concepts/</loc>
+    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/docs/oakestra/</loc>
+    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/docs/contribute/</loc>
+    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/tags/docs/</loc>
+    <lastmod>2022-10-05T15:59:24+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/tags/getstarted/</loc>
+    <lastmod>2022-10-05T15:59:24+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/docs/networking/</loc>
+    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/docs/operations/</loc>
+    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/tags/operations/</loc>
     <lastmod>2022-08-09T19:05:48+02:00</lastmod>
   </url>
 </urlset>
