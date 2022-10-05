@@ -1,82 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Contribute on Oakestra</title>
-        <link>https://oakestra.io/docs/contribute/</link>
-        <description>Recent content in Contribute on Oakestra</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
-        <lastBuildDate>Tue, 09 Aug 2022 15:56:27 +0200</lastBuildDate><atom:link href="https://oakestra.io/docs/contribute/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Contributor Covenant Code of Conduct</title>
-        <link>https://oakestra.io/docs/contribute/coc/</link>
-        <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
-        
-        <guid>https://oakestra.io/docs/contribute/coc/</guid>
-        <description>&lt;h1 id=&#34;contributor-covenant-code-of-conduct&#34;&gt;Contributor Covenant Code of Conduct&lt;/h1&gt;
-&lt;h2 id=&#34;our-pledge&#34;&gt;Our Pledge&lt;/h2&gt;
-&lt;p&gt;In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to make participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, sex characteristics, gender identity and expression,
-level of experience, education, socio-economic status, nationality, personal
-appearance, race, religion, or sexual identity and orientation.&lt;/p&gt;
-&lt;h2 id=&#34;our-standards&#34;&gt;Our Standards&lt;/h2&gt;
-&lt;p&gt;Examples of behavior that contributes to creating a positive environment
-include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Using welcoming and inclusive language&lt;/li&gt;
-&lt;li&gt;Being respectful of differing viewpoints and experiences&lt;/li&gt;
-&lt;li&gt;Gracefully accepting constructive criticism&lt;/li&gt;
-&lt;li&gt;Focusing on what is best for the community&lt;/li&gt;
-&lt;li&gt;Showing empathy towards other community members&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Examples of unacceptable behavior by participants include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The use of sexualized language or imagery and unwelcome sexual attention or
-advances&lt;/li&gt;
-&lt;li&gt;Trolling, insulting/derogatory comments, and personal or political attacks&lt;/li&gt;
-&lt;li&gt;Public or private harassment&lt;/li&gt;
-&lt;li&gt;Publishing others&amp;rsquo; private information, such as a physical or electronic
-address, without explicit permission&lt;/li&gt;
-&lt;li&gt;Other conduct which could reasonably be considered inappropriate in a
-professional setting&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;our-responsibilities&#34;&gt;Our Responsibilities&lt;/h2&gt;
-&lt;p&gt;Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.&lt;/p&gt;
-&lt;p&gt;Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.&lt;/p&gt;
-&lt;h2 id=&#34;scope&#34;&gt;Scope&lt;/h2&gt;
-&lt;p&gt;This Code of Conduct applies within all project spaces, and it also applies when
-an individual is representing the project or its community in public spaces.
-Examples of representing a project or community include using an official
-project e-mail address, posting via an official social media account, or acting
-as an appointed representative at an online or offline event. Representation of
-a project may be further defined and clarified by project maintainers.&lt;/p&gt;
-&lt;h2 id=&#34;enforcement&#34;&gt;Enforcement&lt;/h2&gt;
-&lt;p&gt;Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at [INSERT EMAIL ADDRESS]. All
-complaints will be reviewed and investigated and will result in a response that
-is deemed necessary and appropriate to the circumstances. The project team is
-obligated to maintain confidentiality with regard to the reporter of an incident.
-Further details of specific enforcement policies may be posted separately.&lt;/p&gt;
-&lt;p&gt;Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project&amp;rsquo;s leadership.&lt;/p&gt;
-&lt;h2 id=&#34;attribution&#34;&gt;Attribution&lt;/h2&gt;
-&lt;p&gt;This Code of Conduct is adapted from the &lt;a class=&#34;link&#34; href=&#34;https://www.contributor-covenant.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Contributor Covenant&lt;/a&gt;, version 1.4,
-available at &lt;a class=&#34;link&#34; href=&#34;https://www.contributor-covenant.org/version/1/4/code-of-conduct.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.contributor-covenant.org/version/1/4/code-of-conduct.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;For answers to common questions about this code of conduct, see
-&lt;a class=&#34;link&#34; href=&#34;https://www.contributor-covenant.org/faq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.contributor-covenant.org/faq&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Contribute on Oakestra</title>
+    <link>oakestra.io/docs/contribute/</link>
+    <description>Recent content in Contribute on Oakestra</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="oakestra.io/docs/contribute/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contributor Covenant Code of Conduct</title>
+      <link>oakestra.io/docs/contribute/coc/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      
+      <guid>oakestra.io/docs/contribute/coc/</guid>
+      <description>Contributor Covenant Code of Conduct Our Pledge In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to make participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+Our Standards Examples of behavior that contributes to creating a positive environment include:</description>
+    </item>
+    
+  </channel>
 </rss>

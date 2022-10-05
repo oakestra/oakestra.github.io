@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Opeartions on Oakestra</title>
-        <link>https://oakestra.io/docs/operations/</link>
-        <description>Recent content in Opeartions on Oakestra</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
-        <lastBuildDate>Tue, 09 Aug 2022 15:56:27 +0200</lastBuildDate><atom:link href="https://oakestra.io/docs/operations/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Deploy your first application</title>
-        <link>https://oakestra.io/docs/operations/application-deployment/</link>
-        <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
-        
-        <guid>https://oakestra.io/docs/operations/application-deployment/</guid>
-        <description>&lt;h1 id=&#34;documentation-available-soon-stay-tuned&#34;&gt;Documentation available soon. Stay tuned.&lt;/h1&gt;
-</description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Opeartions on Oakestra</title>
+    <link>oakestra.io/docs/operations/</link>
+    <description>Recent content in Opeartions on Oakestra</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="oakestra.io/docs/operations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy your first application</title>
+      <link>oakestra.io/docs/operations/application-deployment/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      
+      <guid>oakestra.io/docs/operations/application-deployment/</guid>
+      <description> Documentation available soon. Stay tuned. </description>
+    </item>
+    
+  </channel>
 </rss>

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Welcome on Oakestra</title>
-        <link>https://oakestra.io/tags/welcome/</link>
-        <description>Recent content in Welcome on Oakestra</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
-        <lastBuildDate>Tue, 09 Aug 2022 15:56:27 +0200</lastBuildDate><atom:link href="https://oakestra.io/tags/welcome/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Welcome to Oakestra</title>
-        <link>https://oakestra.io/p/welcome/</link>
-        <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
-        
-        <guid>https://oakestra.io/p/welcome/</guid>
-        <description>&lt;img src="https://oakestra.io/cover.png" alt="Featured image of post Welcome to Oakestra" /&gt;&lt;p&gt;Oakestra is a hierarchical, lightweight, flexible, and scalable orchestration framework for edge computing.&lt;/p&gt;
-&lt;p&gt;Through its novel federated cluster management, delegated task scheduling, and semantic overlay networking, Oakestra can flexibly consolidate multiple infrastructure providers and support applications over dynamic variations at the edge.&lt;/p&gt;
-&lt;p&gt;Our comprehensive evaluation against the stateof-the-art demonstrates the significant benefits of Oakestra as it achieves approximately 10× resource usage reduction and 10% application performance improvement.&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Welcome on Oakestra</title>
+    <link>oakestra.io/tags/Welcome/</link>
+    <description>Recent content in Welcome on Oakestra</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 09 Aug 2022 15:56:27 +0200</lastBuildDate><atom:link href="oakestra.io/tags/Welcome/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to Oakestra</title>
+      <link>oakestra.io/post/welcome/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      
+      <guid>oakestra.io/post/welcome/</guid>
+      <description>Oakestra is a hierarchical, lightweight, flexible, and scalable orchestration framework for edge computing.
+Through its novel federated cluster management, delegated task scheduling, and semantic overlay networking, Oakestra can flexibly consolidate multiple infrastructure providers and support applications over dynamic variations at the edge.
+Our comprehensive evaluation against the stateof-the-art demonstrates the significant benefits of Oakestra as it achieves approximately 10× resource usage reduction and 10% application performance improvement.</description>
+    </item>
+    
+  </channel>
 </rss>
