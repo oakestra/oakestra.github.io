@@ -89,23 +89,6 @@ changing regularly, such as the number of worker nodes per cluster, total amount
 </description>
         </item>
         <item>
-        <title>Motivations</title>
-        <link>https://oakestra.io/docs/oakestra/motivations/</link>
-        <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
-        
-        <guid>https://oakestra.io/docs/oakestra/motivations/</guid>
-        <description>&lt;h1 id=&#34;motivations&#34;&gt;Motivations&lt;/h1&gt;
-</description>
-        </item>
-        <item>
-        <title>Node Engine</title>
-        <link>https://oakestra.io/docs/oakestra/node-engine/</link>
-        <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
-        
-        <guid>https://oakestra.io/docs/oakestra/node-engine/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Orchestration</title>
         <link>https://oakestra.io/docs/oakestra/orchestrators/</link>
         <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>

@@ -7,18 +7,6 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Tue, 09 Aug 2022 15:56:27 +0200</lastBuildDate><atom:link href="https://oakestra.io/docs/contribute/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Coding Style</title>
-        <link>https://oakestra.io/docs/contribute/coding-style/</link>
-        <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
-        
-        <guid>https://oakestra.io/docs/contribute/coding-style/</guid>
-        <description>&lt;h1 id=&#34;general-rules&#34;&gt;General rules&lt;/h1&gt;
-&lt;h1 id=&#34;golang-style&#34;&gt;Golang style&lt;/h1&gt;
-&lt;h1 id=&#34;python-style&#34;&gt;Python style&lt;/h1&gt;
-&lt;h1 id=&#34;typescript-style&#34;&gt;TypeScript style&lt;/h1&gt;
-</description>
-        </item>
-        <item>
         <title>Contributor Covenant Code of Conduct</title>
         <link>https://oakestra.io/docs/contribute/coc/</link>
         <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
