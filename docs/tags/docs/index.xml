@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docs on Oakestra</title>
-    <link>oakestra.io/tags/docs/</link>
+    <link>oakestra.io/docs/tags/docs/</link>
     <description>Recent content in docs on Oakestra</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="oakestra.io/tags/docs/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="oakestra.io/docs/tags/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docs</title>
-      <link>oakestra.io/docs/</link>
+      <link>oakestra.io/docs/docs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>oakestra.io/docs/</guid>
+      <guid>oakestra.io/docs/docs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CLI &amp; Frontend</title>
-      <link>oakestra.io/docs/guicli/</link>
+      <link>oakestra.io/docs/docs/guicli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>oakestra.io/docs/guicli/</guid>
+      <guid>oakestra.io/docs/docs/guicli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Contribute</title>
-      <link>oakestra.io/docs/contribute/</link>
+      <link>oakestra.io/docs/docs/contribute/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>oakestra.io/docs/contribute/</guid>
+      <guid>oakestra.io/docs/docs/contribute/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Networking</title>
-      <link>oakestra.io/docs/networking/</link>
+      <link>oakestra.io/docs/docs/networking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>oakestra.io/docs/networking/</guid>
+      <guid>oakestra.io/docs/docs/networking/</guid>
       <description></description>
     </item>
     

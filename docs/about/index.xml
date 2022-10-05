@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About on Oakestra</title>
-    <link>oakestra.io/about/</link>
+    <link>oakestra.io/docs/about/</link>
     <description>Recent content in About on Oakestra</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="oakestra.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="oakestra.io/docs/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Contacts</title>
-      <link>oakestra.io/about/contacts/</link>
+      <link>oakestra.io/docs/about/contacts/</link>
       <pubDate>Wed, 10 Aug 2022 11:28:03 +0200</pubDate>
       
-      <guid>oakestra.io/about/contacts/</guid>
+      <guid>oakestra.io/docs/about/contacts/</guid>
       <description>Our discussion group Join our github discussion group HERE
 Feel free to post questions and ideas or ask about any problem you have.
 In our team section, you can also find a list of people you can contact directly by email, socials, and, why not, carrier pigeons as well.</description>
@@ -18,10 +18,10 @@ In our team section, you can also find a list of people you can contact directly
     
     <item>
       <title>Team</title>
-      <link>oakestra.io/about/team/</link>
+      <link>oakestra.io/docs/about/team/</link>
       <pubDate>Wed, 10 Aug 2022 11:27:56 +0200</pubDate>
       
-      <guid>oakestra.io/about/team/</guid>
+      <guid>oakestra.io/docs/about/team/</guid>
       <description> Giovanni Bartolomeo giovanni.bartolomeo@tum.de Mehdi Yosofie Oliver Haluszczynsci Simon Bäurle Maximilian Eder Patrick Sabanic Sonia Klärmann Ralf Baun Daniel Mair Maria Vienalas Dr. Nitinder Mohan mohan@in.tum.de Prof. Jörg Ott </description>
     </item>
     
