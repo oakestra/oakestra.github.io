@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Concepts on Oakestra</title>
-    <link>oakestra.io/docs/docs/oakestra/</link>
+    <link>https://oakestra.io/docs/docs/oakestra/</link>
     <description>Recent content in Concepts on Oakestra</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="oakestra.io/docs/docs/oakestra/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://oakestra.io/docs/docs/oakestra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>High level architecture</title>
-      <link>oakestra.io/docs/docs/oakestra/architecture/</link>
+      <link>https://oakestra.io/docs/docs/oakestra/architecture/</link>
       <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
       
-      <guid>oakestra.io/docs/docs/oakestra/architecture/</guid>
+      <guid>https://oakestra.io/docs/docs/oakestra/architecture/</guid>
       <description>Table of content Root Orchestrator Cluster Orchestrator Worker Node Oakestra Detailed Architecture As shown in our Get Started guide, Oakestra uses 3-4 building blocks to operate.
 Root Orchestrator Cluster Orchestrator Node Engine NetManager (optional) This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.
 Root Orchestrator The Root Orchestrator is a centralized control plane that is aware of the participating clusters.</description>
@@ -18,20 +18,20 @@ Root Orchestrator The Root Orchestrator is a centralized control plane that is a
     
     <item>
       <title>Orchestration</title>
-      <link>oakestra.io/docs/docs/oakestra/orchestrators/</link>
+      <link>https://oakestra.io/docs/docs/oakestra/orchestrators/</link>
       <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
       
-      <guid>oakestra.io/docs/docs/oakestra/orchestrators/</guid>
+      <guid>https://oakestra.io/docs/docs/oakestra/orchestrators/</guid>
       <description>#APIs
 Root Orchestrator APIs OpenApi Spec</description>
     </item>
     
     <item>
       <title>Task Scheduling</title>
-      <link>oakestra.io/docs/docs/oakestra/scheduling/</link>
+      <link>https://oakestra.io/docs/docs/oakestra/scheduling/</link>
       <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
       
-      <guid>oakestra.io/docs/docs/oakestra/scheduling/</guid>
+      <guid>https://oakestra.io/docs/docs/oakestra/scheduling/</guid>
       <description>How does the scheduling work in Oakestra? Oakestra&amp;rsquo;s architecture is composed of two tiers. Resources are divided into clusters. A cluster is seen as the aggregation of all its resources. A job is first scheduled to a cluster, and then the cluster scheduler decides the target worker.
 The scheduling component is as simple as a Celery worker. The scheduler receives a job description and gives back an allocation target. We differentiate between the Root scheduler and Cluster scheduler.</description>
     </item>
