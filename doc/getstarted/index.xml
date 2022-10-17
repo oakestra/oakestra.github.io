@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Get Started on Oakestra</title>
+    <link>https://oakestra.io/docs/getstarted/</link>
+    <description>Recent content in Get Started on Oakestra</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://oakestra.io/docs/getstarted/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Your First Oakestra Cluster</title>
+      <link>https://oakestra.io/docs/getstarted/get-started-cluster/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      
+      <guid>https://oakestra.io/docs/getstarted/get-started-cluster/</guid>
+      <description>Table of content:
+High-level archtecture Create your first Oakestra cluster High-level architecture Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.
+The Root Orchestrator manages different clusters of resources. The root only sees aggregated cluster resources. The Cluster orchestrator manages your worker nodes.</description>
+    </item>
+    
+    <item>
+      <title>Deploy your first App</title>
+      <link>https://oakestra.io/docs/getstarted/get-started-app/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      
+      <guid>https://oakestra.io/docs/getstarted/get-started-app/</guid>
+      <description>Table of content:
+Requirements Deploy your first applications Requirements You have a running Root Orchestrator with at least one Cluster Orchestrator registered. You have at least one Worker Node Registered (Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured. You can access the APIs at &amp;lt;root-orch-ip&amp;gt;:10000/api/docs Deploy your first application Let&amp;rsquo;s try deploying an Nginx server and a client. Then we&amp;rsquo;ll enter inside the client container and try to curl Nginx.</description>
+    </item>
+    
+  </channel>
+</rss>
