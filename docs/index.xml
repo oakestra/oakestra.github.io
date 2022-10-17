@@ -27,6 +27,16 @@ Requirements Deploy your first applications Requirements You have a running Root
     </item>
     
     <item>
+      <title>Contribution Guide</title>
+      <link>https://oakestra.io/docs/docs/contribute/contribution-guide/</link>
+      <pubDate>Mon, 17 Oct 2022 10:39:27 +0200</pubDate>
+      
+      <guid>https://oakestra.io/docs/docs/contribute/contribution-guide/</guid>
+      <description>Oakestra Contribution guide Oakestra&amp;rsquo;s codebase is open-source on GitHub and open to external contributors as well. The purpose of this guide is to help the developer contribute in such a way that both people directly involved in Okaestra and people outside the research group can follow what happens within the project.
+Issues Each contribution starts from an issue on the corresponding repository. E.g., Are you willing to update the front end?</description>
+    </item>
+    
+    <item>
       <title>Contacts</title>
       <link>https://oakestra.io/docs/about/contacts/</link>
       <pubDate>Wed, 10 Aug 2022 11:28:03 +0200</pubDate>
