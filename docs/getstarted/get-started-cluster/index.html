@@ -1246,7 +1246,7 @@ The Root Orchestrator manages different clusters of resources. The root only see
 </div>
 <p>In this example, we will use a single device to deploy all the components. This is not recommended for production environments, but it is pretty cool for home environments and development.</p>
 <p><img
-  src="/getstarted/SingleNodeExample.png"
+  src="/docs/getstarted/SingleNodeExample.png"
   alt="Deployment example with a single device"
   
 /></p>
@@ -1286,7 +1286,7 @@ export CLUSTER_LOCATION=My_Awesome_Apartment
 </div>
 <p>The M-DOC deployment enables you to deploy One cluster with multiple worker nodes. The main difference between this deployment and 1-DOC is that the worker nodes might be external here, and there can be multiple of them.</p>
 <p><img
-  src="/getstarted/1ClusterExample.png"
+  src="/docs/getstarted/1ClusterExample.png"
   alt=""
   
 /></p>
@@ -1317,7 +1317,7 @@ sudo NodeEngine -n 6000 -p 10100 -a &lt;IP ADDRESS OF THE CLSUTER ORCHESTRATOR&g
 </div>
 <p>This represents the most versatile deployment. You can split your resources into multiple clusters within different locations and with different resources. In this deployment, we need to deploy the Root and the Cluster orchestrator on different nodes. Each independent clsuter orchestrator represents a cluster of resources. The worker nodes attached to each cluster are aggregated and seen as a unique big resource from the point of view of the Root. This deployment isolates the resources from the root perspective and delegates the responsibility to the cluster orchestrator.
 <img
-  src="/getstarted/2ClusterExample.png"
+  src="/docs/getstarted/2ClusterExample.png"
   alt=""
   
 /></p>
