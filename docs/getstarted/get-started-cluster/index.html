@@ -2,7 +2,7 @@
 <html
   lang="en"
   class="color-toggle-hidden"
-  
+  code-theme="dark"
 >
   <head>
     <meta charset="UTF-8" />
@@ -53,7 +53,7 @@ The Root Orchestrator manages different clusters of resources. The root only see
     />
     <meta
       property="article:modified_time"
-      content="2022-10-05T15:59:24+02:00"
+      content="2022-10-20T16:01:10+02:00"
     />
 
 
@@ -73,7 +73,7 @@ The Root Orchestrator manages different clusters of resources. The root only see
       "url" : "https://oakestra.io/docs/getstarted/get-started-cluster/",
       "headline": "Your First Oakestra Cluster",
       "description": "Table of content:\nHigh-level archtecture Create your first Oakestra cluster High-level architecture Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.\nThe Root Orchestrator manages different clusters of resources. The root only sees aggregated cluster resources. The Cluster orchestrator manages your worker nodes.",
-      "wordCount" : "970",
+      "wordCount" : "984",
       "license": "CC BY-SA 4.0",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
@@ -86,7 +86,7 @@ The Root Orchestrator manages different clusters of resources. The root only see
       "copyrightYear" : "2022",
       "dateCreated": "2022-10-05T09:56:27.00Z",
       "datePublished": "2022-10-05T09:56:27.00Z",
-      "dateModified": "2022-10-05T15:59:24.00Z",
+      "dateModified": "2022-10-20T16:01:10.00Z",
       "publisher":{
           "@type":"Organization",
           "name": "Oakestra",
@@ -1203,7 +1203,7 @@ The Root Orchestrator manages different clusters of resources. The root only see
     </h2>
 </div>
 <p><img
-  src="/getstarted/highLevelArch.png"
+  src="/docs/getstarted/highLevelArch.png"
   alt="High level architecture picture"
   
 /></p>
@@ -1251,31 +1251,31 @@ The Root Orchestrator manages different clusters of resources. The root only see
   
 /></p>
 <p><strong>0)</strong> First, let&rsquo;s export the required environment variables</p>
-<pre tabindex="0"><code>## Choose a unique name for your cluster
-export CLUSTER_NAME=My_Awesome_Cluster
-## Come up with a name for the current location
-export CLUSTER_LOCATION=My_Awesome_Apartment
-</code></pre><p><strong>1)</strong> now clone the repository and move into it using:</p>
-<pre tabindex="0"><code>git clone https://github.com/oakestra/oakestra.git &amp;&amp; cd oakestra
-</code></pre><p><strong>2)</strong> Run a local 1-DOC cluster</p>
-<pre tabindex="0"><code>sudo -E docker-compose -f run-a-cluster/1-DOC.yml up
-</code></pre><p><strong>3)</strong> download, untar and install the node engine package</p>
-<pre tabindex="0"><code>wget -c https://github.com/oakestra/oakestra/releases/download/v0.4.2/NodeEngine_$(dpkg --print-architecture).tar.gz &amp;&amp; tar -xzf NodeEngine_$(dpkg --print-architecture).tar.gz &amp;&amp; chmod +x install.sh &amp;&amp; ./install.sh
-</code></pre><p><strong>4)</strong> (optional) download and unzip and install the network manager; this enables an overlay network across your services</p>
-<pre tabindex="0"><code>wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.2/NetManager_$(dpkg --print-architecture).tar.gz &amp;&amp; tar -xzf NetManager_$(dpkg --print-architecture).tar.gz &amp;&amp; chmod +x install.sh &amp;&amp; ./install.sh $(dpkg --print-architecture)
-</code></pre><p>( please replace &lt; arch &gt; with your device architecture: <strong>arm-7</strong> or <strong>amd64</strong> )</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="c1">## Choose a unique name for your cluster</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CLUSTER_NAME</span><span class="o">=</span>My_Awesome_Cluster
+</span></span><span class="line"><span class="cl"><span class="c1">## Come up with a name for the current location</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CLUSTER_LOCATION</span><span class="o">=</span>My_Awesome_Apartment
+</span></span></code></pre></div><p><strong>1)</strong> now clone the repository and move into it using:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">git clone https://github.com/oakestra/oakestra.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> oakestra
+</span></span></code></pre></div><p><strong>2)</strong> Run a local 1-DOC cluster</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">sudo -E docker-compose -f run-a-cluster/1-DOC.yml up
+</span></span></code></pre></div><p><strong>3)</strong> download, untar and install the node engine package</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">wget -c https://github.com/oakestra/oakestra/releases/download/v0.4.2/NodeEngine_<span class="k">$(</span>dpkg --print-architecture<span class="k">)</span>.tar.gz <span class="o">&amp;&amp;</span> tar -xzf NodeEngine_<span class="k">$(</span>dpkg --print-architecture<span class="k">)</span>.tar.gz <span class="o">&amp;&amp;</span> chmod +x install.sh <span class="o">&amp;&amp;</span> mv NodeEngine NodeEngine_<span class="k">$(</span>dpkg --print-architecture<span class="k">)</span> <span class="o">&amp;&amp;</span> ./install.sh <span class="k">$(</span>dpkg --print-architecture<span class="k">)</span>
+</span></span></code></pre></div><p><strong>4)</strong> (optional) download and unzip and install the network manager; this enables an overlay network across your services</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.2/NetManager_<span class="k">$(</span>dpkg --print-architecture<span class="k">)</span>.tar.gz <span class="o">&amp;&amp;</span> tar -xzf NetManager_<span class="k">$(</span>dpkg --print-architecture<span class="k">)</span>.tar.gz <span class="o">&amp;&amp;</span> chmod +x install.sh <span class="o">&amp;&amp;</span> ./install.sh <span class="k">$(</span>dpkg --print-architecture<span class="k">)</span>
+</span></span></code></pre></div><p>( please replace &lt; arch &gt; with your device architecture: <strong>arm-7</strong> or <strong>amd64</strong> )</p>
 <p>4.1) Edit <code>/etc/netmanager/netcfg.json</code> as follows:</p>
-<pre tabindex="0"><code>{
-  &#34;NodePublicAddress&#34;: &#34;&lt;IP ADDRESS OF THIS DEVICE&gt;&#34;,
-  &#34;NodePublicPort&#34;: &#34;&lt;PORT REACHABLE FROM OUTSIDE, use 50103 as default&gt;&#34;,
-  &#34;ClusterUrl&#34;: &#34;localhost&#34;,
-  &#34;ClusterMqttPort&#34;: &#34;10003&#34;
-}
-</code></pre><p>4.2) start the NetManager on port 6000</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;NodePublicAddress&#34;</span>: <span class="s2">&#34;&lt;IP ADDRESS OF THIS DEVICE&gt;&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;NodePublicPort&#34;</span>: <span class="s2">&#34;&lt;PORT REACHABLE FROM OUTSIDE, use 50103 as default&gt;&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;ClusterUrl&#34;</span>: <span class="s2">&#34;localhost&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;ClusterMqttPort&#34;</span>: <span class="s2">&#34;10003&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>4.2) start the NetManager on port 6000</p>
 <pre tabindex="0"><code>sudo NetManager -p 6000 &amp;
 </code></pre><p><strong>5)</strong> start the NodeEngine. Please only use the <code>-n 6000</code> parameter if you started the network component in step 4. This parameter, in fact, is used to specify the internal port of the network component, if any.</p>
-<pre tabindex="0"><code>sudo NodeEngine -n 6000 -p 10100
-</code></pre><p>( you can use <code>NodeEngine -h</code> for further details )</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">sudo NodeEngine -n <span class="m">6000</span> -p <span class="m">10100</span>
+</span></span></code></pre></div><p>( you can use <code>NodeEngine -h</code> for further details )</p>
 <div class="gdoc-page__anchorwrap">
     <h3 id="m-doc-m-devices-one-cluster">
         M-DOC (M Devices, One Cluster)
@@ -1293,21 +1293,21 @@ export CLUSTER_LOCATION=My_Awesome_Apartment
 <p>The deployment of this kind of cluster is similar to 1-DOC. We first need to start the root and cluster orchestrator. Afterward, we can attach the worker nodes.</p>
 <p><strong>1)</strong> On the node you wish to use as a cluster and root orchestrator, execute steps <strong>1-DOC.1</strong> and <strong>1-DOC.2</strong></p>
 <p><strong>2)</strong> Now, we need to prepare all the worker nodes. On each worker node, execute the following:</p>
-<p>2.1) Downlaod and unpack both the NodeEngine and the NetManager:</p>
-<pre tabindex="0"><code>wget -c https://github.com/oakestra/oakestra/releases/download/v0.4.2/NodeEngine_$(dpkg --print-architecture).tar.gz &amp;&amp; tar -xzf NodeEngine_$(dpkg --print-architecture).tar.gz &amp;&amp; chmod +x install.sh &amp;&amp; ./install.sh
-
-wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.2/NetManager_$(dpkg --print-architecture).tar.gz &amp;&amp; tar -xzf NetManager_$(dpkg --print-architecture).tar.gz &amp;&amp; chmod +x install.sh &amp;&amp; ./install.sh $(dpkg --print-architecture)
-</code></pre><p>2.2) Edit <code>/etc/netmanager/netcfg.json</code> accordingly:</p>
-<pre tabindex="0"><code>{
-  &#34;NodePublicAddress&#34;: &#34;&lt;IP ADDRESS OF THIS DEVICE&gt;&#34;,
-  &#34;NodePublicPort&#34;: &#34;&lt;PORT REACHABLE FROM OUTSIDE, internal port is always 50103&gt;&#34;,
-  &#34;ClusterUrl&#34;: &#34;&lt;IP ADDRESS OF THE CLSUTER ORCHESTRATOR&gt;&#34;,
-  &#34;ClusterMqttPort&#34;: &#34;10003&#34;
-}
-</code></pre><p>2.3) Run the NetManager and the NodeEngine components:</p>
-<pre tabindex="0"><code>sudo NetManager -p 6000 &amp;
-sudo NodeEngine -n 6000 -p 10100 -a &lt;IP ADDRESS OF THE CLSUTER ORCHESTRATOR&gt;
-</code></pre><div class="gdoc-page__anchorwrap">
+<p>2.1) Downlaod and unpack both the NodeEngine</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">wget -c https://github.com/oakestra/oakestra/releases/download/v0.4.2/NodeEngine_<span class="k">$(</span>dpkg --print-architecture<span class="k">)</span>.tar.gz <span class="o">&amp;&amp;</span> tar -xzf NodeEngine_<span class="k">$(</span>dpkg --print-architecture<span class="k">)</span>.tar.gz <span class="o">&amp;&amp;</span> chmod +x install.sh <span class="o">&amp;&amp;</span> mv NodeEngine NodeEngine_<span class="k">$(</span>dpkg --print-architecture<span class="k">)</span> <span class="o">&amp;&amp;</span> ./install.sh <span class="k">$(</span>dpkg --print-architecture<span class="k">)</span>
+</span></span></code></pre></div><p>and the NetManager</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.2/NetManager_<span class="k">$(</span>dpkg --print-architecture<span class="k">)</span>.tar.gz <span class="o">&amp;&amp;</span> tar -xzf NetManager_<span class="k">$(</span>dpkg --print-architecture<span class="k">)</span>.tar.gz <span class="o">&amp;&amp;</span> chmod +x install.sh <span class="o">&amp;&amp;</span> ./install.sh <span class="k">$(</span>dpkg --print-architecture<span class="k">)</span>
+</span></span></code></pre></div><p>2.2) Edit <code>/etc/netmanager/netcfg.json</code> accordingly:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;NodePublicAddress&#34;</span>: <span class="s2">&#34;&lt;IP ADDRESS OF THIS DEVICE&gt;&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;NodePublicPort&#34;</span>: <span class="s2">&#34;&lt;PORT REACHABLE FROM OUTSIDE, internal port is always 50103&gt;&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;ClusterUrl&#34;</span>: <span class="s2">&#34;&lt;IP ADDRESS OF THE CLSUTER ORCHESTRATOR&gt;&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;ClusterMqttPort&#34;</span>: <span class="s2">&#34;10003&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>2.3) Run the NetManager and the NodeEngine components:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">sudo NetManager -p <span class="m">6000</span> <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">sudo NodeEngine -n <span class="m">6000</span> -p <span class="m">10100</span> -a &lt;IP ADDRESS OF THE CLSUTER ORCHESTRATOR&gt;
+</span></span></code></pre></div><div class="gdoc-page__anchorwrap">
     <h3 id="mdnc-m-devices-n-clusters">
         MDNC (M Devices, N Clusters)
         <a data-clipboard-text="https://oakestra.io/docs/getstarted/get-started-cluster/#mdnc-m-devices-n-clusters" class="gdoc-page__anchor clip flex align-center" title="Anchor to: MDNC (M Devices, N Clusters)" aria-label="Anchor to: MDNC (M Devices, N Clusters)" href="#mdnc-m-devices-n-clusters">
@@ -1322,20 +1322,20 @@ sudo NodeEngine -n 6000 -p 10100 -a &lt;IP ADDRESS OF THE CLSUTER ORCHESTRATOR&g
   
 /></p>
 <p><strong>1)</strong> In this first step, we need to deploy the RootOrchestrator component on a Node. To do this, you need to clone the repository on the desired node, move to the root orchestrator folder, and execute the startup command.</p>
-<pre tabindex="0"><code>git clone https://github.com/edgeIO/edgeio.git &amp;&amp; cd edgeio
-
-sudo -E docker-compose -f root_orchestrator/docker-compose-&lt;arch&gt;.yml up
-</code></pre><p>( please replace &lt; arch &gt; with your device architecture: <strong>arm</strong> or <strong>amd64</strong> )</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">git clone https://github.com/edgeIO/edgeio.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> edgeio
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo -E docker-compose -f root_orchestrator/docker-compose-&lt;arch&gt;.yml up
+</span></span></code></pre></div><p>( please replace &lt; arch &gt; with your device architecture: <strong>arm</strong> or <strong>amd64</strong> )</p>
 <p><strong>2)</strong> For each node that needs to host a cluster orchestrator, you need to:
 2.1) Export the ENV variables needed to connect to the cluster orchestrator:</p>
-<pre tabindex="0"><code>export SYSTEM_MANAGER_URL=&lt;IP ADDRESS OF THE NODE HOSTING THE ROOT ORCHESTRATOR&gt;
-export CLUSTER_NAME=&lt;choose a name for your cluster&gt;
-export CLUSTER_LOCATION=&lt;choose a name for the cluster&#39;s location&gt;
-</code></pre><p>2.2) Clone the repo and run the cluster orchestrator:</p>
-<pre tabindex="0"><code>git clone https://github.com/edgeIO/edgeio.git &amp;&amp; cd edgeio
-
-sudo -E docker-compose -f cluster_orchestrator/docker-compose-&lt;arch&gt;.yml up
-</code></pre><p>( please replace &lt; arch &gt; with your device architecture: <strong>arm</strong> or <strong>amd64</strong> )</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">SYSTEM_MANAGER_URL</span><span class="o">=</span>&lt;IP ADDRESS OF THE NODE HOSTING THE ROOT ORCHESTRATOR&gt;
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CLUSTER_NAME</span><span class="o">=</span>&lt;choose a name <span class="k">for</span> your cluster&gt;
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CLUSTER_LOCATION</span><span class="o">=</span>&lt;choose a name <span class="k">for</span> the cluster<span class="err">&#39;</span>s location&gt;
+</span></span></code></pre></div><p>2.2) Clone the repo and run the cluster orchestrator:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">git clone https://github.com/edgeIO/edgeio.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> edgeio
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo -E docker-compose -f cluster_orchestrator/docker-compose-&lt;arch&gt;.yml up
+</span></span></code></pre></div><p>( please replace &lt; arch &gt; with your device architecture: <strong>arm</strong> or <strong>amd64</strong> )</p>
 <p><strong>3)</strong> Start and configure each worker as described in M-DOC.2</p>
 <div class="gdoc-page__anchorwrap">
     <h3 id="hybrids">
