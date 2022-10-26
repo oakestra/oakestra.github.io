@@ -30,7 +30,7 @@
 &lt;li&gt;&lt;a href=&#34;#create-your-first-oakestra-cluster&#34;&gt;Create your first Oakestra cluster&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;high-level-architecture&#34;&gt;High-level architecture&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/docs/getstarted/highLevelArch.png&#34; alt=&#34;High level architecture picture&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/getstarted/highLevelArch.png&#34; alt=&#34;High level architecture picture&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The &lt;strong&gt;Root Orchestrator&lt;/strong&gt; manages different clusters of resources. The root only sees aggregated cluster resources.&lt;/li&gt;
@@ -48,7 +48,7 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;1-doc-1-device-one-cluster&#34;&gt;1-DOC (1 Device, One Cluster)&lt;/h3&gt;
 &lt;p&gt;In this example, we will use a single device to deploy all the components. This is not recommended for production environments, but it is pretty cool for home environments and development.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/docs/getstarted/SingleNodeExample.png&#34; alt=&#34;Deployment example with a single device&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/getstarted/SingleNodeExample.png&#34; alt=&#34;Deployment example with a single device&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;0)&lt;/strong&gt; First, let&amp;rsquo;s export the required environment variables&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;## Choose a unique name for your cluster&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;CLUSTER_NAME&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;My_Awesome_Cluster
@@ -77,7 +77,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;( you can use &lt;code&gt;NodeEngine -h&lt;/code&gt; for further details )&lt;/p&gt;
 &lt;h3 id=&#34;m-doc-m-devices-one-cluster&#34;&gt;M-DOC (M Devices, One Cluster)&lt;/h3&gt;
 &lt;p&gt;The M-DOC deployment enables you to deploy One cluster with multiple worker nodes. The main difference between this deployment and 1-DOC is that the worker nodes might be external here, and there can be multiple of them.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/docs/getstarted/1ClusterExample.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/getstarted/1ClusterExample.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The deployment of this kind of cluster is similar to 1-DOC. We first need to start the root and cluster orchestrator. Afterward, we can attach the worker nodes.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt; On the node you wish to use as a cluster and root orchestrator, execute steps &lt;strong&gt;1-DOC.1&lt;/strong&gt; and &lt;strong&gt;1-DOC.2&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2)&lt;/strong&gt; Now, we need to prepare all the worker nodes. On each worker node, execute the following:&lt;/p&gt;
@@ -97,7 +97,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo NodeEngine -n &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;6000&lt;/span&gt; -p &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10100&lt;/span&gt; -a &amp;lt;IP ADDRESS OF THE CLSUTER ORCHESTRATOR&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;mdnc-m-devices-n-clusters&#34;&gt;MDNC (M Devices, N Clusters)&lt;/h3&gt;
 &lt;p&gt;This represents the most versatile deployment. You can split your resources into multiple clusters within different locations and with different resources. In this deployment, we need to deploy the Root and the Cluster orchestrator on different nodes. Each independent clsuter orchestrator represents a cluster of resources. The worker nodes attached to each cluster are aggregated and seen as a unique big resource from the point of view of the Root. This deployment isolates the resources from the root perspective and delegates the responsibility to the cluster orchestrator.
-&lt;img src=&#34;https://oakestra.io/docs/getstarted/2ClusterExample.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://oakestra.io/getstarted/2ClusterExample.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt; In this first step, we need to deploy the RootOrchestrator component on a Node. To do this, you need to clone the repository on the desired node, move to the root orchestrator folder, and execute the startup command.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/edgeIO/edgeio.git &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; edgeio
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
