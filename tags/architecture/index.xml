@@ -1,33 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Architecture on Oakestra</title>
-        <link>https://oakestra.io/tags/architecture/</link>
-        <description>Recent content in Architecture on Oakestra</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
-        <lastBuildDate>Tue, 09 Aug 2022 15:56:27 +0200</lastBuildDate><atom:link href="https://oakestra.io/tags/architecture/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>High level architecture</title>
-        <link>https://oakestra.io/docs/oakestra/architecture/</link>
-        <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+  <channel>
+    <title> – Architecture</title>
+    <link>https://oakestra.io/tags/architecture/</link>
+    <description>Recent content in Architecture on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 09 Aug 2022 15:56:27 +0200</lastBuildDate>
+    
+	  <atom:link href="https://oakestra.io/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
         
-        <guid>https://oakestra.io/docs/oakestra/architecture/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/wiki-banner-help.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+      
+    
+    
+    <item>
+      <title>Docs: High level architecture</title>
+      <link>https://oakestra.io/docs/oakestra/architecture/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      
+      <guid>https://oakestra.io/docs/oakestra/architecture/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;table-of-content&#34;&gt;Table of content&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#root-orchestrator&#34; &gt;Root Orchestrator&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#cluster-orchestrator&#34; &gt;Cluster Orchestrator&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#worker-node&#34; &gt;Worker Node&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#root-orchestrator&#34;&gt;Root Orchestrator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cluster-orchestrator&#34;&gt;Cluster Orchestrator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#worker-node&#34;&gt;Worker Node&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;oakestra-detailed-architecture&#34;&gt;Oakestra Detailed Architecture&lt;/h1&gt;
-&lt;p&gt;As shown in our &lt;a class=&#34;link&#34; href=&#34;get-started.md&#34; &gt;Get Started&lt;/a&gt; guide, Oakestra uses 3-4 building blocks to operate.&lt;/p&gt;
+&lt;p&gt;As shown in our &lt;a href=&#34;get-started.md&#34;&gt;Get Started&lt;/a&gt; guide, Oakestra uses 3-4 building blocks to operate.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Root Orchestrator&lt;/li&gt;
 &lt;li&gt;Cluster Orchestrator&lt;/li&gt;
@@ -36,14 +40,7 @@
 &lt;/ul&gt;
 &lt;p&gt;This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.&lt;/p&gt;
 &lt;h2 id=&#34;root-orchestrator&#34;&gt;Root Orchestrator&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/RootArch.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/RootArch.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The Root Orchestrator is a centralized control plane that is aware of the participating clusters.&lt;/p&gt;
 &lt;p&gt;This picture describes the containers that compose the Root Orchestrator. As you may have seen we use docker-compose to bring up the orchestrators. This is because each block of this picture is &lt;em&gt;currently&lt;/em&gt; a separated container.&lt;/p&gt;
 &lt;ul&gt;
@@ -65,14 +62,7 @@ changing regularly, such as the number of worker nodes per cluster, total amount
 &lt;h3 id=&#34;consideration-regarding-failure-and-scalability&#34;&gt;Consideration regarding failure and scalability:&lt;/h3&gt;
 &lt;p&gt;The main problem of a centralized control plane is that it can act as a single point of failure. By design without a Root Orchestrator, the clusters are able to satisfy the SLA for the deployed applications internally, the only affected functionalities are the deployment of new services and the intra-cluster migrations. To avoid failure and increase resiliency an idea is to make the component able to scale by introducing a load balancer in front of the replicated components. However, this feature is not implemented yet.&lt;/p&gt;
 &lt;h2 id=&#34;cluster-orchestrator&#34;&gt;Cluster Orchestrator&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/ClusterArch.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/ClusterArch.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;TODO&lt;/p&gt;
 &lt;h3 id=&#34;cluster-manager-apis&#34;&gt;Cluster Manager APIs&lt;/h3&gt;
 &lt;p&gt;TODO&lt;/p&gt;
@@ -86,8 +76,9 @@ changing regularly, such as the number of worker nodes per cluster, total amount
 &lt;p&gt;TODO&lt;/p&gt;
 &lt;h2 id=&#34;worker-node&#34;&gt;Worker Node&lt;/h2&gt;
 &lt;p&gt;TODO&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
+
+      </description>
+    </item>
+    
+  </channel>
 </rss>

@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> – CLI &amp; Frontend</title>
+    <link>https://oakestra.io/docs/guicli/</link>
+    <description>Recent content in CLI &amp; Frontend on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://oakestra.io/docs/guicli/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>

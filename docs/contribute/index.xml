@@ -1,0 +1,180 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> – Contribute</title>
+    <link>https://oakestra.io/docs/contribute/</link>
+    <description>Recent content in Contribute on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://oakestra.io/docs/contribute/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Contribution Guide</title>
+      <link>https://oakestra.io/docs/contribute/contribution-guide/</link>
+      <pubDate>Mon, 17 Oct 2022 10:39:27 +0200</pubDate>
+      
+      <guid>https://oakestra.io/docs/contribute/contribution-guide/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;oakestra-contribution-guide&#34;&gt;Oakestra Contribution guide&lt;/h1&gt;
+&lt;p&gt;Oakestra&amp;rsquo;s codebase is open-source on GitHub and open to &lt;strong&gt;external&lt;/strong&gt; contributors as well. The purpose of this guide is to help the developer contribute in such a way that both people directly involved in Okaestra and people outside the research group can follow what happens within the project.&lt;/p&gt;
+&lt;h2 id=&#34;issues&#34;&gt;Issues&lt;/h2&gt;
+&lt;p&gt;Each contribution starts from an issue on the corresponding repository. E.g., Are you willing to update the front end? Open an issue on the dashboard repository.&lt;/p&gt;
+&lt;p&gt;The issue can be of two kinds: &lt;strong&gt;Proposal&lt;/strong&gt; or &lt;strong&gt;Bug&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Template for &lt;strong&gt;Proposal&lt;/strong&gt; issues:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h1 id=&#34;short&#34;&gt;Short&lt;/h1&gt;
+&lt;p&gt;Short description of what you&amp;rsquo;re proposing. Max 2 lines. Highlight if this is something new or maybe you&amp;rsquo;re willing to change some specific behavior.&lt;/p&gt;
+&lt;h1 id=&#34;proposal&#34;&gt;Proposal&lt;/h1&gt;
+&lt;p&gt;Description of the modification you&amp;rsquo;re proposing. You can have references, links, and images. Please be very specific here. External contributors must be able to understand the context and the goal of the proposal.&lt;/p&gt;
+&lt;h1 id=&#34;ratio&#34;&gt;Ratio&lt;/h1&gt;
+&lt;p&gt;Short description of why this is important&lt;/p&gt;
+&lt;h1 id=&#34;impact&#34;&gt;Impact&lt;/h1&gt;
+&lt;p&gt;Describe the components that potentially need to be touched. E.g., Root service manager, Cluster scheduler, etc.&lt;/p&gt;
+&lt;h1 id=&#34;development-time&#34;&gt;Development time&lt;/h1&gt;
+&lt;p&gt;The expected time required to complete the development of this proposal&lt;/p&gt;
+&lt;h1 id=&#34;status&#34;&gt;Status&lt;/h1&gt;
+&lt;p&gt;Describe the current status of this proposal. E.g., looking for feedback, searching for a solution, development, and testing. Try to be concise but descriptive.&lt;/p&gt;
+&lt;h1 id=&#34;checklist&#34;&gt;Checklist&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Discussed&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Documented&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Implemented&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Tested&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Template for &lt;strong&gt;Bug&lt;/strong&gt; issues:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h1 id=&#34;short-1&#34;&gt;Short&lt;/h1&gt;
+&lt;p&gt;Short description of the bug you noticed.&lt;/p&gt;
+&lt;h1 id=&#34;proposal-1&#34;&gt;Proposal&lt;/h1&gt;
+&lt;p&gt;Deeper description of the bug.&lt;/p&gt;
+&lt;h1 id=&#34;solution&#34;&gt;Solution&lt;/h1&gt;
+&lt;p&gt;Eventually, propose a solution.&lt;/p&gt;
+&lt;h1 id=&#34;status-1&#34;&gt;Status&lt;/h1&gt;
+&lt;p&gt;Describe the current status of this proposal. E.g., looking for feedback, searching for a solution, development, testing. Try to be concise but descriptive&lt;/p&gt;
+&lt;h1 id=&#34;checklist-1&#34;&gt;Checklist&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Discussed&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Solved&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Tested&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;issue-names&#34;&gt;Issue names&lt;/h2&gt;
+&lt;p&gt;Try to be concise and informative. Here some good ✅ and bad ❌ examples to give you an idea.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Scheduling  ❌&lt;/li&gt;
+&lt;li&gt;Integration of LDA to Cluster Scheduler ✅&lt;/li&gt;
+&lt;li&gt;Frontend edit ❌&lt;/li&gt;
+&lt;li&gt;Frontend cluster management panel ✅&lt;/li&gt;
+&lt;li&gt;I think we need to replace the login token with a new JWT token ❌&lt;/li&gt;
+&lt;li&gt;JWT API authentication ✅&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;contribution-steps&#34;&gt;Contribution steps&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Open an Issue&lt;/li&gt;
+&lt;li&gt;Starting from the issue, detach a branch from &amp;ldquo;develop&amp;rdquo; and entitle it using the following pattern: &lt;code&gt;&amp;lt;Issue nr.&amp;gt;_issue_name_in_snake_case&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Perform your contributions in this branch&lt;/li&gt;
+&lt;li&gt;Make sure to update the documentation as well&lt;/li&gt;
+&lt;li&gt;Make sure that the PR passes all the automated tests suits&lt;/li&gt;
+&lt;li&gt;Once finished, open a Pull Request towards the develop branch. If you&amp;rsquo;re a student, put your supervisors as Reviewers. Otherwise, refer to the people with the most contributions. Then wait for their approval.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;multi-repo-contributions&#34;&gt;Multi-repo contributions&lt;/h2&gt;
+&lt;p&gt;The codebase is split into multiple repositories. Sometimes a single contribution might need to span across some of them in parallel. This is where things get tricky.&lt;/p&gt;
+&lt;p&gt;Contributions spanning multiple repositories are difficult to track and require careful management.&lt;/p&gt;
+&lt;p&gt;Please open multiple issues, one for each repository, and cross-link them. Each issue discusses only the modification required on that specific repository but links to the issues embedding the work required elsewhere.&lt;/p&gt;
+&lt;p&gt;As a general rule, is better to perform the merges in parallel.
+Make sure to open the pull requests together and cross-link the other pull requests between them.&lt;/p&gt;
+&lt;h2 id=&#34;your-work-into-issues&#34;&gt;Your work into Issues&lt;/h2&gt;
+&lt;p&gt;Try to find out the single tasks of your workflow and open up the corresponding issues accordingly.
+Breaking down the work into issues makes it easier to merge and test the features.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;N.b.&lt;/strong&gt; Always assign the issue to yourself and maybe indicate if this is part of a specific milestone, thesis, or guided research.&lt;/p&gt;
+&lt;h2 id=&#34;discuss-with-the-community&#34;&gt;Discuss with the community&lt;/h2&gt;
+&lt;p&gt;With the growth in the interest for Oakestra, many people are onboarding. By collaborating on this project, you have the chance to ask for their ideas as well.&lt;/p&gt;
+&lt;p&gt;Try to write the issues in a clear way so that anyone might be able to fit in and contribute.
+Then keep an eye on the issue&amp;rsquo;s comment section and add the label &amp;ldquo;help needed&amp;rdquo; if required.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Contributor Covenant Code of Conduct</title>
+      <link>https://oakestra.io/docs/contribute/coc/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      
+      <guid>https://oakestra.io/docs/contribute/coc/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;contributor-covenant-code-of-conduct&#34;&gt;Contributor Covenant Code of Conduct&lt;/h1&gt;
+&lt;h2 id=&#34;our-pledge&#34;&gt;Our Pledge&lt;/h2&gt;
+&lt;p&gt;In the interest of fostering an open and welcoming environment, we as
+contributors and maintainers pledge to make participation in our project and
+our community a harassment-free experience for everyone, regardless of age, body
+size, disability, ethnicity, sex characteristics, gender identity and expression,
+level of experience, education, socio-economic status, nationality, personal
+appearance, race, religion, or sexual identity and orientation.&lt;/p&gt;
+&lt;h2 id=&#34;our-standards&#34;&gt;Our Standards&lt;/h2&gt;
+&lt;p&gt;Examples of behavior that contributes to creating a positive environment
+include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Using welcoming and inclusive language&lt;/li&gt;
+&lt;li&gt;Being respectful of differing viewpoints and experiences&lt;/li&gt;
+&lt;li&gt;Gracefully accepting constructive criticism&lt;/li&gt;
+&lt;li&gt;Focusing on what is best for the community&lt;/li&gt;
+&lt;li&gt;Showing empathy towards other community members&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Examples of unacceptable behavior by participants include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The use of sexualized language or imagery and unwelcome sexual attention or
+advances&lt;/li&gt;
+&lt;li&gt;Trolling, insulting/derogatory comments, and personal or political attacks&lt;/li&gt;
+&lt;li&gt;Public or private harassment&lt;/li&gt;
+&lt;li&gt;Publishing others&amp;rsquo; private information, such as a physical or electronic
+address, without explicit permission&lt;/li&gt;
+&lt;li&gt;Other conduct which could reasonably be considered inappropriate in a
+professional setting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;our-responsibilities&#34;&gt;Our Responsibilities&lt;/h2&gt;
+&lt;p&gt;Project maintainers are responsible for clarifying the standards of acceptable
+behavior and are expected to take appropriate and fair corrective action in
+response to any instances of unacceptable behavior.&lt;/p&gt;
+&lt;p&gt;Project maintainers have the right and responsibility to remove, edit, or
+reject comments, commits, code, wiki edits, issues, and other contributions
+that are not aligned to this Code of Conduct, or to ban temporarily or
+permanently any contributor for other behaviors that they deem inappropriate,
+threatening, offensive, or harmful.&lt;/p&gt;
+&lt;h2 id=&#34;scope&#34;&gt;Scope&lt;/h2&gt;
+&lt;p&gt;This Code of Conduct applies within all project spaces, and it also applies when
+an individual is representing the project or its community in public spaces.
+Examples of representing a project or community include using an official
+project e-mail address, posting via an official social media account, or acting
+as an appointed representative at an online or offline event. Representation of
+a project may be further defined and clarified by project maintainers.&lt;/p&gt;
+&lt;h2 id=&#34;enforcement&#34;&gt;Enforcement&lt;/h2&gt;
+&lt;p&gt;Instances of abusive, harassing, or otherwise unacceptable behavior may be
+reported by contacting the project team at [INSERT EMAIL ADDRESS]. All
+complaints will be reviewed and investigated and will result in a response that
+is deemed necessary and appropriate to the circumstances. The project team is
+obligated to maintain confidentiality with regard to the reporter of an incident.
+Further details of specific enforcement policies may be posted separately.&lt;/p&gt;
+&lt;p&gt;Project maintainers who do not follow or enforce the Code of Conduct in good
+faith may face temporary or permanent repercussions as determined by other
+members of the project&amp;rsquo;s leadership.&lt;/p&gt;
+&lt;h2 id=&#34;attribution&#34;&gt;Attribution&lt;/h2&gt;
+&lt;p&gt;This Code of Conduct is adapted from the &lt;a href=&#34;https://www.contributor-covenant.org&#34;&gt;Contributor Covenant&lt;/a&gt;, version 1.4,
+available at &lt;a href=&#34;https://www.contributor-covenant.org/version/1/4/code-of-conduct.html&#34;&gt;https://www.contributor-covenant.org/version/1/4/code-of-conduct.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For answers to common questions about this code of conduct, see
+&lt;a href=&#34;https://www.contributor-covenant.org/faq&#34;&gt;https://www.contributor-covenant.org/faq&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
