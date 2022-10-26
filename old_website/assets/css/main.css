@@ -359,7 +359,8 @@ table.alt tfoot {
 
 .morebutton {
   text-decoration: none; 
-  border: none
+  border: none;
+  padding: 6px;
 }
 
 /* Scroll animation */
