@@ -105,13 +105,13 @@ changing regularly, such as the number of worker nodes per cluster, total amount
         
         &lt;h2 id=&#34;how-does-the-scheduling-work-in-oakestra&#34;&gt;How does the scheduling work in Oakestra?&lt;/h2&gt;
 &lt;p&gt;Oakestra&amp;rsquo;s architecture is composed of two tiers. Resources are divided into clusters. A cluster is seen as the aggregation of all its resources. A job is first scheduled to a cluster, and then the cluster scheduler decides the target worker.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/docs/oakestra/cluster-worker-selection.png&#34; alt=&#34;scheduling algo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/cluster-worker-selection.png&#34; alt=&#34;scheduling algo&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The scheduling component is as simple as a Celery worker. The scheduler receives a job description and gives back an allocation target. We differentiate between the Root scheduler and Cluster scheduler. The Root scheduler finds a suitable cluster (step 1), and the Cluster scheduler finds a suitable worker node (step 2).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/docs/oakestra/scheduling-celery-worker.png&#34; alt=&#34;scheduling algo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/scheduling-celery-worker.png&#34; alt=&#34;scheduling algo&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This scheduling algorithm does not ensure an absolute optimal deployment but consistently reduces the search space.&lt;/p&gt;
 &lt;h2 id=&#34;scheduling-algorithm&#34;&gt;Scheduling Algorithm&lt;/h2&gt;
 &lt;p&gt;At each layer, the scheduling decision consists of the creation of a &lt;code&gt;candidate_list&lt;/code&gt; of clusters (or workers), the exclusion of unsuitable candidates, and then the selection of the &amp;ldquo;best&amp;rdquo; candidate accordingly to a scheduling algorithm.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/docs/oakestra/scheduling-algo.png&#34; alt=&#34;scheduling algo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/scheduling-algo.png&#34; alt=&#34;scheduling algo&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The scheduling algorithms are implemented in the &lt;code&gt;calculation.py&lt;/code&gt; component of each respective scheduler.&lt;/p&gt;
 &lt;p&gt;The current released version only implements a &lt;strong&gt;best fit&lt;/strong&gt; and &lt;strong&gt;first fit&lt;/strong&gt; calculation strategies. However, on its way to the release, we have our new LDP algorithm (check it out on our &lt;a href=&#34;https://arxiv.org/pdf/2207.01577.pdf&#34;&gt;whitepaper&lt;/a&gt;).&lt;/p&gt;
 &lt;h2 id=&#34;job-constraints&#34;&gt;Job Constraints&lt;/h2&gt;

@@ -275,14 +275,14 @@ deploy in the system.&lt;/p&gt;
 &lt;p&gt;Authenticate using the following procedure:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;locate the login method and use the try-out button
-&lt;img src=&#34;https://oakestra.io/docs/getstarted/login-try.png&#34; alt=&#34;try-login&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https://oakestra.io/getstarted/login-try.png&#34; alt=&#34;try-login&#34;&gt;&lt;/li&gt;
 &lt;li&gt;Use the default Admin credentials to login
-&lt;img src=&#34;https://oakestra.io/docs/getstarted/login-execute.png&#34; alt=&#34;execute-login&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https://oakestra.io/getstarted/login-execute.png&#34; alt=&#34;execute-login&#34;&gt;&lt;/li&gt;
 &lt;li&gt;Copy the result login token
-&lt;img src=&#34;https://oakestra.io/docs/getstarted/login-token-copy.png&#34; alt=&#34;token-login&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https://oakestra.io/getstarted/login-token-copy.png&#34; alt=&#34;token-login&#34;&gt;&lt;/li&gt;
 &lt;li&gt;Go to the top of the page and authenticate with this token
-&lt;img src=&#34;https://oakestra.io/docs/getstarted/authorize.png&#34; alt=&#34;auth-login&#34;&gt;
-&lt;img src=&#34;https://oakestra.io/docs/getstarted/authorize-2.png&#34; alt=&#34;auth2-login&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https://oakestra.io/getstarted/authorize.png&#34; alt=&#34;auth-login&#34;&gt;
+&lt;img src=&#34;https://oakestra.io/getstarted/authorize-2.png&#34; alt=&#34;auth2-login&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;register-an-application-and-the-services&#34;&gt;Register an application and the services&lt;/h3&gt;
 &lt;p&gt;After you authenticate with the login function, you can try out to deploy the first application.&lt;/p&gt;
