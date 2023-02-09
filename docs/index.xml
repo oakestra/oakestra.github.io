@@ -409,6 +409,23 @@ Breaking down the work into issues makes it easier to merge and test the feature
 &lt;p&gt;With the growth in the interest for Oakestra, many people are onboarding. By collaborating on this project, you have the chance to ask for their ideas as well.&lt;/p&gt;
 &lt;p&gt;Try to write the issues in a clear way so that anyone might be able to fit in and contribute.
 Then keep an eye on the issue&amp;rsquo;s comment section and add the label &amp;ldquo;help needed&amp;rdquo; if required.&lt;/p&gt;
+&lt;h2 id=&#34;versioning&#34;&gt;Versioning&lt;/h2&gt;
+&lt;p&gt;The project version is written in the file &lt;code&gt;version.txt&lt;/code&gt;
+Make sure to update this file accordingly.&lt;/p&gt;
+&lt;p&gt;N.b. The versions are amanged only by this file. NEVER CREATE A VERSION TAG MANUALLY.&lt;/p&gt;
+&lt;h2 id=&#34;release-images&#34;&gt;Release images&lt;/h2&gt;
+&lt;p&gt;An accepted pull-request towards main creates a release TAG corresponding to the version in &lt;code&gt;version.txt&lt;/code&gt;.
+The release images will be created automatically by the git workflows.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If a release tag exist already, will not be replaced. You need to increase the version number!&lt;/li&gt;
+&lt;li&gt;If you get an artifact creation error, most likely the release was not yet created on github. Please create a new release for the new tag and re-run the failed jobs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;alpha-images&#34;&gt;Alpha images&lt;/h2&gt;
+&lt;p&gt;An accepted pull-request towards develop creates an alpha TAG corresponding to the version in &lt;code&gt;version.txt&lt;/code&gt; with the &lt;code&gt;alpha-&lt;/code&gt; prefix. If the tag exists already, it will be updated.
+The alpha images will be created automatically by the git workflows.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If you get an artifact creation error, most likely the release was not yet created on github. Please create a new alpha-release for the new tag and re-run the failed jobs.&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
