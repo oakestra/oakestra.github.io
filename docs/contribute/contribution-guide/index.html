@@ -27,13 +27,13 @@ Issues Each contribution starts from an issue on the corresponding repository. E
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oakestra.io/docs/contribute/contribution-guide/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2022-10-17T10:39:27+02:00" />
-<meta property="article:modified_time" content="2022-10-17T11:00:12+02:00" />
+<meta property="article:modified_time" content="2023-02-09T17:41:30+01:00" />
 
 <meta itemprop="name" content="Contribution Guide">
 <meta itemprop="description" content="Oakestra Contribution guide Oakestra&rsquo;s codebase is open-source on GitHub and open to external contributors as well. The purpose of this guide is to help the developer contribute in such a way that both people directly involved in Okaestra and people outside the research group can follow what happens within the project.
 Issues Each contribution starts from an issue on the corresponding repository. E.g., Are you willing to update the front end?"><meta itemprop="datePublished" content="2022-10-17T10:39:27+02:00" />
-<meta itemprop="dateModified" content="2022-10-17T11:00:12+02:00" />
-<meta itemprop="wordCount" content="636">
+<meta itemprop="dateModified" content="2023-02-09T17:41:30+01:00" />
+<meta itemprop="wordCount" content="816">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Contribution Guide"/>
 <meta name="twitter:description" content="Oakestra Contribution guide Oakestra&rsquo;s codebase is open-source on GitHub and open to external contributors as well. The purpose of this guide is to help the developer contribute in such a way that both people directly involved in Okaestra and people outside the research group can follow what happens within the project.
@@ -153,6 +153,9 @@ Issues Each contribution starts from an issue on the corresponding repository. E
     <li><a href="#multi-repo-contributions">Multi-repo contributions</a></li>
     <li><a href="#your-work-into-issues">Your work into Issues</a></li>
     <li><a href="#discuss-with-the-community">Discuss with the community</a></li>
+    <li><a href="#versioning">Versioning</a></li>
+    <li><a href="#release-images">Release images</a></li>
+    <li><a href="#alpha-images">Alpha images</a></li>
   </ul>
 </nav>
       </div>
@@ -235,7 +238,7 @@ Issues Each contribution starts from an issue on the corresponding repository. E
   
 
 		
-			<p class="reading-time"><i class="fa-solid fa-clock" aria-hidden="true"></i>&nbsp; 3 minute read &nbsp;</p>
+			<p class="reading-time"><i class="fa-solid fa-clock" aria-hidden="true"></i>&nbsp; 4 minute read &nbsp;</p>
 
 		
 	</header>    
@@ -316,6 +319,23 @@ Breaking down the work into issues makes it easier to merge and test the feature
 <p>With the growth in the interest for Oakestra, many people are onboarding. By collaborating on this project, you have the chance to ask for their ideas as well.</p>
 <p>Try to write the issues in a clear way so that anyone might be able to fit in and contribute.
 Then keep an eye on the issue&rsquo;s comment section and add the label &ldquo;help needed&rdquo; if required.</p>
+<h2 id="versioning">Versioning</h2>
+<p>The project version is written in the file <code>version.txt</code>
+Make sure to update this file accordingly.</p>
+<p>N.b. The versions are amanged only by this file. NEVER CREATE A VERSION TAG MANUALLY.</p>
+<h2 id="release-images">Release images</h2>
+<p>An accepted pull-request towards main creates a release TAG corresponding to the version in <code>version.txt</code>.
+The release images will be created automatically by the git workflows.</p>
+<ul>
+<li>If a release tag exist already, will not be replaced. You need to increase the version number!</li>
+<li>If you get an artifact creation error, most likely the release was not yet created on github. Please create a new release for the new tag and re-run the failed jobs.</li>
+</ul>
+<h2 id="alpha-images">Alpha images</h2>
+<p>An accepted pull-request towards develop creates an alpha TAG corresponding to the version in <code>version.txt</code> with the <code>alpha-</code> prefix. If the tag exists already, it will be updated.
+The alpha images will be created automatically by the git workflows.</p>
+<ul>
+<li>If you get an artifact creation error, most likely the release was not yet created on github. Please create a new alpha-release for the new tag and re-run the failed jobs.</li>
+</ul>
 
 	
 	
@@ -371,7 +391,7 @@ Then keep an eye on the issue&rsquo;s comment section and add the label &ldquo;h
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2022 The Oakestra Authors All Rights Reserved</small>
+        <small class="text-white">&copy; 2023 The Oakestra Authors All Rights Reserved</small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></small>
 	
       </div>

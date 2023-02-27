@@ -56,7 +56,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt; now clone the repository and move into it using:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/oakestra/oakestra.git &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; oakestra
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;2)&lt;/strong&gt; Run a local 1-DOC cluster&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo -E docker-compose -f run-a-cluster/1-DOC.yml up
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo -E docker-compose -f run-a-cluster/1-DOC.yaml up
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;3)&lt;/strong&gt; download, untar and install the node engine package&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget -c https://github.com/oakestra/oakestra/releases/download/v0.4.2/NodeEngine_&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;$(&lt;/span&gt;dpkg --print-architecture&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;)&lt;/span&gt;.tar.gz &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; tar -xzf NodeEngine_&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;$(&lt;/span&gt;dpkg --print-architecture&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;)&lt;/span&gt;.tar.gz &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod +x install.sh &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mv NodeEngine NodeEngine_&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;$(&lt;/span&gt;dpkg --print-architecture&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./install.sh &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;$(&lt;/span&gt;dpkg --print-architecture&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;4)&lt;/strong&gt; (optional) download and unzip and install the network manager; this enables an overlay network across your services&lt;/p&gt;
@@ -409,6 +409,23 @@ Breaking down the work into issues makes it easier to merge and test the feature
 &lt;p&gt;With the growth in the interest for Oakestra, many people are onboarding. By collaborating on this project, you have the chance to ask for their ideas as well.&lt;/p&gt;
 &lt;p&gt;Try to write the issues in a clear way so that anyone might be able to fit in and contribute.
 Then keep an eye on the issue&amp;rsquo;s comment section and add the label &amp;ldquo;help needed&amp;rdquo; if required.&lt;/p&gt;
+&lt;h2 id=&#34;versioning&#34;&gt;Versioning&lt;/h2&gt;
+&lt;p&gt;The project version is written in the file &lt;code&gt;version.txt&lt;/code&gt;
+Make sure to update this file accordingly.&lt;/p&gt;
+&lt;p&gt;N.b. The versions are amanged only by this file. NEVER CREATE A VERSION TAG MANUALLY.&lt;/p&gt;
+&lt;h2 id=&#34;release-images&#34;&gt;Release images&lt;/h2&gt;
+&lt;p&gt;An accepted pull-request towards main creates a release TAG corresponding to the version in &lt;code&gt;version.txt&lt;/code&gt;.
+The release images will be created automatically by the git workflows.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If a release tag exist already, will not be replaced. You need to increase the version number!&lt;/li&gt;
+&lt;li&gt;If you get an artifact creation error, most likely the release was not yet created on github. Please create a new release for the new tag and re-run the failed jobs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;alpha-images&#34;&gt;Alpha images&lt;/h2&gt;
+&lt;p&gt;An accepted pull-request towards develop creates an alpha TAG corresponding to the version in &lt;code&gt;version.txt&lt;/code&gt; with the &lt;code&gt;alpha-&lt;/code&gt; prefix. If the tag exists already, it will be updated.
+The alpha images will be created automatically by the git workflows.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If you get an artifact creation error, most likely the release was not yet created on github. Please create a new alpha-release for the new tag and re-run the failed jobs.&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
