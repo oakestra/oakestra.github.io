@@ -89,10 +89,10 @@ At the root level, the placement decision is a Cluster. At the cluster level, th
 &lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/nodeEngineArch.png&#34; alt=&#34;NodeEngine&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The Node Engine is a single binary implemented using Go Lang and is composed of the following modules:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;MQTT: This is the interface between the worker and the Cluster. The deployment commands, node status updates and jobs updates use this component.&lt;/li&gt;
+&lt;li&gt;MQTT: This is the interface between the worker and the Cluster. The deployment commands, node status updates, and jobs updates use this component.&lt;/li&gt;
 &lt;li&gt;Models: This contains the models that describe the node and the jobs.
 &lt;ul&gt;
-&lt;li&gt;Node: describes the resources of the node that are transmitted to the custer. This is decomposed in dynamic resources and static. The status of static resources is transmitted only at startup. Dynamic resource statuses such as cpu/memory usage are updated regularly.&lt;/li&gt;
+&lt;li&gt;Node: describes the resources of the node that are transmitted to the cluster. This is decomposed into dynamic resources and static. The status of static resources is transmitted only at startup. Dynamic resource statuses such as cpu/memory usage are updated regularly.&lt;/li&gt;
 &lt;li&gt;Service: describe the fields of the services that are managed by this implementation of the worker node, as well as the real-time service usage statistics that must be monitored.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
