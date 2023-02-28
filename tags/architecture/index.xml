@@ -36,11 +36,11 @@
 &lt;li&gt;Root Orchestrator&lt;/li&gt;
 &lt;li&gt;Cluster Orchestrator&lt;/li&gt;
 &lt;li&gt;Node Engine&lt;/li&gt;
-&lt;li&gt;NetManager (optional)&lt;/li&gt;
+&lt;li&gt;NetManager (optional, detailed in the networking section of the Wiki)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.&lt;/p&gt;
 &lt;h2 id=&#34;root-orchestrator&#34;&gt;Root Orchestrator&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/RootArch.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/RootArch.png&#34; alt=&#34;root architecture&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The Root Orchestrator is a centralized control plane that is aware of the participating clusters.&lt;/p&gt;
 &lt;p&gt;This picture describes the containers that compose the Root Orchestrator. As you may have seen we use docker-compose to bring up the orchestrators. This is because each block of this picture is &lt;em&gt;currently&lt;/em&gt; a separated container.&lt;/p&gt;
 &lt;ul&gt;
@@ -52,30 +52,54 @@ changing regularly, such as the number of worker nodes per cluster, total amount
 &lt;li&gt;The Root Network Components are detailed in the Oakestra-Net Wiki.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;system-manager-apis&#34;&gt;System Manager APIs&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;jobs-db-structure&#34;&gt;Jobs DB Structure&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;clusters-db-structure&#34;&gt;Clusters DB Structure&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;scheduler-algorithms&#34;&gt;Scheduler Algorithms&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
+&lt;p&gt;At startup, the System Manager exposes the public APIs at &amp;lt;root_orch_ip&amp;gt;:10000
+Thr API documentation is available at &lt;code&gt;&amp;lt;root_orch_ip&amp;gt;:10000/api/docs&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;consideration-regarding-failure-and-scalability&#34;&gt;Consideration regarding failure and scalability:&lt;/h3&gt;
-&lt;p&gt;The main problem of a centralized control plane is that it can act as a single point of failure. By design without a Root Orchestrator, the clusters are able to satisfy the SLA for the deployed applications internally, the only affected functionalities are the deployment of new services and the intra-cluster migrations. To avoid failure and increase resiliency an idea is to make the component able to scale by introducing a load balancer in front of the replicated components. However, this feature is not implemented yet.&lt;/p&gt;
+&lt;p&gt;The main problem of a centralized control plane is that it can act as a single point of failure. By design without a Root Orchestrator, the clusters are able to satisfy the SLA for the deployed applications internally, the only affected functionalities are the deployment of new services and the intra-cluster migrations. To avoid failure and increase resiliency, an idea is to make the component able to scale by introducing a load balancer in front of the replicated components. However, this feature is not implemented yet.&lt;/p&gt;
 &lt;h2 id=&#34;cluster-orchestrator&#34;&gt;Cluster Orchestrator&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/ClusterArch.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;cluster-manager-apis&#34;&gt;Cluster Manager APIs&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/clusterArch.png&#34; alt=&#34;cluster architecture&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Cluster orchestrator is a twin of the root but with the following differences:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The cluster orchestrator&amp;rsquo;s scope is the end worker node devices.&lt;/li&gt;
+&lt;li&gt;A cluster orchestrator performs aggregation. It aggregates the worker node resources and does not expose the cluster composition directly to the root.&lt;/li&gt;
+&lt;li&gt;The cluster uses MQTT for communication with the worker nodes.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;mqtt-topics&#34;&gt;MQTT Topics&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;jobs-db-structure-1&#34;&gt;Jobs DB structure&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;nodes-db-structure&#34;&gt;Nodes DB structure&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;schedulers-algorithms&#34;&gt;Schedulers Algorithms&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
+&lt;p&gt;The topics used to interact with the worker nodes are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;nodes/&lt;node-id&gt;/information$&amp;rdquo;: topic where each worker periodically posts its resources usage&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;nodes/&lt;node-id&gt;/job$&amp;rdquo;: used to perform deployments on a worker node and receive back the feedback&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;nodes/&lt;node-id&gt;/jobs/resources$&amp;rdquo;: used to post the resource usage and status of the running instances in a worker node&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;schedulers-algorithms&#34;&gt;Schedulers Algorithms&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/scheduling-celery-worker.png&#34; alt=&#34;scheduler&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The schedulers, at each level, receive Job Placement tasks and return a placement decision.
+At the root level, the placement decision is a Cluster. At the cluster level, the placement decision is a worker node.&lt;/p&gt;
+&lt;p&gt;A job placement task is a Job structure composed of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Service
+&lt;ul&gt;
+&lt;li&gt;Instances&lt;/li&gt;
+&lt;li&gt;Requirements&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Placement currently uses the default Best Fist algorithm. You can find more details in the scheduling section of the wiki.&lt;/p&gt;
 &lt;h2 id=&#34;worker-node&#34;&gt;Worker Node&lt;/h2&gt;
-&lt;p&gt;TODO&lt;/p&gt;
+&lt;p&gt;A machine, in order to be qualified as Worker Node, must contain a Node Engine and optionally a Net Manager. The former enables the deployment of applications accordingly to the runtimes installed. The latter plugs the networking components to enable communication across the applications deployed.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/nodeEngineArch.png&#34; alt=&#34;NodeEngine&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Node Engine is a single binary implemented using Go Lang and is composed of the following modules:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MQTT: This is the interface between the worker and the Cluster. The deployment commands, node status updates and jobs updates use this component.&lt;/li&gt;
+&lt;li&gt;Models: This contains the models that describe the node and the jobs.
+&lt;ul&gt;
+&lt;li&gt;Node: describes the resources of the node that are transmitted to the custer. This is decomposed in dynamic resources and static. The status of static resources is transmitted only at startup. Dynamic resource statuses such as cpu/memory usage are updated regularly.&lt;/li&gt;
+&lt;li&gt;Service: describe the fields of the services that are managed by this implementation of the worker node, as well as the real-time service usage statistics that must be monitored.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Jobs: Background jobs that monitor the status of the Worker node itself and the applications deployed.&lt;/li&gt;
+&lt;li&gt;Runtimes: Contains the glue with the supported system runtimes. Right now, the runtime dispatcher only supports containerd and, therefore, &amp;ldquo;containers&amp;rdquo; is the only runtime available. Any new runtime integration is implemented here. We&amp;rsquo;re currently working on Unikernels integration.&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
