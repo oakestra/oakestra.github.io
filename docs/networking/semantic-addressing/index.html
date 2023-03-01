@@ -18,26 +18,26 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Orchestration | </title>
-<meta name="description" content="#APIs
-Root Orchestrator APIs OpenApi Spec">
-<meta property="og:title" content="Orchestration" />
-<meta property="og:description" content="#APIs
-Root Orchestrator APIs OpenApi Spec" />
+<title>Semantic addressing | </title>
+<meta name="description" content="The default networking component of Oakestra envisions IP communication based on a semantic balancing policy expressed by some special IP addresses.
+What do we mean by semantic addressing? In Oakestra, the addresses belonging to the subnetwork 10.30.0.0/16 are called Service IPs. Similar to a cluster IP in Kubernetes, these addresses reference all the instances(replicas) of a microservice with a single address. This address does not change when scaling up the instances or when migrating them.">
+<meta property="og:title" content="Semantic addressing" />
+<meta property="og:description" content="The default networking component of Oakestra envisions IP communication based on a semantic balancing policy expressed by some special IP addresses.
+What do we mean by semantic addressing? In Oakestra, the addresses belonging to the subnetwork 10.30.0.0/16 are called Service IPs. Similar to a cluster IP in Kubernetes, these addresses reference all the instances(replicas) of a microservice with a single address. This address does not change when scaling up the instances or when migrating them." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://oakestra.io/docs/oakestra/orchestrators/" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2022-08-09T15:56:27+02:00" />
-<meta property="article:modified_time" content="2022-08-09T19:05:48+02:00" />
+<meta property="og:url" content="https://oakestra.io/docs/networking/semantic-addressing/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-03-01T12:56:27+02:00" />
+<meta property="article:modified_time" content="2023-03-01T18:17:51+01:00" />
 
-<meta itemprop="name" content="Orchestration">
-<meta itemprop="description" content="#APIs
-Root Orchestrator APIs OpenApi Spec"><meta itemprop="datePublished" content="2022-08-09T15:56:27+02:00" />
-<meta itemprop="dateModified" content="2022-08-09T19:05:48+02:00" />
-<meta itemprop="wordCount" content="6">
+<meta itemprop="name" content="Semantic addressing">
+<meta itemprop="description" content="The default networking component of Oakestra envisions IP communication based on a semantic balancing policy expressed by some special IP addresses.
+What do we mean by semantic addressing? In Oakestra, the addresses belonging to the subnetwork 10.30.0.0/16 are called Service IPs. Similar to a cluster IP in Kubernetes, these addresses reference all the instances(replicas) of a microservice with a single address. This address does not change when scaling up the instances or when migrating them."><meta itemprop="datePublished" content="2023-03-01T12:56:27+02:00" />
+<meta itemprop="dateModified" content="2023-03-01T18:17:51+01:00" />
+<meta itemprop="wordCount" content="602">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Orchestration"/>
-<meta name="twitter:description" content="#APIs
-Root Orchestrator APIs OpenApi Spec"/>
+<meta name="twitter:title" content="Semantic addressing"/>
+<meta name="twitter:description" content="The default networking component of Oakestra envisions IP communication based on a semantic balancing policy expressed by some special IP addresses.
+What do we mean by semantic addressing? In Oakestra, the addresses belonging to the subnetwork 10.30.0.0/16 are called Service IPs. Similar to a cluster IP in Kubernetes, these addresses reference all the instances(replicas) of a microservice with a single address. This address does not change when scaling up the instances or when migrating them."/>
 
 
 
@@ -100,13 +100,13 @@ Root Orchestrator APIs OpenApi Spec"/>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsguicli-li">
   <a href="/docs/guicli/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsguicli"><span class="">CLI &amp; Frontend</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsoakestra-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsoakestra-li">
   <a href="/docs/oakestra/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsoakestra"><span class="">Concepts</span></a>
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsoakestraarchitecture-li">
   <a href="/docs/oakestra/architecture/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsoakestraarchitecture"><span class="">High level architecture</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsoakestraorchestrators-li">
-  <a href="/docs/oakestra/orchestrators/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-docsoakestraorchestrators"><span class="td-sidebar-nav-active-item">Orchestration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsoakestraorchestrators-li">
+  <a href="/docs/oakestra/orchestrators/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsoakestraorchestrators"><span class="">Orchestration</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsoakestrascheduling-li">
   <a href="/docs/oakestra/scheduling/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsoakestrascheduling"><span class="">Task Scheduling</span></a>
 </li>
@@ -120,11 +120,11 @@ Root Orchestrator APIs OpenApi Spec"/>
   <a href="/docs/contribute/coc/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docscontributecoc"><span class="">Contributor Covenant Code of Conduct</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsnetworking-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsnetworking-li">
   <a href="/docs/networking/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsnetworking"><span class="">Networking</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsnetworkingsemantic-addressing-li">
-  <a href="/docs/networking/semantic-addressing/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingsemantic-addressing"><span class="">Semantic addressing</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsnetworkingsemantic-addressing-li">
+  <a href="/docs/networking/semantic-addressing/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingsemantic-addressing"><span class="td-sidebar-nav-active-item">Semantic addressing</span></a>
 </li>
   </ul>
 </li>
@@ -141,7 +141,18 @@ Root Orchestrator APIs OpenApi Spec"/>
 
 </div>
 
-            
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-do-we-mean-by-semantic-addressing">What do we mean by semantic addressing?</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
             
 
 	
@@ -202,7 +213,7 @@ Root Orchestrator APIs OpenApi Spec"/>
             
             
 <div class="td-content">
-	<h1>Orchestration</h1>
+	<h1>Semantic addressing</h1>
 	
 	<header class="article-meta">
 		
@@ -220,12 +231,31 @@ Root Orchestrator APIs OpenApi Spec"/>
   
 
 		
-			<p class="reading-time"><i class="fa-solid fa-clock" aria-hidden="true"></i>&nbsp; less than a minute &nbsp;</p>
+			<p class="reading-time"><i class="fa-solid fa-clock" aria-hidden="true"></i>&nbsp; 3 minute read &nbsp;</p>
 
 		
 	</header>    
-	<p>#APIs</p>
-<p>Root Orchestrator APIs <a href="https://app.swaggerhub.com/apis-docs/giobarty/oakestra-root_api/v1#/">OpenApi Spec</a></p>
+	<p>The default networking component of Oakestra envisions IP communication based on a semantic balancing policy expressed by some special IP addresses.</p>
+<h2 id="what-do-we-mean-by-semantic-addressing">What do we mean by semantic addressing?</h2>
+<p>In Oakestra, the addresses belonging to the subnetwork 10.30.0.0/16 are called <strong>Service IPs</strong>. Similar to a cluster IP in Kubernetes, these addresses reference all the instances(replicas) of a microservice with a single address. This address does not change when scaling up the instances or when migrating them.
+Anyway, unlike the Kubernetes cluster IP, when deploying a service in Oakestra, the platform provides as many ServiceIP addresses as the number of balancing policies supported (and active) within the platform.
+On top of that, we have a special subset of the Service IPs called <strong>Instance IPs</strong>. An Instance IP balances the traffic only to a specific service instance within the system.
+Let&rsquo;s take a look at the following example.</p>
+<p><img src="/network/NetExample.png" alt="NetExample"></p>
+<p>A developer can communicate with any instance of Service B either with <strong>Round Robin</strong> balancing policy or the <strong>Closest</strong> balancing policy. The former balances the traffic evenly between all the instances, and the latter finds the geographically closer instance.</p>
+<p>Service A performs the first request <img src="/network/NetArchExample_evenlope_1.png" alt= "envelope_1" width="30"> using the ServiceIP <font style="color:red">10.30.0.1</font> representing the closest instance balancing policy.
+The network components&rsquo; proxy converts the address to the Namespace IP of Service B Instance 1, which looks like it is the geographically closer service. The message will be, therefore <strong>transparently</strong> delivered to the closest instance of Service B. Note that the Namespace IP is the real address of the instance, the one provisioned at deployment time, unique and dynamic. An application developer never sees or uses this address, as it depends on the subnetwork of the specific machine where the service is deployed. Find out more about the Namespace IP by reading the implementation details.</p>
+<p>Then, Service A performs a second request <img src="/network/NetArchExample_evenlope_2.png" alt= "envelope_1" width="30"> using the ServiceIP <font style="color:blue">10.30.0.2</font> representing the Round Robin balancing policy. The network components&rsquo; proxy converts the address to the Namespace IP of Service B Instance 3, which is randomly chosen among all the available instances.</p>
+<p>When Service A performs a third request <img src="/network/NetArchExample_evenlope_3.png" alt= "envelope_3" width="30"> using again the ServiceIP <font style="color:blue">10.30.0.2</font> representing the Round Robin balancing policy, this time, the network components&rsquo; proxy randomly chooses Service B Instance 2.</p>
+<p>The last request <img src="/network/NetArchExample_evenlope_4.png" alt= "envelope_4" width="30"> from Service A to Service B uses the Instance IP representing instance 3. The proxy component then automatically chooses Service B Instance 3</p>
+<h4 id="why-do-we-need-instance-ips">Why do we need Instance IPs?</h4>
+<p>Mainly for 2 reasons:</p>
+<ol>
+<li>Instance IPs represent a service&rsquo;s instance uniquely within the platform. Even when the instance migrates toward new devices, the Instance IP always represents the instance and not the machine where the instance is deployed. The Instance IP is the foundation that enables an overlay network that abstracts services from machines.</li>
+<li>When forwarding the packet, the proxy uses the sender&rsquo;s Instance IP in the <code>from</code> header field of the packet. This way, any response or connection-oriented protocol can transparently work, and we guarantee the original sender receives the response.</li>
+</ol>
+<h4 id="why-service-ips-why-do-we-need-multiple-balancing-policies">Why Service IPs? Why do we need multiple balancing policies?</h4>
+<p>At the Edge, Oakestra&rsquo;s net component enables flexibility in the way developers can balance the traffic without the requirement of adapting the code. Just by using a Service IP instead of a regular IP, a developer can achieve balancing by using any protocol based on UDP or TCP and can also customize the balancing behavior of each request accordingly to their need. Edge computing brings resources closer to the users, so one might need to forward some traffic with very low latency using Closest balancing policy, or one might just want to evenly balance another endpoint with Round Robin policy.</p>
 
 	
 	

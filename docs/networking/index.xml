@@ -14,15 +14,35 @@
     
     
     <item>
-      <title>Docs: Oakestra mesh network</title>
-      <link>https://oakestra.io/docs/networking/oakestra-mesh/</link>
-      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <title>Docs: Semantic addressing</title>
+      <link>https://oakestra.io/docs/networking/semantic-addressing/</link>
+      <pubDate>Wed, 01 Mar 2023 12:56:27 +0200</pubDate>
       
-      <guid>https://oakestra.io/docs/networking/oakestra-mesh/</guid>
+      <guid>https://oakestra.io/docs/networking/semantic-addressing/</guid>
       <description>
         
         
-        &lt;p&gt;#Docs coming soon, stay tuned&lt;/p&gt;
+        &lt;p&gt;The default networking component of Oakestra envisions IP communication based on a semantic balancing policy expressed by some special IP addresses.&lt;/p&gt;
+&lt;h2 id=&#34;what-do-we-mean-by-semantic-addressing&#34;&gt;What do we mean by semantic addressing?&lt;/h2&gt;
+&lt;p&gt;In Oakestra, the addresses belonging to the subnetwork 10.30.0.0/16 are called &lt;strong&gt;Service IPs&lt;/strong&gt;. Similar to a cluster IP in Kubernetes, these addresses reference all the instances(replicas) of a microservice with a single address. This address does not change when scaling up the instances or when migrating them.
+Anyway, unlike the Kubernetes cluster IP, when deploying a service in Oakestra, the platform provides as many ServiceIP addresses as the number of balancing policies supported (and active) within the platform.
+On top of that, we have a special subset of the Service IPs called &lt;strong&gt;Instance IPs&lt;/strong&gt;. An Instance IP balances the traffic only to a specific service instance within the system.
+Let&amp;rsquo;s take a look at the following example.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/network/NetExample.png&#34; alt=&#34;NetExample&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A developer can communicate with any instance of Service B either with &lt;strong&gt;Round Robin&lt;/strong&gt; balancing policy or the &lt;strong&gt;Closest&lt;/strong&gt; balancing policy. The former balances the traffic evenly between all the instances, and the latter finds the geographically closer instance.&lt;/p&gt;
+&lt;p&gt;Service A performs the first request &lt;img src=&#34;https://oakestra.io/network/NetArchExample_evenlope_1.png&#34; alt= &#34;envelope_1&#34; width=&#34;30&#34;&gt; using the ServiceIP &lt;font style=&#34;color:red&#34;&gt;10.30.0.1&lt;/font&gt; representing the closest instance balancing policy.
+The network components&amp;rsquo; proxy converts the address to the Namespace IP of Service B Instance 1, which looks like it is the geographically closer service. The message will be, therefore &lt;strong&gt;transparently&lt;/strong&gt; delivered to the closest instance of Service B. Note that the Namespace IP is the real address of the instance, the one provisioned at deployment time, unique and dynamic. An application developer never sees or uses this address, as it depends on the subnetwork of the specific machine where the service is deployed. Find out more about the Namespace IP by reading the implementation details.&lt;/p&gt;
+&lt;p&gt;Then, Service A performs a second request &lt;img src=&#34;https://oakestra.io/network/NetArchExample_evenlope_2.png&#34; alt= &#34;envelope_1&#34; width=&#34;30&#34;&gt; using the ServiceIP &lt;font style=&#34;color:blue&#34;&gt;10.30.0.2&lt;/font&gt; representing the Round Robin balancing policy. The network components&amp;rsquo; proxy converts the address to the Namespace IP of Service B Instance 3, which is randomly chosen among all the available instances.&lt;/p&gt;
+&lt;p&gt;When Service A performs a third request &lt;img src=&#34;https://oakestra.io/network/NetArchExample_evenlope_3.png&#34; alt= &#34;envelope_3&#34; width=&#34;30&#34;&gt; using again the ServiceIP &lt;font style=&#34;color:blue&#34;&gt;10.30.0.2&lt;/font&gt; representing the Round Robin balancing policy, this time, the network components&amp;rsquo; proxy randomly chooses Service B Instance 2.&lt;/p&gt;
+&lt;p&gt;The last request &lt;img src=&#34;https://oakestra.io/network/NetArchExample_evenlope_4.png&#34; alt= &#34;envelope_4&#34; width=&#34;30&#34;&gt; from Service A to Service B uses the Instance IP representing instance 3. The proxy component then automatically chooses Service B Instance 3&lt;/p&gt;
+&lt;h4 id=&#34;why-do-we-need-instance-ips&#34;&gt;Why do we need Instance IPs?&lt;/h4&gt;
+&lt;p&gt;Mainly for 2 reasons:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Instance IPs represent a service&amp;rsquo;s instance uniquely within the platform. Even when the instance migrates toward new devices, the Instance IP always represents the instance and not the machine where the instance is deployed. The Instance IP is the foundation that enables an overlay network that abstracts services from machines.&lt;/li&gt;
+&lt;li&gt;When forwarding the packet, the proxy uses the sender&amp;rsquo;s Instance IP in the &lt;code&gt;from&lt;/code&gt; header field of the packet. This way, any response or connection-oriented protocol can transparently work, and we guarantee the original sender receives the response.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;why-service-ips-why-do-we-need-multiple-balancing-policies&#34;&gt;Why Service IPs? Why do we need multiple balancing policies?&lt;/h4&gt;
+&lt;p&gt;At the Edge, Oakestra&amp;rsquo;s net component enables flexibility in the way developers can balance the traffic without the requirement of adapting the code. Just by using a Service IP instead of a regular IP, a developer can achieve balancing by using any protocol based on UDP or TCP and can also customize the balancing behavior of each request accordingly to their need. Edge computing brings resources closer to the users, so one might need to forward some traffic with very low latency using Closest balancing policy, or one might just want to evenly balance another endpoint with Round Robin policy.&lt;/p&gt;
 
       </description>
     </item>

@@ -14,6 +14,9 @@
     <loc>https://oakestra.io/docs/</loc>
     <lastmod>2022-10-26T16:05:00+02:00</lastmod>
   </url><url>
+    <loc>https://oakestra.io/docs/networking/semantic-addressing/</loc>
+    <lastmod>2023-03-01T18:17:51+01:00</lastmod>
+  </url><url>
     <loc>https://oakestra.io/docs/contribute/contribution-guide/</loc>
     <lastmod>2023-02-28T15:47:25+01:00</lastmod>
   </url><url>
@@ -43,9 +46,6 @@
   </url><url>
     <loc>https://oakestra.io/docs/oakestra/architecture/</loc>
     <lastmod>2023-02-28T18:23:20+01:00</lastmod>
-  </url><url>
-    <loc>https://oakestra.io/docs/networking/oakestra-mesh/</loc>
-    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/oakestra/orchestrators/</loc>
     <lastmod>2022-08-09T19:05:48+02:00</lastmod>
