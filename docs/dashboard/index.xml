@@ -1,12 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title> – GetStarted</title>
-    <link>https://oakestra.io/tags/getstarted/</link>
-    <description>Recent content in GetStarted on </description>
+    <title> – Dashboard</title>
+    <link>https://oakestra.io/docs/dashboard/</link>
+    <description>Recent content in Dashboard on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 05 Oct 2022 09:56:27 +0200</lastBuildDate>
     
-	  <atom:link href="https://oakestra.io/tags/getstarted/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://oakestra.io/docs/dashboard/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -58,19 +57,6 @@ seamless and hassle-free manner.&lt;/p&gt;
 MongoDB must be started.
 How to start them is described in this WIKI &lt;a href=&#34;../../getstarted/get-started-cluster&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Get Started</title>
-      <link>https://oakestra.io/docs/getstarted/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://oakestra.io/docs/getstarted/</guid>
-      <description>
-        
-        
-        
       </description>
     </item>
     
