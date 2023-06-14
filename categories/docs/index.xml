@@ -325,6 +325,155 @@ deploy in the system.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: Start your Dashboard</title>
+      <link>https://oakestra.io/docs/dashboard/getting-started-dashboard/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      
+      <guid>https://oakestra.io/docs/dashboard/getting-started-dashboard/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Dashboard is a sophisticated web-based user interface for the Oakestra system.
+It is designed to provide users with a comprehensive set of tools to deploy applications to a
+Oakestra cluster, effectively manage cluster resources, and troubleshoot any issues that may arise.&lt;/p&gt;
+&lt;p&gt;With the Dashboard, users can gain an insightful overview of the applications currently running on
+their cluster. It allows them to create and modify individual services,
+view the status of running services, and configure service-level agreements (SLAs) with an intuitive form.
+This feature-rich interface also enables users to monitor the state of Oakestra resources within
+their cluster and track any errors that may have occurred.&lt;/p&gt;
+&lt;p&gt;In essence, the Dashboard empowers users to harness the full potential of the Oakestra system with
+ease and efficiency, enabling them to achieve their goals and objectives in a
+seamless and hassle-free manner.&lt;/p&gt;
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You have a running Root Orchestrator.&lt;/li&gt;
+&lt;li&gt;You can access the APIs at &lt;code&gt;&amp;lt;root-orch-ip&amp;gt;:10000&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;preparation&#34;&gt;Preparation&lt;/h2&gt;
+&lt;p&gt;Make sure the following software is installed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Git 2.13.2+ (&lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;installation manual&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Docker 1.13.1+ (&lt;a href=&#34;https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/&#34;&gt;installation manual&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;deployment&#34;&gt;Deployment&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;0)&lt;/strong&gt; First, let&amp;rsquo;s export the required environment variables&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;API_ADDRESS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;IP_of_the_system_manager_api
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt; Clone the repository&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/oakestra/dashboard.git &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; dashboard
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;2)&lt;/strong&gt; Run the dashboard&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo docker-compose up
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;running-the-okakestra-framework&#34;&gt;Running the Okakestra Framework&lt;/h3&gt;
+&lt;p&gt;To be able to log into the dashboard and test all functions, at least the System Manager and
+MongoDB must be started.
+How to start them is described in this WIKI &lt;a href=&#34;../../getstarted/get-started-cluster&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Access Control</title>
+      <link>https://oakestra.io/docs/dashboard/access-control/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      
+      <guid>https://oakestra.io/docs/dashboard/access-control/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;access-control&#34;&gt;Access control&lt;/h2&gt;
+&lt;p&gt;Upon successful installation and accessibility of the Dashboard, our attention can shift to configuring
+access control to resources for various users.&lt;/p&gt;
+&lt;p&gt;Upon launching the framework for the first time, an administrative user is automatically generated.
+This administrative user can then be leveraged to create additional users and organizations within the system.&lt;/p&gt;
+&lt;p&gt;Credentials for the admin user:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Username:&lt;/strong&gt; Admin&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Password:&lt;/strong&gt; Admin&lt;/p&gt;
+&lt;p&gt;It is important to note that after the initial launch of the System Manager,
+it is imperative to change the password for the Admin user as an added measure of security.&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Oakestra supports currently only one way of authenticating and authorizing users.
+Authorization is handled by the Root Orchestrator (System Manager) API server.
+The Dashboard only acts as a proxy and passes all auth information to it.
+In case of forbidden access corresponding warnings will be displayed in the Dashboard.&lt;/p&gt;
+&lt;h2 id=&#34;authentication&#34;&gt;Authentication&lt;/h2&gt;
+&lt;p&gt;Oakestra Dashboard currently supports only the following method for authenticating users:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Username/password&lt;/strong&gt; that can be used on the Dashboard login view.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once a user has successfully logged in, tokens in the authorization header are leveraged to authenticate the user.&lt;/p&gt;
+&lt;h3 id=&#34;authorization-header&#34;&gt;Authorization Header&lt;/h3&gt;
+&lt;p&gt;Using the authorization header is the only way to make Dashboard function as a specific user. However, it is worth noting that if plain HTTP is used, the traffic is vulnerable to &lt;a href=&#34;https://en.wikipedia.org/wiki/Man-in-the-middle_attack&#34;&gt;MITM attacks&lt;/a&gt;, which could result in potential security risks.&lt;/p&gt;
+&lt;p&gt;To enable Dashboard to utilize the authorization header, simply pass &lt;code&gt;Authorization: Bearer &amp;lt;token&amp;gt;&lt;/code&gt; with every request made to Dashboard. Currently, this is automatically executed with an HTTP interceptor.&lt;/p&gt;
+&lt;p&gt;To test this feature swiftly, try out the &lt;a href=&#34;https://chrome.google.com/webstore/detail/requestly-redirect-url-mo/mdnleldcmiljblolnjhpnblkcekpdkpa&#34;&gt;Requestly&lt;/a&gt; Chrome browser plugin that enables manual modification of request headers.&lt;/p&gt;
+&lt;h2 id=&#34;admin-privileges&#34;&gt;Admin Privileges&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANT:&lt;/strong&gt; Before proceeding, it is crucial to understand the potential security implications of granting admin privileges to Dashboard&amp;rsquo;s Service Account.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Features</title>
+      <link>https://oakestra.io/docs/dashboard/features/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      
+      <guid>https://oakestra.io/docs/dashboard/features/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;features&#34;&gt;Features&lt;/h1&gt;
+&lt;p&gt;The user interface is still under development and therefore does not offer so many features yet.
+However, we are working on it to support more and more features.
+If you find ideas for new features or bugs post an issue in the &lt;a href=&#34;https://github.com/oakestra/dashboard&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;creating-a-service&#34;&gt;Creating a service&lt;/h2&gt;
+&lt;p&gt;Creating a service is the main task of the dashboard, as described in other parts of the documentation,
+an SLA definition must be created for it. This can be easily done using the various input fields
+in the dashboard.&lt;/p&gt;
+&lt;p&gt;To do this, first, create an application, then you can create a service in this application by
+entering the various values in the form. The dashboard then creates the SLA deployment descriptor
+based on your input and sends it to the root orchestrator.&lt;/p&gt;
+&lt;h2 id=&#34;organizations&#34;&gt;Organizations&lt;/h2&gt;
+&lt;p&gt;Organizations ensure smooth collaboration within a team in Oakestra.
+Members of an organization have access to all applications created within that organization,
+and they can use the resources provided within the organization to deploy new services.&lt;/p&gt;
+&lt;h3 id=&#34;root-organization&#34;&gt;Root Organization&lt;/h3&gt;
+&lt;p&gt;When the root orchestrator is started for the first time, a root organization
+is also created with the admin, and each user is automatically part of this root organization.
+However, users can also be part of other organizations.
+The root organization has specific properties.
+Unlike other organizations, where a user can view all applications within the organization
+and share resources, in the root organization,
+only the applications that a user has created can be viewed.&lt;/p&gt;
+&lt;h2 id=&#34;roles&#34;&gt;Roles&lt;/h2&gt;
+&lt;p&gt;After a successful login, the user receives a JWT token that authenticates the user.
+The token contains the user&amp;rsquo;s roles and the organization ID in which the user is currently logged in.
+We distinguish between the following different roles.&lt;/p&gt;
+&lt;h3 id=&#34;admin&#34;&gt;Admin&lt;/h3&gt;
+&lt;p&gt;The admin is created at the start of the root orchestrator. He can create new users, create organizations,
+add users to organizations and change settings in the complete system.&lt;/p&gt;
+&lt;h3 id=&#34;organization-admin&#34;&gt;Organization Admin&lt;/h3&gt;
+&lt;p&gt;A user with this role is the admin of an organization he can add new users to the organization
+and manage their roles within the organization.&lt;/p&gt;
+&lt;h3 id=&#34;infrastructure-provider&#34;&gt;Infrastructure Provider&lt;/h3&gt;
+&lt;p&gt;A user with this role can add resources that can then be used to deploy applications there.&lt;/p&gt;
+&lt;h3 id=&#34;application-provider&#34;&gt;Application Provider&lt;/h3&gt;
+&lt;p&gt;This is the default role of a user, he can create applications and services and manage them accordingly.&lt;/p&gt;
+&lt;h2 id=&#34;e-mail-configuration&#34;&gt;E-mail Configuration&lt;/h2&gt;
+&lt;p&gt;The admin of Oakestra can configure an SMTP server in the settings.&lt;/p&gt;
+&lt;p&gt;If no SMTP server is configured, the official Oakestra mail service can be used in the future.&lt;/p&gt;
+&lt;p&gt;Currently, mails are sent in the following scenarios:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When creating a new user, the user receives a mail with the password previously set by the admin.&lt;/li&gt;
+&lt;li&gt;When changing the password of a user&lt;/li&gt;
+&lt;li&gt;And to reset the password of a user.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If nothing is configured, no mails are sent and the admin must reset the password for the user.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: High level architecture</title>
       <link>https://oakestra.io/docs/oakestra/architecture/</link>
       <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
@@ -346,11 +495,11 @@ deploy in the system.&lt;/p&gt;
 &lt;li&gt;Root Orchestrator&lt;/li&gt;
 &lt;li&gt;Cluster Orchestrator&lt;/li&gt;
 &lt;li&gt;Node Engine&lt;/li&gt;
-&lt;li&gt;NetManager (optional)&lt;/li&gt;
+&lt;li&gt;NetManager (optional, detailed in the networking section of the Wiki)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.&lt;/p&gt;
 &lt;h2 id=&#34;root-orchestrator&#34;&gt;Root Orchestrator&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/RootArch.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/RootArch.png&#34; alt=&#34;root architecture&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The Root Orchestrator is a centralized control plane that is aware of the participating clusters.&lt;/p&gt;
 &lt;p&gt;This picture describes the containers that compose the Root Orchestrator. As you may have seen we use docker-compose to bring up the orchestrators. This is because each block of this picture is &lt;em&gt;currently&lt;/em&gt; a separated container.&lt;/p&gt;
 &lt;ul&gt;
@@ -362,30 +511,54 @@ changing regularly, such as the number of worker nodes per cluster, total amount
 &lt;li&gt;The Root Network Components are detailed in the Oakestra-Net Wiki.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;system-manager-apis&#34;&gt;System Manager APIs&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;jobs-db-structure&#34;&gt;Jobs DB Structure&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;clusters-db-structure&#34;&gt;Clusters DB Structure&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;scheduler-algorithms&#34;&gt;Scheduler Algorithms&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
+&lt;p&gt;At startup, the System Manager exposes the public APIs at &amp;lt;root_orch_ip&amp;gt;:10000
+Thr API documentation is available at &lt;code&gt;&amp;lt;root_orch_ip&amp;gt;:10000/api/docs&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;consideration-regarding-failure-and-scalability&#34;&gt;Consideration regarding failure and scalability:&lt;/h3&gt;
-&lt;p&gt;The main problem of a centralized control plane is that it can act as a single point of failure. By design without a Root Orchestrator, the clusters are able to satisfy the SLA for the deployed applications internally, the only affected functionalities are the deployment of new services and the intra-cluster migrations. To avoid failure and increase resiliency an idea is to make the component able to scale by introducing a load balancer in front of the replicated components. However, this feature is not implemented yet.&lt;/p&gt;
+&lt;p&gt;The main problem of a centralized control plane is that it can act as a single point of failure. By design without a Root Orchestrator, the clusters are able to satisfy the SLA for the deployed applications internally, the only affected functionalities are the deployment of new services and the intra-cluster migrations. To avoid failure and increase resiliency, an idea is to make the component able to scale by introducing a load balancer in front of the replicated components. However, this feature is not implemented yet.&lt;/p&gt;
 &lt;h2 id=&#34;cluster-orchestrator&#34;&gt;Cluster Orchestrator&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/ClusterArch.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;cluster-manager-apis&#34;&gt;Cluster Manager APIs&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/clusterArch.png&#34; alt=&#34;cluster architecture&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Cluster orchestrator is a twin of the root but with the following differences:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The cluster orchestrator&amp;rsquo;s scope is the end worker node devices.&lt;/li&gt;
+&lt;li&gt;A cluster orchestrator performs aggregation. It aggregates the worker node resources and does not expose the cluster composition directly to the root.&lt;/li&gt;
+&lt;li&gt;The cluster uses MQTT for communication with the worker nodes.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;mqtt-topics&#34;&gt;MQTT Topics&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;jobs-db-structure-1&#34;&gt;Jobs DB structure&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;nodes-db-structure&#34;&gt;Nodes DB structure&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;h3 id=&#34;schedulers-algorithms&#34;&gt;Schedulers Algorithms&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
+&lt;p&gt;The topics used to interact with the worker nodes are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;nodes/&lt;node-id&gt;/information$&amp;rdquo;: topic where each worker periodically posts its resources usage&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;nodes/&lt;node-id&gt;/job$&amp;rdquo;: used to perform deployments on a worker node and receive back the feedback&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;nodes/&lt;node-id&gt;/jobs/resources$&amp;rdquo;: used to post the resource usage and status of the running instances in a worker node&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;schedulers-algorithms&#34;&gt;Schedulers Algorithms&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/scheduling-celery-worker.png&#34; alt=&#34;scheduler&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The schedulers, at each level, receive Job Placement tasks and return a placement decision.
+At the root level, the placement decision is a Cluster. At the cluster level, the placement decision is a worker node.&lt;/p&gt;
+&lt;p&gt;A job placement task is a Job structure composed of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Service
+&lt;ul&gt;
+&lt;li&gt;Instances&lt;/li&gt;
+&lt;li&gt;Requirements&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Placement currently uses the default Best Fist algorithm. You can find more details in the scheduling section of the wiki.&lt;/p&gt;
 &lt;h2 id=&#34;worker-node&#34;&gt;Worker Node&lt;/h2&gt;
-&lt;p&gt;TODO&lt;/p&gt;
+&lt;p&gt;A machine, in order to be qualified as Worker Node, must contain a Node Engine and optionally a Net Manager. The former enables the deployment of applications accordingly to the runtimes installed. The latter plugs the networking components to enable communication across the applications deployed.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/nodeEngineArch.png&#34; alt=&#34;NodeEngine&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Node Engine is a single binary implemented using Go Lang and is composed of the following modules:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MQTT: This is the interface between the worker and the Cluster. The deployment commands, node status updates, and jobs updates use this component.&lt;/li&gt;
+&lt;li&gt;Models: This contains the models that describe the node and the jobs.
+&lt;ul&gt;
+&lt;li&gt;Node: describes the resources of the node that are transmitted to the cluster. This is decomposed into dynamic resources and static. The status of static resources is transmitted only at startup. Dynamic resource statuses such as cpu/memory usage are updated regularly.&lt;/li&gt;
+&lt;li&gt;Service: describe the fields of the services that are managed by this implementation of the worker node, as well as the real-time service usage statistics that must be monitored.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Jobs: Background jobs that monitor the status of the Worker node itself and the applications deployed.&lt;/li&gt;
+&lt;li&gt;Runtimes: Contains the glue with the supported system runtimes. Right now, the runtime dispatcher only supports containerd and, therefore, &amp;ldquo;containers&amp;rdquo; is the only runtime available. Any new runtime integration is implemented here. We&amp;rsquo;re currently working on Unikernels integration.&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>

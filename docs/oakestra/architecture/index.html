@@ -20,27 +20,27 @@
 
 <title>High level architecture | </title>
 <meta name="description" content="Table of content Root Orchestrator Cluster Orchestrator Worker Node Oakestra Detailed Architecture As shown in our Get Started guide, Oakestra uses 3-4 building blocks to operate.
-Root Orchestrator Cluster Orchestrator Node Engine NetManager (optional) This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.
+Root Orchestrator Cluster Orchestrator Node Engine NetManager (optional, detailed in the networking section of the Wiki) This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.
 Root Orchestrator The Root Orchestrator is a centralized control plane that is aware of the participating clusters.">
 <meta property="og:title" content="High level architecture" />
 <meta property="og:description" content="Table of content Root Orchestrator Cluster Orchestrator Worker Node Oakestra Detailed Architecture As shown in our Get Started guide, Oakestra uses 3-4 building blocks to operate.
-Root Orchestrator Cluster Orchestrator Node Engine NetManager (optional) This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.
+Root Orchestrator Cluster Orchestrator Node Engine NetManager (optional, detailed in the networking section of the Wiki) This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.
 Root Orchestrator The Root Orchestrator is a centralized control plane that is aware of the participating clusters." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oakestra.io/docs/oakestra/architecture/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2022-08-09T15:56:27+02:00" />
-<meta property="article:modified_time" content="2022-08-09T19:48:53+02:00" />
+<meta property="article:modified_time" content="2023-02-28T18:23:20+01:00" />
 
 <meta itemprop="name" content="High level architecture">
 <meta itemprop="description" content="Table of content Root Orchestrator Cluster Orchestrator Worker Node Oakestra Detailed Architecture As shown in our Get Started guide, Oakestra uses 3-4 building blocks to operate.
-Root Orchestrator Cluster Orchestrator Node Engine NetManager (optional) This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.
+Root Orchestrator Cluster Orchestrator Node Engine NetManager (optional, detailed in the networking section of the Wiki) This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.
 Root Orchestrator The Root Orchestrator is a centralized control plane that is aware of the participating clusters."><meta itemprop="datePublished" content="2022-08-09T15:56:27+02:00" />
-<meta itemprop="dateModified" content="2022-08-09T19:48:53+02:00" />
-<meta itemprop="wordCount" content="394">
+<meta itemprop="dateModified" content="2023-02-28T18:23:20+01:00" />
+<meta itemprop="wordCount" content="789">
 <meta itemprop="keywords" content="Architecture," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="High level architecture"/>
 <meta name="twitter:description" content="Table of content Root Orchestrator Cluster Orchestrator Worker Node Oakestra Detailed Architecture As shown in our Get Started guide, Oakestra uses 3-4 building blocks to operate.
-Root Orchestrator Cluster Orchestrator Node Engine NetManager (optional) This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.
+Root Orchestrator Cluster Orchestrator Node Engine NetManager (optional, detailed in the networking section of the Wiki) This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.
 Root Orchestrator The Root Orchestrator is a centralized control plane that is aware of the participating clusters."/>
 
 
@@ -102,8 +102,6 @@ Root Orchestrator The Root Orchestrator is a centralized control plane that is a
   <a href="/docs/getstarted/get-started-app/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsgetstartedget-started-app"><span class="">Deploy your first App</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsguicli-li">
-  <a href="/docs/guicli/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsguicli"><span class="">CLI &amp; Frontend</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsoakestra-li">
   <a href="/docs/oakestra/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsoakestra"><span class="">Concepts</span></a>
   <ul class="ul-2 foldable">
@@ -124,11 +122,24 @@ Root Orchestrator The Root Orchestrator is a centralized control plane that is a
   <a href="/docs/contribute/coc/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docscontributecoc"><span class="">Contributor Covenant Code of Conduct</span></a>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdashboard-li">
+  <a href="/docs/dashboard/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdashboard"><span class="">Dashboard</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdashboardgetting-started-dashboard-li">
+  <a href="/docs/dashboard/getting-started-dashboard/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdashboardgetting-started-dashboard"><span class="">Start your Dashboard</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdashboardaccess-control-li">
+  <a href="/docs/dashboard/access-control/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdashboardaccess-control"><span class="">Access Control</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdashboardfeatures-li">
+  <a href="/docs/dashboard/features/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdashboardfeatures"><span class="">Features</span></a>
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsnetworking-li">
   <a href="/docs/networking/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsnetworking"><span class="">Networking</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsnetworkingoakestra-mesh-li">
-  <a href="/docs/networking/oakestra-mesh/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingoakestra-mesh"><span class="">Oakestra mesh network</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsnetworkingsemantic-addressing-li">
+  <a href="/docs/networking/semantic-addressing/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingsemantic-addressing"><span class="">Semantic addressing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsnetworkingservice-ip-overlay-implementation-li">
+  <a href="/docs/networking/service-ip-overlay-implementation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingservice-ip-overlay-implementation"><span class="">IPv4 Service IP implementation details</span></a>
 </li>
   </ul>
 </li>
@@ -151,21 +162,15 @@ Root Orchestrator The Root Orchestrator is a centralized control plane that is a
     <li><a href="#root-orchestrator">Root Orchestrator</a>
       <ul>
         <li><a href="#system-manager-apis">System Manager APIs</a></li>
-        <li><a href="#jobs-db-structure">Jobs DB Structure</a></li>
-        <li><a href="#clusters-db-structure">Clusters DB Structure</a></li>
-        <li><a href="#scheduler-algorithms">Scheduler Algorithms</a></li>
         <li><a href="#consideration-regarding-failure-and-scalability">Consideration regarding failure and scalability:</a></li>
       </ul>
     </li>
     <li><a href="#cluster-orchestrator">Cluster Orchestrator</a>
       <ul>
-        <li><a href="#cluster-manager-apis">Cluster Manager APIs</a></li>
         <li><a href="#mqtt-topics">MQTT Topics</a></li>
-        <li><a href="#jobs-db-structure-1">Jobs DB structure</a></li>
-        <li><a href="#nodes-db-structure">Nodes DB structure</a></li>
-        <li><a href="#schedulers-algorithms">Schedulers Algorithms</a></li>
       </ul>
     </li>
+    <li><a href="#schedulers-algorithms">Schedulers Algorithms</a></li>
     <li><a href="#worker-node">Worker Node</a></li>
   </ul>
 </nav>
@@ -187,7 +192,7 @@ Root Orchestrator The Root Orchestrator is a centralized control plane that is a
       
       <ul class="taxonomy-terms">
         
-          <li><a class="taxonomy-term" href="https://oakestra.io/categories/docs/" data-taxonomy-term="docs"><span class="taxonomy-label">Docs</span><span class="taxonomy-count">3</span></a></li>
+          <li><a class="taxonomy-term" href="https://oakestra.io/categories/docs/" data-taxonomy-term="docs"><span class="taxonomy-label">Docs</span><span class="taxonomy-count">6</span></a></li>
         
       </ul>
     </div>
@@ -210,11 +215,13 @@ Root Orchestrator The Root Orchestrator is a centralized control plane that is a
         
           <li><a class="taxonomy-term" href="https://oakestra.io/tags/concepts/" data-taxonomy-term="concepts"><span class="taxonomy-label">concepts</span><span class="taxonomy-count">1</span></a></li>
         
-          <li><a class="taxonomy-term" href="https://oakestra.io/tags/docs/" data-taxonomy-term="docs"><span class="taxonomy-label">docs</span><span class="taxonomy-count">3</span></a></li>
+          <li><a class="taxonomy-term" href="https://oakestra.io/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">dashboard</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://oakestra.io/tags/docs/" data-taxonomy-term="docs"><span class="taxonomy-label">docs</span><span class="taxonomy-count">2</span></a></li>
         
           <li><a class="taxonomy-term" href="https://oakestra.io/tags/getsarted/" data-taxonomy-term="getsarted"><span class="taxonomy-label">GetSarted</span><span class="taxonomy-count">2</span></a></li>
         
-          <li><a class="taxonomy-term" href="https://oakestra.io/tags/getstarted/" data-taxonomy-term="getstarted"><span class="taxonomy-label">getstarted</span><span class="taxonomy-count">1</span></a></li>
+          <li><a class="taxonomy-term" href="https://oakestra.io/tags/getstarted/" data-taxonomy-term="getstarted"><span class="taxonomy-label">GetStarted</span><span class="taxonomy-count">4</span></a></li>
         
       </ul>
     </div>
@@ -267,7 +274,7 @@ Root Orchestrator The Root Orchestrator is a centralized control plane that is a
   
 
 		
-			<p class="reading-time"><i class="fa-solid fa-clock" aria-hidden="true"></i>&nbsp; 2 minute read &nbsp;</p>
+			<p class="reading-time"><i class="fa-solid fa-clock" aria-hidden="true"></i>&nbsp; 4 minute read &nbsp;</p>
 
 		
 	</header>    
@@ -284,11 +291,11 @@ Root Orchestrator The Root Orchestrator is a centralized control plane that is a
 <li>Root Orchestrator</li>
 <li>Cluster Orchestrator</li>
 <li>Node Engine</li>
-<li>NetManager (optional)</li>
+<li>NetManager (optional, detailed in the networking section of the Wiki)</li>
 </ul>
 <p>This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.</p>
 <h2 id="root-orchestrator">Root Orchestrator</h2>
-<p><img src="/oakestra/RootArch.png" alt=""></p>
+<p><img src="/oakestra/RootArch.png" alt="root architecture"></p>
 <p>The Root Orchestrator is a centralized control plane that is aware of the participating clusters.</p>
 <p>This picture describes the containers that compose the Root Orchestrator. As you may have seen we use docker-compose to bring up the orchestrators. This is because each block of this picture is <em>currently</em> a separated container.</p>
 <ul>
@@ -300,30 +307,54 @@ changing regularly, such as the number of worker nodes per cluster, total amount
 <li>The Root Network Components are detailed in the Oakestra-Net Wiki.</li>
 </ul>
 <h3 id="system-manager-apis">System Manager APIs</h3>
-<p>TODO</p>
-<h3 id="jobs-db-structure">Jobs DB Structure</h3>
-<p>TODO</p>
-<h3 id="clusters-db-structure">Clusters DB Structure</h3>
-<p>TODO</p>
-<h3 id="scheduler-algorithms">Scheduler Algorithms</h3>
-<p>TODO</p>
+<p>At startup, the System Manager exposes the public APIs at &lt;root_orch_ip&gt;:10000
+Thr API documentation is available at <code>&lt;root_orch_ip&gt;:10000/api/docs</code></p>
 <h3 id="consideration-regarding-failure-and-scalability">Consideration regarding failure and scalability:</h3>
-<p>The main problem of a centralized control plane is that it can act as a single point of failure. By design without a Root Orchestrator, the clusters are able to satisfy the SLA for the deployed applications internally, the only affected functionalities are the deployment of new services and the intra-cluster migrations. To avoid failure and increase resiliency an idea is to make the component able to scale by introducing a load balancer in front of the replicated components. However, this feature is not implemented yet.</p>
+<p>The main problem of a centralized control plane is that it can act as a single point of failure. By design without a Root Orchestrator, the clusters are able to satisfy the SLA for the deployed applications internally, the only affected functionalities are the deployment of new services and the intra-cluster migrations. To avoid failure and increase resiliency, an idea is to make the component able to scale by introducing a load balancer in front of the replicated components. However, this feature is not implemented yet.</p>
 <h2 id="cluster-orchestrator">Cluster Orchestrator</h2>
-<p><img src="/oakestra/ClusterArch.png" alt=""></p>
-<p>TODO</p>
-<h3 id="cluster-manager-apis">Cluster Manager APIs</h3>
-<p>TODO</p>
+<p><img src="/oakestra/clusterArch.png" alt="cluster architecture"></p>
+<p>The Cluster orchestrator is a twin of the root but with the following differences:</p>
+<ul>
+<li>The cluster orchestrator&rsquo;s scope is the end worker node devices.</li>
+<li>A cluster orchestrator performs aggregation. It aggregates the worker node resources and does not expose the cluster composition directly to the root.</li>
+<li>The cluster uses MQTT for communication with the worker nodes.</li>
+</ul>
 <h3 id="mqtt-topics">MQTT Topics</h3>
-<p>TODO</p>
-<h3 id="jobs-db-structure-1">Jobs DB structure</h3>
-<p>TODO</p>
-<h3 id="nodes-db-structure">Nodes DB structure</h3>
-<p>TODO</p>
-<h3 id="schedulers-algorithms">Schedulers Algorithms</h3>
-<p>TODO</p>
+<p>The topics used to interact with the worker nodes are:</p>
+<ul>
+<li>&ldquo;nodes/<node-id>/information$&rdquo;: topic where each worker periodically posts its resources usage</li>
+<li>&ldquo;nodes/<node-id>/job$&rdquo;: used to perform deployments on a worker node and receive back the feedback</li>
+<li>&ldquo;nodes/<node-id>/jobs/resources$&rdquo;: used to post the resource usage and status of the running instances in a worker node</li>
+</ul>
+<h2 id="schedulers-algorithms">Schedulers Algorithms</h2>
+<p><img src="/oakestra/scheduling-celery-worker.png" alt="scheduler"></p>
+<p>The schedulers, at each level, receive Job Placement tasks and return a placement decision.
+At the root level, the placement decision is a Cluster. At the cluster level, the placement decision is a worker node.</p>
+<p>A job placement task is a Job structure composed of:</p>
+<ul>
+<li>Service
+<ul>
+<li>Instances</li>
+<li>Requirements</li>
+</ul>
+</li>
+</ul>
+<p>Placement currently uses the default Best Fist algorithm. You can find more details in the scheduling section of the wiki.</p>
 <h2 id="worker-node">Worker Node</h2>
-<p>TODO</p>
+<p>A machine, in order to be qualified as Worker Node, must contain a Node Engine and optionally a Net Manager. The former enables the deployment of applications accordingly to the runtimes installed. The latter plugs the networking components to enable communication across the applications deployed.</p>
+<p><img src="/oakestra/nodeEngineArch.png" alt="NodeEngine"></p>
+<p>The Node Engine is a single binary implemented using Go Lang and is composed of the following modules:</p>
+<ul>
+<li>MQTT: This is the interface between the worker and the Cluster. The deployment commands, node status updates, and jobs updates use this component.</li>
+<li>Models: This contains the models that describe the node and the jobs.
+<ul>
+<li>Node: describes the resources of the node that are transmitted to the cluster. This is decomposed into dynamic resources and static. The status of static resources is transmitted only at startup. Dynamic resource statuses such as cpu/memory usage are updated regularly.</li>
+<li>Service: describe the fields of the services that are managed by this implementation of the worker node, as well as the real-time service usage statistics that must be monitored.</li>
+</ul>
+</li>
+<li>Jobs: Background jobs that monitor the status of the Worker node itself and the applications deployed.</li>
+<li>Runtimes: Contains the glue with the supported system runtimes. Right now, the runtime dispatcher only supports containerd and, therefore, &ldquo;containers&rdquo; is the only runtime available. Any new runtime integration is implemented here. We&rsquo;re currently working on Unikernels integration.</li>
+</ul>
 
 	
 	

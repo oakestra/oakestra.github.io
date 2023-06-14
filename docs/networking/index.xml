@@ -14,15 +14,193 @@
     
     
     <item>
-      <title>Docs: Oakestra mesh network</title>
-      <link>https://oakestra.io/docs/networking/oakestra-mesh/</link>
-      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <title>Docs: Semantic addressing</title>
+      <link>https://oakestra.io/docs/networking/semantic-addressing/</link>
+      <pubDate>Wed, 01 Mar 2023 12:56:27 +0200</pubDate>
       
-      <guid>https://oakestra.io/docs/networking/oakestra-mesh/</guid>
+      <guid>https://oakestra.io/docs/networking/semantic-addressing/</guid>
       <description>
         
         
-        &lt;p&gt;#Docs coming soon, stay tuned&lt;/p&gt;
+        &lt;p&gt;The default networking component of Oakestra envisions IP communication based on a semantic balancing policy expressed by some special IP addresses.&lt;/p&gt;
+&lt;h2 id=&#34;what-do-we-mean-by-semantic-addressing&#34;&gt;What do we mean by semantic addressing?&lt;/h2&gt;
+&lt;p&gt;In Oakestra, the addresses belonging to the subnetwork 10.30.0.0/16 are called &lt;strong&gt;Service IPs&lt;/strong&gt;. Similar to a cluster IP in Kubernetes, these addresses reference all the instances(replicas) of a microservice with a single address. This address does not change when scaling up the instances or when migrating them.
+Anyway, unlike the Kubernetes cluster IP, when deploying a service in Oakestra, the platform provides as many ServiceIP addresses as the number of balancing policies supported (and active) within the platform.
+On top of that, we have a special subset of the Service IPs called &lt;strong&gt;Instance IPs&lt;/strong&gt;. An Instance IP balances the traffic only to a specific service instance within the system.
+Let&amp;rsquo;s take a look at the following example.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/network/NetExample.png&#34; alt=&#34;NetExample&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A developer can communicate with any instance of Service B either with &lt;strong&gt;Round Robin&lt;/strong&gt; balancing policy or the &lt;strong&gt;Closest&lt;/strong&gt; balancing policy. The former balances the traffic evenly between all the instances, and the latter finds the geographically closer instance.&lt;/p&gt;
+&lt;p&gt;Service A performs the first request &lt;img src=&#34;https://oakestra.io/network/NetArchExample_evenlope_1.png&#34; alt= &#34;envelope_1&#34; width=&#34;30&#34;&gt; using the ServiceIP &lt;font style=&#34;color:red&#34;&gt;10.30.0.1&lt;/font&gt; representing the closest instance balancing policy.
+The network components&amp;rsquo; proxy converts the address to the Namespace IP of Service B Instance 1, which looks like it is the geographically closer service. The message will be, therefore &lt;strong&gt;transparently&lt;/strong&gt; delivered to the closest instance of Service B. Note that the Namespace IP is the real address of the instance, the one provisioned at deployment time, unique and dynamic. An application developer never sees or uses this address, as it depends on the subnetwork of the specific machine where the service is deployed. Find out more about the Namespace IP by reading the implementation details.&lt;/p&gt;
+&lt;p&gt;Then, Service A performs a second request &lt;img src=&#34;https://oakestra.io/network/NetArchExample_evenlope_2.png&#34; alt= &#34;envelope_1&#34; width=&#34;30&#34;&gt; using the ServiceIP &lt;font style=&#34;color:blue&#34;&gt;10.30.0.2&lt;/font&gt; representing the Round Robin balancing policy. The network components&amp;rsquo; proxy converts the address to the Namespace IP of Service B Instance 3, which is randomly chosen among all the available instances.&lt;/p&gt;
+&lt;p&gt;When Service A performs a third request &lt;img src=&#34;https://oakestra.io/network/NetArchExample_evenlope_3.png&#34; alt= &#34;envelope_3&#34; width=&#34;30&#34;&gt; using again the ServiceIP &lt;font style=&#34;color:blue&#34;&gt;10.30.0.2&lt;/font&gt; representing the Round Robin balancing policy, this time, the network components&amp;rsquo; proxy randomly chooses Service B Instance 2.&lt;/p&gt;
+&lt;p&gt;The last request &lt;img src=&#34;https://oakestra.io/network/NetArchExample_evenlope_4.png&#34; alt= &#34;envelope_4&#34; width=&#34;30&#34;&gt; from Service A to Service B uses the Instance IP representing instance 3. The proxy component then automatically chooses Service B Instance 3&lt;/p&gt;
+&lt;h4 id=&#34;why-do-we-need-instance-ips&#34;&gt;Why do we need Instance IPs?&lt;/h4&gt;
+&lt;p&gt;Mainly for 2 reasons:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Instance IPs represent a service&amp;rsquo;s instance uniquely within the platform. Even when the instance migrates toward new devices, the Instance IP always represents the instance and not the machine where the instance is deployed. The Instance IP is the foundation that enables an overlay network that abstracts services from machines.&lt;/li&gt;
+&lt;li&gt;When forwarding the packet, the proxy uses the sender&amp;rsquo;s Instance IP in the &lt;code&gt;from&lt;/code&gt; header field of the packet. This way, any response or connection-oriented protocol can transparently work, and we guarantee the original sender receives the response.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;why-service-ips-why-do-we-need-multiple-balancing-policies&#34;&gt;Why Service IPs? Why do we need multiple balancing policies?&lt;/h4&gt;
+&lt;p&gt;At the Edge, Oakestra&amp;rsquo;s net component enables flexibility in the way developers can balance the traffic without the requirement of adapting the code. Just by using a Service IP instead of a regular IP, a developer can achieve balancing by using any protocol based on UDP or TCP and can also customize the balancing behavior of each request accordingly to their need. Edge computing brings resources closer to the users, so one might need to forward some traffic with very low latency using Closest balancing policy, or one might just want to evenly balance another endpoint with Round Robin policy.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: IPv4 Service IP implementation details</title>
+      <link>https://oakestra.io/docs/networking/service-ip-overlay-implementation/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      
+      <guid>https://oakestra.io/docs/networking/service-ip-overlay-implementation/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In this wiki page, we&amp;rsquo;ll go through the details of the IPv4 implementation of the Service IPs in Oakestra.&lt;/p&gt;
+&lt;p&gt;The building blocks are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Network Overlays&lt;/li&gt;
+&lt;li&gt;Proxy Translation&lt;/li&gt;
+&lt;li&gt;Interest registration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;network-overlays&#34;&gt;Network Overlays&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/network/Overlay-layers.png&#34; alt=&#34;Overlay Example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The abstraction required to enable service-to-service communication spans 3 different layers.&lt;/p&gt;
+&lt;h4 id=&#34;physical-layer&#34;&gt;Physical layer&lt;/h4&gt;
+&lt;p&gt;At the very bottom of the hierarchy, we have the physical layer, where we address machines rather than microservices or containers.
+In this space, an IP address is an address that can be used to uniquely identify a machine and reach it. In Oakestra, we keep track of this layer, pairing each service with a &lt;strong&gt;Node IP&lt;/strong&gt; and &lt;strong&gt;Port&lt;/strong&gt;. The pair IP:port enables us to reach multiple devices sharing the same IP address (NAT). Each worker node exposes the network stack required to enable the upper layers of the overlay at the assigned port.&lt;/p&gt;
+&lt;h4 id=&#34;virtual-layer&#34;&gt;Virtual layer&lt;/h4&gt;
+&lt;p&gt;Each physical machine is provisioned with a virtual subnetwork. The subnetwork is assigned by the root orchestrator. When instantiating a container, the system provides a so-called &lt;strong&gt;Namespace IP&lt;/strong&gt;, which is an IPv4 address provisioned from the virtual subnetwork of the node. This address is used to route the traffic within the platform to the running containers. The current implementation uses a default fixed netmask of 26 bits for the node subnetwork from the private 10.18.0.0/16 network, allowing over 1024 devices, each supporting 64 containers, for a maximum of 65536 containers. Support for more devices and bigger subnetworks can be achieved by changing the default subnetwork to, i.e., 10.0.0.0/8 or even further transitioning to virtual IPv6 networking.&lt;/p&gt;
+&lt;h4 id=&#34;service-layer&#34;&gt;Service layer&lt;/h4&gt;
+&lt;p&gt;This is the layer where we abstract from the virtualization technology in use to a Service.
+The service layer does not take into consideration the physical positioning of services, the number of instances of each service, the subnetworks, or the routing. This layer provides abstractions that allow the developers to forget about the underlying implementation and just address the service required for the business logic of the application.
+This abstraction is enabled by the &lt;strong&gt;Service IPs&lt;/strong&gt;. These are a set of IPv4 addresses that identify services and all their instances and that can be used to transparently pick the right instance and establish a connection. A Service IP expresses an inherent balancing policy, and, for each service, we have as many Service IPs as the implemented system balancing policies (Look at the Semantic Addressing page of this wiki for more details).&lt;/p&gt;
+&lt;p&gt;A subset of the Service IPs are the &lt;strong&gt;Instance IPs&lt;/strong&gt;. They balance the traffic always to a specific instance of a service. Therefore, when deploying a service, the system will provision the following addresses:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 Load Balanced Service IP for each balancing policy implemented in the system&lt;/li&gt;
+&lt;li&gt;1 Instance IP for each new instance of the service that has been deployed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The latest version of Oakestra (v0.4.201), only implements Round Robin Service IPs.&lt;/p&gt;
+&lt;p&gt;One might ask, &lt;strong&gt;what&amp;rsquo;s the difference between an Instance IP and a Namespace IP?&lt;/strong&gt; They operate on 2 different abstraction layers. The Namespace IP depends on the virtualized subnetwork of a worker node and changes when migrating an application from one node to another. It cannot be provisioned beforehand and must not be used by developers. The Instance IP is part of the Service layer abstraction. Therefore it identifies an instance regardless of migration operations, scales up, scales down, and can be provisioned even before the deployment of a service instance.&lt;/p&gt;
+&lt;h2 id=&#34;proxy-translation&#34;&gt;Proxy Translation&lt;/h2&gt;
+&lt;p&gt;The Service layer networking is achieved thanks to a worker-level tun-proxy transparently instantiated as part of the Oakestra network component. The following picture is an example of what happens in a worker node based on the IPv4 implementation of the NetManager component.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/network/Overlay-example.png&#34; alt=&#34;Overlay Example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In this example, we have two worker nodes, namely Node 1 and Node 2, each containing two containers. The containers are instantiated and managed by the NodeEngine (See High-Level Architecture wiki), while the Net Manager, creates a network namespace for each container (the cloud surrounding the container), enabling the Virtual Layer abstraction.&lt;/p&gt;
+&lt;p&gt;The Service Layer abstraction is realized hierarchically with a mechanism of route Interest Registration and Proxying Translation. This section details the proxy Translation, hence the mechanism that allows transparent conversion of Service IPs into Namespace IPs, therefore transparent Virtual Layer - Service Layer conversion.&lt;/p&gt;
+&lt;p&gt;Following the example mentioned above, suppose we deployed services X1 and X3 using the following deployment descriptor.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{
+  &amp;#34;sla_version&amp;#34; : &amp;#34;v2.0&amp;#34;,
+  &amp;#34;customerID&amp;#34; : &amp;#34;Admin&amp;#34;,
+  &amp;#34;applications&amp;#34; : [
+    {
+      &amp;#34;applicationID&amp;#34; : &amp;#34;&amp;#34;,
+      &amp;#34;application_name&amp;#34; : &amp;#34;X&amp;#34;,
+      &amp;#34;application_namespace&amp;#34; : &amp;#34;default&amp;#34;,
+      &amp;#34;application_desc&amp;#34; : &amp;#34;X application&amp;#34;,
+      &amp;#34;microservices&amp;#34; : [
+        {
+          &amp;#34;microserviceID&amp;#34;: &amp;#34;&amp;#34;,
+          &amp;#34;microservice_name&amp;#34;: &amp;#34;X1&amp;#34;,
+          &amp;#34;microservice_namespace&amp;#34;: &amp;#34;default&amp;#34;,
+          &amp;#34;virtualization&amp;#34;: &amp;#34;container&amp;#34;,
+          &amp;#34;code&amp;#34;: &amp;#34;docker.io/X/X1&amp;#34;,
+          &amp;#34;addresses&amp;#34;: {
+            &amp;#34;rr_ip&amp;#34;: &amp;#34;10.30.0.1&amp;#34;
+          },
+        },
+        {
+          &amp;#34;microserviceID&amp;#34;: &amp;#34;&amp;#34;,
+          &amp;#34;microservice_name&amp;#34;: &amp;#34;X3&amp;#34;,
+          &amp;#34;microservice_namespace&amp;#34;: &amp;#34;default&amp;#34;,
+          &amp;#34;virtualization&amp;#34;: &amp;#34;container&amp;#34;,
+          &amp;#34;code&amp;#34;: &amp;#34;docker.io/X/X3&amp;#34;,
+          &amp;#34;addresses&amp;#34;: {
+            &amp;#34;rr_ip&amp;#34;: &amp;#34;10.30.1.30&amp;#34;
+          	},
+        }
+      ]
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Therefore we register into the platform two services, &lt;code&gt;X.default.X1.default&lt;/code&gt; and &lt;code&gt;X.default.X3.default&lt;/code&gt;. At deployment time, we request 2 instances of X1 (&lt;code&gt;X.default.X1.default.0&lt;/code&gt; and &lt;code&gt;X.default.X1.default.1&lt;/code&gt;) and one instance of X3 (&lt;code&gt;X.default.X3.default.0&lt;/code&gt;). The scheduling decision places the instances as shown in the picture.
+From the deployment descriptor, we asked the platform to provision the Service IP &lt;code&gt;10.30.1.30&lt;/code&gt; to X3 with Round Robin policy. Therefore, X1 will use this address to perform load-balanced requests toward X3.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;font style=&#34;color:black;background:red&#34;&gt;&lt;b&gt;   1   &lt;/b&gt;&lt;/font&gt; &lt;font style=&#34;color:black;background:orange&#34;&gt;&lt;b&gt; http://10.30.1.30:30443/api/hello &lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;X1 performs a GET request using the Service IP &lt;code&gt;10.30.1.30&lt;/code&gt;. The default getaway for the &lt;code&gt;10.0.0.0/8&lt;/code&gt; subnetwork is the ProxyTUN component of the Net Manager. The request will be directed there.
+From an L4 perspective, the packet will look somewhat like this:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;from ip: 10.19.1.3
+to ip: 10.30.1.30
+from port: 34278
+to port: 30443
+payload: ....
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The &lt;code&gt;from ip&lt;/code&gt;, is the Virtual Layer IP, the &lt;strong&gt;Namespace IP&lt;/strong&gt; of the container. This Namespace IP is assigned to the VETH device used to connect the container namespace to the virtual bridge in the system namespace.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;font style=&#34;color:black;background:red&#34;&gt;&lt;b&gt;   2   &lt;/b&gt;&lt;/font&gt; &lt;font style=&#34;color:black;background:orange&#34;&gt;&lt;b&gt; Cache Miss &lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;When receiving the request packet, the proxy does not yet have an active conversion entry in its cache. This results in a cache miss. With a cache miss, the proxy TUN fetches the information required for the conversion to the Environment Manager. This component keeps track of the services deployed internally in the worker node, as well as the relevant services deployed on other worker nodes.&lt;/p&gt;
+&lt;p&gt;This is an example of the Conversion Table maintained by the Environment Manager at this moment.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/network/Overlay-example-table-before.png&#34; alt=&#34;Overlay Example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The entries of the table keep the cross-layer information of each service, including the physical layer address and port, the virtual layer address, and all the service layer addresses. As the number of records is limited, the table only keeps track of the services currently deployed in this machine. No interest in external services has been recorded so far.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;font style=&#34;color:black;background:red&#34;&gt;&lt;b&gt;   3   &lt;/b&gt;&lt;/font&gt; &lt;font style=&#34;color:black;background:orange&#34;&gt;&lt;b&gt; Table query &lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;When the address &lt;code&gt;10.30.1.30&lt;/code&gt; must be converted using the Conversion Table, this will result in a &lt;strong&gt;table miss&lt;/strong&gt;. The Environment Manager is then forced to ask the cluster orchestration for an entry that enables the conversion of this address.
+This operation is called &lt;strong&gt;table query&lt;/strong&gt; and serves a double purpose:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Hierarchical lookup to fetch the required information.&lt;/li&gt;
+&lt;li&gt;If the information exists, an interest in that information is registered. Therefore any update, such as a service migration or service scaling, results in an update for that table entry.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This is one of the building blocks of the proposed abstraction, and it is detailed in the Interest Registration section.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;font style=&#34;color:black;background:red&#34;&gt;&lt;b&gt;   4   &lt;/b&gt;&lt;/font&gt; &lt;font style=&#34;color:black;background:orange&#34;&gt;&lt;b&gt; Update &lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;Upon completion of the table query, the internal Conversion table is updated as follows.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/network/Overlay-example-table-after.png&#34; alt=&#34;Overlay Example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The cluster resolved the Service IP &lt;code&gt;10.30.1.30&lt;/code&gt; into a table entry describing only &lt;code&gt;X.default.X3.default.0&lt;/code&gt; (apparently, no other instances are in the system yet).&lt;/p&gt;
+&lt;p&gt;The Environment Manager can now answer the proxy with the &lt;em&gt;virtual layer&lt;/em&gt; and &lt;em&gt;physical layer&lt;/em&gt; addresses resolving the previous cache miss and the balancing policy metadata associated with the address. In this case the response will look like this:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;policy: Round Robin
+instances: [
+	{
+		NS IP: 10.21.0.1
+		Node IP: 131.1.21.5
+		Node port: 55301
+		Cluster: 1
+		...
+		... 
+	}
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;&lt;font style=&#34;color:black;background:red&#34;&gt;&lt;b&gt;   5   &lt;/b&gt;&lt;/font&gt; &lt;font style=&#34;color:black;background:orange&#34;&gt;&lt;b&gt; Service IP conversion: from: 10.30.1.30 to 10.21.0.1 &lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;Given the resolution details, the proxy, using the balancing policy information, picks an instance from the instance list and adds an entry to the conversion list.&lt;/p&gt;
+&lt;p&gt;In this example, the entry will look like this:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;                FROM              TO
+                __________________________________
+matching rule:  10.19.1.3:34278 - 10.30.1.30:30443
+convert to:     10.30.0.2:34278 - 10.21.0.1:30443
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Notice how the proxy also replaces the &lt;code&gt;from&lt;/code&gt; address with the &lt;strong&gt;Instance IP&lt;/strong&gt; of X1.&lt;/p&gt;
+&lt;p&gt;In abstract terms, the proxy is converting a the incoming packet from the form of&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{
+	from:&amp;lt;Sender Virtual Layer Address&amp;gt; 
+	to:&amp;lt;Receiver Service Layer Address&amp;gt;
+} 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;to&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{
+	from:&amp;lt;Sender Service Layer Address&amp;gt;
+	to:&amp;lt;Receiver Virtual Layer Address&amp;gt; 
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The conversion just shown is the key to enabling transparent Service Layer abstraction.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;font style=&#34;color:black;background:red&#34;&gt;&lt;b&gt;   6   &lt;/b&gt;&lt;/font&gt; &lt;font style=&#34;color:black;background:orange&#34;&gt;&lt;b&gt; UDP to 131.1.21.5:55301 &lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;In this step, we see how the ProxyTUN uses the &lt;strong&gt;Physical layer&lt;/strong&gt; information to create a tunnel between Node 1 and Node 2 and forward the packet to the destination machine&amp;rsquo;s Net Manager.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;font style=&#34;color:black;background:red&#34;&gt;&lt;b&gt;   7   &lt;/b&gt;&lt;/font&gt; &lt;font style=&#34;color:black;background:orange&#34;&gt;&lt;b&gt; http://10.21.0.1:30443/api/hello &lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;The Net Manager does not need to translate the incoming packet as the recipient IP is a &lt;strong&gt;Virtual layer&lt;/strong&gt; known address. Notice how a response from X3 to X1 follows the same steps shown in this example.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;interest-registration&#34;&gt;Interest Registration&lt;/h2&gt;
+&lt;p&gt;Here we show a sequence diagram of how a table query and an interest registration work in the worker-cluster-root hierarchy.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://oakestra.io/network/Overlay-example-seq.png&#34; alt=&#34;Overlay Example&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The environment manager keeps the &amp;lsquo;interests subscriptions&amp;rsquo; for 10 seconds. If the route is not used for more than 10 seconds, the interest is removed, and the table entry is cleared.&lt;/li&gt;
+&lt;li&gt;A cluster maintains an interest as long as at least one worker node is interested in that route.&lt;/li&gt;
+&lt;li&gt;A worker node is ALWAYS subscribed to interests regarding the instances deployed internally.&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
