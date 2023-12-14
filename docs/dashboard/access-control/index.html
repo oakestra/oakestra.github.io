@@ -35,7 +35,7 @@ It is important to note that after the initial launch of the System Manager, it 
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oakestra.io/docs/dashboard/access-control/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2022-10-05T09:56:27+02:00" />
-<meta property="article:modified_time" content="2023-05-15T18:51:32+02:00" />
+<meta property="article:modified_time" content="2023-09-21T15:11:02+02:00" />
 
 <meta itemprop="name" content="Access Control">
 <meta itemprop="description" content="Access control Upon successful installation and accessibility of the Dashboard, our attention can shift to configuring access control to resources for various users.
@@ -44,8 +44,8 @@ Credentials for the admin user:
 Username: Admin
 Password: Admin
 It is important to note that after the initial launch of the System Manager, it is imperative to change the password for the Admin user as an added measure of security."><meta itemprop="datePublished" content="2022-10-05T09:56:27+02:00" />
-<meta itemprop="dateModified" content="2023-05-15T18:51:32+02:00" />
-<meta itemprop="wordCount" content="295">
+<meta itemprop="dateModified" content="2023-09-21T15:11:02+02:00" />
+<meta itemprop="wordCount" content="322">
 <meta itemprop="keywords" content="GetStarted," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Access Control"/>
 <meta name="twitter:description" content="Access control Upon successful installation and accessibility of the Dashboard, our attention can shift to configuring access control to resources for various users.
@@ -178,7 +178,7 @@ It is important to note that after the initial launch of the System Manager, it 
         <li><a href="#authorization-header">Authorization Header</a></li>
       </ul>
     </li>
-    <li><a href="#admin-privileges">Admin Privileges</a></li>
+    <li><a href="#organization-login">Organization Login</a></li>
   </ul>
 </nav>
       </div>
@@ -311,8 +311,10 @@ In case of forbidden access corresponding warnings will be displayed in the Dash
 <p>Using the authorization header is the only way to make Dashboard function as a specific user. However, it is worth noting that if plain HTTP is used, the traffic is vulnerable to <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">MITM attacks</a>, which could result in potential security risks.</p>
 <p>To enable Dashboard to utilize the authorization header, simply pass <code>Authorization: Bearer &lt;token&gt;</code> with every request made to Dashboard. Currently, this is automatically executed with an HTTP interceptor.</p>
 <p>To test this feature swiftly, try out the <a href="https://chrome.google.com/webstore/detail/requestly-redirect-url-mo/mdnleldcmiljblolnjhpnblkcekpdkpa">Requestly</a> Chrome browser plugin that enables manual modification of request headers.</p>
-<h2 id="admin-privileges">Admin Privileges</h2>
-<p><strong>IMPORTANT:</strong> Before proceeding, it is crucial to understand the potential security implications of granting admin privileges to Dashboard&rsquo;s Service Account.</p>
+<h2 id="organization-login">Organization Login</h2>
+<p>If you want to log in to an organization you have to enter the organization name if there is no organization yet or if no organization is entered, you will be automatically logged in to the ROOT organization.</p>
+<p>Here you can see the login to the <strong>sampleOrga:</strong></p>
+<p><img src="/orga-login.gif" alt=""></p>
 
 	
 	
