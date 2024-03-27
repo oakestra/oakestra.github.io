@@ -14,6 +14,44 @@
     
     
     <item>
+      <title>Docs: Contributor Git Hooks Guide</title>
+      <link>https://oakestra.io/docs/contribute/git-hooks-guide/</link>
+      <pubDate>Wed, 20 Mar 2024 15:56:27 +0200</pubDate>
+      
+      <guid>https://oakestra.io/docs/contribute/git-hooks-guide/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;integrating-pre-commit-into-our-development-workflow&#34;&gt;Integrating Pre-commit into Our Development Workflow&lt;/h1&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;Git hooks are scripts that Git executes before or after events such as: pre-commit, pre-push. These hooks are a powerful part of the Git ecosystem, enabling custom actions based on the current repository state or the changes being committed. They are used for a variety of tasks such as syntax checking, testing, linting, and auto-formatting code before it is committed or pushed. More information on git hooks is found &lt;a href=&#34;https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;why-git-hooks&#34;&gt;Why Git hooks&lt;/h3&gt;
+&lt;p&gt;Git pipelines often fail because of linting issues, which then requires another commit to fix it, leaving the history of commits just filled with &amp;ldquo;liniting fix&amp;rdquo;.&lt;/p&gt;
+&lt;h2 id=&#34;why-pre-commit&#34;&gt;Why &lt;code&gt;pre-commit&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Git hooks are not shared across the repo, and it&amp;rsquo;s only available locally. This means every developer will need to implement their own hooks. Hence we use a tool called &lt;code&gt;pre-commit&lt;/code&gt;. Through this tool, developers define a configuration file that is commited to the repository, ensuring that all contributors have access to the same hook configurations.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note that the tool name, &lt;code&gt;pre-commit&lt;/code&gt;, is misleading as it implies it only provides pre-commit hooks, however it also provides other stages/hooks such as &lt;code&gt;pre-push&lt;/code&gt;.&lt;/em&gt;
+More information on the tool can be found &lt;a href=&#34;https://pre-commit.com/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;setting-up&#34;&gt;Setting Up:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;First, ensure that you have pre-commit installed. It can be installed via pip or Homebrew (for macOS users):&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install pre-commit
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# or&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install pre-commit
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Install the git hooks scripts&lt;/strong&gt;:
+In the Oakestra repo, there is a file called &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt; containing git hooks. They can be installed by running:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pre-commit install --hook-type pre-push
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note: &lt;code&gt;--hook-type&lt;/code&gt; specifies the the type of hook. In our case we want to do the checks before pushing to remote repo. Our team felt that git hook type &lt;code&gt;pre-push&lt;/code&gt; offers a good compromise, where developers just want to commit anyways but not yet push and just fix the linting issues later. With &lt;code&gt;pre-push&lt;/code&gt; hook users avoid force pushing and can just squash their changes locally and do a normal push.&lt;/p&gt;
+&lt;p&gt;For more information on how to configure this file visit the &lt;a href=&#34;https://pre-commit.com/&#34;&gt;official website&lt;/a&gt; of the tool.&lt;/p&gt;
+&lt;h2 id=&#34;contributing-code&#34;&gt;Contributing Code&lt;/h2&gt;
+&lt;p&gt;When you&amp;rsquo;re ready to contribute code, simply add your changes and push as you normally would. The pre-push hooks will automatically run, checking your code against the configured linters. If any issues are found, the push will be aborted, and you will need to fix the issues before retrying the push.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Contributor Python Code Style Guide</title>
       <link>https://oakestra.io/docs/contribute/python-style-guide/</link>
       <pubDate>Thu, 30 Nov 2023 15:56:27 +0200</pubDate>
