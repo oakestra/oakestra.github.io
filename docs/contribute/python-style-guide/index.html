@@ -35,7 +35,7 @@ Besides that, having and enforcing a common code style guide helps the team to s
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oakestra.io/docs/contribute/python-style-guide/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-11-30T15:56:27+02:00" />
-<meta property="article:modified_time" content="2024-01-31T17:33:27+01:00" />
+<meta property="article:modified_time" content="2024-04-18T12:10:46+02:00" />
 
 <meta itemprop="name" content="Contributor Python Code Style Guide">
 <meta itemprop="description" content="The most important shared understanding should be that spending additional time on high-quality and easily comprehensable/readable code is absolutely worth it and crucial for success in software engineering.
@@ -44,7 +44,7 @@ https://bayrhammer-klaus.medium.com/you-spend-much-more-time-reading-code-than-w
 https://google.github.io/styleguide/pyguide.html#385-block-and-inline-comments
 https://google.github.io/styleguide/pyguide.html#386-punctuation-spelling-and-grammar
 Besides that, having and enforcing a common code style guide helps the team to stick to and create high quality code that is uniform, thus easier to get used to (onboarding) and comprehend. We want to help and make life easier for our individual team members and not enforce/punish them during their work."><meta itemprop="datePublished" content="2023-11-30T15:56:27+02:00" />
-<meta itemprop="dateModified" content="2024-01-31T17:33:27+01:00" />
+<meta itemprop="dateModified" content="2024-04-18T12:10:46+02:00" />
 <meta itemprop="wordCount" content="723">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Contributor Python Code Style Guide"/>
@@ -322,7 +322,7 @@ Black can target a single file or the entire root directory.</p>
 </ol>
 <h3 id="integrating-black-in-pycharm">Integrating Black in PyCharm</h3>
 <p>There is a plugin for black:</p>
-<p><img src="images/black_connect_marketplace.png" alt="BlackConnect"></p>
+<p><img src="/img/docs/contribute/python-style-guide/black_connect_marketplace.png" alt="BlackConnect"></p>
 <p>For it to work properly you need to do the following:
 Read the plugin description carefully
 Install <code>blackd</code> via pip.</p>
@@ -330,17 +330,17 @@ Install <code>blackd</code> via pip.</p>
 <p>You can connect to the server by running this command: <code>blackd</code></p>
 <p>You can then trigger the black formatting by pressing &quot; <code>Alt + Shift + B</code> &ldquo;.</p>
 <p>You can also configure the following:</p>
-<p>Run black on file save &amp; refactor:
-<img src="images/blackd_save.png" alt="blackd_save">
-<img src="images/blackd_settings.png" alt="blackd_settings"></p>
-<p>Further settings can be found here:
-<img src="images/balckd_settings_plus.png" alt="balckd_settings_plus"></p>
+<p>Run black on file save &amp; refactor:</p>
+<p><img src="/img/docs/contribute/python-style-guide/blackd_save.png" alt="blackd_save"></p>
+<p><img src="/img/docs/contribute/python-style-guide/blackd_settings.png" alt="blackd_settings"></p>
+<p>Further settings can be found here:</p>
+<p><img src="/img/docs/contribute/python-style-guide/balckd_settings_plus.png" alt="balckd_settings_plus"></p>
 <p>Make sure to change the Line length to 100.</p>
 <p>If you want the plugin to start the blackd connection on IDE startup make sure to provide the Path to your local blackd installation.</p>
 <h2 id="flake8"><em>Flake8</em></h2>
 <p>Flake provides concrete custom errorcodes for found issues.
-Feel free to look them up online to properly understand how to fix them. E.g. for the issue code F841
-<img src="images/flake8_online.png" alt="Flake error online lookup"></p>
+Feel free to look them up online to properly understand how to fix them. E.g. for the issue code F841</p>
+<p><img src="/img/docs/contribute/python-style-guide/flake8_online.png" alt="Flake error online lookup"></p>
 <h3 id="installation-1">Installation</h3>
 <p><code>pip install flake8</code></p>
 <h3 id="terminal-usage-1">Terminal Usage</h3>
@@ -350,7 +350,7 @@ Unlike Black however, flake8 cannot fix its found issues on its own because sema
 <p><code>flake8 --max-line-length=100 .</code></p>
 <h3 id="enabling-flake8-highlighting-in-vscode">Enabling flake8 highlighting in VSCode</h3>
 <p>As already mentioned flake8 sadly cannot fix our logical issues for us, however it can point them out directly in the code by highlighting possible mistakes and when you hover over them it will point to a concrete so-called flake-error that can be looked up online to figure out how to fix it.</p>
-<p><img src="images/flake8_vscode_example.png" alt="Example of flake8 VSCode highlighting"></p>
+<p><img src="/img/docs/contribute/python-style-guide/flake8_vscode_example.png" alt="Example of flake8 VSCode highlighting"></p>
 <p>Install the official (from Microsoft) &ldquo;Flake8&rdquo; extension.</p>
 <h3 id="making-flake8-work-in-pycharm">Making flake8 work in PyCharm</h3>
 <p>There is sadly no trivial way of including flake8 into PyCharm i.e. there is no plugin for it, however I have found the following resources that might help:</p>
@@ -371,8 +371,8 @@ Unlike Black however, flake8 cannot fix its found issues on its own because sema
 <p>Similar to Black&rsquo;s extension the official (Microsoft) &ldquo;isort&rdquo; extension will automatically sort all your imports when you safe a file.</p>
 <h3 id="isort-in-pycharm">Isort in PyCharm</h3>
 <p>Similar to flake8 there is not native/trivial way of including isort into PyCharm yet. You can however configure the imports settings and adjust them to make them as similar to isort.
-(Note: The screenshot only shows where to find the settings, it does not show recommended settings.)
-<img src="images/import_settings.png" alt="import_settings"></p>
+(Note: The screenshot only shows where to find the settings, it does not show recommended settings.)</p>
+<p><img src="/img/docs/contribute/python-style-guide/import_settings.png" alt="import_settings"></p>
 
 	
 	
