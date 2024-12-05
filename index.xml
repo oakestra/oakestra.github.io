@@ -1,16 +1,263 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title> – Oakestra</title>
+    <title>Oakestra on </title>
     <link>https://oakestra.io/</link>
     <description>Recent content in Oakestra on </description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	  <atom:link href="https://oakestra.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-      
-    
-    
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://oakestra.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Your First Oakestra Cluster</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/getstarted/get-started-cluster/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/getstarted/get-started-cluster/</guid>
+      <description>&lt;h2 id=&#34;high-level-architecture&#34;&gt;High-level architecture&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/getstarted/highLevelArch.png&#34; alt=&#34;High level architecture picture&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The &lt;strong&gt;Root Orchestrator&lt;/strong&gt; manages different clusters of resources. The root only sees aggregated cluster resources.&lt;/li&gt;&#xA;&lt;li&gt;The &lt;strong&gt;Cluster orchestrator&lt;/strong&gt; manages your worker nodes. This component collects the real-time resources and schedules your workloads to the perfect matching device.&lt;/li&gt;&#xA;&lt;li&gt;A &lt;strong&gt;Worker&lt;/strong&gt; is any device where a component called NodeEngine is installed. Each node can support multiple execution environments such as Containers (containerd runtime), MicroVM (containerd runtime), and Unikernels (mirageOS).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Disclaimer, currently, only containers are supported. Help is still needed for Unikernels and MicroVMs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Your First Oakestra Cluster</title>
+      <link>https://oakestra.io/docs/getstarted/get-started-cluster/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/getstarted/get-started-cluster/</guid>
+      <description>&lt;h2 id=&#34;high-level-architecture&#34;&gt;High-level architecture&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/getstarted/highLevelArch.png&#34; alt=&#34;High level architecture picture&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The &lt;strong&gt;Root Orchestrator&lt;/strong&gt; manages different clusters of resources. The root only sees aggregated cluster resources.&lt;/li&gt;&#xA;&lt;li&gt;The &lt;strong&gt;Cluster orchestrator&lt;/strong&gt; manages your worker nodes. This component collects the real-time resources and schedules your workloads to the perfect matching device.&lt;/li&gt;&#xA;&lt;li&gt;A &lt;strong&gt;Worker&lt;/strong&gt; is any device where a component called NodeEngine is installed. Each node can support multiple execution environments such as Containers (containerd runtime), MicroVM (containerd runtime), and Unikernels (mirageOS).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Disclaimer, currently, only containers are supported. Help is still needed for Unikernels and MicroVMs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deploy your first App</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/getstarted/get-started-app/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/getstarted/get-started-app/</guid>
+      <description>&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;You have a running Root Orchestrator with at least one Cluster Orchestrator registered.&lt;/li&gt;&#xA;&lt;li&gt;You have at least one Worker Node Registered&lt;/li&gt;&#xA;&lt;li&gt;(Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured.&lt;/li&gt;&#xA;&lt;li&gt;You can access the APIs at &lt;code&gt;&amp;lt;root-orch-ip&amp;gt;:10000/api/docs&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;You can access the Dashboard at &lt;code&gt;http://&amp;lt;root-orch-ip&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;your-first-application-using-the-dashboard-&#34;&gt;Your first application using the Dashboard 💻&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a name=&#34;your-first-application-💻&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s use the dashboard to deploy you first application.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deploy your first App</title>
+      <link>https://oakestra.io/docs/getstarted/get-started-app/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/getstarted/get-started-app/</guid>
+      <description>&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;You have a running Root Orchestrator with at least one Cluster Orchestrator registered.&lt;/li&gt;&#xA;&lt;li&gt;You have at least one Worker Node Registered&lt;/li&gt;&#xA;&lt;li&gt;(Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured.&lt;/li&gt;&#xA;&lt;li&gt;You can access the APIs at &lt;code&gt;&amp;lt;root-orch-ip&amp;gt;:10000/api/docs&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;You can access the Dashboard at &lt;code&gt;http://&amp;lt;root-orch-ip&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;your-first-application-using-the-dashboard-&#34;&gt;Your first application using the Dashboard 💻&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a name=&#34;your-first-application-💻&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s use the dashboard to deploy you first application.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Start your Dashboard</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/dashboard/getting-started-dashboard/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/dashboard/getting-started-dashboard/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The Dashboard is a sophisticated web-based user interface for the Oakestra system.&#xA;It is designed to provide users with a comprehensive set of tools to deploy applications to a&#xA;Oakestra cluster, effectively manage cluster resources, and troubleshoot any issues that may arise.&lt;/p&gt;&#xA;&lt;p&gt;With the Dashboard, users can gain an insightful overview of the applications currently running on&#xA;their cluster. It allows them to create and modify individual services,&#xA;view the status of running services, and configure service-level agreements (SLAs) with an intuitive form.&#xA;This feature-rich interface also enables users to monitor the state of Oakestra resources within&#xA;their cluster and track any errors that may have occurred.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Start your Dashboard</title>
+      <link>https://oakestra.io/docs/dashboard/getting-started-dashboard/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/dashboard/getting-started-dashboard/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The Dashboard is a sophisticated web-based user interface for the Oakestra system.&#xA;It is designed to provide users with a comprehensive set of tools to deploy applications to a&#xA;Oakestra cluster, effectively manage cluster resources, and troubleshoot any issues that may arise.&lt;/p&gt;&#xA;&lt;p&gt;With the Dashboard, users can gain an insightful overview of the applications currently running on&#xA;their cluster. It allows them to create and modify individual services,&#xA;view the status of running services, and configure service-level agreements (SLAs) with an intuitive form.&#xA;This feature-rich interface also enables users to monitor the state of Oakestra resources within&#xA;their cluster and track any errors that may have occurred.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>High Level Setup Overview</title>
+      <link>https://oakestra.io/archive/alpha/docs/getstarted/high-level-view/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://oakestra.io/archive/alpha/docs/getstarted/high-level-view/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/archive/alpha-bass/arch-new.png&#34; alt=&#34;High level architecture picture&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Oakestra lets you deploy your workload on devices of any size, from a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The &lt;strong&gt;Root Orchestrator&lt;/strong&gt; manages different clusters of resources. The root only sees aggregated cluster resources.&lt;/li&gt;&#xA;&lt;li&gt;The &lt;strong&gt;Cluster Orchestrator&lt;/strong&gt; manages your worker nodes. This component collects real-time resources and schedules your workloads to the perfect matching device.&lt;/li&gt;&#xA;&lt;li&gt;A &lt;strong&gt;Worker&lt;/strong&gt; is where your workloads are executed. E.g., your containers.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;ince the stable Accordion release, Oakestra supports both containers and unikernel virtualization targets.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Create your first Oakestra Orchestrator</title>
+      <link>https://oakestra.io/archive/alpha/docs/getstarted/your-first-orchestrator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://oakestra.io/archive/alpha/docs/getstarted/your-first-orchestrator/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s get you up to speed with the easiest possible setup. You&amp;rsquo;ll be able to run your first Oakestra Orchestrator in a few seconds!&lt;/p&gt;&#xA;&lt;h3 id=&#34;startup-the-orchestrators-in-a-single-machine&#34;&gt;Startup the Orchestrators in a Single Machine&lt;/h3&gt;&#xA;&lt;p&gt;In this guide, we&amp;rsquo;ll perform a Single Machine Setup. This setup is the easiest way to get started with Oakestra with a single Cluster managed by a single machine. To do so, we&amp;rsquo;ll install the &lt;strong&gt;Root Orchestrator&lt;/strong&gt; and the &lt;strong&gt;Cluster Orchestrator&lt;/strong&gt; together, as shown in the following figure.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Add Edge Devices (Workers) to Your Setup</title>
+      <link>https://oakestra.io/archive/alpha/docs/getstarted/your-first-worker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://oakestra.io/archive/alpha/docs/getstarted/your-first-worker/</guid>
+      <description>&lt;h3 id=&#34;add-a-worker-node-to-your-cluster&#34;&gt;Add a Worker Node to your Cluster&lt;/h3&gt;&#xA;&lt;p&gt;If you have a running &lt;strong&gt;Root Orchestrator&lt;/strong&gt; and at least one &lt;strong&gt;Cluster Orchestrator&lt;/strong&gt; you can add a new worker node to your cluster.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/archive/alpha-bass/deploy-worker.png&#34; alt=&#34;High level architecture picture&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;First, you need to install your &lt;strong&gt;Worker Node&lt;/strong&gt; components on every Edge Device you want to use as a worker running:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; sh -  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Each worker node must be attached to a running &lt;strong&gt;Cluster Orchestrator&lt;/strong&gt;. To do so, you need to know the IP address of the Cluster Orchestrator you want to connect to.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Add a Cluster</title>
+      <link>https://oakestra.io/archive/alpha/docs/getstarted/add-a-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://oakestra.io/archive/alpha/docs/getstarted/add-a-cluster/</guid>
+      <description>&lt;h3 id=&#34;add-a-new-cluster-to-your-infrastructure&#34;&gt;Add a New Cluster to your Infrastructure.&lt;/h3&gt;&#xA;&lt;p&gt;If you want to create new Clusters to attatch to you Oakestra Root, on each Cluster Orchestrator machine you can run:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/StartOakestraCluster.sh &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; sh -&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will start a new &lt;strong&gt;Cluster Orchestrator&lt;/strong&gt; component.&#xA;A script will ask you for your&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cluster name&lt;/strong&gt; : A name of your choice for this cluster.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Location&lt;/strong&gt; : Geographical coordinates and competence radius in meters, e.g.:&lt;code&gt;48.1374,11.5755,1000&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;IP address of the Root Orchestrator&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;All these variables can be set before startup exporting them:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deploy your first App</title>
+      <link>https://oakestra.io/archive/alpha/docs/getstarted/get-started-app/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/alpha/docs/getstarted/get-started-app/</guid>
+      <description>&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;You have a running Root Orchestrator with at least one Cluster Orchestrator registered.&lt;/li&gt;&#xA;&lt;li&gt;You have at least one Worker Node Registered&lt;/li&gt;&#xA;&lt;li&gt;(Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured.&lt;/li&gt;&#xA;&lt;li&gt;You can access the APIs at &lt;code&gt;&amp;lt;root-orch-ip&amp;gt;:10000/api/docs&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;You can access the Dashboard at &lt;code&gt;http://&amp;lt;root-orch-ip&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;your-first-application-using-the-dashboard-&#34;&gt;Your first application using the Dashboard 💻&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a name=&#34;your-first-application-💻&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s use the dashboard to deploy you first application.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Firewall Configuration</title>
+      <link>https://oakestra.io/archive/alpha/docs/getstarted/cluster-network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://oakestra.io/archive/alpha/docs/getstarted/cluster-network/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;If&lt;/strong&gt; you&amp;rsquo;re running Oakestra on a restricted network, &lt;strong&gt;e.g., on cloud VMs&lt;/strong&gt;, you need to configure the firewall rules accordingly.&lt;/p&gt;&#xA;&lt;h3 id=&#34;firewall-configuration&#34;&gt;Firewall Configuration&lt;/h3&gt;&#xA;&lt;p&gt;These are the ports that need to be open for the Oakestra components to communicate.&lt;/p&gt;&#xA;&lt;p&gt;Root:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;External APIs: port &lt;code&gt;10000&lt;/code&gt; (APIs used by the CLI and the Web Interface to interact with the Root Orchestrator)&lt;/li&gt;&#xA;&lt;li&gt;Cluster APIs: ports &lt;code&gt;10099&lt;/code&gt;,&lt;code&gt;10000&lt;/code&gt; (APIs used by each Cluster Orchestrator)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Cluster:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Worker&amp;rsquo;s Broker: port &lt;code&gt;10003&lt;/code&gt; (MQTT Broker port, used by the workers to communicate with the Cluster Orchestrator)&lt;/li&gt;&#xA;&lt;li&gt;Worker&amp;rsquo;s APIs: port &lt;code&gt;10100&lt;/code&gt; (HTTP APIs used by the workers to perform the initial cluster handshake)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Worker:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contributor Git Hooks Guide</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/contribute/git-hooks-guide/</link>
+      <pubDate>Wed, 20 Mar 2024 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/contribute/git-hooks-guide/</guid>
+      <description>&lt;h1 id=&#34;integrating-pre-commit-into-our-development-workflow&#34;&gt;Integrating Pre-commit into Our Development Workflow&lt;/h1&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Git hooks are scripts that Git executes before or after events such as: pre-commit, pre-push. These hooks are a powerful part of the Git ecosystem, enabling custom actions based on the current repository state or the changes being committed. They are used for a variety of tasks such as syntax checking, testing, linting, and auto-formatting code before it is committed or pushed. More information on git hooks is found &lt;a href=&#34;https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks&#34;&gt;here&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contributor Git Hooks Guide</title>
+      <link>https://oakestra.io/docs/contribute/git-hooks-guide/</link>
+      <pubDate>Wed, 20 Mar 2024 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/contribute/git-hooks-guide/</guid>
+      <description>&lt;h1 id=&#34;integrating-pre-commit-into-our-development-workflow&#34;&gt;Integrating Pre-commit into Our Development Workflow&lt;/h1&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Git hooks are scripts that Git executes before or after events such as: pre-commit, pre-push. These hooks are a powerful part of the Git ecosystem, enabling custom actions based on the current repository state or the changes being committed. They are used for a variety of tasks such as syntax checking, testing, linting, and auto-formatting code before it is committed or pushed. More information on git hooks is found &lt;a href=&#34;https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks&#34;&gt;here&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contributor Python Code Style Guide</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/contribute/python-style-guide/</link>
+      <pubDate>Thu, 30 Nov 2023 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/contribute/python-style-guide/</guid>
+      <description>&lt;p&gt;The most important shared understanding should be that spending additional time on high-quality and easily comprehensable/readable code is absolutely worth it and crucial for success in software engineering.&lt;/p&gt;&#xA;&lt;p&gt;Recommended reads:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://bayrhammer-klaus.medium.com/you-spend-much-more-time-reading-code-than-writing-code-bc953376fe19&#34;&gt;https://bayrhammer-klaus.medium.com/you-spend-much-more-time-reading-code-than-writing-code-bc953376fe19&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://google.github.io/styleguide/pyguide.html#385-block-and-inline-comments&#34;&gt;https://google.github.io/styleguide/pyguide.html#385-block-and-inline-comments&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://google.github.io/styleguide/pyguide.html#386-punctuation-spelling-and-grammar&#34;&gt;https://google.github.io/styleguide/pyguide.html#386-punctuation-spelling-and-grammar&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Besides that, having and enforcing a common code style guide helps the team to stick to and create high quality code that is uniform, thus easier to get used to (onboarding) and comprehend. We want to help and make life easier for our individual team members and not enforce/punish them during their work.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contributor Python Code Style Guide</title>
+      <link>https://oakestra.io/docs/contribute/python-style-guide/</link>
+      <pubDate>Thu, 30 Nov 2023 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/contribute/python-style-guide/</guid>
+      <description>&lt;p&gt;The most important shared understanding should be that spending additional time on high-quality and easily comprehensable/readable code is absolutely worth it and crucial for success in software engineering.&lt;/p&gt;&#xA;&lt;p&gt;Recommended reads:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://bayrhammer-klaus.medium.com/you-spend-much-more-time-reading-code-than-writing-code-bc953376fe19&#34;&gt;https://bayrhammer-klaus.medium.com/you-spend-much-more-time-reading-code-than-writing-code-bc953376fe19&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://google.github.io/styleguide/pyguide.html#385-block-and-inline-comments&#34;&gt;https://google.github.io/styleguide/pyguide.html#385-block-and-inline-comments&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://google.github.io/styleguide/pyguide.html#386-punctuation-spelling-and-grammar&#34;&gt;https://google.github.io/styleguide/pyguide.html#386-punctuation-spelling-and-grammar&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Besides that, having and enforcing a common code style guide helps the team to stick to and create high quality code that is uniform, thus easier to get used to (onboarding) and comprehend. We want to help and make life easier for our individual team members and not enforce/punish them during their work.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Semantic addressing</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/networking/semantic-addressing/</link>
+      <pubDate>Wed, 01 Mar 2023 12:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/networking/semantic-addressing/</guid>
+      <description>&lt;p&gt;The default networking component of Oakestra envisions IP communication based on a semantic balancing policy expressed by some special IP addresses.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-do-we-mean-by-semantic-addressing&#34;&gt;What do we mean by semantic addressing?&lt;/h2&gt;&#xA;&lt;p&gt;In Oakestra, the addresses belonging to the subnetwork 10.30.0.0/16 are called &lt;strong&gt;Service IPs&lt;/strong&gt;. Similar to a cluster IP in Kubernetes, these addresses reference all the instances(replicas) of a microservice with a single address. This address does not change when scaling up the instances or when migrating them.&#xA;Anyway, unlike the Kubernetes cluster IP, when deploying a service in Oakestra, the platform provides as many ServiceIP addresses as the number of balancing policies supported (and active) within the platform.&#xA;On top of that, we have a special subset of the Service IPs called &lt;strong&gt;Instance IPs&lt;/strong&gt;. An Instance IP balances the traffic only to a specific service instance within the system.&#xA;Let&amp;rsquo;s take a look at the following example.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Semantic addressing</title>
+      <link>https://oakestra.io/docs/networking/semantic-addressing/</link>
+      <pubDate>Wed, 01 Mar 2023 12:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/networking/semantic-addressing/</guid>
+      <description>&lt;p&gt;The default networking component of Oakestra envisions IP communication based on a semantic balancing policy expressed by some special IP addresses.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-do-we-mean-by-semantic-addressing&#34;&gt;What do we mean by semantic addressing?&lt;/h2&gt;&#xA;&lt;p&gt;In Oakestra, the addresses belonging to the subnetwork 10.30.0.0/16 are called &lt;strong&gt;Service IPs&lt;/strong&gt;. Similar to a cluster IP in Kubernetes, these addresses reference all the instances(replicas) of a microservice with a single address. This address does not change when scaling up the instances or when migrating them.&#xA;Anyway, unlike the Kubernetes cluster IP, when deploying a service in Oakestra, the platform provides as many ServiceIP addresses as the number of balancing policies supported (and active) within the platform.&#xA;On top of that, we have a special subset of the Service IPs called &lt;strong&gt;Instance IPs&lt;/strong&gt;. An Instance IP balances the traffic only to a specific service instance within the system.&#xA;Let&amp;rsquo;s take a look at the following example.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contribution Guide</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/contribute/contribution-guide/</link>
+      <pubDate>Mon, 17 Oct 2022 10:39:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/contribute/contribution-guide/</guid>
+      <description>&lt;h1 id=&#34;oakestra-contribution-guide&#34;&gt;Oakestra Contribution guide&lt;/h1&gt;&#xA;&lt;p&gt;Oakestra&amp;rsquo;s codebase is open-source on GitHub and open to &lt;strong&gt;external&lt;/strong&gt; contributors as well. The purpose of this guide is to help the developer contribute in such a way that both people directly involved in Okaestra and people outside the research group can follow what happens within the project.&lt;/p&gt;&#xA;&lt;h2 id=&#34;issues&#34;&gt;Issues&lt;/h2&gt;&#xA;&lt;p&gt;Each contribution starts from an issue on the corresponding repository. E.g., Are you willing to update the front end? Open an issue on the dashboard repository.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contribution Guide</title>
+      <link>https://oakestra.io/docs/contribute/contribution-guide/</link>
+      <pubDate>Mon, 17 Oct 2022 10:39:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/contribute/contribution-guide/</guid>
+      <description>&lt;h1 id=&#34;oakestra-contribution-guide&#34;&gt;Oakestra Contribution guide&lt;/h1&gt;&#xA;&lt;p&gt;Oakestra&amp;rsquo;s codebase is open-source on GitHub and open to &lt;strong&gt;external&lt;/strong&gt; contributors as well. The purpose of this guide is to help the developer contribute in such a way that both people directly involved in Okaestra and people outside the research group can follow what happens within the project.&lt;/p&gt;&#xA;&lt;h2 id=&#34;issues&#34;&gt;Issues&lt;/h2&gt;&#xA;&lt;p&gt;Each contribution starts from an issue on the corresponding repository. E.g., Are you willing to update the front end? Open an issue on the dashboard repository.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Access Control</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/dashboard/access-control/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/dashboard/access-control/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;access-control&#34;&gt;Access control&lt;/h2&gt;&#xA;&lt;p&gt;Upon successful installation and accessibility of the Dashboard, our attention can shift to configuring&#xA;access control to resources for various users.&lt;/p&gt;&#xA;&lt;p&gt;Upon launching the framework for the first time, an administrative user is automatically generated.&#xA;This administrative user can then be leveraged to create additional users and organizations within the system.&lt;/p&gt;&#xA;&lt;p&gt;Credentials for the admin user:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Username:&lt;/strong&gt; Admin&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Password:&lt;/strong&gt; Admin&lt;/p&gt;&#xA;&lt;p&gt;It is important to note that after the initial launch of the System Manager,&#xA;it is imperative to change the password for the Admin user as an added measure of security.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Access Control</title>
+      <link>https://oakestra.io/docs/dashboard/access-control/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/dashboard/access-control/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;access-control&#34;&gt;Access control&lt;/h2&gt;&#xA;&lt;p&gt;Upon successful installation and accessibility of the Dashboard, our attention can shift to configuring&#xA;access control to resources for various users.&lt;/p&gt;&#xA;&lt;p&gt;Upon launching the framework for the first time, an administrative user is automatically generated.&#xA;This administrative user can then be leveraged to create additional users and organizations within the system.&lt;/p&gt;&#xA;&lt;p&gt;Credentials for the admin user:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Username:&lt;/strong&gt; Admin&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Password:&lt;/strong&gt; Admin&lt;/p&gt;&#xA;&lt;p&gt;It is important to note that after the initial launch of the System Manager,&#xA;it is imperative to change the password for the Admin user as an added measure of security.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Features</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/dashboard/features/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/dashboard/features/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;features&#34;&gt;Features&lt;/h1&gt;&#xA;&lt;p&gt;The user interface is still under development and therefore does not offer so many features yet.&#xA;However, we are working on it to support more and more features.&#xA;If you find ideas for new features or bugs post an issue in the &lt;a href=&#34;https://github.com/oakestra/dashboard&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-an-application&#34;&gt;Creating an application&lt;/h2&gt;&#xA;&lt;p&gt;In Oakestra there is the principle of applications and services, within one application there can be several services and one user can create several applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Features</title>
+      <link>https://oakestra.io/docs/dashboard/features/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/dashboard/features/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;features&#34;&gt;Features&lt;/h1&gt;&#xA;&lt;p&gt;The user interface is still under development and therefore does not offer so many features yet.&#xA;However, we are working on it to support more and more features.&#xA;If you find ideas for new features or bugs post an issue in the &lt;a href=&#34;https://github.com/oakestra/dashboard&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-an-application&#34;&gt;Creating an application&lt;/h2&gt;&#xA;&lt;p&gt;In Oakestra there is the principle of applications and services, within one application there can be several services and one user can create several applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contacts</title>
+      <link>https://oakestra.io/about/contacts/</link>
+      <pubDate>Wed, 10 Aug 2022 11:28:03 +0200</pubDate>
+      <guid>https://oakestra.io/about/contacts/</guid>
+      <description>&lt;h2 id=&#34;our-discussion-group&#34;&gt;Our discussion group&lt;/h2&gt;&#xA;&lt;p&gt;Join our github discussion group &lt;a href=&#34;https://github.com/oakestra/oakestra/discussions&#34;&gt;HERE&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Feel free to post questions and ideas or ask about any problem you have.&lt;/p&gt;&#xA;&lt;p&gt;In our team section, you can also find a list of people you can contact directly by email, socials, and, why not, carrier pigeons as well.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Team</title>
+      <link>https://oakestra.io/about/team/</link>
+      <pubDate>Wed, 10 Aug 2022 11:27:56 +0200</pubDate>
+      <guid>https://oakestra.io/about/team/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;Giovanni Bartolomeo&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;mailto:giovanni.bartolomeo@tum.de&#34;&gt;giovanni.bartolomeo@tum.de&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Mehdi Yosofie&lt;/li&gt;&#xA;&lt;li&gt;Oliver Haluszczynsci&lt;/li&gt;&#xA;&lt;li&gt;Simon Bäurle&lt;/li&gt;&#xA;&lt;li&gt;Maximilian Eder&lt;/li&gt;&#xA;&lt;li&gt;Patrick Sabanic&lt;/li&gt;&#xA;&lt;li&gt;Sonia Klärmann&lt;/li&gt;&#xA;&lt;li&gt;Ralf Baun&lt;/li&gt;&#xA;&lt;li&gt;Daniel Mair&lt;/li&gt;&#xA;&lt;li&gt;Maria Vienalas&lt;/li&gt;&#xA;&lt;li&gt;Dr. Nitinder Mohan&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;mailto:mohan@in.tum.de&#34;&gt;mohan@in.tum.de&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Prof. Jörg Ott&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Contributor Covenant Code of Conduct</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/contribute/coc/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/contribute/coc/</guid>
+      <description>&lt;h1 id=&#34;contributor-covenant-code-of-conduct&#34;&gt;Contributor Covenant Code of Conduct&lt;/h1&gt;&#xA;&lt;h2 id=&#34;our-pledge&#34;&gt;Our Pledge&lt;/h2&gt;&#xA;&lt;p&gt;In the interest of fostering an open and welcoming environment, we as&#xA;contributors and maintainers pledge to make participation in our project and&#xA;our community a harassment-free experience for everyone, regardless of age, body&#xA;size, disability, ethnicity, sex characteristics, gender identity and expression,&#xA;level of experience, education, socio-economic status, nationality, personal&#xA;appearance, race, religion, or sexual identity and orientation.&lt;/p&gt;&#xA;&lt;h2 id=&#34;our-standards&#34;&gt;Our Standards&lt;/h2&gt;&#xA;&lt;p&gt;Examples of behavior that contributes to creating a positive environment&#xA;include:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contributor Covenant Code of Conduct</title>
+      <link>https://oakestra.io/docs/contribute/coc/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/contribute/coc/</guid>
+      <description>&lt;h1 id=&#34;contributor-covenant-code-of-conduct&#34;&gt;Contributor Covenant Code of Conduct&lt;/h1&gt;&#xA;&lt;h2 id=&#34;our-pledge&#34;&gt;Our Pledge&lt;/h2&gt;&#xA;&lt;p&gt;In the interest of fostering an open and welcoming environment, we as&#xA;contributors and maintainers pledge to make participation in our project and&#xA;our community a harassment-free experience for everyone, regardless of age, body&#xA;size, disability, ethnicity, sex characteristics, gender identity and expression,&#xA;level of experience, education, socio-economic status, nationality, personal&#xA;appearance, race, religion, or sexual identity and orientation.&lt;/p&gt;&#xA;&lt;h2 id=&#34;our-standards&#34;&gt;Our Standards&lt;/h2&gt;&#xA;&lt;p&gt;Examples of behavior that contributes to creating a positive environment&#xA;include:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>High level architecture</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/oakestra/architecture/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/oakestra/architecture/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;table-of-content&#34;&gt;Table of content&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#root-orchestrator&#34;&gt;Root Orchestrator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#cluster-orchestrator&#34;&gt;Cluster Orchestrator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#worker-node&#34;&gt;Worker Node&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;oakestra-detailed-architecture&#34;&gt;Oakestra Detailed Architecture&lt;/h1&gt;&#xA;&lt;p&gt;As shown in our &lt;a href=&#34;get-started.md&#34;&gt;Get Started&lt;/a&gt; guide, Oakestra uses 3-4 building blocks to operate.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Root Orchestrator&lt;/li&gt;&#xA;&lt;li&gt;Cluster Orchestrator&lt;/li&gt;&#xA;&lt;li&gt;Node Engine&lt;/li&gt;&#xA;&lt;li&gt;NetManager (optional, detailed in the networking section of the Wiki)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.&lt;/p&gt;&#xA;&lt;h2 id=&#34;root-orchestrator&#34;&gt;Root Orchestrator&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/RootArch.png&#34; alt=&#34;root architecture&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>High level architecture</title>
+      <link>https://oakestra.io/docs/oakestra/architecture/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/oakestra/architecture/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;table-of-content&#34;&gt;Table of content&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#root-orchestrator&#34;&gt;Root Orchestrator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#cluster-orchestrator&#34;&gt;Cluster Orchestrator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#worker-node&#34;&gt;Worker Node&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;oakestra-detailed-architecture&#34;&gt;Oakestra Detailed Architecture&lt;/h1&gt;&#xA;&lt;p&gt;As shown in our &lt;a href=&#34;get-started.md&#34;&gt;Get Started&lt;/a&gt; guide, Oakestra uses 3-4 building blocks to operate.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Root Orchestrator&lt;/li&gt;&#xA;&lt;li&gt;Cluster Orchestrator&lt;/li&gt;&#xA;&lt;li&gt;Node Engine&lt;/li&gt;&#xA;&lt;li&gt;NetManager (optional, detailed in the networking section of the Wiki)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.&lt;/p&gt;&#xA;&lt;h2 id=&#34;root-orchestrator&#34;&gt;Root Orchestrator&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/RootArch.png&#34; alt=&#34;root architecture&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IPv4 Service IP implementation details</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/networking/service-ip-overlay-implementation/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/networking/service-ip-overlay-implementation/</guid>
+      <description>&lt;p&gt;In this wiki page, we&amp;rsquo;ll go through the details of the IPv4 implementation of the Service IPs in Oakestra.&lt;/p&gt;&#xA;&lt;p&gt;The building blocks are:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Network Overlays&lt;/li&gt;&#xA;&lt;li&gt;Proxy Translation&lt;/li&gt;&#xA;&lt;li&gt;Interest registration&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;network-overlays&#34;&gt;Network Overlays&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/network/Overlay-layers.png&#34; alt=&#34;Overlay Example&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The abstraction required to enable service-to-service communication spans 3 different layers.&lt;/p&gt;&#xA;&lt;h4 id=&#34;physical-layer&#34;&gt;Physical layer&lt;/h4&gt;&#xA;&lt;p&gt;At the very bottom of the hierarchy, we have the physical layer, where we address machines rather than microservices or containers.&#xA;In this space, an IP address is an address that can be used to uniquely identify a machine and reach it. In Oakestra, we keep track of this layer, pairing each service with a &lt;strong&gt;Node IP&lt;/strong&gt; and &lt;strong&gt;Port&lt;/strong&gt;. The pair IP:port enables us to reach multiple devices sharing the same IP address (NAT). Each worker node exposes the network stack required to enable the upper layers of the overlay at the assigned port.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IPv4 Service IP implementation details</title>
+      <link>https://oakestra.io/docs/networking/service-ip-overlay-implementation/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/networking/service-ip-overlay-implementation/</guid>
+      <description>&lt;p&gt;In this wiki page, we&amp;rsquo;ll go through the details of the IPv4 implementation of the Service IPs in Oakestra.&lt;/p&gt;&#xA;&lt;p&gt;The building blocks are:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Network Overlays&lt;/li&gt;&#xA;&lt;li&gt;Proxy Translation&lt;/li&gt;&#xA;&lt;li&gt;Interest registration&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;network-overlays&#34;&gt;Network Overlays&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/network/Overlay-layers.png&#34; alt=&#34;Overlay Example&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The abstraction required to enable service-to-service communication spans 3 different layers.&lt;/p&gt;&#xA;&lt;h4 id=&#34;physical-layer&#34;&gt;Physical layer&lt;/h4&gt;&#xA;&lt;p&gt;At the very bottom of the hierarchy, we have the physical layer, where we address machines rather than microservices or containers.&#xA;In this space, an IP address is an address that can be used to uniquely identify a machine and reach it. In Oakestra, we keep track of this layer, pairing each service with a &lt;strong&gt;Node IP&lt;/strong&gt; and &lt;strong&gt;Port&lt;/strong&gt;. The pair IP:port enables us to reach multiple devices sharing the same IP address (NAT). Each worker node exposes the network stack required to enable the upper layers of the overlay at the assigned port.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Orchestration</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/oakestra/orchestrators/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/oakestra/orchestrators/</guid>
+      <description>&lt;p&gt;#APIs&lt;/p&gt;&#xA;&lt;p&gt;Root Orchestrator APIs &lt;a href=&#34;https://app.swaggerhub.com/apis-docs/giobarty/oakestra-root_api/v1#/&#34;&gt;OpenApi Spec&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Orchestration</title>
+      <link>https://oakestra.io/docs/oakestra/orchestrators/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/oakestra/orchestrators/</guid>
+      <description>&lt;p&gt;#APIs&lt;/p&gt;&#xA;&lt;p&gt;Root Orchestrator APIs &lt;a href=&#34;https://app.swaggerhub.com/apis-docs/giobarty/oakestra-root_api/v1#/&#34;&gt;OpenApi Spec&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Task Scheduling</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/oakestra/scheduling/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/oakestra/scheduling/</guid>
+      <description>&lt;h2 id=&#34;how-does-the-scheduling-work-in-oakestra&#34;&gt;How does the scheduling work in Oakestra?&lt;/h2&gt;&#xA;&lt;p&gt;Oakestra&amp;rsquo;s architecture is composed of two tiers. Resources are divided into clusters. A cluster is seen as the aggregation of all its resources. A job is first scheduled to a cluster, and then the cluster scheduler decides the target worker.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/cluster-worker-selection.png&#34; alt=&#34;scheduling algo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The scheduling component is as simple as a Celery worker. The scheduler receives a job description and gives back an allocation target. We differentiate between the Root scheduler and Cluster scheduler. The Root scheduler finds a suitable cluster (step 1), and the Cluster scheduler finds a suitable worker node (step 2).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Task Scheduling</title>
+      <link>https://oakestra.io/docs/oakestra/scheduling/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/docs/oakestra/scheduling/</guid>
+      <description>&lt;h2 id=&#34;how-does-the-scheduling-work-in-oakestra&#34;&gt;How does the scheduling work in Oakestra?&lt;/h2&gt;&#xA;&lt;p&gt;Oakestra&amp;rsquo;s architecture is composed of two tiers. Resources are divided into clusters. A cluster is seen as the aggregation of all its resources. A job is first scheduled to a cluster, and then the cluster scheduler decides the target worker.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/cluster-worker-selection.png&#34; alt=&#34;scheduling algo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The scheduling component is as simple as a Celery worker. The scheduler receives a job description and gives back an allocation target. We differentiate between the Root scheduler and Cluster scheduler. The Root scheduler finds a suitable cluster (step 1), and the Cluster scheduler finds a suitable worker node (step 2).&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

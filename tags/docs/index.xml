@@ -1,43 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title> – docs</title>
+    <title>Docs on </title>
     <link>https://oakestra.io/tags/docs/</link>
-    <description>Recent content in docs on </description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	  <atom:link href="https://oakestra.io/tags/docs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
+    <description>Recent content in Docs on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://oakestra.io/tags/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Docs: Contribute</title>
+      <title>Contribute</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/contribute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/contribute/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Contribute</title>
       <link>https://oakestra.io/docs/contribute/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://oakestra.io/docs/contribute/</guid>
-      <description>
-        
-        
-        
-      </description>
+      <description></description>
     </item>
-    
     <item>
-      <title>Docs: Networking</title>
+      <title>Networking</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/networking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Networking</title>
       <link>https://oakestra.io/docs/networking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://oakestra.io/docs/networking/</guid>
-      <description>
-        
-        
-        
-      </description>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

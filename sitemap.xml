@@ -2,14 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/getstarted/get-started-cluster/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
     <loc>https://oakestra.io/docs/getstarted/get-started-cluster/</loc>
-    <lastmod>2024-04-24T17:29:50+02:00</lastmod>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/getstarted/get-started-app/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/getstarted/get-started-app/</loc>
-    <lastmod>2022-10-26T16:20:03+02:00</lastmod>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/dashboard/getting-started-dashboard/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/dashboard/getting-started-dashboard/</loc>
     <lastmod>2023-09-21T15:11:02+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/getstarted/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/getstarted/</loc>
     <lastmod>2022-10-26T16:05:00+02:00</lastmod>
@@ -17,38 +29,92 @@
     <loc>https://oakestra.io/docs/</loc>
     <lastmod>2022-10-26T16:05:00+02:00</lastmod>
   </url><url>
+    <loc>https://oakestra.io/archive/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/alpha/docs/getstarted/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/alpha/docs/getstarted/high-level-view/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/alpha/docs/getstarted/your-first-orchestrator/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/alpha/docs/getstarted/your-first-worker/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/alpha/docs/getstarted/add-a-cluster/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/alpha/docs/getstarted/get-started-app/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/alpha/docs/getstarted/cluster-network/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/alpha/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/alpha/docs/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/contribute/git-hooks-guide/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
     <loc>https://oakestra.io/docs/contribute/git-hooks-guide/</loc>
     <lastmod>2024-03-27T17:22:57+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/contribute/python-style-guide/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/contribute/python-style-guide/</loc>
     <lastmod>2024-04-18T12:10:46+02:00</lastmod>
   </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/networking/semantic-addressing/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
     <loc>https://oakestra.io/docs/networking/semantic-addressing/</loc>
     <lastmod>2023-03-01T18:17:51+01:00</lastmod>
   </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/contribute/contribution-guide/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
     <loc>https://oakestra.io/docs/contribute/contribution-guide/</loc>
     <lastmod>2023-02-28T15:47:25+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/dashboard/access-control/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/dashboard/access-control/</loc>
     <lastmod>2023-09-21T15:11:02+02:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/categories/</loc>
-    <lastmod>2024-04-24T17:29:50+02:00</lastmod>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/categories/docs/</loc>
-    <lastmod>2024-04-24T17:29:50+02:00</lastmod>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/dashboard/features/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/dashboard/features/</loc>
     <lastmod>2023-11-10T08:38:00+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/tags/getsarted/</loc>
-    <lastmod>2024-04-24T17:29:50+02:00</lastmod>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/tags/getstarted/</loc>
-    <lastmod>2023-11-10T08:38:00+01:00</lastmod>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/tags/</loc>
-    <lastmod>2024-04-24T17:29:50+02:00</lastmod>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/about/contacts/</loc>
     <lastmod>2022-08-10T12:02:27+02:00</lastmod>
@@ -57,19 +123,34 @@
     <lastmod>2022-08-10T12:02:27+02:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/tags/architecture/</loc>
-    <lastmod>2023-02-28T18:23:20+01:00</lastmod>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/contribute/coc/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/contribute/coc/</loc>
     <lastmod>2022-08-09T19:05:48+02:00</lastmod>
   </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/oakestra/architecture/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
     <loc>https://oakestra.io/docs/oakestra/architecture/</loc>
     <lastmod>2023-02-28T18:23:20+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/networking/service-ip-overlay-implementation/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/networking/service-ip-overlay-implementation/</loc>
     <lastmod>2023-03-06T18:29:59+01:00</lastmod>
   </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/oakestra/orchestrators/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
     <loc>https://oakestra.io/docs/oakestra/orchestrators/</loc>
     <lastmod>2022-08-09T19:05:48+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/oakestra/scheduling/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/oakestra/scheduling/</loc>
     <lastmod>2022-10-26T16:20:03+02:00</lastmod>
@@ -78,22 +159,34 @@
     <lastmod>2022-10-26T16:05:00+02:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/tags/concepts/</loc>
-    <lastmod>2022-10-26T16:05:00+02:00</lastmod>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/oakestra/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/oakestra/</loc>
     <lastmod>2022-10-26T16:05:00+02:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/contribute/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/contribute/</loc>
     <lastmod>2022-08-09T19:05:48+02:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/tags/dashboard/</loc>
-    <lastmod>2023-04-27T17:53:05+02:00</lastmod>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/dashboard/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/dashboard/</loc>
     <lastmod>2023-04-27T17:53:05+02:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/tags/docs/</loc>
-    <lastmod>2022-08-09T19:05:48+02:00</lastmod>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
+  </url><url>
+    <loc>https://oakestra.io/archive/0.4.2/docs/networking/</loc>
+    <lastmod>2024-12-05T14:56:13+01:00</lastmod>
   </url><url>
     <loc>https://oakestra.io/docs/networking/</loc>
     <lastmod>2022-08-09T19:05:48+02:00</lastmod>

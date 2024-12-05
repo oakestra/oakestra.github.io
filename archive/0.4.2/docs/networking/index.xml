@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on </title>
+    <link>https://oakestra.io/archive/0.4.2/docs/networking/</link>
+    <description>Recent content in Networking on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://oakestra.io/archive/0.4.2/docs/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Semantic addressing</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/networking/semantic-addressing/</link>
+      <pubDate>Wed, 01 Mar 2023 12:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/networking/semantic-addressing/</guid>
+      <description>&lt;p&gt;The default networking component of Oakestra envisions IP communication based on a semantic balancing policy expressed by some special IP addresses.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-do-we-mean-by-semantic-addressing&#34;&gt;What do we mean by semantic addressing?&lt;/h2&gt;&#xA;&lt;p&gt;In Oakestra, the addresses belonging to the subnetwork 10.30.0.0/16 are called &lt;strong&gt;Service IPs&lt;/strong&gt;. Similar to a cluster IP in Kubernetes, these addresses reference all the instances(replicas) of a microservice with a single address. This address does not change when scaling up the instances or when migrating them.&#xA;Anyway, unlike the Kubernetes cluster IP, when deploying a service in Oakestra, the platform provides as many ServiceIP addresses as the number of balancing policies supported (and active) within the platform.&#xA;On top of that, we have a special subset of the Service IPs called &lt;strong&gt;Instance IPs&lt;/strong&gt;. An Instance IP balances the traffic only to a specific service instance within the system.&#xA;Let&amp;rsquo;s take a look at the following example.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IPv4 Service IP implementation details</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/networking/service-ip-overlay-implementation/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/networking/service-ip-overlay-implementation/</guid>
+      <description>&lt;p&gt;In this wiki page, we&amp;rsquo;ll go through the details of the IPv4 implementation of the Service IPs in Oakestra.&lt;/p&gt;&#xA;&lt;p&gt;The building blocks are:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Network Overlays&lt;/li&gt;&#xA;&lt;li&gt;Proxy Translation&lt;/li&gt;&#xA;&lt;li&gt;Interest registration&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;network-overlays&#34;&gt;Network Overlays&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/network/Overlay-layers.png&#34; alt=&#34;Overlay Example&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The abstraction required to enable service-to-service communication spans 3 different layers.&lt;/p&gt;&#xA;&lt;h4 id=&#34;physical-layer&#34;&gt;Physical layer&lt;/h4&gt;&#xA;&lt;p&gt;At the very bottom of the hierarchy, we have the physical layer, where we address machines rather than microservices or containers.&#xA;In this space, an IP address is an address that can be used to uniquely identify a machine and reach it. In Oakestra, we keep track of this layer, pairing each service with a &lt;strong&gt;Node IP&lt;/strong&gt; and &lt;strong&gt;Port&lt;/strong&gt;. The pair IP:port enables us to reach multiple devices sharing the same IP address (NAT). Each worker node exposes the network stack required to enable the upper layers of the overlay at the assigned port.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

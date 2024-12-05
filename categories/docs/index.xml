@@ -1,645 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title> – Docs</title>
+    <title>Docs on </title>
     <link>https://oakestra.io/categories/docs/</link>
     <description>Recent content in Docs on </description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 05 Oct 2022 09:56:27 +0200</lastBuildDate>
-    
-	  <atom:link href="https://oakestra.io/categories/docs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Dec 2024 14:56:13 +0100</lastBuildDate>
+    <atom:link href="https://oakestra.io/categories/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Docs: Your First Oakestra Cluster</title>
+      <title>Your First Oakestra Cluster</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/getstarted/get-started-cluster/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/getstarted/get-started-cluster/</guid>
+      <description>&lt;h2 id=&#34;high-level-architecture&#34;&gt;High-level architecture&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/getstarted/highLevelArch.png&#34; alt=&#34;High level architecture picture&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The &lt;strong&gt;Root Orchestrator&lt;/strong&gt; manages different clusters of resources. The root only sees aggregated cluster resources.&lt;/li&gt;&#xA;&lt;li&gt;The &lt;strong&gt;Cluster orchestrator&lt;/strong&gt; manages your worker nodes. This component collects the real-time resources and schedules your workloads to the perfect matching device.&lt;/li&gt;&#xA;&lt;li&gt;A &lt;strong&gt;Worker&lt;/strong&gt; is any device where a component called NodeEngine is installed. Each node can support multiple execution environments such as Containers (containerd runtime), MicroVM (containerd runtime), and Unikernels (mirageOS).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Disclaimer, currently, only containers are supported. Help is still needed for Unikernels and MicroVMs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Your First Oakestra Cluster</title>
       <link>https://oakestra.io/docs/getstarted/get-started-cluster/</link>
       <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
-      
       <guid>https://oakestra.io/docs/getstarted/get-started-cluster/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Table of content:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#high-level-architecture&#34;&gt;High-level archtecture&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#create-your-first-oakestra-cluster&#34;&gt;Create your first Oakestra cluster&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;high-level-architecture&#34;&gt;High-level architecture&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/getstarted/highLevelArch.png&#34; alt=&#34;High level architecture picture&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The &lt;strong&gt;Root Orchestrator&lt;/strong&gt; manages different clusters of resources. The root only sees aggregated cluster resources.&lt;/li&gt;
-&lt;li&gt;The &lt;strong&gt;Cluster orchestrator&lt;/strong&gt; manages your worker nodes. This component collects the real-time resources and schedules your workloads to the perfect matching device.&lt;/li&gt;
-&lt;li&gt;A &lt;strong&gt;Worker&lt;/strong&gt; is any device where a component called NodeEngine is installed. Each node can support multiple execution environments such as Containers (containerd runtime), MicroVM (containerd runtime), and Unikernels (mirageOS).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Disclaimer, currently, only containers are supported. Help is still needed for Unikernels and MicroVMs.&lt;/p&gt;
-&lt;h2 id=&#34;create-your-first-oakestra-cluster&#34;&gt;Create your first Oakestra cluster&lt;/h2&gt;
-&lt;p&gt;Let&amp;rsquo;s start simple with a single node deployment, where all the components are in the same device. Then, we will separate the components and use multiple devices until we&amp;rsquo;re able to create multiple clusters.&lt;/p&gt;
-&lt;h3 id=&#34;requirements&#34;&gt;Requirements:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Linux (Workers only)&lt;/li&gt;
-&lt;li&gt;Docker + Docker compose (Orchestrators only)&lt;/li&gt;
-&lt;li&gt;Cluster Orchestrator and Root Orchestrator machines must be mutually reachable.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;1-doc-1-device-one-cluster&#34;&gt;1-DOC (1 Device, One Cluster)&lt;/h3&gt;
-&lt;p&gt;In this example, we will use a single device to deploy all the components. This is not recommended for production environments, but it is pretty cool for home environments and development.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/getstarted/SingleNodeExample.png&#34; alt=&#34;Deployment example with a single device&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s start the Root, the dashboard, and a cluster orchestrator on your machine.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -sfL oakestra.io/getstarted.sh | sh -
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;2)&lt;/strong&gt; download, untar and install the node engine and network manager binaries&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; sh -  
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;3)&lt;/strong&gt; Configure the Network Manager by editing &lt;code&gt;/etc/netmanager/netcfg.json&lt;/code&gt; as follows:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;NodePublicAddress&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;lt;IP ADDRESS OF THIS DEVICE&amp;gt;&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;NodePublicPort&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;lt;PORT REACHABLE FROM OUTSIDE, use 50103 as default&amp;gt;&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ClusterUrl&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;localhost&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ClusterMqttPort&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;10003&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;4)&lt;/strong&gt; start the NetManager on port 6000&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo NetManager -p 6000 &amp;amp;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;5)&lt;/strong&gt; start the NodeEngine.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo NodeEngine -n &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;6000&lt;/span&gt; -p &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10100&lt;/span&gt; -a &amp;lt;Cluster Orchestrator IP Address&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;( you can use &lt;code&gt;NodeEngine -h&lt;/code&gt; for further details )&lt;/p&gt;
-&lt;p&gt;If you see the NodeEngine reporting metrics to the Cluster&amp;hellip;&lt;/p&gt;
-&lt;p&gt;🏆 Success!&lt;/p&gt;
-&lt;p&gt;✨🆕✨ If the worker node machine has KVM installed and it supports nested virtualization, you can add the flag -u=true to the NodeEngine startup command to enable Oakestra Unikernel deployment support for this machine.&lt;/p&gt;
-&lt;h3 id=&#34;m-doc-m-devices-one-cluster&#34;&gt;M-DOC (M Devices, One Cluster)&lt;/h3&gt;
-&lt;p&gt;The M-DOC deployment enables you to deploy One cluster with multiple worker nodes. The main difference between this deployment and 1-DOC is that the worker nodes might be external here, and there can be multiple of them.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/getstarted/1ClusterExample.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The deployment of this kind of cluster is similar to 1-DOC. We first need to start the root and cluster orchestrator. Afterward, we can attach the worker nodes.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt; On the node you wish to use as a cluster and root orchestrator, execute steps &lt;strong&gt;1-DOC.1&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2)&lt;/strong&gt; Now, we need to prepare all the worker nodes. On each worker node, execute the following:&lt;/p&gt;
-&lt;p&gt;2.1) Downlaod and unpack both the NodeEngine and NetManager&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; sh -  
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2.2) Edit &lt;code&gt;/etc/netmanager/netcfg.json&lt;/code&gt; accordingly:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;NodePublicAddress&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;lt;IP ADDRESS OF THIS DEVICE&amp;gt;&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;NodePublicPort&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;lt;PORT REACHABLE FROM OUTSIDE, internal port is always 50103&amp;gt;&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ClusterUrl&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;lt;IP ADDRESS OF THE CLSUTER ORCHESTRATOR&amp;gt;&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ClusterMqttPort&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;10003&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2.3) Run the NetManager and the NodeEngine components:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo NetManager -p &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;6000&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo NodeEngine -n &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;6000&lt;/span&gt; -p &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10100&lt;/span&gt; -a &amp;lt;IP ADDRESS OF THE CLSUTER ORCHESTRATOR&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;mdnc-m-devices-n-clusters&#34;&gt;MDNC (M Devices, N Clusters)&lt;/h3&gt;
-&lt;p&gt;This represents the most versatile deployment. You can split your resources into multiple clusters within different locations and with different resources. In this deployment, we need to deploy the Root and the Cluster orchestrator on different nodes. Each independent clsuter orchestrator represents a cluster of resources. The worker nodes attached to each cluster are aggregated and seen as a unique big resource from the point of view of the Root. This deployment isolates the resources from the root perspective and delegates the responsibility to the cluster orchestrator.
-&lt;img src=&#34;https://oakestra.io/getstarted/2ClusterExample.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt; In this first step, we need to deploy the RootOrchestrator component on a Node. To do this, you need to clone the repository on the desired node, move to the root orchestrator folder, and execute the startup command.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/oakestra/oakestra.git &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; oakestra
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SYSTEM_MANAGER_URL&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&amp;lt;IP ADDRESS OF THE NODE HOSTING THE ROOT ORCHESTRATOR&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo -E docker-compose -f root_orchestrator/docker-compose.yml up
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;2)&lt;/strong&gt; For each node that needs to host a cluster orchestrator, you need to:
-2.1) Export the ENV variables needed to connect to the cluster orchestrator:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SYSTEM_MANAGER_URL&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&amp;lt;IP ADDRESS OF THE NODE HOSTING THE ROOT ORCHESTRATOR&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;CLUSTER_NAME&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&amp;lt;choose a name &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; your cluster&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;CLUSTER_LOCATION&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&amp;lt;choose a name &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; the cluster&lt;span style=&#34;color:#a40000&#34;&gt;&amp;#39;&lt;/span&gt;s location&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2.2) Clone the repo and run the cluster orchestrator:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/oakestra/oakestra.git &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; oakestra
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo -E docker-compose -f cluster_orchestrator/docker-compose.yml up
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;3)&lt;/strong&gt; Start and configure each worker as described in M-DOC.2&lt;/p&gt;
-&lt;h3 id=&#34;hybrids&#34;&gt;Hybrids&lt;/h3&gt;
-&lt;p&gt;You should have got the gist now, but if you want, you can build the infrastructure by composing the components like LEGO blocks.
-Do you want to give your Cluster Orchestrator computational capabilities for the deployment? Deploy there the NodeEngine+Netmanager components, and you&amp;rsquo;re done. You don&amp;rsquo;t want to use a separate node for the Root Orchestrator? Simply deploy it all together with a cluster orchestrator.&lt;/p&gt;
-
-      </description>
+      <description>&lt;h2 id=&#34;high-level-architecture&#34;&gt;High-level architecture&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/getstarted/highLevelArch.png&#34; alt=&#34;High level architecture picture&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The &lt;strong&gt;Root Orchestrator&lt;/strong&gt; manages different clusters of resources. The root only sees aggregated cluster resources.&lt;/li&gt;&#xA;&lt;li&gt;The &lt;strong&gt;Cluster orchestrator&lt;/strong&gt; manages your worker nodes. This component collects the real-time resources and schedules your workloads to the perfect matching device.&lt;/li&gt;&#xA;&lt;li&gt;A &lt;strong&gt;Worker&lt;/strong&gt; is any device where a component called NodeEngine is installed. Each node can support multiple execution environments such as Containers (containerd runtime), MicroVM (containerd runtime), and Unikernels (mirageOS).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Disclaimer, currently, only containers are supported. Help is still needed for Unikernels and MicroVMs.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Docs: Deploy your first App</title>
+      <title>Deploy your first App</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/getstarted/get-started-app/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/getstarted/get-started-app/</guid>
+      <description>&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;You have a running Root Orchestrator with at least one Cluster Orchestrator registered.&lt;/li&gt;&#xA;&lt;li&gt;You have at least one Worker Node Registered&lt;/li&gt;&#xA;&lt;li&gt;(Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured.&lt;/li&gt;&#xA;&lt;li&gt;You can access the APIs at &lt;code&gt;&amp;lt;root-orch-ip&amp;gt;:10000/api/docs&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;You can access the Dashboard at &lt;code&gt;http://&amp;lt;root-orch-ip&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;your-first-application-using-the-dashboard-&#34;&gt;Your first application using the Dashboard 💻&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a name=&#34;your-first-application-💻&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s use the dashboard to deploy you first application.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deploy your first App</title>
       <link>https://oakestra.io/docs/getstarted/get-started-app/</link>
       <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
-      
       <guid>https://oakestra.io/docs/getstarted/get-started-app/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Table of content:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#deploy-your-first-applications&#34;&gt;Requirements&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#deploy-your-first-applications&#34;&gt;Deploy your first applications&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;You have a running Root Orchestrator with at least one Cluster Orchestrator registered.&lt;/li&gt;
-&lt;li&gt;You have at least one Worker Node Registered&lt;/li&gt;
-&lt;li&gt;(Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured.&lt;/li&gt;
-&lt;li&gt;You can access the APIs at &lt;code&gt;&amp;lt;root-orch-ip&amp;gt;:10000/api/docs&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;deploy-your-first-application&#34;&gt;Deploy your first application&lt;/h2&gt;
-&lt;p&gt;Let&amp;rsquo;s try deploying an Nginx server and a client. Then we&amp;rsquo;ll enter inside the client container and try to curl Nginx.&lt;/p&gt;
-&lt;p&gt;All we need to do to deploy an application is to create a deployment descriptor and submit it to the platform using the APIs.&lt;/p&gt;
-&lt;h3 id=&#34;deployment-descriptor&#34;&gt;Deployment descriptor&lt;/h3&gt;
-&lt;p&gt;In order to deploy a container a deployment descriptor must be passed to the deployment command.
-The deployment descriptor contains all the information that Oakestra needs in order to achieve a complete
-deploy in the system.&lt;/p&gt;
-&lt;p&gt;Since version 0.4, Oakestra (previously, EdgeIO) uses the following deployment descriptor format.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;deploy_curl_application.yaml&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;sla_version&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;v2.0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;customerID&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Admin&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;applications&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;{&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;applicationID&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;application_name&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;clientsrvr&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;application_namespace&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;application_desc&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Simple demo with curl client and Nginx server&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;microservices&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;{&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;microserviceID&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;microservice_name&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;curl&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;microservice_namespace&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;virtualization&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;container&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;cmd&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;sh&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;-c&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;tail -f /dev/null&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;memory&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;vcpus&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;vgpus&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;vtpus&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;bandwidth_in&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;bandwidth_out&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;storage&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;docker.io/curlimages/curl:7.82.0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;state&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;port&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;9080&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;added_files&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[]&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;}&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;{&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;microserviceID&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;microservice_name&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;nginx&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;microservice_namespace&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;virtualization&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;container&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;cmd&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[],&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;memory&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;vcpus&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;vgpus&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;vtpus&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;bandwidth_in&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;bandwidth_out&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;storage&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;docker.io/library/nginx:latest&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;state&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;port&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;6080:80/tcp&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;addresses&amp;#34;: &lt;/span&gt;{&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;            &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;rr_ip&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;10.30.30.30&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;}&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;added_files&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[]&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;}&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;}&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;}&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This deployment descriptor example generates one application named &lt;em&gt;clientserver&lt;/em&gt; with the &lt;code&gt;test&lt;/code&gt; namespace and two microservices:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;nginx server with test namespace, namely &lt;code&gt;clientserver.test.nginx.test&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;curl client with test namespace, namely &lt;code&gt;clientserver.test.curl.test&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This is a detailed description of the deployment descriptor fields currently implemented:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;sla_version: the current version is v0.2&lt;/li&gt;
-&lt;li&gt;customerID: id of the user, default is Admin
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;application list, in a single deployment descriptor is possible to define multiple applications, each containing:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Fully qualified app name: A fully qualified name in Oakestra is composed of
-&lt;ul&gt;
-&lt;li&gt;application_name: unique name representing the application (max 10 char, no symbols)&lt;/li&gt;
-&lt;li&gt;application_namespace: namespace of the app, used to reference different deployment of the same application. Examples of namespace name can be &lt;code&gt;default&lt;/code&gt; or &lt;code&gt;production&lt;/code&gt; or &lt;code&gt;test&lt;/code&gt; (max 10 char, no symbols)&lt;/li&gt;
-&lt;li&gt;applicationID: leave it empty for new deployments, this is needed only to edit an existing deployment.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;application_desc: Short description of the application&lt;/li&gt;
-&lt;li&gt;microservice list, a list of the microservices composing the application. For each microservice the user can specify:
-&lt;ul&gt;
-&lt;li&gt;microserviceID: leave it empty for new deployments, this is needed only to edit an existing deployment.&lt;/li&gt;
-&lt;li&gt;Fully qualified service name:
-&lt;ul&gt;
-&lt;li&gt;microservice_name: name of the service (max 10 char, no symbols)&lt;/li&gt;
-&lt;li&gt;microservice_namespace: namespace of the service, used to reference different deployment of the same service. Examples of namespace name can be &lt;code&gt;default&lt;/code&gt; or &lt;code&gt;production&lt;/code&gt; or &lt;code&gt;test&lt;/code&gt; (max 10 char, no symbols)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;virtualization: currently the only uspported virtualization is &lt;code&gt;container&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;cmd: list of the commands to be executed inside the container at startup&lt;/li&gt;
-&lt;li&gt;vcpu,vgpu,memory: minimum cpu/gpu vcores and memory amount needed to run the container&lt;/li&gt;
-&lt;li&gt;vtpus: currently not implemented&lt;/li&gt;
-&lt;li&gt;storage: minimum storage size required (currently the scheduler does not take this value into account)&lt;/li&gt;
-&lt;li&gt;bandwidth_in/out: minimum required bandwith on the worker node. (currently the scheduler does not take this value into account)&lt;/li&gt;
-&lt;li&gt;port: port mapping for the container in the syntax hostport_1:containerport_1[/protocol];hostport_2:containerport_2[/protocol] (default protocol is tcp)&lt;/li&gt;
-&lt;li&gt;addresses: allows to specify a custom ip address to be used to balance the traffic across all the service instances.
-&lt;ul&gt;
-&lt;li&gt;rr_ip: [optional filed] This field allows you to setup a custom Round Robin network address to reference all the instances belonging to this service. This address is going to be permanently bounded to the service. The address MUST be in the form &lt;code&gt;10.30.x.y&lt;/code&gt; and must not collide with any other Instance Address or Service IP in the system, otherwise an error will be returned. If you don&amp;rsquo;t specify a RR_ip and you don&amp;rsquo;t set this field, a new address will be generated by the system.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;constraints: array of constraints regarding the service.
-&lt;ul&gt;
-&lt;li&gt;type: constraint type
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;direct&lt;/code&gt;: Send a deployment to a specific cluster and a specific list of eligible nodes. You can specify &lt;code&gt;&amp;quot;node&amp;quot;:&amp;quot;node1;node2;...;noden&amp;quot;&lt;/code&gt; a list of node&amp;rsquo;s hostnames. These are the only eligible worker nodes.  &lt;code&gt;&amp;quot;cluster&amp;quot;:&amp;quot;cluster_name&amp;quot;&lt;/code&gt; The name of the cluster where this service must be scheduled. E.g.:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;#34;constraints&amp;#34;:[
-            {
-              &amp;#34;type&amp;#34;:&amp;#34;direct&amp;#34;,
-              &amp;#34;node&amp;#34;:&amp;#34;xavier1&amp;#34;,
-              &amp;#34;cluster&amp;#34;:&amp;#34;gpu&amp;#34;
-            }
-          ]
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;login-to-the-apis&#34;&gt;Login to the APIs&lt;/h3&gt;
-&lt;p&gt;After running a cluster you can use the debug OpenAPI page to interact with the apis and use the infrastructure&lt;/p&gt;
-&lt;p&gt;connect to &lt;code&gt;&amp;lt;root_orch_ip&amp;gt;:10000/api/docs&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Authenticate using the following procedure:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;locate the login method and use the try-out button
-&lt;img src=&#34;https://oakestra.io/getstarted/login-try.png&#34; alt=&#34;try-login&#34;&gt;&lt;/li&gt;
-&lt;li&gt;Use the default Admin credentials to login
-&lt;img src=&#34;https://oakestra.io/getstarted/login-execute.png&#34; alt=&#34;execute-login&#34;&gt;&lt;/li&gt;
-&lt;li&gt;Copy the result login token
-&lt;img src=&#34;https://oakestra.io/getstarted/login-token-copy.png&#34; alt=&#34;token-login&#34;&gt;&lt;/li&gt;
-&lt;li&gt;Go to the top of the page and authenticate with this token
-&lt;img src=&#34;https://oakestra.io/getstarted/authorize.png&#34; alt=&#34;auth-login&#34;&gt;
-&lt;img src=&#34;https://oakestra.io/getstarted/authorize-2.png&#34; alt=&#34;auth2-login&#34;&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;register-an-application-and-the-services&#34;&gt;Register an application and the services&lt;/h3&gt;
-&lt;p&gt;After you authenticate with the login function, you can try out to deploy the first application.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Upload the deployment description to the system. You can try using the deployment descriptor above.
-&lt;img src=&#34;https://oakestra.io/getstarted/post-app.png&#34; alt=&#34;post app&#34;&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The response contains the Application id and the id for all the application&amp;rsquo;s services. Now the application and the services are registered to the platform. It&amp;rsquo;s time to deploy the service instances!&lt;/p&gt;
-&lt;p&gt;You can always remove or create a new service for the application using the /api/services endpoints&lt;/p&gt;
-&lt;h3 id=&#34;deploy-an-instance-of-a-registered-service&#34;&gt;Deploy an instance of a registered service&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Trigger a deployment of a service&amp;rsquo;s instance using &lt;code&gt;POST /api/service/{serviceid}/instance&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;each call to this endpoint generates a new instance of the service&lt;/p&gt;
-&lt;h3 id=&#34;monitor-the-service-status&#34;&gt;Monitor the service status&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;With &lt;code&gt;GET /api/aplications/&amp;lt;userid&amp;gt;&lt;/code&gt; (or simply /api/aplications/ if you&amp;rsquo;re admin) you can check the list of the deployed application.&lt;/li&gt;
-&lt;li&gt;With &lt;code&gt;GET /api/services/&amp;lt;appid&amp;gt;&lt;/code&gt; you can check the services attached to an application&lt;/li&gt;
-&lt;li&gt;With &lt;code&gt;GET /api/service/&amp;lt;serviceid&amp;gt;&lt;/code&gt; you can check the status for all the instances of &lt;serviceid&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;undeploy&#34;&gt;Undeploy&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Use &lt;code&gt;DELETE /api/service/&amp;lt;serviceid&amp;gt;&lt;/code&gt; to delete all the instances of a service&lt;/li&gt;
-&lt;li&gt;Use &lt;code&gt;DELETE /api/service/&amp;lt;serviceid&amp;gt;/instance/&amp;lt;instance number&amp;gt;&lt;/code&gt; to delete a specific instance of a service&lt;/li&gt;
-&lt;li&gt;Use &lt;code&gt;DELETE /api/application/&amp;lt;appid&amp;gt;&lt;/code&gt; to delete all together an application with all the services and instances&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;check-if-the-deployment-succeded&#34;&gt;Check if the deployment succeded&lt;/h3&gt;
-&lt;p&gt;Familiarize yourself with the API and discover for each one of the service the status and the public address.&lt;/p&gt;
-&lt;p&gt;If both services show the status &lt;strong&gt;ACTIVE&lt;/strong&gt; then everything went fine. Otherwise, there might be a configuration issue or a bug. Please debug it with &lt;code&gt;docker logs system_manager -f --tail=1000&lt;/code&gt; on the root orchestrator, with &lt;code&gt;docker logs cluster_manager -f --tail=1000&lt;/code&gt; on the cluster orchestrator and checking the logs of the NetManager and NodeEngine. Then please open an issue.&lt;/p&gt;
-&lt;p&gt;If both services are ACTIVE, it is time to test the communication.&lt;/p&gt;
-&lt;p&gt;Try to reach the nginx server you just deployed reaching: http://&amp;lt;deployment_machine_ip&amp;gt;:6080 If you see the Nginx landing page the deployment succeeded! Hurray! 🎉&lt;/p&gt;
-&lt;p&gt;If you want to try the semantic addressing, move into the worker node hosting the client and use the following command to log into the container.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo ctr -n edge.io task exec --exec-id term1 Client.default.client.default /bin/sh
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once we are inside our client, we can curl the Nginx server and check if everything works.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl 10.30.30.30
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note that this address is the one we specified in the Nginx&amp;rsquo;s deployment descriptor.&lt;/p&gt;
-
-      </description>
+      <description>&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;You have a running Root Orchestrator with at least one Cluster Orchestrator registered.&lt;/li&gt;&#xA;&lt;li&gt;You have at least one Worker Node Registered&lt;/li&gt;&#xA;&lt;li&gt;(Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured.&lt;/li&gt;&#xA;&lt;li&gt;You can access the APIs at &lt;code&gt;&amp;lt;root-orch-ip&amp;gt;:10000/api/docs&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;You can access the Dashboard at &lt;code&gt;http://&amp;lt;root-orch-ip&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;your-first-application-using-the-dashboard-&#34;&gt;Your first application using the Dashboard 💻&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a name=&#34;your-first-application-💻&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s use the dashboard to deploy you first application.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Docs: Start your Dashboard</title>
+      <title>Start your Dashboard</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/dashboard/getting-started-dashboard/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/dashboard/getting-started-dashboard/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The Dashboard is a sophisticated web-based user interface for the Oakestra system.&#xA;It is designed to provide users with a comprehensive set of tools to deploy applications to a&#xA;Oakestra cluster, effectively manage cluster resources, and troubleshoot any issues that may arise.&lt;/p&gt;&#xA;&lt;p&gt;With the Dashboard, users can gain an insightful overview of the applications currently running on&#xA;their cluster. It allows them to create and modify individual services,&#xA;view the status of running services, and configure service-level agreements (SLAs) with an intuitive form.&#xA;This feature-rich interface also enables users to monitor the state of Oakestra resources within&#xA;their cluster and track any errors that may have occurred.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Start your Dashboard</title>
       <link>https://oakestra.io/docs/dashboard/getting-started-dashboard/</link>
       <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
-      
       <guid>https://oakestra.io/docs/dashboard/getting-started-dashboard/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The Dashboard is a sophisticated web-based user interface for the Oakestra system.
-It is designed to provide users with a comprehensive set of tools to deploy applications to a
-Oakestra cluster, effectively manage cluster resources, and troubleshoot any issues that may arise.&lt;/p&gt;
-&lt;p&gt;With the Dashboard, users can gain an insightful overview of the applications currently running on
-their cluster. It allows them to create and modify individual services,
-view the status of running services, and configure service-level agreements (SLAs) with an intuitive form.
-This feature-rich interface also enables users to monitor the state of Oakestra resources within
-their cluster and track any errors that may have occurred.&lt;/p&gt;
-&lt;p&gt;In essence, the Dashboard empowers users to harness the full potential of the Oakestra system with
-ease and efficiency, enabling them to achieve their goals and objectives in a
-seamless and hassle-free manner.&lt;/p&gt;
-&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;You have a running Root Orchestrator.&lt;/li&gt;
-&lt;li&gt;You can access the APIs at &lt;code&gt;&amp;lt;root-orch-ip&amp;gt;:10000&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;preparation&#34;&gt;Preparation&lt;/h2&gt;
-&lt;p&gt;Make sure the following software is installed:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Git 2.13.2+ (&lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;installation manual&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Docker 1.13.1+ (&lt;a href=&#34;https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/&#34;&gt;installation manual&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;deployment&#34;&gt;Deployment&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;0)&lt;/strong&gt; Clone the repository&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/oakestra/dashboard.git &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; dashboard
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt; Create a file that contains the environment variables&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;API_ADDRESS=&amp;lt;IP_of_the_system_manager_api&amp;gt;:10000&amp;#34;&lt;/span&gt; &amp;gt; .env
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;2)&lt;/strong&gt; Run the dashboard&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo docker-compose up
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;running-the-okakestra-framework&#34;&gt;Running the Okakestra Framework&lt;/h3&gt;
-&lt;p&gt;To be able to log into the dashboard and test all functions, at least the System Manager and
-MongoDB must be started.
-How to start them is described in this WIKI &lt;a href=&#34;../../getstarted/get-started-cluster&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If these components were not started or the wrong IP address was configured, the login screen can be reached, but you cannot log in to the dashboard.&lt;/p&gt;
-
-      </description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The Dashboard is a sophisticated web-based user interface for the Oakestra system.&#xA;It is designed to provide users with a comprehensive set of tools to deploy applications to a&#xA;Oakestra cluster, effectively manage cluster resources, and troubleshoot any issues that may arise.&lt;/p&gt;&#xA;&lt;p&gt;With the Dashboard, users can gain an insightful overview of the applications currently running on&#xA;their cluster. It allows them to create and modify individual services,&#xA;view the status of running services, and configure service-level agreements (SLAs) with an intuitive form.&#xA;This feature-rich interface also enables users to monitor the state of Oakestra resources within&#xA;their cluster and track any errors that may have occurred.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Docs: Access Control</title>
+      <title>Deploy your first App</title>
+      <link>https://oakestra.io/archive/alpha/docs/getstarted/get-started-app/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/alpha/docs/getstarted/get-started-app/</guid>
+      <description>&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;You have a running Root Orchestrator with at least one Cluster Orchestrator registered.&lt;/li&gt;&#xA;&lt;li&gt;You have at least one Worker Node Registered&lt;/li&gt;&#xA;&lt;li&gt;(Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured.&lt;/li&gt;&#xA;&lt;li&gt;You can access the APIs at &lt;code&gt;&amp;lt;root-orch-ip&amp;gt;:10000/api/docs&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;You can access the Dashboard at &lt;code&gt;http://&amp;lt;root-orch-ip&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;your-first-application-using-the-dashboard-&#34;&gt;Your first application using the Dashboard 💻&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a name=&#34;your-first-application-💻&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s use the dashboard to deploy you first application.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Access Control</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/dashboard/access-control/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/dashboard/access-control/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;access-control&#34;&gt;Access control&lt;/h2&gt;&#xA;&lt;p&gt;Upon successful installation and accessibility of the Dashboard, our attention can shift to configuring&#xA;access control to resources for various users.&lt;/p&gt;&#xA;&lt;p&gt;Upon launching the framework for the first time, an administrative user is automatically generated.&#xA;This administrative user can then be leveraged to create additional users and organizations within the system.&lt;/p&gt;&#xA;&lt;p&gt;Credentials for the admin user:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Username:&lt;/strong&gt; Admin&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Password:&lt;/strong&gt; Admin&lt;/p&gt;&#xA;&lt;p&gt;It is important to note that after the initial launch of the System Manager,&#xA;it is imperative to change the password for the Admin user as an added measure of security.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Access Control</title>
       <link>https://oakestra.io/docs/dashboard/access-control/</link>
       <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
-      
       <guid>https://oakestra.io/docs/dashboard/access-control/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;access-control&#34;&gt;Access control&lt;/h2&gt;
-&lt;p&gt;Upon successful installation and accessibility of the Dashboard, our attention can shift to configuring
-access control to resources for various users.&lt;/p&gt;
-&lt;p&gt;Upon launching the framework for the first time, an administrative user is automatically generated.
-This administrative user can then be leveraged to create additional users and organizations within the system.&lt;/p&gt;
-&lt;p&gt;Credentials for the admin user:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Username:&lt;/strong&gt; Admin&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Password:&lt;/strong&gt; Admin&lt;/p&gt;
-&lt;p&gt;It is important to note that after the initial launch of the System Manager,
-it is imperative to change the password for the Admin user as an added measure of security.&lt;/p&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Oakestra supports currently only one way of authenticating and authorizing users.
-Authorization is handled by the Root Orchestrator (System Manager) API server.
-The Dashboard only acts as a proxy and passes all auth information to it.
-In case of forbidden access corresponding warnings will be displayed in the Dashboard.&lt;/p&gt;
-&lt;h2 id=&#34;authentication&#34;&gt;Authentication&lt;/h2&gt;
-&lt;p&gt;Oakestra Dashboard currently supports only the following method for authenticating users:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Username/password&lt;/strong&gt; that can be used on the Dashboard login view.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Once a user has successfully logged in, tokens in the authorization header are leveraged to authenticate the user.&lt;/p&gt;
-&lt;h3 id=&#34;authorization-header&#34;&gt;Authorization Header&lt;/h3&gt;
-&lt;p&gt;Using the authorization header is the only way to make Dashboard function as a specific user. However, it is worth noting that if plain HTTP is used, the traffic is vulnerable to &lt;a href=&#34;https://en.wikipedia.org/wiki/Man-in-the-middle_attack&#34;&gt;MITM attacks&lt;/a&gt;, which could result in potential security risks.&lt;/p&gt;
-&lt;p&gt;To enable Dashboard to utilize the authorization header, simply pass &lt;code&gt;Authorization: Bearer &amp;lt;token&amp;gt;&lt;/code&gt; with every request made to Dashboard. Currently, this is automatically executed with an HTTP interceptor.&lt;/p&gt;
-&lt;p&gt;To test this feature swiftly, try out the &lt;a href=&#34;https://chrome.google.com/webstore/detail/requestly-redirect-url-mo/mdnleldcmiljblolnjhpnblkcekpdkpa&#34;&gt;Requestly&lt;/a&gt; Chrome browser plugin that enables manual modification of request headers.&lt;/p&gt;
-&lt;h2 id=&#34;organization-login&#34;&gt;Organization Login&lt;/h2&gt;
-&lt;p&gt;If you want to log in to an organization you have to enter the organization name if there is no organization yet or if no organization is entered, you will be automatically logged in to the ROOT organization.&lt;/p&gt;
-&lt;p&gt;Here you can see the login to the &lt;strong&gt;sampleOrga:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/orga-login.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-
-      </description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;access-control&#34;&gt;Access control&lt;/h2&gt;&#xA;&lt;p&gt;Upon successful installation and accessibility of the Dashboard, our attention can shift to configuring&#xA;access control to resources for various users.&lt;/p&gt;&#xA;&lt;p&gt;Upon launching the framework for the first time, an administrative user is automatically generated.&#xA;This administrative user can then be leveraged to create additional users and organizations within the system.&lt;/p&gt;&#xA;&lt;p&gt;Credentials for the admin user:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Username:&lt;/strong&gt; Admin&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Password:&lt;/strong&gt; Admin&lt;/p&gt;&#xA;&lt;p&gt;It is important to note that after the initial launch of the System Manager,&#xA;it is imperative to change the password for the Admin user as an added measure of security.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Docs: Features</title>
+      <title>Features</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/dashboard/features/</link>
+      <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/dashboard/features/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;features&#34;&gt;Features&lt;/h1&gt;&#xA;&lt;p&gt;The user interface is still under development and therefore does not offer so many features yet.&#xA;However, we are working on it to support more and more features.&#xA;If you find ideas for new features or bugs post an issue in the &lt;a href=&#34;https://github.com/oakestra/dashboard&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-an-application&#34;&gt;Creating an application&lt;/h2&gt;&#xA;&lt;p&gt;In Oakestra there is the principle of applications and services, within one application there can be several services and one user can create several applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Features</title>
       <link>https://oakestra.io/docs/dashboard/features/</link>
       <pubDate>Wed, 05 Oct 2022 09:56:27 +0200</pubDate>
-      
       <guid>https://oakestra.io/docs/dashboard/features/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;features&#34;&gt;Features&lt;/h1&gt;
-&lt;p&gt;The user interface is still under development and therefore does not offer so many features yet.
-However, we are working on it to support more and more features.
-If you find ideas for new features or bugs post an issue in the &lt;a href=&#34;https://github.com/oakestra/dashboard&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;creating-an-application&#34;&gt;Creating an application&lt;/h2&gt;
-&lt;p&gt;In Oakestra there is the principle of applications and services, within one application there can be several services and one user can create several applications.&lt;/p&gt;
-&lt;p&gt;In order to create a service, an application must first be created.  This is very simple, you only need to specify the name, the namespace and an optional description.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/add-app.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;creating-a-service&#34;&gt;Creating a service&lt;/h2&gt;
-&lt;p&gt;To create a service, you can use the APIs as described &lt;a href=&#34;https://www.oakestra.io/docs/getstarted/get-started-app&#34;&gt;here&lt;/a&gt;.
-Another option is to create a service with the dashboard,
-which makes this process much easier.&lt;/p&gt;
-&lt;p&gt;As described in other parts of the documentation,
-an SLA definition (Service Level Agreement) must be created for the
-creation of an application.
-This can be done easily using the various input fields in the dashboard.&lt;/p&gt;
-&lt;p&gt;To do this, first create an application or select the appropriate application in which a new service should be created.  Then you can create a service in this application by entering the various values in the form. The dashboard then creates the SLA provisioning descriptor
-based on your input and sends it to the root orchestrator.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/create-service.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;If you already have other SLA configurations, you can upload this
-configuration to the dashboard, and it will send everything to the root.&lt;/p&gt;
-&lt;p&gt;Please note that the JSON file should have the following format.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{
-&amp;#34;microservices&amp;#34; : [
-        {
-          &amp;#34;microserviceID&amp;#34;: &amp;#34;&amp;#34;,
-          &amp;#34;microservice_name&amp;#34;: &amp;#34;curl&amp;#34;,
-          &amp;#34;microservice_namespace&amp;#34;: &amp;#34;test&amp;#34;,
-          &amp;#34;virtualization&amp;#34;: &amp;#34;container&amp;#34;,
-          &amp;#34;cmd&amp;#34;: [&amp;#34;sh&amp;#34;, &amp;#34;-c&amp;#34;, &amp;#34;tail -f /dev/null&amp;#34;],
-          &amp;#34;memory&amp;#34;: 100,
-          &amp;#34;vcpus&amp;#34;: 1,
-          &amp;#34;vgpus&amp;#34;: 0,
-          &amp;#34;vtpus&amp;#34;: 0,
-          &amp;#34;bandwidth_in&amp;#34;: 0,
-          &amp;#34;bandwidth_out&amp;#34;: 0,
-          &amp;#34;storage&amp;#34;: 0,
-          &amp;#34;code&amp;#34;: &amp;#34;docker.io/curlimages/curl:7.82.0&amp;#34;,
-          &amp;#34;state&amp;#34;: &amp;#34;&amp;#34;,
-          &amp;#34;port&amp;#34;: &amp;#34;9080&amp;#34;,
-          &amp;#34;added_files&amp;#34;: []
-        },
-        {
-          &amp;#34;microserviceID&amp;#34;: &amp;#34;&amp;#34;,
-          &amp;#34;microservice_name&amp;#34;: &amp;#34;nginx&amp;#34;,
-          &amp;#34;microservice_namespace&amp;#34;: &amp;#34;test&amp;#34;,
-          &amp;#34;virtualization&amp;#34;: &amp;#34;container&amp;#34;,
-          &amp;#34;cmd&amp;#34;: [],
-          &amp;#34;memory&amp;#34;: 100,
-          &amp;#34;vcpus&amp;#34;: 1,
-          &amp;#34;vgpus&amp;#34;: 0,
-          &amp;#34;vtpus&amp;#34;: 0,
-          &amp;#34;bandwidth_in&amp;#34;: 0,
-          &amp;#34;bandwidth_out&amp;#34;: 0,
-          &amp;#34;storage&amp;#34;: 0,
-          &amp;#34;code&amp;#34;: &amp;#34;docker.io/library/nginx:latest&amp;#34;,
-          &amp;#34;state&amp;#34;: &amp;#34;&amp;#34;,
-          &amp;#34;port&amp;#34;: &amp;#34;6080:80/tcp&amp;#34;,
-          &amp;#34;addresses&amp;#34;: {
-            &amp;#34;rr_ip&amp;#34;: &amp;#34;10.30.30.30&amp;#34;
-          },
-          &amp;#34;added_files&amp;#34;: []
-        }
-      ]
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The microservice array can then contain any number of service configurations.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/sla-upload.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;service-details&#34;&gt;Service Details&lt;/h2&gt;
-&lt;p&gt;Once a service has been created and deployed, the parts of an instance can be viewed. To do this, click on the arrow in the instance list.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/details.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;roles&#34;&gt;Roles&lt;/h2&gt;
-&lt;p&gt;After a successful login, the user receives a JWT token that authenticates the user.
-The token contains the user&amp;rsquo;s roles and the organization ID in which the user is currently logged in.
-We distinguish between the following different roles.&lt;/p&gt;
-&lt;h3 id=&#34;admin&#34;&gt;Admin&lt;/h3&gt;
-&lt;p&gt;The admin is created at the start of the root orchestrator. He can create new users, create organizations,
-add users to organizations and change settings in the complete system.&lt;/p&gt;
-&lt;h3 id=&#34;organization-admin&#34;&gt;Organization Admin&lt;/h3&gt;
-&lt;p&gt;A user with this role is the admin of an organization he can add new users to the organization
-and manage their roles within the organization.&lt;/p&gt;
-&lt;h3 id=&#34;infrastructure-provider&#34;&gt;Infrastructure Provider&lt;/h3&gt;
-&lt;p&gt;A user with this role can add resources that can then be used to deploy applications there.&lt;/p&gt;
-&lt;h3 id=&#34;application-provider&#34;&gt;Application Provider&lt;/h3&gt;
-&lt;p&gt;This is the default role of a user, he can create applications and services and manage them accordingly.&lt;/p&gt;
-&lt;h2 id=&#34;user-management&#34;&gt;User Management&lt;/h2&gt;
-&lt;p&gt;The admin can easily add a new user in the user management and assign him appropriate roles.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/create-user.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;organizations&#34;&gt;Organizations&lt;/h2&gt;
-&lt;p&gt;An Organization in Oakestra is a fundamental unit designed to facilitate and enhance collaboration among team members.
-It serves as a container for projects, applications, and resources, providing a structured and efficient
-environment for collective work.
-Within an organization, team members share a common space where they can
-collaboratively develop, manage, and deploy applications.&lt;/p&gt;
-&lt;p&gt;Key attributes of an Oakestra Organization include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Collaborative Space:&lt;/strong&gt; Organizations provide a dedicated space for team members to work together.
-This shared environment ensures that all members have visibility into the applications and projects associated with the organization.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Access Control:&lt;/strong&gt; Members of an organization enjoy access to all applications
-created within that organizational context.
-This access control mechanism streamlines collaboration by allowing team members to contribute to shared projects seamlessly.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Resource Utilization:&lt;/strong&gt; The organization serves as a hub for resource management.
-Team members can utilize the resources provided within the organization to deploy new services,
-fostering an efficient and centralized approach to application development.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;root-organization&#34;&gt;Root Organization&lt;/h3&gt;
-&lt;p&gt;When the root orchestrator is started for the first time, a root organization
-is also created with the admin, and each user is automatically part of this root organization.
-However, users can also be part of other organizations.
-The root organization has specific properties.
-Unlike other organizations, where a user can view all applications within the organization
-and share resources, in the root organization,
-only the applications that a user has created can be viewed.&lt;/p&gt;
-&lt;h2 id=&#34;e-mail-configuration&#34;&gt;E-mail Configuration&lt;/h2&gt;
-&lt;p&gt;The admin of Oakestra can configure an SMTP server in the settings.&lt;/p&gt;
-&lt;p&gt;If no SMTP server is configured, the official Oakestra mail service can be used in the future.&lt;/p&gt;
-&lt;p&gt;Currently, mails are sent in the following scenarios:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;When creating a new user, the user receives a mail with the password previously set by the admin.&lt;/li&gt;
-&lt;li&gt;When changing the password of a user&lt;/li&gt;
-&lt;li&gt;And to reset the password of a user.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If nothing is configured, no mails are sent and the admin must reset the password for the user.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/smtp.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; This feature is implemented in the frontend but not yet 100% in the backend and therefore might not work yet.
-&lt;a href=&#34;https://github.com/oakestra/oakestra/issues/182&#34;&gt;Here&lt;/a&gt; you can see the GitHub issue for this feature.&lt;/p&gt;
-
-      </description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;features&#34;&gt;Features&lt;/h1&gt;&#xA;&lt;p&gt;The user interface is still under development and therefore does not offer so many features yet.&#xA;However, we are working on it to support more and more features.&#xA;If you find ideas for new features or bugs post an issue in the &lt;a href=&#34;https://github.com/oakestra/dashboard&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;creating-an-application&#34;&gt;Creating an application&lt;/h2&gt;&#xA;&lt;p&gt;In Oakestra there is the principle of applications and services, within one application there can be several services and one user can create several applications.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Docs: High level architecture</title>
+      <title>High level architecture</title>
+      <link>https://oakestra.io/archive/0.4.2/docs/oakestra/architecture/</link>
+      <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
+      <guid>https://oakestra.io/archive/0.4.2/docs/oakestra/architecture/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;table-of-content&#34;&gt;Table of content&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#root-orchestrator&#34;&gt;Root Orchestrator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#cluster-orchestrator&#34;&gt;Cluster Orchestrator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#worker-node&#34;&gt;Worker Node&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;oakestra-detailed-architecture&#34;&gt;Oakestra Detailed Architecture&lt;/h1&gt;&#xA;&lt;p&gt;As shown in our &lt;a href=&#34;get-started.md&#34;&gt;Get Started&lt;/a&gt; guide, Oakestra uses 3-4 building blocks to operate.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Root Orchestrator&lt;/li&gt;&#xA;&lt;li&gt;Cluster Orchestrator&lt;/li&gt;&#xA;&lt;li&gt;Node Engine&lt;/li&gt;&#xA;&lt;li&gt;NetManager (optional, detailed in the networking section of the Wiki)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.&lt;/p&gt;&#xA;&lt;h2 id=&#34;root-orchestrator&#34;&gt;Root Orchestrator&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/RootArch.png&#34; alt=&#34;root architecture&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>High level architecture</title>
       <link>https://oakestra.io/docs/oakestra/architecture/</link>
       <pubDate>Tue, 09 Aug 2022 15:56:27 +0200</pubDate>
-      
       <guid>https://oakestra.io/docs/oakestra/architecture/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;table-of-content&#34;&gt;Table of content&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#root-orchestrator&#34;&gt;Root Orchestrator&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#cluster-orchestrator&#34;&gt;Cluster Orchestrator&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#worker-node&#34;&gt;Worker Node&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;oakestra-detailed-architecture&#34;&gt;Oakestra Detailed Architecture&lt;/h1&gt;
-&lt;p&gt;As shown in our &lt;a href=&#34;get-started.md&#34;&gt;Get Started&lt;/a&gt; guide, Oakestra uses 3-4 building blocks to operate.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Root Orchestrator&lt;/li&gt;
-&lt;li&gt;Cluster Orchestrator&lt;/li&gt;
-&lt;li&gt;Node Engine&lt;/li&gt;
-&lt;li&gt;NetManager (optional, detailed in the networking section of the Wiki)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.&lt;/p&gt;
-&lt;h2 id=&#34;root-orchestrator&#34;&gt;Root Orchestrator&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/RootArch.png&#34; alt=&#34;root architecture&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The Root Orchestrator is a centralized control plane that is aware of the participating clusters.&lt;/p&gt;
-&lt;p&gt;This picture describes the containers that compose the Root Orchestrator. As you may have seen we use docker-compose to bring up the orchestrators. This is because each block of this picture is &lt;em&gt;currently&lt;/em&gt; a separated container.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The System Manager is the point of contact for users, developers, or operators to use the system as an application deployment platform. It exposes APIs to receive deployment commands from users (application management) and APIs to handle slave Cluster Orchestrators. Cluster Orchestrators send their information
-regularly, and the System Manager is aware of those clusters.&lt;/li&gt;
-&lt;li&gt;The scheduler calculates a placement for a given application within the available clusters.&lt;/li&gt;
-&lt;li&gt;Mongo is the interface we use to access the database. We store aggregated information about the participating clusters. We differentiate between static metadata and dynamic data. The former covers the IP address, port number, name, and location of each cluster. The latter can be data that is
-changing regularly, such as the number of worker nodes per cluster, total amount of CPU cores and memory size, total amount of disk space, GPU capabilities, etc.&lt;/li&gt;
-&lt;li&gt;The Root Network Components are detailed in the Oakestra-Net Wiki.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;system-manager-apis&#34;&gt;System Manager APIs&lt;/h3&gt;
-&lt;p&gt;At startup, the System Manager exposes the public APIs at &amp;lt;root_orch_ip&amp;gt;:10000
-Thr API documentation is available at &lt;code&gt;&amp;lt;root_orch_ip&amp;gt;:10000/api/docs&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;consideration-regarding-failure-and-scalability&#34;&gt;Consideration regarding failure and scalability:&lt;/h3&gt;
-&lt;p&gt;The main problem of a centralized control plane is that it can act as a single point of failure. By design without a Root Orchestrator, the clusters are able to satisfy the SLA for the deployed applications internally, the only affected functionalities are the deployment of new services and the intra-cluster migrations. To avoid failure and increase resiliency, an idea is to make the component able to scale by introducing a load balancer in front of the replicated components. However, this feature is not implemented yet.&lt;/p&gt;
-&lt;h2 id=&#34;cluster-orchestrator&#34;&gt;Cluster Orchestrator&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/clusterArch.png&#34; alt=&#34;cluster architecture&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The Cluster orchestrator is a twin of the root but with the following differences:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The cluster orchestrator&amp;rsquo;s scope is the end worker node devices.&lt;/li&gt;
-&lt;li&gt;A cluster orchestrator performs aggregation. It aggregates the worker node resources and does not expose the cluster composition directly to the root.&lt;/li&gt;
-&lt;li&gt;The cluster uses MQTT for communication with the worker nodes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;mqtt-topics&#34;&gt;MQTT Topics&lt;/h3&gt;
-&lt;p&gt;The topics used to interact with the worker nodes are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&amp;ldquo;nodes/&lt;node-id&gt;/information$&amp;rdquo;: topic where each worker periodically posts its resources usage&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;nodes/&lt;node-id&gt;/job$&amp;rdquo;: used to perform deployments on a worker node and receive back the feedback&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;nodes/&lt;node-id&gt;/jobs/resources$&amp;rdquo;: used to post the resource usage and status of the running instances in a worker node&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;schedulers-algorithms&#34;&gt;Schedulers Algorithms&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/scheduling-celery-worker.png&#34; alt=&#34;scheduler&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The schedulers, at each level, receive Job Placement tasks and return a placement decision.
-At the root level, the placement decision is a Cluster. At the cluster level, the placement decision is a worker node.&lt;/p&gt;
-&lt;p&gt;A job placement task is a Job structure composed of:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Service
-&lt;ul&gt;
-&lt;li&gt;Instances&lt;/li&gt;
-&lt;li&gt;Requirements&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Placement currently uses the default Best Fist algorithm. You can find more details in the scheduling section of the wiki.&lt;/p&gt;
-&lt;h2 id=&#34;worker-node&#34;&gt;Worker Node&lt;/h2&gt;
-&lt;p&gt;A machine, in order to be qualified as Worker Node, must contain a Node Engine and optionally a Net Manager. The former enables the deployment of applications accordingly to the runtimes installed. The latter plugs the networking components to enable communication across the applications deployed.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/nodeEngineArch.png&#34; alt=&#34;NodeEngine&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The Node Engine is a single binary implemented using Go Lang and is composed of the following modules:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;MQTT: This is the interface between the worker and the Cluster. The deployment commands, node status updates, and jobs updates use this component.&lt;/li&gt;
-&lt;li&gt;Models: This contains the models that describe the node and the jobs.
-&lt;ul&gt;
-&lt;li&gt;Node: describes the resources of the node that are transmitted to the cluster. This is decomposed into dynamic resources and static. The status of static resources is transmitted only at startup. Dynamic resource statuses such as cpu/memory usage are updated regularly.&lt;/li&gt;
-&lt;li&gt;Service: describe the fields of the services that are managed by this implementation of the worker node, as well as the real-time service usage statistics that must be monitored.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Jobs: Background jobs that monitor the status of the Worker node itself and the applications deployed.&lt;/li&gt;
-&lt;li&gt;Runtimes: Contains the glue with the supported system runtimes. Right now, the runtime dispatcher only supports containerd and, therefore, &amp;ldquo;containers&amp;rdquo; is the only runtime available. Any new runtime integration is implemented here. We&amp;rsquo;re currently working on Unikernels integration.&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/wiki-banner-help.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;table-of-content&#34;&gt;Table of content&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#root-orchestrator&#34;&gt;Root Orchestrator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#cluster-orchestrator&#34;&gt;Cluster Orchestrator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#worker-node&#34;&gt;Worker Node&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;oakestra-detailed-architecture&#34;&gt;Oakestra Detailed Architecture&lt;/h1&gt;&#xA;&lt;p&gt;As shown in our &lt;a href=&#34;get-started.md&#34;&gt;Get Started&lt;/a&gt; guide, Oakestra uses 3-4 building blocks to operate.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Root Orchestrator&lt;/li&gt;&#xA;&lt;li&gt;Cluster Orchestrator&lt;/li&gt;&#xA;&lt;li&gt;Node Engine&lt;/li&gt;&#xA;&lt;li&gt;NetManager (optional, detailed in the networking section of the Wiki)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This section of the wiki is intended for people willing to contribute to the project and it is meant to describe some internal architectural details.&lt;/p&gt;&#xA;&lt;h2 id=&#34;root-orchestrator&#34;&gt;Root Orchestrator&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://oakestra.io/oakestra/RootArch.png&#34; alt=&#34;root architecture&#34;&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
