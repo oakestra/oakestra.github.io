@@ -20,28 +20,28 @@
 <title>Add Edge Devices (Workers) to Your Setup | </title>
 <meta name="description" content="Add a Worker Node to your Cluster If you have a running Root Orchestrator and at least one Cluster Orchestrator you can add a new worker node to your cluster.
 First, you need to install your Worker Node components on every Edge Device you want to use as a worker running:
-curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh | sh - Each worker node must be attached to a running Cluster Orchestrator. To do so, you need to know the IP address of the Cluster Orchestrator you want to connect to.">
+export OAKESTRA_VERSION=alpha curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh | sh - Each worker node must be attached to a running Cluster Orchestrator. To do so, you need to know the IP address of the Cluster Orchestrator you want to connect to.">
 <meta property="og:url" content="https://oakestra.io/archive/alpha/docs/getstarted/your-first-worker/">
   <meta property="og:title" content="Add Edge Devices (Workers) to Your Setup">
   <meta property="og:description" content="Add a Worker Node to your Cluster If you have a running Root Orchestrator and at least one Cluster Orchestrator you can add a new worker node to your cluster.
 First, you need to install your Worker Node components on every Edge Device you want to use as a worker running:
-curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh | sh - Each worker node must be attached to a running Cluster Orchestrator. To do so, you need to know the IP address of the Cluster Orchestrator you want to connect to.">
+export OAKESTRA_VERSION=alpha curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh | sh - Each worker node must be attached to a running Cluster Orchestrator. To do so, you need to know the IP address of the Cluster Orchestrator you want to connect to.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="archive">
-    <meta property="article:modified_time" content="2024-12-05T14:56:13+01:00">
+    <meta property="article:modified_time" content="2024-12-06T22:37:11+01:00">
 
   <meta itemprop="name" content="Add Edge Devices (Workers) to Your Setup">
   <meta itemprop="description" content="Add a Worker Node to your Cluster If you have a running Root Orchestrator and at least one Cluster Orchestrator you can add a new worker node to your cluster.
 First, you need to install your Worker Node components on every Edge Device you want to use as a worker running:
-curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh | sh - Each worker node must be attached to a running Cluster Orchestrator. To do so, you need to know the IP address of the Cluster Orchestrator you want to connect to.">
-  <meta itemprop="dateModified" content="2024-12-05T14:56:13+01:00">
-  <meta itemprop="wordCount" content="198">
+export OAKESTRA_VERSION=alpha curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh | sh - Each worker node must be attached to a running Cluster Orchestrator. To do so, you need to know the IP address of the Cluster Orchestrator you want to connect to.">
+  <meta itemprop="dateModified" content="2024-12-06T22:37:11+01:00">
+  <meta itemprop="wordCount" content="200">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Add Edge Devices (Workers) to Your Setup">
   <meta name="twitter:description" content="Add a Worker Node to your Cluster If you have a running Root Orchestrator and at least one Cluster Orchestrator you can add a new worker node to your cluster.
 First, you need to install your Worker Node components on every Edge Device you want to use as a worker running:
-curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh | sh - Each worker node must be attached to a running Cluster Orchestrator. To do so, you need to know the IP address of the Cluster Orchestrator you want to connect to.">
+export OAKESTRA_VERSION=alpha curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh | sh - Each worker node must be attached to a running Cluster Orchestrator. To do so, you need to know the IP address of the Cluster Orchestrator you want to connect to.">
 <link rel="preload" href="/scss/main.min.5d79d8460962ff102d5ebf25f747487598eeca2861ac4ed29e97672e2828e13a.css" as="style" integrity="sha256-XXnYRgli/xAtXr8l90dIdZjuyihhrE7SnpdnLigo4To=" crossorigin="anonymous">
 <link href="/scss/main.min.5d79d8460962ff102d5ebf25f747487598eeca2861ac4ed29e97672e2828e13a.css" rel="stylesheet" integrity="sha256-XXnYRgli/xAtXr8l90dIdZjuyihhrE7SnpdnLigo4To=" crossorigin="anonymous">
 <script
@@ -180,7 +180,8 @@ curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/In
 <p>If you have a running <strong>Root Orchestrator</strong> and at least one <strong>Cluster Orchestrator</strong> you can add a new worker node to your cluster.</p>
 <p><img src="/archive/alpha-bass/deploy-worker.png" alt="High level architecture picture"></p>
 <p>First, you need to install your <strong>Worker Node</strong> components on every Edge Device you want to use as a worker running:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh <span style="color:#000;font-weight:bold">|</span> sh -  
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#204a87">export</span> <span style="color:#000">OAKESTRA_VERSION</span><span style="color:#ce5c00;font-weight:bold">=</span>alpha
+</span></span><span style="display:flex;"><span>curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh <span style="color:#000;font-weight:bold">|</span> sh -  
 </span></span></code></pre></div><p>Each worker node must be attached to a running <strong>Cluster Orchestrator</strong>. To do so, you need to know the IP address of the Cluster Orchestrator you want to connect to.</p>
 <p>Then, startup each <strong>Worker Node</strong> using the following command:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo NodeEngine -a &lt;IP address of your cluster orchestrator&gt; -d
