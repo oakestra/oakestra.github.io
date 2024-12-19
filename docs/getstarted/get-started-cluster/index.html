@@ -28,14 +28,14 @@ The Root Orchestrator manages different clusters of resources. The root only see
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
     <meta property="article:published_time" content="2022-10-05T09:56:27+02:00">
-    <meta property="article:modified_time" content="2024-12-05T14:56:13+01:00">
+    <meta property="article:modified_time" content="2024-12-19T11:55:37+01:00">
     <meta property="article:tag" content="GetSarted">
 
   <meta itemprop="name" content="Your First Oakestra Cluster">
   <meta itemprop="description" content="High-level architecture Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.
 The Root Orchestrator manages different clusters of resources. The root only sees aggregated cluster resources. The Cluster orchestrator manages your worker nodes. This component collects the real-time resources and schedules your workloads to the perfect matching device. A Worker is any device where a component called NodeEngine is installed. Each node can support multiple execution environments such as Containers (containerd runtime), MicroVM (containerd runtime), and Unikernels (mirageOS). Disclaimer, currently, only containers are supported. Help is still needed for Unikernels and MicroVMs.">
   <meta itemprop="datePublished" content="2022-10-05T09:56:27+02:00">
-  <meta itemprop="dateModified" content="2024-12-05T14:56:13+01:00">
+  <meta itemprop="dateModified" content="2024-12-19T11:55:37+01:00">
   <meta itemprop="wordCount" content="1451">
   <meta itemprop="keywords" content="GetSarted">
   <meta name="twitter:card" content="summary">
@@ -261,7 +261,7 @@ The Root Orchestrator manages different clusters of resources. The root only see
 <p>You can turn off the cluster using <code>docker compose -f ~/oakestra/1-DOC.yaml down</code></p>
 </blockquote>
 <p><strong>2)</strong> download, untar and install the node engine and network manager binaries</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Shell" data-lang="Shell"><span style="display:flex;"><span>curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh <span style="color:#000;font-weight:bold">|</span> sh -  
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Shell" data-lang="Shell"><span style="display:flex;"><span>curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/main/scripts/InstallOakestraWorker.sh <span style="color:#000;font-weight:bold">|</span> sh -  
 </span></span></code></pre></div><p><strong>3)</strong> Configure the Network Manager by editing <code>/etc/netmanager/netcfg.json</code> as follows:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;NodePublicAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&lt;IP ADDRESS OF THIS DEVICE&gt;&#34;</span><span style="color:#000;font-weight:bold">,</span>
