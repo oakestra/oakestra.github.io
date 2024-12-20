@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CLI Features on Oakestra</title><link>oakestra.github.io/docs/manuals/cli/features/</link><description>Recent content in CLI Features on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="oakestra.github.io/docs/manuals/cli/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Applications</title><link>oakestra.github.io/docs/manuals/cli/features/applications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/cli/features/applications/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CLI Features on Oakestra</title><link>/docs/manuals/cli/features/</link><description>Recent content in CLI Features on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/cli/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Applications</title><link>/docs/manuals/cli/features/applications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/applications/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
@@ -18,7 +18,7 @@
 &lt;/svg>
  &lt;div class="callout-content">
  &lt;div class="callout-title">
- &lt;p>Overview&lt;/p></description></item><item><title>Configuration</title><link>oakestra.github.io/docs/manuals/cli/features/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/cli/features/configuration/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;p>Overview&lt;/p></description></item><item><title>Configuration</title><link>/docs/manuals/cli/features/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/configuration/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
@@ -38,7 +38,7 @@
 &lt;/svg>
  &lt;div class="callout-content">
  &lt;div class="callout-title">
- &lt;p>Overview&lt;/p></description></item><item><title>Development</title><link>oakestra.github.io/docs/manuals/cli/features/development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/cli/features/development/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;p>Overview&lt;/p></description></item><item><title>Development</title><link>/docs/manuals/cli/features/development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/development/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
@@ -58,7 +58,7 @@
 &lt;/svg>
  &lt;div class="callout-content">
  &lt;div class="callout-title">
- &lt;p>Overview&lt;/p></description></item><item><title>FLOps Addon</title><link>oakestra.github.io/docs/manuals/cli/features/flops-addon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/cli/features/flops-addon/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;p>Overview&lt;/p></description></item><item><title>FLOps Addon</title><link>/docs/manuals/cli/features/flops-addon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/flops-addon/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
@@ -78,7 +78,7 @@
 &lt;/svg>
  &lt;div class="callout-content">
  &lt;div class="callout-title">
- &lt;p>Overview&lt;/p></description></item><item><title>Installer</title><link>oakestra.github.io/docs/manuals/cli/features/installer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/cli/features/installer/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;p>Overview&lt;/p></description></item><item><title>Installer</title><link>/docs/manuals/cli/features/installer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/installer/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
@@ -98,7 +98,7 @@
 &lt;/svg>
  &lt;div class="callout-content">
  &lt;div class="callout-title">
- &lt;p>Overview&lt;/p></description></item><item><title>Services</title><link>oakestra.github.io/docs/manuals/cli/features/services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/cli/features/services/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;p>Overview&lt;/p></description></item><item><title>Services</title><link>/docs/manuals/cli/features/services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/services/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
@@ -118,7 +118,7 @@
 &lt;/svg>
  &lt;div class="callout-content">
  &lt;div class="callout-title">
- &lt;p>Overview&lt;/p></description></item><item><title>Worker Node</title><link>oakestra.github.io/docs/manuals/cli/features/worker-node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/cli/features/worker-node/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;p>Overview&lt;/p></description></item><item><title>Worker Node</title><link>/docs/manuals/cli/features/worker-node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/worker-node/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"

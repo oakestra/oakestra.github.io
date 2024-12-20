@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Extending Oakestra on Oakestra</title><link>oakestra.github.io/docs/manuals/extending-oakestra/</link><description>Recent content in Extending Oakestra on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="oakestra.github.io/docs/manuals/extending-oakestra/index.xml" rel="self" type="application/rss+xml"/><item><title>Setting Up</title><link>oakestra.github.io/docs/manuals/extending-oakestra/setting-up/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/extending-oakestra/setting-up/</guid><description>&lt;p>The addons system consists of two subsystems that must both be running:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Extending Oakestra on Oakestra</title><link>/docs/manuals/extending-oakestra/</link><description>Recent content in Extending Oakestra on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/extending-oakestra/index.xml" rel="self" type="application/rss+xml"/><item><title>Setting Up</title><link>/docs/manuals/extending-oakestra/setting-up/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/extending-oakestra/setting-up/</guid><description>&lt;p>The addons system consists of two subsystems that must both be running:&lt;/p>
 &lt;ul>
 &lt;li>The addons engine&lt;/li>
 &lt;li>The addons marketplace&lt;/li>
@@ -10,7 +10,7 @@
  &lt;div class="card-body d-flex">
  &lt;div class="d-flex flex-column me-auto text-start">
  &lt;h5 class="card-title my-0">&lt;a href="../../../concepts/oakestra-extensions/addons" target="_blank" class="stretched-link text-reset text-decoration-none">Addons&lt;/a>&lt;/h5>
- &lt;p class="card-text mt-1">Learn more about addons&lt;/p></description></item><item><title>Installing Addons</title><link>oakestra.github.io/docs/manuals/extending-oakestra/installing-addons/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/extending-oakestra/installing-addons/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;p class="card-text mt-1">Learn more about addons&lt;/p></description></item><item><title>Installing Addons</title><link>/docs/manuals/extending-oakestra/installing-addons/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/extending-oakestra/installing-addons/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
@@ -30,7 +30,7 @@
 &lt;/svg>
  &lt;div class="callout-content">
  &lt;div class="callout-title">
- &lt;p>Requirements&lt;/p></description></item><item><title>Creating Addons</title><link>oakestra.github.io/docs/manuals/extending-oakestra/creating-addons/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/extending-oakestra/creating-addons/</guid><description>&lt;span class="lead">
+ &lt;p>Requirements&lt;/p></description></item><item><title>Creating Addons</title><link>/docs/manuals/extending-oakestra/creating-addons/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/extending-oakestra/creating-addons/</guid><description>&lt;span class="lead">
 To install an addon, it first has to be published to the marketplace. Addons are published as a Dockerfile
 containing the addon functionality and a configuration file outlining the addons specifications.
 &lt;/span>
@@ -54,7 +54,7 @@ containing the addon functionality and a configuration file outlining the addons
 &lt;/svg>
  &lt;div class="callout-content">
  &lt;div class="callout-title">
- &lt;p>Global Marketplace&lt;/p></description></item><item><title>Setting up Hooks</title><link>oakestra.github.io/docs/manuals/extending-oakestra/setting-up-hooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/extending-oakestra/setting-up-hooks/</guid><description>&lt;span class="lead">
+ &lt;p>Global Marketplace&lt;/p></description></item><item><title>Setting up Hooks</title><link>/docs/manuals/extending-oakestra/setting-up-hooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/extending-oakestra/setting-up-hooks/</guid><description>&lt;span class="lead">
 Hooks in Oakestra provide a mechanism for listening to and reacting to system lifecycle events. By leveraging hooks, developers can decouple components and enable services to dynamically respond to events like creation, updates, or deletion of system entities.
 &lt;/span>
 &lt;div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
@@ -77,7 +77,7 @@ Hooks in Oakestra provide a mechanism for listening to and reacting to system li
 &lt;/svg>
  &lt;div class="callout-content">
  &lt;div class="callout-title">
- &lt;p>Why should developers use hooks?&lt;/p></description></item><item><title>Creating Custom Resources</title><link>oakestra.github.io/docs/manuals/extending-oakestra/creating-custom-resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/extending-oakestra/creating-custom-resources/</guid><description>&lt;span class="lead">
+ &lt;p>Why should developers use hooks?&lt;/p></description></item><item><title>Creating Custom Resources</title><link>/docs/manuals/extending-oakestra/creating-custom-resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/extending-oakestra/creating-custom-resources/</guid><description>&lt;span class="lead">
 Custom resources in Oakestra provide a mechanism to extend the system’s API dynamically by introducing new resource types. Similar to Kubernetes’ Custom Resources, this feature allows developers to define and manage tailored data structures to meet specific needs, enabling Oakestra to adapt to a wide range of scenarios.
 &lt;/span>
 &lt;div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">

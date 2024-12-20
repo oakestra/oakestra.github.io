@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Manuals on Oakestra</title><link>oakestra.github.io/docs/manuals/</link><description>Recent content in Manuals on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="oakestra.github.io/docs/manuals/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced Cluster Setup</title><link>oakestra.github.io/docs/manuals/advanced-cluster-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/advanced-cluster-setup/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Manuals on Oakestra</title><link>/docs/manuals/</link><description>Recent content in Manuals on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced Cluster Setup</title><link>/docs/manuals/advanced-cluster-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/advanced-cluster-setup/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
@@ -18,7 +18,7 @@
 &lt;/svg>
  &lt;div class="callout-content">
  &lt;div class="callout-title">
- &lt;p>System Requirements&lt;/p></description></item><item><title>Firewall Configuration</title><link>oakestra.github.io/docs/manuals/firewall-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/firewall-configuration/</guid><description>&lt;span class="lead">
+ &lt;p>System Requirements&lt;/p></description></item><item><title>Firewall Configuration</title><link>/docs/manuals/firewall-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/firewall-configuration/</guid><description>&lt;span class="lead">
 Oakestra components interact with each other over specific ports. These ports need to be open for the components to communicate. Firewall configurations are necessary to ensure that the network traffic is allowed to flow between the components.
 &lt;/span>
 &lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
