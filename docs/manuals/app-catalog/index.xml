@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>App Catalog on Oakestra</title><link>oakestra.github.io/docs/manuals/app-catalog/</link><description>Recent content in App Catalog on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="oakestra.github.io/docs/manuals/app-catalog/index.xml" rel="self" type="application/rss+xml"/><item><title>Example Applications</title><link>oakestra.github.io/docs/manuals/app-catalog/example-applications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/app-catalog/example-applications/</guid><description>&lt;p>You can run a wide variety of applications in your Oakestra cluster.
+Here, you&amp;rsquo;ll find some examples applications with their respective SLA template that you can use right away to test out Oakestra. You can also use these examples as a starting point to build your own applications.&lt;/p></description></item><item><title>Nginx Client-Server with Load Balancing</title><link>oakestra.github.io/docs/manuals/app-catalog/nginx-client-server-with-load-balancing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/app-catalog/nginx-client-server-with-load-balancing/</guid><description>&lt;p>
+
+&lt;img
+ src="oakestra.github.io/docs/manuals/app-catalog/balancing_hu4058391521148338003.webp"
+ width="1452"
+ height="538"
+ decoding="async"
+ fetchpriority="auto"
+ loading="lazy"
+ alt="Nginx Balancing"id="h-rh-i-0"
+/>&lt;/p>
+&lt;p>To test out the balancing capabilities of Oakestra, we can deploy a simple Nginx server and a client that sends requests to a Round-Robin balanced semantic IP assigned to the server. When scaling up the Nginx service, the client requests will automatically be balanced across the service&amp;rsquo;s instances.&lt;/p></description></item><item><title>Nginx Unikernel Deployment</title><link>oakestra.github.io/docs/manuals/app-catalog/nginx-unikernel-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/manuals/app-catalog/nginx-unikernel-deployment/</guid><description>&lt;p>
+
+&lt;img
+ src="oakestra.github.io/docs/manuals/app-catalog/balancing-unikraft_hu774123168921839086.webp"
+ width="1383"
+ height="938"
+ decoding="async"
+ fetchpriority="auto"
+ loading="lazy"
+ alt="Nginx Balancing"id="h-rh-i-0"
+/>&lt;/p>
+&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M12 9v4" />
+ &lt;path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+ &lt;path d="M12 16h.01" />
+&lt;/svg>
+ &lt;div class="callout-content">
+ &lt;div class="callout-title">
+ &lt;p>Unikernels within Oakestra&lt;/p></description></item></channel></rss>

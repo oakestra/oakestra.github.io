@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Get Started on Oakestra</title><link>oakestra.github.io/version/0.4.301/docs/getstarted/</link><description>Recent content in Get Started on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><atom:link href="oakestra.github.io/version/0.4.301/docs/getstarted/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploy your first App</title><link>oakestra.github.io/version/0.4.301/docs/getstarted/get-started-app/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/version/0.4.301/docs/getstarted/get-started-app/</guid><description>&lt;h2 id="requirements">Requirements&lt;/h2>
+&lt;ul>
+&lt;li>You have a running Root Orchestrator with at least one Cluster Orchestrator registered.&lt;/li>
+&lt;li>You have at least one Worker Node Registered&lt;/li>
+&lt;li>(Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured.&lt;/li>
+&lt;li>You can access the APIs at &lt;code>&amp;lt;root-orch-ip&amp;gt;:10000/api/docs&lt;/code>&lt;/li>
+&lt;li>You can access the Dashboard at &lt;code>http://&amp;lt;root-orch-ip&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="your-first-application-using-the-dashboard-">Your first application using the Dashboard 💻&lt;/h2>
+&lt;p>&lt;a name="your-first-application-💻">&lt;/a>&lt;/p></description></item><item><title>Your First Oakestra Cluster</title><link>oakestra.github.io/version/0.4.301/docs/getstarted/get-started-cluster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/version/0.4.301/docs/getstarted/get-started-cluster/</guid><description>&lt;h2 id="high-level-architecture">High-level architecture&lt;/h2>
+&lt;p>
+
+&lt;img
+ src="oakestra.github.io/getstarted/highLevelArch_hu13515324087746045157.webp"
+ width="1362"
+ height="684"
+ decoding="async"
+ fetchpriority="auto"
+ loading="lazy"
+ alt="High level architecture picture"id="h-rh-i-0"
+/>&lt;/p>
+&lt;p>Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.&lt;/p></description></item></channel></rss>

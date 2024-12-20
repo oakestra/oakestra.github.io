@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Oakestra Extensions on Oakestra</title><link>oakestra.github.io/docs/concepts/oakestra-extensions/</link><description>Recent content in Oakestra Extensions on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="oakestra.github.io/docs/concepts/oakestra-extensions/index.xml" rel="self" type="application/rss+xml"/><item><title>Addons</title><link>oakestra.github.io/docs/concepts/oakestra-extensions/addons/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/concepts/oakestra-extensions/addons/</guid><description>&lt;span class="lead">
+Addons in Oakestra are modular components designed to extend the core functionality of the system without modifying its foundational architecture. Addons can either enhance existing capabilities, introduce entirely new features, or customize Oakestra components according to their unique requirements. 
+&lt;/span>
+&lt;div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/layers-subtract svg-inline callout-icon me-2 mb-3" id="svg-layers-subtract" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M8 4m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z" />
+ &lt;path d="M16 16v2a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2h2" />
+&lt;/svg>
+ &lt;div class="callout-content">
+ 
+ &lt;div class="callout-body">
+ &lt;p>Oakestra achieves a flexible system architecture that empowers users to dynamically tailor the system to fit specific use cases while preserving a streamlined core.&lt;/p></description></item><item><title>Hooks</title><link>oakestra.github.io/docs/concepts/oakestra-extensions/hooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/concepts/oakestra-extensions/hooks/</guid><description>&lt;span class="lead">
+Hooks are a mechanism in Oakestra designed to enhance system flexibility by allowing components to react to specific lifecycle events within the system. 
+&lt;/span>
+&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/info-square-rounded svg-inline callout-icon me-2 mb-3" id="svg-info-square-rounded" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M12 9h.01" />
+ &lt;path d="M11 12h1v4h1" />
+ &lt;path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+&lt;/svg>
+ &lt;div class="callout-content">
+ 
+ &lt;div class="callout-body">
+ &lt;p>Unlike addons, which extend functionality by adding components, hooks enable services to listen and respond to the dynamic state changes of entities like applications or services within Oakestra.&lt;/p></description></item><item><title>Custom Resources</title><link>oakestra.github.io/docs/concepts/oakestra-extensions/custom-resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/concepts/oakestra-extensions/custom-resources/</guid><description>&lt;span class="lead">
+Custom resources in Oakestra extend the system’s API by enabling the dynamic addition of new data types as a colllection of API endpoints. 
+&lt;/span>
+&lt;div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/skateboarding svg-inline callout-icon me-2 mb-3" id="svg-skateboarding" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M16 4a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+ &lt;path d="M5.5 15h3.5l.75 -1.5" />
+ &lt;path d="M14 19v-5l-2.5 -3l2.5 -4" />
+ &lt;path d="M8 8l3 -1h4l1 3h3" />
+ &lt;path d="M17.5 21a.5 .5 0 1 0 0 -1a.5 .5 0 0 0 0 1z" fill="currentColor" />
+ &lt;path d="M3 18c0 .552 .895 1 2 1h14c1.105 0 2 -.448 2 -1" />
+ &lt;path d="M6.5 21a.5 .5 0 1 0 0 -1a.5 .5 0 0 0 0 1z" fill="currentColor" />
+&lt;/svg>
+ &lt;div class="callout-content">
+ 
+ &lt;div class="callout-body">
+ &lt;p>Custom resources allow you to define and manage data structures via the Oakestra API, enabling specialized workflows and routines.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Concepts on Oakestra</title><link>oakestra.github.io/version/0.4.301/docs/oakestra/</link><description>Recent content in Concepts on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><atom:link href="oakestra.github.io/version/0.4.301/docs/oakestra/index.xml" rel="self" type="application/rss+xml"/><item><title>High level architecture</title><link>oakestra.github.io/version/0.4.301/docs/oakestra/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/version/0.4.301/docs/oakestra/architecture/</guid><description>&lt;p>
+
+&lt;img
+ src="oakestra.github.io/oakestra/wiki-banner-help_hu17583486541791342639.webp"
+ width="1102"
+ height="122"
+ decoding="async"
+ fetchpriority="auto"
+ loading="lazy"
+ alt=""id="h-rh-i-0"
+/>&lt;/p>
+&lt;h1 id="table-of-content">Table of content&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="#root-orchestrator">Root Orchestrator&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#cluster-orchestrator">Cluster Orchestrator&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#worker-node">Worker Node&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h1 id="oakestra-detailed-architecture">Oakestra Detailed Architecture&lt;/h1>
+&lt;p>As shown in our &lt;a href="get-started.md">Get Started&lt;/a> guide, Oakestra uses 3-4 building blocks to operate.&lt;/p></description></item><item><title>Orchestration</title><link>oakestra.github.io/version/0.4.301/docs/oakestra/orchestrators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/version/0.4.301/docs/oakestra/orchestrators/</guid><description>&lt;p>#APIs&lt;/p>
+&lt;p>Root Orchestrator APIs &lt;a href="https://app.swaggerhub.com/apis-docs/giobarty/oakestra-root_api/v1#/">OpenApi Spec&lt;/a>&lt;/p></description></item><item><title>Task Scheduling</title><link>oakestra.github.io/version/0.4.301/docs/oakestra/scheduling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/version/0.4.301/docs/oakestra/scheduling/</guid><description>&lt;h2 id="how-does-the-scheduling-work-in-oakestra">How does the scheduling work in Oakestra?&lt;/h2>
+&lt;p>Oakestra&amp;rsquo;s architecture is composed of two tiers. Resources are divided into clusters. A cluster is seen as the aggregation of all its resources. A job is first scheduled to a cluster, and then the cluster scheduler decides the target worker.&lt;/p></description></item></channel></rss>

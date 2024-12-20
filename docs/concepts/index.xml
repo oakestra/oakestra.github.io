@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Concepts on Oakestra</title><link>oakestra.github.io/docs/concepts/</link><description>Recent content in Concepts on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="oakestra.github.io/docs/concepts/index.xml" rel="self" type="application/rss+xml"/><item><title>High-Level Architecture</title><link>oakestra.github.io/docs/concepts/high-level-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/concepts/high-level-architecture/</guid><description>&lt;div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+ &lt;path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+ &lt;path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+&lt;/svg>
+ &lt;div class="callout-content">
+ &lt;div class="callout-title">
+ &lt;p>Did you know?&lt;/p></description></item><item><title>Scheduling</title><link>oakestra.github.io/docs/concepts/scheduling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/concepts/scheduling/</guid><description>&lt;h2 id="how-does-the-scheduling-work-in-oakestra">How does the scheduling work in Oakestra?&lt;/h2>
+&lt;p>Oakestra&amp;rsquo;s architecture consists of a two-tier design where resources are organized into clusters. Each cluster represents an aggregation of all its resources. When a job is submitted, it is first scheduled to a cluster. The cluster&amp;rsquo;s scheduler then determines the target worker node to execute the job.&lt;/p></description></item><item><title>Networking</title><link>oakestra.github.io/docs/concepts/networking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>oakestra.github.io/docs/concepts/networking/</guid><description>&lt;p>This page will discuss the main networking concepts used in Oakestra.
+With IPv4 and IPv6 addressing, the platform additionally heavily
+benefits from the use of &lt;strong>semantic addressing&lt;/strong>.&lt;/p></description></item></channel></rss>
