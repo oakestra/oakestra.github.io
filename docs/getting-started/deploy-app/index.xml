@@ -42,7 +42,7 @@ You can also manage your infrastructure and deploy/monitor applications using Oa
  &lt;div class="callout-content">
  &lt;div class="callout-title">
  &lt;p>Dashboard features&lt;/p></description></item><item><title>With the CLI</title><link>/docs/getting-started/deploy-app/with-the-cli/</link><pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate><guid>/docs/getting-started/deploy-app/with-the-cli/</guid><description>&lt;span class="lead">
-Besides using the API directly or clicking through the dashboard UI, you can also interact with Oakestra using the Command Line Interface (`oak-cli`).
+Besides using the API directly or clicking through the dashboard UI, you can also interact with Oakestra using the Command Line Interface.
 &lt;/span>
 &lt;div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
