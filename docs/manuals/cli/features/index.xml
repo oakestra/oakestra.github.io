@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CLI Features on Oakestra</title><link>/docs/manuals/cli/features/</link><description>Recent content in CLI Features on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/cli/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Applications</title><link>/docs/manuals/cli/features/applications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/applications/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CLI Features on Oakestra</title><link>/docs/manuals/cli/features/</link><description>Recent content in CLI Features on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/cli/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Installer</title><link>/docs/manuals/cli/features/installer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/installer/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
@@ -38,47 +38,7 @@
 &lt;/svg>
  &lt;div class="callout-content">
  &lt;div class="callout-title">
- &lt;p>Overview&lt;/p></description></item><item><title>Development</title><link>/docs/manuals/cli/features/development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/development/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- width="24"
- height="24"
- viewBox="0 0 24 24"
- fill="none"
- stroke="currentColor"
- stroke-width="2"
- stroke-linecap="round"
- stroke-linejoin="round"
- 
- class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
- &lt;path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
- &lt;path d="M12 9h.01" />
- &lt;path d="M11 12h1v4h1" />
-&lt;/svg>
- &lt;div class="callout-content">
- &lt;div class="callout-title">
- &lt;p>Overview&lt;/p></description></item><item><title>FLOps Addon</title><link>/docs/manuals/cli/features/flops-addon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/flops-addon/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- width="24"
- height="24"
- viewBox="0 0 24 24"
- fill="none"
- stroke="currentColor"
- stroke-width="2"
- stroke-linecap="round"
- stroke-linejoin="round"
- 
- class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
- &lt;path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
- &lt;path d="M12 9h.01" />
- &lt;path d="M11 12h1v4h1" />
-&lt;/svg>
- &lt;div class="callout-content">
- &lt;div class="callout-title">
- &lt;p>Overview&lt;/p></description></item><item><title>Installer</title><link>/docs/manuals/cli/features/installer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/installer/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;p>Overview&lt;/p></description></item><item><title>Applications</title><link>/docs/manuals/cli/features/applications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/applications/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
@@ -119,6 +79,46 @@
  &lt;div class="callout-content">
  &lt;div class="callout-title">
  &lt;p>Overview&lt;/p></description></item><item><title>Worker Node</title><link>/docs/manuals/cli/features/worker-node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/worker-node/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+ &lt;path d="M12 9h.01" />
+ &lt;path d="M11 12h1v4h1" />
+&lt;/svg>
+ &lt;div class="callout-content">
+ &lt;div class="callout-title">
+ &lt;p>Overview&lt;/p></description></item><item><title>Development</title><link>/docs/manuals/cli/features/development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/development/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+ &lt;path d="M12 9h.01" />
+ &lt;path d="M11 12h1v4h1" />
+&lt;/svg>
+ &lt;div class="callout-content">
+ &lt;div class="callout-title">
+ &lt;p>Overview&lt;/p></description></item><item><title>FLOps Addon</title><link>/docs/manuals/cli/features/flops-addon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/cli/features/flops-addon/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
