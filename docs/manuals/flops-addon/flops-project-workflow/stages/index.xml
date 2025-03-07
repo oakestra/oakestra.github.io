@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Project Stages on Oakestra</title><link>/docs/manuals/flops-addon/flops-project-workflow/stages/</link><description>Recent content in Project Stages on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/flops-addon/flops-project-workflow/stages/index.xml" rel="self" type="application/rss+xml"/><item><title>Stage 0: Preparation</title><link>/docs/manuals/flops-addon/flops-project-workflow/stages/stage-0-preparation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/flops-project-workflow/stages/stage-0-preparation/</guid><description>&lt;h2 id="ml-git-repository">ML Git Repository&lt;/h2>
+&lt;p>The heart of a FLOps project is the ML Git repository, which contains the ML training code that will be run by FLOps learner services.
+For FLOps to use this repository correctly, it must follow some simple structural requirements.&lt;/p></description></item><item><title>Stage 1: Project Start</title><link>/docs/manuals/flops-addon/flops-project-workflow/stages/stage-1-project-start/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/flops-project-workflow/stages/stage-1-project-start/</guid><description>&lt;p>To start a project we need to request the FLOps Manager (&lt;em>which is part of FLOps Management&lt;/em>) to create one.
+FLOps projects are based on project SLAs.
+We will use one of the predefined ones that the &lt;a href="/docs/getting-started/deploy-app/with-the-cli/">oak-cli&lt;/a> provides.&lt;/p></description></item><item><title>Stage 2: Image-Builder Deployment</title><link>/docs/manuals/flops-addon/flops-project-workflow/stages/stage-2-image-builder-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/flops-project-workflow/stages/stage-2-image-builder-deployment/</guid><description>&lt;p>The FLOps manager tries to look up matching container images for learners and aggregators.
+The manager checks for images in the FLOps image registry (&lt;em>part of the management suite&lt;/em>) that match the ML repository that was part of the requested project SLA.&lt;/p></description></item><item><title>Stage 3: FL-Actors Image Build</title><link>/docs/manuals/flops-addon/flops-project-workflow/stages/stage-3-fl-actors-image-build/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/flops-project-workflow/stages/stage-3-fl-actors-image-build/</guid><description>&lt;p>In stage 3, the deployed image-builder service builds the requested images for the learner and aggregator services.&lt;/p>
+&lt;div class="callout callout-danger d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/alert-octagon svg-inline callout-icon me-2 mb-3" id="svg-alert-octagon" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
+ &lt;path d="M12 8v4" />
+ &lt;path d="M12 16h.01" />
+&lt;/svg>
+ &lt;div class="callout-content">
+ &lt;div class="callout-title">
+ &lt;p>Critical&lt;/p></description></item><item><title>Stage 4: FL-Actors Deployment</title><link>/docs/manuals/flops-addon/flops-project-workflow/stages/stage-4-fl-actors-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/flops-project-workflow/stages/stage-4-fl-actors-deployment/</guid><description>&lt;p>The FL actor images stored in the FLOps image registry now get deployed on matching worker nodes.
+Thanks to its rather lightweight computations, the aggregator service can be deployed on an arbitrary worker node, whereas learner services can only be deployed on dedicated notes that have the &lt;code>FLOps-learner&lt;/code> add-on enabled.
+The aggregator image has a superset of the learner image dependencies, so pulling and deploying both actors takes about the same amount of time.&lt;/p></description></item><item><title>Stage 5: FL Training</title><link>/docs/manuals/flops-addon/flops-project-workflow/stages/stage-5-fl-training/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/flops-project-workflow/stages/stage-5-fl-training/</guid><description>&lt;p>The actual FL training takes place during this stage.
+For our base-case scenario, the processes are as described in the &lt;a href="/docs/concepts/flops/fl-basics/#federated-learning-overview">FL Overview&lt;/a>.
+Because the base case should be as fast as possible, it only trains for 3 rounds.
+The following demo shows how a CLI user can inspect the running actors to observe the training rounds.&lt;/p></description></item><item><title>Post-training Steps</title><link>/docs/manuals/flops-addon/flops-project-workflow/stages/post-training-steps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/flops-project-workflow/stages/post-training-steps/</guid><description>&lt;p>Post-training steps are optional steps or stages that FLOps can perform for the user after training concludes and the model is logged.
+Users can freely specify what steps they want for their projects as part of their SLAs.
+If no post-training steps are requested, the FLOps project counts as completed.
+The tracking server and its GUI keep running so users can inspect and work with their project results.
+Our base case uses post-training steps.&lt;/p></description></item></channel></rss>

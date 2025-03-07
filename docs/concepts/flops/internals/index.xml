@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FLOps Internals on Oakestra</title><link>/docs/concepts/flops/internals/</link><description>Recent content in FLOps Internals on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/concepts/flops/internals/index.xml" rel="self" type="application/rss+xml"/><item><title>ML Data Management</title><link>/docs/concepts/flops/internals/ml-data-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/concepts/flops/internals/ml-data-management/</guid><description>&lt;p>One noticeable trend in FL is the focus on virtual simulations with already existing data sets.
+In real scenarios, FL works on previously unseen heterogeneous data.
+FLOps aims to make FL more practical and application-oriented.
+To emphasize this, FLOps requires real data from edge devices or &amp;ldquo;mocked&amp;rdquo; data provided in such a way that it could have originated from real devices.&lt;/p></description></item><item><title>Image Building Process</title><link>/docs/concepts/flops/internals/image-building-process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/concepts/flops/internals/image-building-process/</guid><description>&lt;details>
+ &lt;summary>&lt;strong>Why is building images necessary for FLOps?&lt;/strong>&lt;/summary>
+ Performing FL can be challenging.
+FLOps handles most FL aspects and configurations unless users want to &lt;a href="/docs/manuals/flops-addon/customizations/flops-customizations-overview/">customize their FLOps projects&lt;/a>.
+FLOps takes pure (non-FL) ML code (in the form of Git repositories) and augments it to support FL.
+In addition, FLOps wraps this augmented FL code and all necessary dependencies to perform ML training as a multi-platform container image.
+By using container images, learners can be deployed and distributed among various workers while stabilizing the training behavior and avoiding tedious varying configurations and setups that depend on the concrete worker machine.&lt;/details>
+&lt;details>
+ &lt;summary>&lt;strong>Why should you use worker nodes to build FLOps images?&lt;/strong>&lt;/summary>
+ &lt;p>Image building (especially multi-platform ones) can get very demanding on a system.
+This is especially the case for dependency-rich ML projects.
+Building such images is computationally demanding, takes a lot of time (5-30+ minutes), and can lead to large images (1-10+ GB).
+FLOps delegates and distributes this duty to image builders running on orchestrated worker nodes to avoid bottlenecking the control plane.&lt;/p></description></item><item><title>Mock Data Providers</title><link>/docs/concepts/flops/internals/mock-data-providers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/concepts/flops/internals/mock-data-providers/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M12 9v4" />
+ &lt;path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+ &lt;path d="M12 16h.01" />
+&lt;/svg>
+ &lt;div class="callout-content">
+ &lt;div class="callout-title">
+ &lt;p>Prerequisites&lt;/p></description></item><item><title>MLflow MLOps Integration</title><link>/docs/concepts/flops/internals/mlflow-mlops-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/concepts/flops/internals/mlflow-mlops-integration/</guid><description>&lt;h2 id="mlflow-basics">MLflow Basics&lt;/h2>
+&lt;p>&lt;a href="https://mlflow.org/">MLflow&lt;/a> is a broad open-source MLOps platform that enriches and unifies common ML tasks.
+It provides automatic solutions for ML challenges.
+It supports various popular ML tools and frameworks such as &lt;a href="https://keras.io/">Keras&lt;/a> and &lt;a href="https://pytorch.org/">Pytorch&lt;/a>.
+MLflow is highly flexible, customizable, and extendable.
+It supports ML workflow loops from conception to re-deployment.
+MLflow does not explicitly focus on orchestration or FL.&lt;/p></description></item></channel></rss>

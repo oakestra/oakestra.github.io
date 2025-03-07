@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Federated Learning (FLOps) on Oakestra</title><link>/docs/manuals/flops-addon/</link><description>Recent content in Federated Learning (FLOps) on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/flops-addon/index.xml" rel="self" type="application/rss+xml"/><item><title>FLOps Overview</title><link>/docs/manuals/flops-addon/flops-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/flops-overview/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Federated Learning (FLOps) on Oakestra</title><link>/docs/manuals/flops-addon/</link><description>Recent content in Federated Learning (FLOps) on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/flops-addon/index.xml" rel="self" type="application/rss+xml"/><item><title>FLOps Manuals Overview</title><link>/docs/manuals/flops-addon/flops-manuals-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/flops-manuals-overview/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
@@ -10,12 +10,13 @@
  stroke-linecap="round"
  stroke-linejoin="round"
  
- class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img">
+ class="outline/alert-octagon svg-inline callout-icon me-2 mb-3" id="svg-alert-octagon" role="img">
  &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
- &lt;path d="M12 9v4" />
- &lt;path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+ &lt;path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
+ &lt;path d="M12 8v4" />
  &lt;path d="M12 16h.01" />
 &lt;/svg>
  &lt;div class="callout-content">
- &lt;div class="callout-title">
- &lt;p>Requirements&lt;/p></description></item></channel></rss>
+ 
+ &lt;div class="callout-body">
+ &lt;p>If you want to learn about Federated Learning and FLOps basics have a look at &lt;a href="/docs/concepts/flops/overview/">the concepts&lt;/a>.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Customizing FLOps on Oakestra</title><link>/docs/manuals/flops-addon/customizations/</link><description>Recent content in Customizing FLOps on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/flops-addon/customizations/index.xml" rel="self" type="application/rss+xml"/><item><title>FLOps Customizations Overview</title><link>/docs/manuals/flops-addon/customizations/flops-customizations-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/customizations/flops-customizations-overview/</guid><description>&lt;span class="lead">
+ The true power of FLOps lies in its flexibility and adaptability.
+ This guide will teach you how to personalize your projects and make FLOps yours.
+&lt;/span>
+&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M12 9v4" />
+ &lt;path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+ &lt;path d="M12 16h.01" />
+&lt;/svg>
+ &lt;div class="callout-content">
+ &lt;div class="callout-title">
+ &lt;p>Prerequisites&lt;/p></description></item><item><title>Project SLAs</title><link>/docs/manuals/flops-addon/customizations/project-slas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/customizations/project-slas/</guid><description>&lt;span class="lead">
+ The FLOps manager can only instantiate a new project via a Service Layer Agreement JSON file.
+ This guide showcases the structure and all available properties and keys of such SLAs with examples.
+&lt;/span>
+&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+ &lt;path d="M12 9h.01" />
+ &lt;path d="M11 12h1v4h1" />
+&lt;/svg>
+ &lt;div class="callout-content">
+ 
+ &lt;div class="callout-body">
+ &lt;p>To see project SLAs in action have a look at &lt;a href="/docs/manuals/flops-addon/flops-project-workflow/stages/stage-1-project-start/">Stage 1: Project Start&lt;/a>.&lt;/p></description></item><item><title>ML Git Repositories</title><link>/docs/manuals/flops-addon/customizations/ml-git-repositories/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/customizations/ml-git-repositories/</guid><description>&lt;p>Each FLOps project is associated with precisely one public ML code repository.
+Multiple users can reuse the same repository, and each user can create various FLOps projects per repository.
+To use your own ML code in FLOps, you must create a properly structured public Git repository and include a link to it in your project SLA.
+The repository must fulfill the following structural requirements for this to be possible and straightforward.&lt;/p></description></item></channel></rss>

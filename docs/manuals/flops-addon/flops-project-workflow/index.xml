@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FLOps Project Workflow on Oakestra</title><link>/docs/manuals/flops-addon/flops-project-workflow/</link><description>Recent content in FLOps Project Workflow on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/flops-addon/flops-project-workflow/index.xml" rel="self" type="application/rss+xml"/><item><title>FLOps Projects Overview</title><link>/docs/manuals/flops-addon/flops-project-workflow/flops-projects-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/flops-project-workflow/flops-projects-overview/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/target-arrow svg-inline callout-icon me-2 mb-3" id="svg-target-arrow" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+ &lt;path d="M12 7a5 5 0 1 0 5 5" />
+ &lt;path d="M13 3.055a9 9 0 1 0 7.941 7.945" />
+ &lt;path d="M15 6v3h3l3 -3h-3v-3z" />
+ &lt;path d="M15 9l-3 3" />
+&lt;/svg>
+ &lt;div class="callout-content">
+ &lt;div class="callout-title">
+ &lt;p>This Guide&amp;rsquo;s Goals&lt;/p></description></item></channel></rss>
