@@ -1,0 +1,174 @@
+{
+  "security": [
+    {
+      "bearer": []
+    }
+  ],
+  "paths": {
+    "/api/pubnet/service/netinfo/{service_name}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceNetinfo"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "netinfo"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "service_name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ]
+    },
+    "/api/pubnet/service/netinfo/ip/{service_ip}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceNetinfo"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "netinfo"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "service_ip",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ]
+    }
+  },
+  "info": {
+    "title": "Oakestra Root Service Manager - Network Information API",
+    "version": "v1"
+  },
+  "tags": [
+    {
+      "name": "netinfo",
+      "description": "Network Information API"
+    }
+  ],
+  "openapi": "3.0.2",
+  "components": {
+    "schemas": {
+      "ServiceIp": {
+        "type": "object",
+        "properties": {
+          "Address": {
+            "type": "string",
+            "nullable": true
+          },
+          "Address_v6": {
+            "type": "string",
+            "nullable": true
+          },
+          "IpType": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Instance": {
+        "type": "object",
+        "properties": {
+          "cluster_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance_number": {
+            "type": "integer",
+            "nullable": true
+          },
+          "instance_ip": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance_ip_v6": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ServiceNetinfo": {
+        "type": "object",
+        "properties": {
+          "system_job_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "applicationID": {
+            "type": "string",
+            "nullable": true
+          },
+          "app_ns": {
+            "type": "string",
+            "nullable": true
+          },
+          "app_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "service_ns": {
+            "type": "string",
+            "nullable": true
+          },
+          "service_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "service_job_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "service_ip_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceIp"
+            }
+          },
+          "instance_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Instance"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
