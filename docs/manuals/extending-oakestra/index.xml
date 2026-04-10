@@ -23,9 +23,9 @@
  stroke-linejoin="round"
  
  class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img"&gt;
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
  &lt;path d="M12 9v4" /&gt;
- &lt;path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" /&gt;
+ &lt;path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" /&gt;
  &lt;path d="M12 16h.01" /&gt;
 &lt;/svg&gt;
  &lt;div class="callout-content"&gt;
@@ -47,10 +47,10 @@ containing the addon functionality and a configuration file outlining the addons
  stroke-linejoin="round"
  
  class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img"&gt;
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
  &lt;path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /&gt;
  &lt;path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /&gt;
- &lt;path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /&gt;
+ &lt;path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /&gt;
 &lt;/svg&gt;
  &lt;div class="callout-content"&gt;
  &lt;div class="callout-title"&gt;
@@ -70,10 +70,10 @@ Hooks in Oakestra provide a mechanism for listening to and reacting to system li
  stroke-linejoin="round"
  
  class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img"&gt;
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
  &lt;path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /&gt;
  &lt;path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /&gt;
- &lt;path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /&gt;
+ &lt;path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /&gt;
 &lt;/svg&gt;
  &lt;div class="callout-content"&gt;
  &lt;div class="callout-title"&gt;
@@ -93,10 +93,10 @@ Custom resources in Oakestra provide a mechanism to extend the system’s API dy
  stroke-linejoin="round"
  
  class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img"&gt;
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
  &lt;path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /&gt;
  &lt;path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /&gt;
- &lt;path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /&gt;
+ &lt;path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /&gt;
 &lt;/svg&gt;
  &lt;div class="callout-content"&gt;
  &lt;div class="callout-title"&gt;

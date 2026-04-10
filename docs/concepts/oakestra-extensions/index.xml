@@ -14,8 +14,8 @@ Addons in Oakestra are modular components designed to extend the core functional
  stroke-linejoin="round"
  
  class="outline/layers-subtract svg-inline callout-icon me-2 mb-3" id="svg-layers-subtract" role="img"&gt;
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/&gt;
- &lt;path d="M8 4m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z" /&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
+ &lt;path d="M8 6a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2l0 -8" /&gt;
  &lt;path d="M16 16v2a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2h2" /&gt;
 &lt;/svg&gt;
  &lt;div class="callout-content"&gt;
@@ -37,10 +37,10 @@ Hooks are a mechanism in Oakestra designed to enhance system flexibility by allo
  stroke-linejoin="round"
  
  class="outline/info-square-rounded svg-inline callout-icon me-2 mb-3" id="svg-info-square-rounded" role="img"&gt;
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
  &lt;path d="M12 9h.01" /&gt;
  &lt;path d="M11 12h1v4h1" /&gt;
- &lt;path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" /&gt;
+ &lt;path d="M12 3c7.2 0 9 1.8 9 9c0 7.2 -1.8 9 -9 9c-7.2 0 -9 -1.8 -9 -9c0 -7.2 1.8 -9 9 -9" /&gt;
 &lt;/svg&gt;
  &lt;div class="callout-content"&gt;
  
@@ -61,14 +61,14 @@ Custom resources in Oakestra extend the system’s API by enabling the dynamic a
  stroke-linejoin="round"
  
  class="outline/skateboarding svg-inline callout-icon me-2 mb-3" id="svg-skateboarding" role="img"&gt;
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
  &lt;path d="M16 4a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /&gt;
  &lt;path d="M5.5 15h3.5l.75 -1.5" /&gt;
  &lt;path d="M14 19v-5l-2.5 -3l2.5 -4" /&gt;
  &lt;path d="M8 8l3 -1h4l1 3h3" /&gt;
- &lt;path d="M17.5 21a.5 .5 0 1 0 0 -1a.5 .5 0 0 0 0 1z" fill="currentColor" /&gt;
+ &lt;path d="M17.5 21a.5 .5 0 1 0 0 -1a.5 .5 0 0 0 0 1" fill="currentColor" /&gt;
  &lt;path d="M3 18c0 .552 .895 1 2 1h14c1.105 0 2 -.448 2 -1" /&gt;
- &lt;path d="M6.5 21a.5 .5 0 1 0 0 -1a.5 .5 0 0 0 0 1z" fill="currentColor" /&gt;
+ &lt;path d="M6.5 21a.5 .5 0 1 0 0 -1a.5 .5 0 0 0 0 1" fill="currentColor" /&gt;
 &lt;/svg&gt;
  &lt;div class="callout-content"&gt;
  

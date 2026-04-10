@@ -14,7 +14,7 @@ Git hooks are scripts that run automatically at various points in the Git workfl
  stroke-linejoin="round"
  
  class="outline/book svg-inline callout-icon me-2 mb-3" id="svg-book" role="img"&gt;
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
  &lt;path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /&gt;
  &lt;path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /&gt;
  &lt;path d="M3 6l0 13" /&gt;
