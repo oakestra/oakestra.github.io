@@ -4,7 +4,7 @@ FLOps aims to make FL more practical and application-oriented.
 To emphasize this, FLOps requires real data from edge devices or &amp;ldquo;mocked&amp;rdquo; data provided in such a way that it could have originated from real devices.&lt;/p&gt;</description></item><item><title>Image Building Process</title><link>/docs/concepts/flops/internals/image-building-process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/concepts/flops/internals/image-building-process/</guid><description>&lt;details&gt;
  &lt;summary&gt;&lt;strong&gt;Why is building images necessary for FLOps?&lt;/strong&gt;&lt;/summary&gt;
  Performing FL can be challenging.
-FLOps handles most FL aspects and configurations unless users want to &lt;a href="/docs/manuals/flops-addon/customizations/flops-customizations-overview/"&gt;customize their FLOps projects&lt;/a&gt;.
+FLOps handles most FL aspects and configurations unless users want to &lt;a href="../../../../manuals/flops-addon/customizations/overview/"&gt;customize their FLOps projects&lt;/a&gt;.
 FLOps takes pure (non-FL) ML code (in the form of Git repositories) and augments it to support FL.
 In addition, FLOps wraps this augmented FL code and all necessary dependencies to perform ML training as a multi-platform container image.
 By using container images, learners can be deployed and distributed among various workers while stabilizing the training behavior and avoiding tedious varying configurations and setups that depend on the concrete worker machine.&lt;/details&gt;
@@ -33,7 +33,7 @@ FLOps delegates and distributes this duty to image builders running on orchestra
 &lt;/svg&gt;
  &lt;div class="callout-content"&gt;
  &lt;div class="callout-title"&gt;
- &lt;p&gt;Prerequisites&lt;/p&gt;</description></item><item><title>MLflow MLOps Integration</title><link>/docs/concepts/flops/internals/mlflow-mlops-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/concepts/flops/internals/mlflow-mlops-integration/</guid><description>&lt;h2 id="mlflow-basics"&gt;MLflow Basics&lt;/h2&gt;
+ &lt;p&gt;Prerequisites&lt;/p&gt;</description></item><item><title>MLflow MLOps Integration</title><link>/docs/concepts/flops/internals/mflow-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/concepts/flops/internals/mflow-integration/</guid><description>&lt;h2 id="mlflow-basics"&gt;MLflow Basics&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://mlflow.org/"&gt;MLflow&lt;/a&gt; is a broad open-source MLOps platform that enriches and unifies common ML tasks.
 It provides automatic solutions for ML challenges.
 It supports various popular ML tools and frameworks such as &lt;a href="https://keras.io/"&gt;Keras&lt;/a&gt; and &lt;a href="https://pytorch.org/"&gt;Pytorch&lt;/a&gt;.

@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Advanced Topics on Oakestra</title><link>/docs/manuals/flops-addon/advanced/</link><description>Recent content in Advanced Topics on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/flops-addon/advanced/index.xml" rel="self" type="application/rss+xml"/><item><title>Clustered Hierarchical FL</title><link>/docs/manuals/flops-addon/advanced/clustered-hierarchical-fl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/advanced/clustered-hierarchical-fl/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Advanced Topics on Oakestra</title><link>/docs/manuals/flops-addon/advanced/</link><description>Recent content in Advanced Topics on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/flops-addon/advanced/index.xml" rel="self" type="application/rss+xml"/><item><title>FLOps API Endpoints</title><link>/docs/manuals/flops-addon/advanced/api-endpoints/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/advanced/api-endpoints/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/tools-kitchen-2 svg-inline callout-icon me-2 mb-3" id="svg-tools-kitchen-2" role="img"&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
+ &lt;path d="M19 3v12h-5c-.023 -3.681 .184 -7.406 5 -12m0 12v6h-1v-3m-10 -14v17m-3 -17v3a3 3 0 1 0 6 0v-3" /&gt;
+&lt;/svg&gt;
+ &lt;div class="callout-content"&gt;
+ &lt;div class="callout-title"&gt;
+ &lt;p&gt;Who is serving?&lt;/p&gt;</description></item><item><title>Clustered Hierarchical FL</title><link>/docs/manuals/flops-addon/advanced/clustered-hierarchical-fl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/advanced/clustered-hierarchical-fl/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
@@ -18,22 +36,4 @@
 &lt;/svg&gt;
  &lt;div class="callout-content"&gt;
  &lt;div class="callout-title"&gt;
- &lt;p&gt;Prerequisites&lt;/p&gt;</description></item><item><title>FLOps API Endpoints</title><link>/docs/manuals/flops-addon/advanced/flops-api-endpoints/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/advanced/flops-api-endpoints/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- width="24"
- height="24"
- viewBox="0 0 24 24"
- fill="none"
- stroke="currentColor"
- stroke-width="2"
- stroke-linecap="round"
- stroke-linejoin="round"
- 
- class="outline/tools-kitchen-2 svg-inline callout-icon me-2 mb-3" id="svg-tools-kitchen-2" role="img"&gt;
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
- &lt;path d="M19 3v12h-5c-.023 -3.681 .184 -7.406 5 -12m0 12v6h-1v-3m-10 -14v17m-3 -17v3a3 3 0 1 0 6 0v-3" /&gt;
-&lt;/svg&gt;
- &lt;div class="callout-content"&gt;
- &lt;div class="callout-title"&gt;
- &lt;p&gt;Who is serving?&lt;/p&gt;</description></item></channel></rss>
+ &lt;p&gt;Prerequisites&lt;/p&gt;</description></item></channel></rss>

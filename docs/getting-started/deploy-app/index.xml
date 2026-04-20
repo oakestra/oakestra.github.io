@@ -1,48 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Deploy your first App on Oakestra</title><link>/docs/getting-started/deploy-app/</link><description>Recent content in Deploy your first App on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Thu, 07 Sep 2023 16:06:50 +0200</lastBuildDate><atom:link href="/docs/getting-started/deploy-app/index.xml" rel="self" type="application/rss+xml"/><item><title>With the API</title><link>/docs/getting-started/deploy-app/with-the-api/</link><pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate><guid>/docs/getting-started/deploy-app/with-the-api/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- width="24"
- height="24"
- viewBox="0 0 24 24"
- fill="none"
- stroke="currentColor"
- stroke-width="2"
- stroke-linecap="round"
- stroke-linejoin="round"
- 
- class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img"&gt;
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
- &lt;path d="M12 9v4" /&gt;
- &lt;path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" /&gt;
- &lt;path d="M12 16h.01" /&gt;
-&lt;/svg&gt;
- &lt;div class="callout-content"&gt;
- &lt;div class="callout-title"&gt;
- &lt;p&gt;Requirements&lt;/p&gt;</description></item><item><title>With the Dashboard</title><link>/docs/getting-started/deploy-app/with-the-dashboard/</link><pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate><guid>/docs/getting-started/deploy-app/with-the-dashboard/</guid><description>&lt;span class="lead"&gt;
-You can also manage your infrastructure and deploy/monitor applications using Oakestra frontend dashboard. 
-&lt;/span&gt;
-&lt;div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- width="24"
- height="24"
- viewBox="0 0 24 24"
- fill="none"
- stroke="currentColor"
- stroke-width="2"
- stroke-linecap="round"
- stroke-linejoin="round"
- 
- class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img"&gt;
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
- &lt;path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /&gt;
- &lt;path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /&gt;
- &lt;path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /&gt;
-&lt;/svg&gt;
- &lt;div class="callout-content"&gt;
- &lt;div class="callout-title"&gt;
- &lt;p&gt;Dashboard features&lt;/p&gt;</description></item><item><title>With the CLI</title><link>/docs/getting-started/deploy-app/with-the-cli/</link><pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate><guid>/docs/getting-started/deploy-app/with-the-cli/</guid><description>&lt;span class="lead"&gt;
-Besides using the API directly or clicking through the dashboard UI, you can also interact with Oakestra using the Command Line Interface.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Deploy Your First App on Oakestra</title><link>/docs/getting-started/deploy-app/</link><description>Recent content in Deploy Your First App on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Thu, 07 Sep 2023 16:06:50 +0200</lastBuildDate><atom:link href="/docs/getting-started/deploy-app/index.xml" rel="self" type="application/rss+xml"/><item><title>With the CLI</title><link>/docs/getting-started/deploy-app/deploy-cli/</link><pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate><guid>/docs/getting-started/deploy-app/deploy-cli/</guid><description>&lt;span class="lead"&gt;
+You can interact with your Oakestra installation using any terminal on any machine you like.
 &lt;/span&gt;
 &lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
  &lt;svg
@@ -64,4 +21,27 @@ Besides using the API directly or clicking through the dashboard UI, you can als
 &lt;/svg&gt;
  &lt;div class="callout-content"&gt;
  &lt;div class="callout-title"&gt;
- &lt;p&gt;Requirements&lt;/p&gt;</description></item></channel></rss>
+ &lt;p&gt;Requirements&lt;/p&gt;</description></item><item><title>With the Dashboard</title><link>/docs/getting-started/deploy-app/deploy-dashboard/</link><pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate><guid>/docs/getting-started/deploy-app/deploy-dashboard/</guid><description>&lt;span class="lead"&gt;
+You can also manage your infrastructure and deploy/monitor applications using the Oakestra frontend dashboard.
+&lt;/span&gt;
+&lt;div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img"&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
+ &lt;path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /&gt;
+ &lt;path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /&gt;
+ &lt;path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /&gt;
+&lt;/svg&gt;
+ &lt;div class="callout-content"&gt;
+ &lt;div class="callout-title"&gt;
+ &lt;p&gt;Dashboard Features&lt;/p&gt;</description></item></channel></rss>

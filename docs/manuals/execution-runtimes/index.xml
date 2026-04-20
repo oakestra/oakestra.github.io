@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Execution Runtimes on Oakestra</title><link>/docs/manuals/execution-runtimes/</link><description>Recent content in Execution Runtimes on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/execution-runtimes/index.xml" rel="self" type="application/rss+xml"/><item><title>Supported Virtualization Runtimes</title><link>/docs/manuals/execution-runtimes/supported-virtualization-runtimes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/execution-runtimes/supported-virtualization-runtimes/</guid><description>&lt;span class="lead"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Execution Runtimes on Oakestra</title><link>/docs/manuals/execution-runtimes/</link><description>Recent content in Execution Runtimes on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/execution-runtimes/index.xml" rel="self" type="application/rss+xml"/><item><title>Supported Virtualization Runtimes</title><link>/docs/manuals/execution-runtimes/supported-runtimes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/execution-runtimes/supported-runtimes/</guid><description>&lt;span class="lead"&gt;
 Oakestra aims to streamline how different virtualization technologies are managed and orchestrated. Instead of limiting you to one type of runtime, Oakestra lets you mix and match different virtualizations for different microservices of your application. This gives you the freedom to choose the best environment for each workload.
 &lt;/span&gt;
 &lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
@@ -22,7 +22,7 @@ Oakestra aims to streamline how different virtualization technologies are manage
 &lt;/svg&gt;
  &lt;div class="callout-content"&gt;
  &lt;div class="callout-title"&gt;
- &lt;p&gt;What is virtualization?&lt;/p&gt;</description></item><item><title>Unikernel Deployment</title><link>/docs/manuals/execution-runtimes/unikernel-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/execution-runtimes/unikernel-deployment/</guid><description>&lt;span class="lead"&gt;
+ &lt;p&gt;What is virtualization?&lt;/p&gt;</description></item><item><title>Unikernel Deployment</title><link>/docs/manuals/execution-runtimes/unikernel-operations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/execution-runtimes/unikernel-operations/</guid><description>&lt;span class="lead"&gt;
 Oakestra supports unikernel executions for applications built using Unikraft. 
 &lt;/span&gt;
 &lt;div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
@@ -45,4 +45,29 @@ Oakestra supports unikernel executions for applications built using Unikraft.
 &lt;/svg&gt;
  &lt;div class="callout-content"&gt;
  &lt;div class="callout-title"&gt;
- &lt;p&gt;What do you need?&lt;/p&gt;</description></item></channel></rss>
+ &lt;p&gt;What do you need?&lt;/p&gt;</description></item><item><title>Crosvm VM Deployment</title><link>/docs/manuals/execution-runtimes/crosvm-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/execution-runtimes/crosvm-deployment/</guid><description>&lt;span class="lead"&gt;
+Oakestra supports running workloads inside virtual machines via its
+crosvm-based runtime, enabling secure multi-tenant GPU sharing through
+virtio-GPU.
+&lt;/span&gt;
+&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img"&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
+ &lt;path d="M12 9v4" /&gt;
+ &lt;path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" /&gt;
+ &lt;path d="M12 16h.01" /&gt;
+&lt;/svg&gt;
+ &lt;div class="callout-content"&gt;
+ &lt;div class="callout-title"&gt;
+ &lt;p&gt;Experimental Runtime&lt;/p&gt;</description></item></channel></rss>

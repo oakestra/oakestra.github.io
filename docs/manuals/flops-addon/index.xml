@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Federated Learning (FLOps) on Oakestra</title><link>/docs/manuals/flops-addon/</link><description>Recent content in Federated Learning (FLOps) on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/flops-addon/index.xml" rel="self" type="application/rss+xml"/><item><title>FLOps Manuals Overview</title><link>/docs/manuals/flops-addon/flops-manuals-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/flops-manuals-overview/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Federated Learning (FLOps) on Oakestra</title><link>/docs/manuals/flops-addon/</link><description>Recent content in Federated Learning (FLOps) on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/flops-addon/index.xml" rel="self" type="application/rss+xml"/><item><title>FLOps Manuals Overview</title><link>/docs/manuals/flops-addon/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/overview/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
  &lt;svg
  xmlns="http://www.w3.org/2000/svg"
  width="24"
@@ -19,4 +19,4 @@
  &lt;div class="callout-content"&gt;
  
  &lt;div class="callout-body"&gt;
- &lt;p&gt;If you want to learn about Federated Learning and FLOps basics have a look at &lt;a href="/docs/concepts/flops/overview/"&gt;the concepts&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
+ &lt;p&gt;If you want to learn about Federated Learning and FLOps basics have a look at &lt;a href="../../../concepts/flops/overview/"&gt;the concepts&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>

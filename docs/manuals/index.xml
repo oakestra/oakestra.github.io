@@ -1,25 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Manuals on Oakestra</title><link>/docs/manuals/</link><description>Recent content in Manuals on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced Cluster Setup</title><link>/docs/manuals/advanced-cluster-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/advanced-cluster-setup/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- width="24"
- height="24"
- viewBox="0 0 24 24"
- fill="none"
- stroke="currentColor"
- stroke-width="2"
- stroke-linecap="round"
- stroke-linejoin="round"
- 
- class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img"&gt;
- &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
- &lt;path d="M12 9v4" /&gt;
- &lt;path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" /&gt;
- &lt;path d="M12 16h.01" /&gt;
-&lt;/svg&gt;
- &lt;div class="callout-content"&gt;
- &lt;div class="callout-title"&gt;
- &lt;p&gt;System Requirements&lt;/p&gt;</description></item><item><title>Firewall Configuration</title><link>/docs/manuals/firewall-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/firewall-configuration/</guid><description>&lt;span class="lead"&gt;
-Oakestra components interact with each other over specific ports. These ports need to be open for the components to communicate. Firewall configurations are necessary to ensure that the network traffic is allowed to flow between the components.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Manuals on Oakestra</title><link>/docs/manuals/</link><description>Recent content in Manuals on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/index.xml" rel="self" type="application/rss+xml"/><item><title>Troubleshooting Guide</title><link>/docs/manuals/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/troubleshooting/</guid><description>&lt;p&gt;In this page you will find a set of steps to troubleshoot and hopefully fix your Oakestra setup.&lt;/p&gt;
+&lt;h1 id="where-to-start"&gt;Where to start:&lt;/h1&gt;
+&lt;p&gt;On each machine where you installed oakestra you can run:&lt;/p&gt;</description></item><item><title>Worker Configuration</title><link>/docs/manuals/worker-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/worker-configuration/</guid><description>&lt;p&gt;The Oakestra worker is managed by two components:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;NodeEngine&lt;/strong&gt; is responsible for worker ↔ cluster communication&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;NetManager&lt;/strong&gt; is responsible for worker ↔ worker communication&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The NodeEngine regularly collects system information and sends it to the cluster manager. It is also responsible for handling deployment commands.
+Only the NodeEngine is required to register a worker with a cluster, however the NetManager is required for service-to-service communication through the overlay network.&lt;/p&gt;</description></item><item><title>Advanced Cluster Configurations</title><link>/docs/manuals/advanced-cluster-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/advanced-cluster-configuration/</guid><description>&lt;p&gt;&lt;strong&gt;Root Orchestrator Environment Variables&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In a complex network environment, you might want to reach your Root Orchestrator from a specific IP. You can customize the default IP by exporting the following environment variable before the Root Orchestrator installation command.&lt;/p&gt;</description></item><item><title>Firewall Configuration</title><link>/docs/manuals/firewall/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/firewall/</guid><description>&lt;span class="lead"&gt;
+Oakestra components interact with each other over specific ports. These ports need to be open for the components to communicate. Firewall configurations are necessary to ensure that network traffic is allowed to flow between the components.
 &lt;/span&gt;
 &lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
  &lt;svg

@@ -6,8 +6,8 @@
  &lt;div class="card text-end w-100"&gt;
  &lt;div class="card-body d-flex"&gt;
  &lt;div class="d-flex flex-column me-auto text-start"&gt;
- &lt;h5 class="card-title my-0"&gt;&lt;a href="/docs/concepts/flops/fl-basics" class="stretched-link text-reset text-decoration-none"&gt;FL Basics&lt;/a&gt;&lt;/h5&gt;
- &lt;p class="card-text mt-1"&gt;Explore fundamental concepts of Federated Learning&lt;/p&gt;</description></item><item><title>FL Basics</title><link>/docs/concepts/flops/fl-basics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/concepts/flops/fl-basics/</guid><description>&lt;p&gt;Before we discuss Federated Learning (FL) in detail, let&amp;rsquo;s recall how classic centralized machine learning (ML) works.&lt;/p&gt;
+ &lt;h5 class="card-title my-0"&gt;&lt;a href="../fl_basics" class="stretched-link text-reset text-decoration-none"&gt;FL Basics&lt;/a&gt;&lt;/h5&gt;
+ &lt;p class="card-text mt-1"&gt;Explore fundamental concepts of Federated Learning&lt;/p&gt;</description></item><item><title>FL Basics</title><link>/docs/concepts/flops/fl_basics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/concepts/flops/fl_basics/</guid><description>&lt;p&gt;Before we discuss Federated Learning (FL) in detail, let&amp;rsquo;s recall how classic centralized machine learning (ML) works.&lt;/p&gt;
 &lt;h2 id="classic-machine-learning"&gt;Classic Machine Learning&lt;/h2&gt;
 
 

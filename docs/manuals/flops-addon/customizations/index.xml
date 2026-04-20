@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Customizing FLOps on Oakestra</title><link>/docs/manuals/flops-addon/customizations/</link><description>Recent content in Customizing FLOps on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/flops-addon/customizations/index.xml" rel="self" type="application/rss+xml"/><item><title>FLOps Customizations Overview</title><link>/docs/manuals/flops-addon/customizations/flops-customizations-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/customizations/flops-customizations-overview/</guid><description>&lt;span class="lead"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Customizing FLOps on Oakestra</title><link>/docs/manuals/flops-addon/customizations/</link><description>Recent content in Customizing FLOps on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/docs/manuals/flops-addon/customizations/index.xml" rel="self" type="application/rss+xml"/><item><title>FLOps Customizations Overview</title><link>/docs/manuals/flops-addon/customizations/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/customizations/overview/</guid><description>&lt;span class="lead"&gt;
  The true power of FLOps lies in its flexibility and adaptability.
  This guide will teach you how to personalize your projects and make FLOps yours.
 &lt;/span&gt;
@@ -22,10 +22,7 @@
 &lt;/svg&gt;
  &lt;div class="callout-content"&gt;
  &lt;div class="callout-title"&gt;
- &lt;p&gt;Prerequisites&lt;/p&gt;</description></item><item><title>ML Git Repositories</title><link>/docs/manuals/flops-addon/customizations/ml-git-repositories/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/customizations/ml-git-repositories/</guid><description>&lt;p&gt;Each FLOps project is associated with precisely one public ML code repository.
-Multiple users can reuse the same repository, and each user can create various FLOps projects per repository.
-To use your own ML code in FLOps, you must create a properly structured public Git repository and include a link to it in your project SLA.
-The repository must fulfill the following structural requirements for this to be possible and straightforward.&lt;/p&gt;</description></item><item><title>Project SLAs</title><link>/docs/manuals/flops-addon/customizations/project-slas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/customizations/project-slas/</guid><description>&lt;span class="lead"&gt;
+ &lt;p&gt;Prerequisites&lt;/p&gt;</description></item><item><title>Project SLAs</title><link>/docs/manuals/flops-addon/customizations/slas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/customizations/slas/</guid><description>&lt;span class="lead"&gt;
  The FLOps manager can only instantiate a new project via a Service Layer Agreement JSON file.
  This guide showcases the structure and all available properties and keys of such SLAs with examples.
 &lt;/span&gt;
@@ -50,4 +47,10 @@ The repository must fulfill the following structural requirements for this to be
  &lt;div class="callout-content"&gt;
  
  &lt;div class="callout-body"&gt;
- &lt;p&gt;To see project SLAs in action have a look at &lt;a href="/docs/manuals/flops-addon/flops-project-workflow/stages/stage-1-project-start/"&gt;Stage 1: Project Start&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
+ &lt;p&gt;To see project SLAs in action have a look at &lt;a href="/docs/manuals/flops-addon/flops-project-workflow/stages/stage-1-project-start/"&gt;Stage 1: Project Start&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>ML Git Repositories</title><link>/docs/manuals/flops-addon/customizations/ml-git-repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/customizations/ml-git-repo/</guid><description>&lt;p&gt;Each FLOps project is associated with precisely one public ML code repository.
+Multiple users can reuse the same repository, and each user can create various FLOps projects per repository.
+To use your own ML code in FLOps, you must create a properly structured public Git repository and include a link to it in your project SLA.
+The repository must fulfill the following structural requirements for this to be possible and straightforward.&lt;/p&gt;</description></item><item><title>Example Projects</title><link>/docs/manuals/flops-addon/customizations/example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/manuals/flops-addon/customizations/example/</guid><description>&lt;span class="lead"&gt;
+Check out these examples from the community!
+&lt;/span&gt;
+&lt;p&gt;Here a collection of examples that you can already use to experiment with FLOps.&lt;/p&gt;</description></item></channel></rss>
