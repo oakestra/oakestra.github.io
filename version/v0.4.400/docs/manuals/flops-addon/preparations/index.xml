@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>System Preparations on Oakestra</title><link>/version/v0.4.400/docs/manuals/flops-addon/preparations/</link><description>Recent content in System Preparations on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/version/v0.4.400/docs/manuals/flops-addon/preparations/index.xml" rel="self" type="application/rss+xml"/><item><title>FLOps Preparations Overview</title><link>/version/v0.4.400/docs/manuals/flops-addon/preparations/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/version/v0.4.400/docs/manuals/flops-addon/preparations/overview/</guid><description>&lt;div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/server svg-inline callout-icon me-2 mb-3" id="svg-server" role="img"&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
+ &lt;path d="M3 7a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3" /&gt;
+ &lt;path d="M3 15a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -2" /&gt;
+ &lt;path d="M7 8l0 .01" /&gt;
+ &lt;path d="M7 16l0 .01" /&gt;
+&lt;/svg&gt;
+ &lt;div class="callout-content"&gt;
+ &lt;div class="callout-title"&gt;
+ &lt;p&gt;Machine Compatibility&lt;/p&gt;</description></item><item><title>Prepare Image-builder Workers</title><link>/version/v0.4.400/docs/manuals/flops-addon/preparations/image-builder-workers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/version/v0.4.400/docs/manuals/flops-addon/preparations/image-builder-workers/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img"&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
+ &lt;path d="M12 9v4" /&gt;
+ &lt;path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" /&gt;
+ &lt;path d="M12 16h.01" /&gt;
+&lt;/svg&gt;
+ &lt;div class="callout-content"&gt;
+ &lt;div class="callout-title"&gt;
+ &lt;p&gt;Mandatory&lt;/p&gt;</description></item><item><title>Prepare Learner Workers</title><link>/version/v0.4.400/docs/manuals/flops-addon/preparations/learner-workers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/version/v0.4.400/docs/manuals/flops-addon/preparations/learner-workers/</guid><description>&lt;div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img"&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
+ &lt;path d="M12 9v4" /&gt;
+ &lt;path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" /&gt;
+ &lt;path d="M12 16h.01" /&gt;
+&lt;/svg&gt;
+ &lt;div class="callout-content"&gt;
+ &lt;div class="callout-title"&gt;
+ &lt;p&gt;Mandatory&lt;/p&gt;</description></item></channel></rss>

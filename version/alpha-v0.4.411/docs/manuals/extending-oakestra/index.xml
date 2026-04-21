@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Extending Oakestra on Oakestra</title><link>/version/alpha-v0.4.411/docs/manuals/extending-oakestra/</link><description>Recent content in Extending Oakestra on Oakestra</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="/version/alpha-v0.4.411/docs/manuals/extending-oakestra/index.xml" rel="self" type="application/rss+xml"/><item><title>Setting Up</title><link>/version/alpha-v0.4.411/docs/manuals/extending-oakestra/setting-up/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/version/alpha-v0.4.411/docs/manuals/extending-oakestra/setting-up/</guid><description>&lt;p&gt;The addons system consists of three subsystems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The addons engine&lt;/li&gt;
+&lt;li&gt;The addons dashboard&lt;/li&gt;
+&lt;li&gt;The addons marketplace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The cluster and root orchestrator each deploy an instance of the:&lt;/p&gt;</description></item><item><title>Installing Addons</title><link>/version/alpha-v0.4.411/docs/manuals/extending-oakestra/install_addon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/version/alpha-v0.4.411/docs/manuals/extending-oakestra/install_addon/</guid><description>&lt;h2 id="installation"&gt;Installation&lt;/h2&gt;
+&lt;p&gt;You can view the available Marketplace Addons in the tab &amp;ldquo;Marketplace&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;
+
+&lt;img
+ src="/version/alpha-v0.4.411/docs/manuals/extending-oakestra/pngs/marketplace_hu_f092d2e2e1753c78.webp"
+ width="773"
+ height="407"
+ decoding="async"
+ fetchpriority="auto"
+ loading="lazy"
+ alt="Marketplace"
+ id="h-rh-i-0"
+&gt;&lt;/p&gt;
+&lt;p&gt;Installing an addon is as simple as pressing the button.&lt;/p&gt;</description></item><item><title>Creating Addons</title><link>/version/alpha-v0.4.411/docs/manuals/extending-oakestra/create_addon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/version/alpha-v0.4.411/docs/manuals/extending-oakestra/create_addon/</guid><description>&lt;span class="lead"&gt;
+To install an addon, it first has to be published to the marketplace. Addons are published as a Dockerfile
+containing the addon functionality and a configuration file outlining the addons specifications.
+&lt;/span&gt;
+&lt;div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img"&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
+ &lt;path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /&gt;
+ &lt;path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /&gt;
+ &lt;path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /&gt;
+&lt;/svg&gt;
+ &lt;div class="callout-content"&gt;
+ &lt;div class="callout-title"&gt;
+ &lt;p&gt;Global Marketplace&lt;/p&gt;</description></item><item><title>Setting up Hooks</title><link>/version/alpha-v0.4.411/docs/manuals/extending-oakestra/hooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/version/alpha-v0.4.411/docs/manuals/extending-oakestra/hooks/</guid><description>&lt;span class="lead"&gt;
+Hooks in Oakestra provide a mechanism for listening to and reacting to system lifecycle events. By leveraging hooks, developers can decouple components and enable services to dynamically respond to events like creation, updates, or deletion of system entities.
+&lt;/span&gt;
+&lt;div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img"&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
+ &lt;path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /&gt;
+ &lt;path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /&gt;
+ &lt;path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /&gt;
+&lt;/svg&gt;
+ &lt;div class="callout-content"&gt;
+ &lt;div class="callout-title"&gt;
+ &lt;p&gt;Why should developers use hooks?&lt;/p&gt;</description></item><item><title>Creating Custom Resources</title><link>/version/alpha-v0.4.411/docs/manuals/extending-oakestra/custom_resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/version/alpha-v0.4.411/docs/manuals/extending-oakestra/custom_resources/</guid><description>&lt;span class="lead"&gt;
+Custom resources in Oakestra provide a mechanism to extend the system’s API dynamically by introducing new resource types. Similar to Kubernetes’ Custom Resources, this feature allows developers to define and manage tailored data structures to meet specific needs, enabling Oakestra to adapt to a wide range of scenarios.
+&lt;/span&gt;
+&lt;div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3"&gt;
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img"&gt;
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none" /&gt;
+ &lt;path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /&gt;
+ &lt;path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /&gt;
+ &lt;path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /&gt;
+&lt;/svg&gt;
+ &lt;div class="callout-content"&gt;
+ &lt;div class="callout-title"&gt;
+ &lt;p&gt;Why should developers use custom resources?&lt;/p&gt;</description></item></channel></rss>
