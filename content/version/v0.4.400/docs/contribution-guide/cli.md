@@ -19,9 +19,7 @@ Go to the CLI Repository and create a new Issue.
 title="CLI Repository"
 description="Explore the source code"
 href="https://github.com/oakestra/oakestra-cli"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 ## CLI Foundations
 

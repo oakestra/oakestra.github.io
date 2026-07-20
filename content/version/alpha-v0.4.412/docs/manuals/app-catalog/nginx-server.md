@@ -24,9 +24,8 @@ In this guide we'll use the comprehensive Oakestra CLI toolkit to interact with 
 title="Get Started with the Oakestra CLI"
 description="Check out how to deploy your first application with the CLI."
 href="/docs/getting-started/deploy-app/deploy-cli/"
-target="\_blank"
+target="\_blank" >}}
 
-> }}
 > <br>
 
 You can check if `oak-cli` is installed by running the following command:

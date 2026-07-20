@@ -18,9 +18,7 @@ seo:
 {{< link-card
 title="FL Basics"
 description="Explore fundamental concepts of Federated Learning"
-href="../fl_basics/"
-
-> }}
+href="../fl_basics/" >}}
 
 ## FL with Oakestra
 
@@ -151,29 +149,21 @@ FLOps’ architecture/workflow consists of the following parts:
 {{< link-card
 title="Local ML Data Management"
 description="Explore how FLOps manages ML data for local training"
-href="../internals/ml-data-management/"
-
-> }}
+href="../internals/ml-data-management/" >}}
 
 {{< link-card
 title="Image Building Process"
 description="Learn why and how container images are build in FLOps"
-href="../internals/image-building-process/"
-
-> }}
+href="../internals/image-building-process/" >}}
 
 {{< link-card
 title="MLflow MLOps Integration"
 description="Learn how FLOps integrates MLflow into its architecture and workflows"
-href="../internals/mflow-integration/"
-
-> }}
+href="../internals/mflow-integration/" >}}
 
 ## How to use FLOps
 
 {{< link-card
 title="FLOps Manuals"
 description="Explore how to set up and use FLOps yourself"
-href="../../../manuals/flops-addon/overview/"
-
-> }}
+href="../../../manuals/flops-addon/overview/" >}}

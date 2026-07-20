@@ -94,6 +94,4 @@ FL training eventually terminates due to time/resource constraints or a failure 
 
 {{< link-card
 title="Find out how you can do FL via Oakestra"
-href="../overview/#fl-with-oakestra"
-
-> }}
+href="../overview/#fl-with-oakestra" >}}

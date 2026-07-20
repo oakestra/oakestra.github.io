@@ -41,9 +41,7 @@ Your unikernel tarball MUST contain a file named `kernel`, which is the unikerne
 title="Looking for an example?"
 description="Check out the Unikraft Nginx walkthrough in the Application Catalogue"
 href="/docs/manuals/app-catalog/nginx-server-unikraft/"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 Once you've packaged your unikernel, you can upload it to a location accessible to Oakestra, such as a web server or a cloud storage service.
 

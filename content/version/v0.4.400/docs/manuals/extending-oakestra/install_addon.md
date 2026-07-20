@@ -41,9 +41,7 @@ You can find a detailed outline of all the API endpoints at:
 title="Oakestra API"
 description="Learn more about the Oakestra API"
 href="../../../getting-started/deploy-app/with-the-api"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 ## Verify Installation
 

@@ -44,9 +44,7 @@ changing the default subnetwork to, i.e., 10.0.0.0/8 or even further transitioni
 {{< link-card
 title="IPv6 Addressing in Oakestra"
 href="../ipv6-addressing/"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 ### Service layer
 

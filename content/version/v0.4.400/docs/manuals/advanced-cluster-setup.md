@@ -78,9 +78,7 @@ a unique `Cluster Name` and `Cluster Location`.
 title="Registering Nodes"
 description="Check out how to register worker nodes with a cluster"
 href="../../getting-started/oak-environment/add-edge-devices-workers-to-your-setup"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 ## Custom Deployments
 

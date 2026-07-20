@@ -51,8 +51,6 @@ You can also run live diagnostics commands to check the status of the components
 {{< link-card
 description="See CLI command descriptions for details"
 href="../../cli/features/"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 Continue reading to learn more about the debugging specific aspects of the Oakestra ecosystem.

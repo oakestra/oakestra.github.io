@@ -26,9 +26,7 @@ To test out the balancing capabilities of Oakestra, you can deploy a simple Ngin
 title="Nginx Client-Server Example"
 description="Read more about how to create load-balanced microservices"
 href="../nginx-server/"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 ## II. Cloud/Edge Gaming: Minecraft
 
@@ -46,9 +44,7 @@ target="\_blank"
 title="Self-hosted Minecraft Demo"
 description="See GitHub repository for installation details."
 href="https://github.com/oakestra/minecraft-client-server-example"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 ## III. Augmented Reality (AR)
 
@@ -69,9 +65,7 @@ You can try out our custom distributed AR application, which is composed of thre
 title="Augmented Reality Pipeline Setup"
 description="See GitHub repository for installation details."
 href="https://github.com/oakestra/app-ar-pipeline/tree/main"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 {{< callout context="note" title="Good to know" icon="outline/info-circle" >}}
 Read our research on how Augmented Reality and video analytics applications can be accelerated using Oakestra here.
@@ -85,6 +79,4 @@ Similarly to the regular Nginx deployment in Oakestra, we can deploy nginx using
 title="Nginx Unikernel Deployment"
 description="Read more to learn how to create unikernel microservices."
 href="../nginx-server-unikraft/"
-target="\_blank"
-
-> }}
+target="\_blank" >}}

@@ -25,17 +25,14 @@ seo:
 {{< link-card
 title="Customize Project SLAs"
 description="Discover how to finetune your FLOps projects and make them your own"
-href="../slas/"
-
-> }}
-> {{< link-card
+href="../slas/" >}}
+{{< link-card
 
     title="Federate your ML Code"
     description="Learn how to structure your ML Git repository to use it with FLOps"
-    href="../ml-git-repo/"
+    href="../ml-git-repo/" >}}
 
-> }}
-> {{< /card-grid >}}
+{{< /card-grid >}}
 
 <br>
 
@@ -47,6 +44,4 @@ Help yourself and the community by contributing to FLOps' lightweight, extendabl
 {{< link-card
 title="Need more Customization?"
 description="Explore how to modify, extend, and contribute to FLOps"
-href="../../../../contribution-guide/flops_addon/"
-
-> }}
+href="../../../../contribution-guide/flops_addon/" >}}

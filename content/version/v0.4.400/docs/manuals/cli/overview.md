@@ -30,16 +30,12 @@ Most root commands have their own set of subcommands.
 {{< link-card
 title="Installer"
 href="../features/installer/"
-description="Set up necessary requirements the easy way."
-
-> }}
+description="Set up necessary requirements the easy way." >}}
 
 {{< link-card
 title="Configuration"
 href="../features/configuration/"
-description="Configure the CLI to your liking."
-
-> }}
+description="Configure the CLI to your liking." >}}
 
 {{< /card-grid >}}
 
@@ -50,16 +46,12 @@ description="Configure the CLI to your liking."
 {{< link-card
 title="Applications"
 href="../features/applications/"
-description="Interact with apps."
-
-> }}
+description="Interact with apps." >}}
 
 {{< link-card
 title="Services"
 href="../features/services/"
-description="Interact with services."
-
-> }}
+description="Interact with services." >}}
 
 {{< /card-grid >}}
 
@@ -70,9 +62,7 @@ description="Interact with services."
 {{< link-card
 title="FLOps"
 href="../features/flops/"
-description="Interact with the FLOps addon to perform practical federated machine learning."
-
-> }}
+description="Interact with the FLOps addon to perform practical federated machine learning." >}}
 
 {{< /card-grid >}}
 
@@ -83,16 +73,12 @@ description="Interact with the FLOps addon to perform practical federated machin
 {{< link-card
 title="Development"
 href="../features/development/"
-description="Accelerate local docker based Oakestra development."
-
-> }}
+description="Accelerate local docker based Oakestra development." >}}
 
 {{< link-card
 title="Worker Node"
 href="../features/worker/"
-description="Manage your local worker node."
-
-> }}
+description="Manage your local worker node." >}}
 
 {{< /card-grid >}}
 
@@ -101,6 +87,4 @@ description="Manage your local worker node."
 {{< link-card
 title="The CLI in action"
 description="Use the CLI to deploy your first Oakestra app."
-href="../../../getting-started/deploy-app/deploy-cli/"
-
-> }}
+href="../../../getting-started/deploy-app/deploy-cli/" >}}

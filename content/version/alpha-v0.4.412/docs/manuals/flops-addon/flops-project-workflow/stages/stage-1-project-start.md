@@ -93,6 +93,4 @@ Now relax, sit back, and continue reading the following stages to understand wha
 {{< link-card
 title="In need of customization?"
 description="Learn how to create and fine-tune your own FLOps projects"
-href="../../../customizations/overview/"
-
-> }}
+href="../../../customizations/overview/" >}}

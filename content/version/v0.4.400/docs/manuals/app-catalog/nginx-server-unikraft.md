@@ -25,9 +25,7 @@ We can deploy Nginx using [Unikraft](https://unikraft.org). This will allow us t
 title="Unikraft Runtime"
 description="To enable unikernel support, please refer to the Unikernel Support manual section."
 href="../../execution-runtimes/unikernel-operations/"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 <!-- {{< callout context="note" title="Unikernel Support" icon="outline/rocket">}} To enable unikernel support, please refer to the Unikernel Support manual section{{< /callout >}} -->
 
@@ -114,9 +112,7 @@ In this guide we'll use the comprehensive Oakestra CLI toolkit to interact with 
 title="Get Started with the Oakestra CLI"
 description="Check out how to deploy your first application with the CLI."
 href="../../../getting-started/deploy-app/deploy-cli/"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 <br>
 You can check if `oak-cli` is installed by running the following command:

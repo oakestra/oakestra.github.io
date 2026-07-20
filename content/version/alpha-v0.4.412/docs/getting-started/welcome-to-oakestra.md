@@ -78,22 +78,16 @@ Whether you're a beginner or an advanced user, joining our community is the best
 {{< link-card
 title="Contribute to Oakestra"
 description="Read our contribution guide"
-href="/docs/contribution-guide/contributing-guide/"
-
-> }}
+href="/docs/contribution-guide/contributing-guide/" >}}
 
 {{< link-card
 title="Join us"
 description="Meet our lively Discord community"
-href="https://discord.gg/7F8EhYCJDf"
-
-> }}
+href="https://discord.gg/7F8EhYCJDf" >}}
 
 {{< link-card
 title="Follow us"
 description="See our updates on X"
-href="https://x.com/oakestra"
-
-> }}
+href="https://x.com/oakestra" >}}
 
 {{< /card-grid >}}

@@ -30,9 +30,7 @@ Addons fall into two primary categories in Oakestra:
 title="FLOps"
 description="Oakestra federated learing extension"
 href="../../flops"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 ## Addon System Design
 
@@ -77,6 +75,4 @@ When installing an addon, the Addons Engine checks if a similar core component i
 title="Installing addons"
 description="Read more on how to use addons within Oakestra"
 href="../../../manuals/extending-oakestra/installing-addons"
-target="\_blank"
-
-> }}
+target="\_blank" >}}

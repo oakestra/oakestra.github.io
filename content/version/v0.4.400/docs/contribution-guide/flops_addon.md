@@ -19,9 +19,7 @@ Go to the FLOps addon repository and create a new Issue.
 title="FLOps Addon Repository"
 description="Explore the source code"
 href="https://github.com/oakestra/addon-FLOps"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 ## Linting & Formatting
 

@@ -88,6 +88,4 @@ If you're using `runu` runtime attached to containerd, you can still use the pro
 {{< link-card
 description="Read Unikraft debugging guide for more information"
 href="https://unikraft.org/guides/debugging"
-target="\_blank"
-
-> }}
+target="\_blank" >}}

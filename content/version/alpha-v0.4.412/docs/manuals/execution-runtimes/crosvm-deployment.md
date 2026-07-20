@@ -61,9 +61,7 @@ RUN systemctl enable my-app
 title="Looking for a real-world example?"
 description="See the Wolf cloud gaming image for a complete example of a crosvm-compatible image, including the base image Dockerfile."
 href="https://github.com/axiphi/oakestra-wolf"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 ### Creating a Service Deployment Descriptor
 

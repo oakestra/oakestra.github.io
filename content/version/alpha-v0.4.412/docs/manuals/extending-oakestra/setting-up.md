@@ -28,9 +28,7 @@ While sharing an instance of the addons marketplace, which is deployed at the ro
 title="Addons"
 description="Learn more about addons"
 href="../../../concepts/oakestra-extensions/addons"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 ## Visiting the Dashboard
 

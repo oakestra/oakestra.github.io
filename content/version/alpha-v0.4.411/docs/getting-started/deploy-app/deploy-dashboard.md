@@ -84,9 +84,7 @@ name is left empty, then you will be logged in to the default root organization.
 title="Organizations"
 description="More on organizations"
 href="../../../manuals/dashboard-features/organizations/"
-target="\_blank"
-
-> }}
+target="\_blank" >}}
 
 Here you can see the login to the _sampleOrga_ organization.
 
