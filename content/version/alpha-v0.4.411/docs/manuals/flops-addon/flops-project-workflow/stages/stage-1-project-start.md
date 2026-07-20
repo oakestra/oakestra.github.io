@@ -2,7 +2,7 @@
 title: "Stage 1: Project Start"
 summary: ""
 draft: false
-weight: 110311030202
+weight: 10311030202
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -95,4 +95,4 @@ title="In need of customization?"
 description="Learn how to create and fine-tune your own FLOps projects"
 href="../../../customizations/overview/"
 
->}}
+> }}

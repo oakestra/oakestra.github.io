@@ -53,6 +53,6 @@ description="See CLI command descriptions for details"
 href="../../cli/features/"
 target="\_blank"
 
->}}
+> }}
 
 Continue reading to learn more about the debugging specific aspects of the Oakestra ecosystem.

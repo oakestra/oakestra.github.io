@@ -29,14 +29,14 @@ title="Image Building Preparation"
 description="Prepare a worker node to build (multi-platform) container images"
 href="../image-builder-workers/"
 
->}}
+> }}
 
 {{< link-card
 title="ML Training Data Preparation"
 description="Prepare a worker node to aggregate data for training"
 href="../learner-workers/"
 
->}}
+> }}
 
 ### Set up FLOps Management
 
@@ -82,7 +82,7 @@ title="FLOps CLI commands"
 description="Explore the oak-cli commands that help you to work with FLOps."
 href="../../../cli/features/flops/"
 
->}}
+> }}
 
 {{< callout context="note" title="Resetting your FLOps Management" icon="outline/info-circle" >}}
 

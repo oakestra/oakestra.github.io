@@ -28,7 +28,7 @@ description="Read more about how to create load-balanced microservices"
 href="../nginx-client-server-with-load-balancing/"
 target="\_blank"
 
->}}
+> }}
 
 ## II. Cloud/Edge Gaming: Minecraft
 
@@ -48,7 +48,7 @@ description="See GitHub repository for installation details."
 href="https://github.com/oakestra/minecraft-client-server-example"
 target="\_blank"
 
->}}
+> }}
 
 ## III. Augmented Reality (AR)
 
@@ -71,7 +71,7 @@ description="See GitHub repository for installation details."
 href="https://github.com/oakestra/app-ar-pipeline/tree/main"
 target="\_blank"
 
->}}
+> }}
 
 {{< callout context="note" title="Good to know" icon="outline/info-circle" >}}
 Read our research on how Augmented Reality and video analytics applications can be accelerated using Oakestra here.
@@ -87,4 +87,4 @@ description="Read more to learn how to create unikernel microservices."
 href="../nginx-unikernel-deployment/"
 target="\_blank"
 
->}}
+> }}

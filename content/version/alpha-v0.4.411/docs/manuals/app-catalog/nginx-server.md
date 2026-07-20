@@ -2,7 +2,7 @@
 title: "Nginx Client-Server with Load Balancing"
 summary: ""
 draft: false
-weight: 110307020000
+weight: 10307020000
 toc: true
 hidden: true
 seo:
@@ -23,10 +23,10 @@ In this guide we'll use the comprehensive Oakestra CLI toolkit to interact with 
 {{< link-card
 title="Get Started with the Oakestra CLI"
 description="Check out how to deploy your first application with the CLI."
-href="/docs/getting-started/deploy-app/with-the-cli/"
+href="/docs/getting-started/deploy-app/deploy-cli/"
 target="\_blank"
 
->}}
+> }}
 > <br>
 
 You can check if `oak-cli` is installed by running the following command:
@@ -187,6 +187,6 @@ For this example, we used the command `oak s i 672cf97ff7728660d15a5852`
 As you can see both instances got requests from the single client we have, even if the client is always using the same IP address.
 
 {{< callout context="tip" title="Oakestra Dashboard" icon="outline/rocket">}}
-You can also monitor the services and their instances using the Oakestra Dashboard. To access the dashboard, open your browser and navigate to `http://<your-oakestra-root-ip>`. See the [Dashboard](/docs/getting-started/deploy-app/with-the-dashboard) section for more information.
+You can also monitor the services and their instances using the Oakestra Dashboard. To access the dashboard, open your browser and navigate to `http://<your-oakestra-root-ip>`. See the [Dashboard](/docs/getting-started/deploy-app/deploy-dashboard) section for more information.
 
 {{< /callout >}}

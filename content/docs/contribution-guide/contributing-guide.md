@@ -51,7 +51,7 @@ There are other ways you can contribute without writing a single line of code. H
    href="https://github.com/oakestra/oakestra/issues/new?assignees=&labels=&projects=&template=bug.md&title="
    target="\_blank"
 
-   >}}
+   > }}
 
 1. **Suggesting Features**
    Have a new feature idea? Feature requests are welcome! Please submit them as GitHub issues with details on why it would be useful and any implementation suggestions.
@@ -60,7 +60,7 @@ There are other ways you can contribute without writing a single line of code. H
    href="https://github.com/oakestra/oakestra/issues/new?assignees=&labels=&projects=&template=proposal.md&title="
    target="\_blank"
 
-   >}}
+   > }}
 
 1. **Improving Documentation**
    Documentation improvements are always appreciated! If you find something unclear or missing, feel free to submit an issue.
@@ -70,7 +70,7 @@ There are other ways you can contribute without writing a single line of code. H
    href="https://github.com/oakestra/documentation/issues"
    target="\_blank"
 
-   >}}
+   > }}
 
 ## Reviewing and Merging Pull Requests
 

@@ -2,7 +2,7 @@
 title: "Addons"
 summary: ""
 draft: false
-weight: 010205010000
+weight: 10205010000
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -32,7 +32,7 @@ description="Oakestra's federated learning extension"
 href="../../flops/overview/#flops-addon"
 target="\_blank"
 
->}}
+> }}
 
 ## Addon System Design
 
@@ -79,4 +79,4 @@ description="Read more on how to use addons within Oakestra"
 href="../../../manuals/extending-oakestra/install_addon"
 target="\_blank"
 
->}}
+> }}

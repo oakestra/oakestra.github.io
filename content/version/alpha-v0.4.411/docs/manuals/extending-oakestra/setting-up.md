@@ -2,7 +2,7 @@
 title: "Setting Up"
 summary: ""
 draft: false
-weight: 110307010000
+weight: 10309010000
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -30,7 +30,7 @@ description="Learn more about addons"
 href="../../../concepts/oakestra-extensions/addons"
 target="\_blank"
 
->}}
+> }}
 
 ## Visiting the Dashboard
 

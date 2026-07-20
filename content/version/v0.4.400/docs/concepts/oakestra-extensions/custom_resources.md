@@ -46,4 +46,4 @@ description="Read more on how to use custom resources within Oakestra"
 href="../../../manuals/extending-oakestra/setting-up-hooks"
 target="\_blank"
 
->}}
+> }}

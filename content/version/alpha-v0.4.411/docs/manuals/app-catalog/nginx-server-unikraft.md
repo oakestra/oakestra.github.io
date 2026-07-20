@@ -2,7 +2,7 @@
 title: "Nginx Unikernel Deployment"
 summary: ""
 draft: false
-weight: 110307030000
+weight: 10307030000
 toc: true
 hidden: true
 seo:
@@ -15,7 +15,7 @@ seo:
 ![Nginx Balancing](balancing-unikraft.png)
 
 {{< callout context="caution" title="Unikernels within Oakestra" icon="outline/alert-triangle">}}
-This guide is (almost) a clone of the containers Nginx client-server applications described in [previous walkthrough](/docs/manuals/app-catalog/nginx-sever), however, we instead use Unikraft Nginx server.
+This guide is (almost) a clone of the containers Nginx client-server applications described in [previous walkthrough](/docs/manuals/app-catalog/nginx-server), however, we instead use Unikraft Nginx server.
 
 {{< /callout >}}
 
@@ -24,10 +24,10 @@ We can deploy Nginx using [Unikraft](https://unikraft.org). This will allow us t
 {{< link-card
 title="Unikraft Runtime"
 description="To enable unikernel support, please refer to the Unikernel Support manual section."
-href="/docs/manuals/execution-runtimes/unikernel-deployment/"
+href="/docs/manuals/execution-runtimes/unikernel-operations/"
 target="\_blank"
 
->}}
+> }}
 
 <!-- {{< callout context="note" title="Unikernel Support" icon="outline/rocket">}} To enable unikernel support, please refer to the Unikernel Support manual section{{< /callout >}} -->
 
@@ -113,10 +113,10 @@ In this guide we'll use the comprehensive Oakestra CLI toolkit to interact with 
 {{< link-card
 title="Get Started with the Oakestra CLI"
 description="Check out how to deploy your first application with the CLI."
-href="/docs/getting-started/deploy-app/with-the-cli/"
+href="/docs/getting-started/deploy-app/deploy-cli/"
 target="\_blank"
 
->}}
+> }}
 
 <br>
 You can check if `oak-cli` is installed by running the following command:

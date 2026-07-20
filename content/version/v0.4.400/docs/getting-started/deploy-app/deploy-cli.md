@@ -163,7 +163,7 @@ description="Explore every available CLI command in detail and more"
 href="../../../manuals/cli/overview/"
 target="\_blank"
 
->}}
+> }}
 
 {{< callout context="note" title="Maximize Speed & Convenience" icon="outline/bolt" >}}
 The `oak-cli` is powered by [Typer](https://github.com/fastapi/typer) which supports tab autocompletion natively.

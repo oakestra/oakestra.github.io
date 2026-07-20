@@ -26,7 +26,7 @@ description="Check out how to deploy your first application with the CLI."
 href="../../../getting-started/deploy-app/deploy-cli/"
 target="\_blank"
 
->}}
+> }}
 > <br>
 
 You can check if `oak-cli` is installed by running the following command:

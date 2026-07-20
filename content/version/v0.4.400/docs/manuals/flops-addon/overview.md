@@ -22,28 +22,28 @@ title="Prepare your system for FLOps"
 description="Explore the necessary steps and requirements to use FLOps"
 href="../preparations/overview/"
 
->}}
+> }}
 
 {{< link-card
 title="Running a FLOps Project"
 description="Follow a step-by-step guide to create a trained FL model and inference server"
 href="../flops-project-workflow/overview/"
 
->}}
+> }}
 
 {{< link-card
 title="Customize your FLOps Projects"
 description="Learn how to configure custom SLAs and ML Git repositories"
 href="../customizations/overview/"
 
->}}
+> }}
 
 {{< link-card
 title="Contribute to FLOps"
 description="Explore how to modify, extend, and contribute to FLOps"
 href="../../../contribution-guide/flops_addon/"
 
->}}
+> }}
 
 ## Advanced Topics
 
@@ -52,11 +52,11 @@ title="FLOps API Endpoints "
 description="Discover the FLOps API"
 href="../advanced/api-endpoints/"
 
->}}
+> }}
 
 {{< link-card
 title="Clustered Hierarchical FL"
 description="Explore how FLOps can utilize Oakestra's clustered hierarchy"
 href="../advanced/clustered-hierarchical-fl/"
 
->}}
+> }}

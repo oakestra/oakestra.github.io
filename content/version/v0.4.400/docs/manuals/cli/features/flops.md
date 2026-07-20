@@ -33,7 +33,7 @@ title="Want to know more about FL and FLOps?"
 description="Have a look at the dedicated Federated Learning Documentation"
 href="../../../../concepts/flops/overview/"
 
->}}
+> }}
 
 {{< include-sphinx-html "/static/automatically_generated_oak_cli_docs/flops.html" >}}
 

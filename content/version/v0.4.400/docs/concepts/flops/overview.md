@@ -20,7 +20,7 @@ title="FL Basics"
 description="Explore fundamental concepts of Federated Learning"
 href="../fl_basics/"
 
->}}
+> }}
 
 ## FL with Oakestra
 
@@ -153,21 +153,21 @@ title="Local ML Data Management"
 description="Explore how FLOps manages ML data for local training"
 href="../internals/ml-data-management/"
 
->}}
+> }}
 
 {{< link-card
 title="Image Building Process"
 description="Learn why and how container images are build in FLOps"
 href="../internals/image-building-process/"
 
->}}
+> }}
 
 {{< link-card
 title="MLflow MLOps Integration"
 description="Learn how FLOps integrates MLflow into its architecture and workflows"
 href="../internals/mflow-integration/"
 
->}}
+> }}
 
 ## How to use FLOps
 
@@ -176,4 +176,4 @@ title="FLOps Manuals"
 description="Explore how to set up and use FLOps yourself"
 href="../../../manuals/flops-addon/overview/"
 
->}}
+> }}

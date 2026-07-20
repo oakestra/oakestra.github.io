@@ -32,7 +32,7 @@ description="Oakestra federated learing extension"
 href="../../flops"
 target="\_blank"
 
->}}
+> }}
 
 ## Addon System Design
 
@@ -79,4 +79,4 @@ description="Read more on how to use addons within Oakestra"
 href="../../../manuals/extending-oakestra/installing-addons"
 target="\_blank"
 
->}}
+> }}

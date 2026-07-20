@@ -2,7 +2,7 @@
 title: "MQTT Authentication"
 summary: ""
 draft: false
-weight: 110305060000
+weight: 10305060000
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -45,7 +45,7 @@ description="Check out the Getting Started guide to set up your first cluster"
 href="../../../getting-started/oak-environment/your-first-orchestrator/"
 target="\_blank"
 
->}}
+> }}
 
 ### Configuring the Cluster Manager
 

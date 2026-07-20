@@ -5,7 +5,7 @@ summary: ""
 date: 2023-09-07T16:06:50+02:00
 lastmod: 2023-09-07T16:06:50+02:00
 draft: false
-weight: 010104010000
+weight: 10104010000
 toc: true
 sidebar:
   collapsed: false
@@ -72,7 +72,7 @@ Finally, you can configure the IP of your Oakestra Root Orchestrator:
 oak config set root_orchestrator_address <IP OF YOUR ROOT ORCHESTRATOR>
 ```
 
-For further information about the CLI configuration, see the [CLI Configuration Manuals](/docs/manuals/cli/features/configuration).
+For further information about the CLI configuration, see the [CLI Configuration Reference](/docs/reference/cli/oak_config).
 
 ### Deploying Your First Application Using the CLI
 
@@ -152,8 +152,8 @@ All available SLAs can be inspected via the `oak application sla` command.
 
 Your personal SLA files describing your applications can be stored in any folder in your machine.
 
-{{< link-card title="Check out these examples" href="/docs/manuals/app-catalog/example-applications">}}
-{{< link-card title="Learn more about the SLA specifications" href="/docs/reference/application-sla-description">}}
+{{< link-card title="Check out these examples" href="/docs/manuals/app-catalog/catalog">}}
+{{< link-card title="Learn more about the SLA specifications" href="/docs/reference/app-sla">}}
 
 ### Managing Applications
 
@@ -205,7 +205,7 @@ description="Explore every available CLI command in detail and more"
 href="../../../reference/cli/oak"
 target="\_blank"
 
->}}
+> }}
 
 {{< callout context="note" title="Maximize Speed & Convenience" icon="outline/bolt" >}}
 The `oak-cli` supports tab autocompletion natively.

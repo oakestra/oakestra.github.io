@@ -45,7 +45,7 @@ description="Check out the Getting Started guide to set up your first cluster"
 href="../../../getting-started/oak-environment/create-your-first-oakestra-orchestrator"
 target="\_blank"
 
->}}
+> }}
 
 ### Configuring the Cluster Manager
 

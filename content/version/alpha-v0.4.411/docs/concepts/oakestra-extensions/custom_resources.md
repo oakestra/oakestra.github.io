@@ -2,7 +2,7 @@
 title: "Custom Resources"
 summary: ""
 draft: false
-weight: 010205030000
+weight: 10205030000
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -46,4 +46,4 @@ description="Read more on how to use custom resources within Oakestra"
 href="../../../manuals/extending-oakestra/custom_resources"
 target="\_blank"
 
->}}
+> }}

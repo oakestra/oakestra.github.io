@@ -21,7 +21,7 @@ description="Explore the source code"
 href="https://github.com/oakestra/addon-FLOps"
 target="\_blank"
 
->}}
+> }}
 
 ## Linting & Formatting
 

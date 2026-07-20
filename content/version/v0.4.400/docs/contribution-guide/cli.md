@@ -21,7 +21,7 @@ description="Explore the source code"
 href="https://github.com/oakestra/oakestra-cli"
 target="\_blank"
 
->}}
+> }}
 
 ## CLI Foundations
 

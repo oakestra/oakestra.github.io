@@ -46,7 +46,7 @@ title="IPv6 Addressing in Oakestra"
 href="../ipv6-addressing/"
 target="\_blank"
 
->}}
+> }}
 
 ### Service layer
 

@@ -43,7 +43,7 @@ description="Check out the Unikraft Nginx walkthrough in the Application Catalog
 href="../../app-catalog/nginx-server-unikraft/"
 target="\_blank"
 
->}}
+> }}
 
 Once you've packaged your unikernel, you can upload it to a location accessible to Oakestra, such as a web server or a cloud storage service.
 

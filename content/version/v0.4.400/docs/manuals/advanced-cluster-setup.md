@@ -80,7 +80,7 @@ description="Check out how to register worker nodes with a cluster"
 href="../../getting-started/oak-environment/add-edge-devices-workers-to-your-setup"
 target="\_blank"
 
->}}
+> }}
 
 ## Custom Deployments
 

@@ -2,7 +2,7 @@
 title: "Create a Single-Node Cluster"
 summary: ""
 draft: false
-weight: 010102020000
+weight: 10102020000
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -15,9 +15,13 @@ Let's get you up to speed with the easiest possible setup. You'll be able to run
 
 ### Start the Orchestrators on a Single Machine
 
+{{< callout context="caution" title="System Requirements" icon="outline/alert-triangle">}}
+Make sure you first check the system requirements [here](../high-level-view).
+{{< /callout >}}
+
 In this guide, we'll perform a single-machine setup. This setup is the easiest way to get started with Oakestra, with a single cluster managed by a single machine. To do so, we'll install the **Root Orchestrator**, the **Cluster Orchestrator**, and the **Worker Node** together, as shown in the following figure.
 
-After the orchestrators are up and running, you can add edge devices as workers to your cluster (see: [Add Edge Devices (Workers) to Your Setup](/docs/getting-started/oak-environment/add-edge-devices-workers-to-your-setup/)).
+After the orchestrators are up and running, you can add edge devices as workers to your cluster.
 
 {{< svg-small "deploy-orchestrators" >}}
 
@@ -32,7 +36,7 @@ curl -sfL oakestra.io/oak.sh | bash
 2. Perform a full Root + Cluster + Worker installation using:
 
 ```bash
-oak install full alpha-v0.4.410
+oak install full alpha-v0.4.411
 ```
 
 That's it! You should be good to go now.
@@ -52,7 +56,7 @@ Check out the [Advanced Oakestra Clusters Setup](../advanced-cluster-setup) sect
 {{< /callout >}}
 
 {{< callout context="caution" title="Network Configuration" icon="outline/alert-triangle">}}
-If you run into a restricted network (e.g., on a cloud VM), you need to configure the firewall rules and the NetManager component accordingly. Please refer to: [Firewall Setup](../../../manuals/firewall-configuration)
+If you run into a restricted network (e.g., on a cloud VM), you need to configure the firewall rules and the NetManager component accordingly. Please refer to: [Firewall Setup](../../../manuals/firewall)
 {{< /callout >}}
 
 If the installation command succeeded, you can now check if your cluster is showing up correctly using the command:

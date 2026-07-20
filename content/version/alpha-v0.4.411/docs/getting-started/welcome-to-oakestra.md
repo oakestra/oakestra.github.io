@@ -2,7 +2,7 @@
 title: "Welcome to the Oakestra Documentation"
 summary: ""
 draft: false
-weight: 010101000000
+weight: 10101000000
 toc: true
 seo:
   title: "welcome to oakestra docs" # custom title (optional)
@@ -38,7 +38,7 @@ Take full control of your microservices with Oakestra's powerful API and intuiti
 - [Oakestra CLI](../deploy-app/deploy-cli/)
 - [Oakestra Dashboard](../deploy-app/deploy-dashboard/)
 - [Oakestra API](../../reference/api/deploy-api/)
-- [Application Catalog](../manuals/app-catalog/example-applications/)
+- [Application Catalog](../../manuals/app-catalog/catalog/)
 
 {{< /card >}}
 
@@ -78,22 +78,22 @@ Whether you're a beginner or an advanced user, joining our community is the best
 {{< link-card
 title="Contribute to Oakestra"
 description="Read our contribution guide"
-href="/docs/contribution-guide/contributing-overview/"
+href="/docs/contribution-guide/contributing-guide/"
 
->}}
+> }}
 
 {{< link-card
 title="Join us"
 description="Meet our lively Discord community"
 href="https://discord.gg/7F8EhYCJDf"
 
->}}
+> }}
 
 {{< link-card
 title="Follow us"
 description="See our updates on X"
 href="https://x.com/oakestra"
 
->}}
+> }}
 
 {{< /card-grid >}}

@@ -28,20 +28,20 @@ description="Connect a worker to an Oakestra cluster"
 href="../../getting-started/oak-environment/advanced-cluster-setup/#create-a-worker-node"
 target="\_blank"
 
->}}
-{{< link-card
-title="Worker Architecture"
-description="Explore the components of an Oakestra worker"
-href="../../concepts/high-level-architecture/#worker-node"
-target="_blank"
->}}
-{{< link-card
-title="Overlay Network"
-description="Learn more on the overlay network"
-href="../networking-internals/overlay-network"
-target="_blank"
->}}
-{{< /card-grid >}}
+> }}
+> {{< link-card
+> title="Worker Architecture"
+> description="Explore the components of an Oakestra worker"
+> href="../../concepts/high-level-architecture/#worker-node"
+> target="_blank"
+> }}
+> {{< link-card
+> title="Overlay Network"
+> description="Learn more on the overlay network"
+> href="../networking-internals/overlay-network"
+> target="_blank"
+> }}
+> {{< /card-grid >}}
 
 ## Installation
 

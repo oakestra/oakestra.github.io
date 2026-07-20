@@ -92,7 +92,7 @@ description="More on organizations"
 href="../../../manuals/dashboard-features/organizations/"
 target="\_blank"
 
->}}
+> }}
 
 Here you can see the login to the _sampleOrga_ organization.
 

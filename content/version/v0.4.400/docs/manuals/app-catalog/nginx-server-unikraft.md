@@ -27,7 +27,7 @@ description="To enable unikernel support, please refer to the Unikernel Support 
 href="../../execution-runtimes/unikernel-operations/"
 target="\_blank"
 
->}}
+> }}
 
 <!-- {{< callout context="note" title="Unikernel Support" icon="outline/rocket">}} To enable unikernel support, please refer to the Unikernel Support manual section{{< /callout >}} -->
 
@@ -116,7 +116,7 @@ description="Check out how to deploy your first application with the CLI."
 href="../../../getting-started/deploy-app/deploy-cli/"
 target="\_blank"
 
->}}
+> }}
 
 <br>
 You can check if `oak-cli` is installed by running the following command:

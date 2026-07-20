@@ -58,40 +58,40 @@ Projects are based on the SLA you use - they can vary in:
 title="Stage 0: Preparations"
 href="../stages/stage-0-preparation/"
 
->}}
+> }}
 
 {{< link-card
 title="Stage 1: Project Start"
 href="../stages/stage-1-project-start/"
 
->}}
+> }}
 
 {{< link-card
 title="Stage 2: Image-Builder Deployment"
 href="../stages/stage-2-image-builder-deployment/"
 
->}}
+> }}
 
 {{< link-card
 title="Stage 3: FL-Actors Image Build"
 href="../stages/stage-3-FL-actor-image-build/"
 
->}}
+> }}
 
 {{< link-card
 title="Stage 4: FL-Actors Deployment"
 href="../stages/stage-4-FL-actor-deployment/"
 
->}}
+> }}
 
 {{< link-card
 title="Stage 5: FL Training"
 href="../stages/stage-5-FL-training/"
 
->}}
+> }}
 
 {{< link-card
 title="Post-training Steps"
 href="../stages/post-training-steps/"
 
->}}
+> }}

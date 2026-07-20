@@ -32,14 +32,14 @@ title="Installer"
 href="../features/installer/"
 description="Set up necessary requirements the easy way."
 
->}}
+> }}
 
 {{< link-card
 title="Configuration"
 href="../features/configuration/"
 description="Configure the CLI to your liking."
 
->}}
+> }}
 
 {{< /card-grid >}}
 
@@ -52,14 +52,14 @@ title="Applications"
 href="../features/applications/"
 description="Interact with apps."
 
->}}
+> }}
 
 {{< link-card
 title="Services"
 href="../features/services/"
 description="Interact with services."
 
->}}
+> }}
 
 {{< /card-grid >}}
 
@@ -72,7 +72,7 @@ title="FLOps"
 href="../features/flops/"
 description="Interact with the FLOps addon to perform practical federated machine learning."
 
->}}
+> }}
 
 {{< /card-grid >}}
 
@@ -85,14 +85,14 @@ title="Development"
 href="../features/development/"
 description="Accelerate local docker based Oakestra development."
 
->}}
+> }}
 
 {{< link-card
 title="Worker Node"
 href="../features/worker/"
 description="Manage your local worker node."
 
->}}
+> }}
 
 {{< /card-grid >}}
 
@@ -103,4 +103,4 @@ title="The CLI in action"
 description="Use the CLI to deploy your first Oakestra app."
 href="../../../getting-started/deploy-app/deploy-cli/"
 
->}}
+> }}

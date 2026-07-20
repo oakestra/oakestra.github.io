@@ -49,6 +49,6 @@ description="Learn more about deploying container-based applications with Oakest
 href="../../../getting-started/deploy-app/"
 target="\_blank"
 
->}}
+> }}
 
 Or continue reading to deploy your unikernel applications with Oakestra.

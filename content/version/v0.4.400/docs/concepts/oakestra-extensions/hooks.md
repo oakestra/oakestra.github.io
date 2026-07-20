@@ -49,4 +49,4 @@ description="Read up on how to set up hooks within Oakestra"
 href="../../../manuals/extending-oakestra/setting-up-hooks"
 target="\_blank"
 
->}}
+> }}

@@ -43,7 +43,7 @@ description="Learn more about the Oakestra API"
 href="../../../getting-started/deploy-app/with-the-api"
 target="\_blank"
 
->}}
+> }}
 
 ## Verify Installation
 

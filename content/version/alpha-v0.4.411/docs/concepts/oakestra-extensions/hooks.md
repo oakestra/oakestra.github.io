@@ -2,7 +2,7 @@
 title: "Hooks"
 summary: ""
 draft: false
-weight: 010205020000
+weight: 10205020000
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -49,4 +49,4 @@ description="Read up on how to set up hooks within Oakestra"
 href="../../../manuals/extending-oakestra/hooks"
 target="\_blank"
 
->}}
+> }}

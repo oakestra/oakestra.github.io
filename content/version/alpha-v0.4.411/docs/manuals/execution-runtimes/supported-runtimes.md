@@ -2,7 +2,7 @@
 title: "Supported Virtualization Runtimes"
 summary: ""
 draft: false
-weight: 110308010000
+weight: 10310010000
 toc: true
 seo:
   title: "Supported Virtualization Runtimes" # custom title (optional)
@@ -33,10 +33,11 @@ This unique functionality allows you to:
 
 Currently, Oakestra supports the following virtualization runtimes.
 
-| **Technology** | **Type**                    | **Description**                                                                                 |
-| -------------- | --------------------------- | ----------------------------------------------------------------------------------------------- |
-| Containerd     | Container Execution Runtime | Ideal for deploying OCI compliant applications that require easy portability and management.    |
-| Unikraft       | Unikernel Execution Runtime | Specialized, lightweight virtual machines that are optimized for high performance and security. |
+| **Technology**        | **Type**                    | **Description**                                                                                 |
+| --------------------- | --------------------------- | ----------------------------------------------------------------------------------------------- |
+| Containerd            | Container Execution Runtime | Ideal for deploying OCI compliant applications that require easy portability and management.    |
+| Unikraft              | Unikernel Execution Runtime | Specialized, lightweight virtual machines that are optimized for high performance and security. |
+| crosvm (experimental) | VM Execution Runtime        | Lightweight virtual machines that allow sharing a GPU between multiple workloads.               |
 
 ### How to Choose a Runtime
 
@@ -45,9 +46,11 @@ Picking the right runtime depends on your workload’s priorities. Are you looki
 With Oakestra, you can easily switch between runtimes to find the best fit for your workload. _Or_ you can package different virtualizations for different microservices of your application to truly unlock the **hybrid virtualization of edge computing**. Oakestra makes it easy to manage and orchestrate different runtimes, so you can focus on building and deploying your applications.
 
 {{< link-card
-  description="Learn more about deploying container-based applications with Oakestra"
-  href="/docs/getting-started/deploy-app"
-  target="_blank" >}}
+description="Learn more about deploying container-based applications with Oakestra"
+href="/docs/getting-started/deploy-app"
+target="\_blank"
+
+> }}
 
 Or continue reading to deploy your unikernel applications with Oakestra.
 
