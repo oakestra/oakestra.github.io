@@ -14,7 +14,7 @@ seo:
 Oakestra includes a host-local observability stack for its Root and Cluster control planes. It collects container logs and resource metrics, stores them locally, and makes them available through provisioned Grafana dashboards and alert rules.
 
 {{< callout context="note" title="Alpha documentation" icon="outline/info-circle" >}}
-This page describes the observability architecture being introduced for the `alpha-v0.4.412` documentation line. The stack is still being extended, so later alpha revisions may add dashboards, metrics, and alert rules without changing the data-ownership model described here.
+This page describes the observability architecture included in Oakestra `alpha-v0.4.412`. The wider observability roadmap is still being developed, so later versions may add dashboards, metrics, and alert rules without changing the data-ownership model described here.
 {{< /callout >}}
 
 ## Capabilities

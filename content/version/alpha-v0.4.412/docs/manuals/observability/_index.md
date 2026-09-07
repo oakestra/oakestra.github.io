@@ -17,24 +17,26 @@ seo:
 This manual explains how to operate the observability stack described in [Observability Architecture](../../concepts/observability/). It covers Root, Cluster, and 1-DOC deployments, but every standalone orchestrator reads only its own local Loki and Prometheus.
 
 {{< callout context="note" title="Alpha documentation" icon="outline/info-circle" >}}
-This guide is staged in the `alpha-v0.4.412` documentation line while the observability stack is under review. The currently published `alpha-v0.4.412` Oakestra tag predates this stack and still uses Promtail. Until a later Oakestra revision contains the complete stack, use a source revision that includes these components and verify the expected containers after installation.
+This guide applies to the observability stack included in Oakestra `alpha-v0.4.412`. The wider observability roadmap is still being developed, so later versions may extend the documented dashboards, metrics, and alert rules.
 {{< /callout >}}
 
 ## Install or upgrade
 
-The startup scripts and `oak install` commands download configuration for the selected Oakestra version. Keep the Compose manifests, overrides, images, and configuration files on the same revision. Once an Oakestra version containing this stack is published, install every host with that same version:
+The startup scripts and `oak install` commands download configuration for the selected Oakestra version. Keep the Compose manifests, overrides, images, and configuration files on the same revision.
+
+For a 1-DOC installation:
 
 ```bash
-oak install full <VERSION_WITH_OBSERVABILITY>
+oak install full alpha-v0.4.412
 ```
 
 For separate hosts, install the Root first, configure the Cluster's Root address, and then install the Cluster using the same version:
 
 ```bash
-oak install root <VERSION_WITH_OBSERVABILITY>
+oak install root alpha-v0.4.412
 
 oak config set root_orchestrator_address <ROOT_ADDRESS>
-oak install cluster <VERSION_WITH_OBSERVABILITY>
+oak install cluster alpha-v0.4.412
 ```
 
 The observability changes are also testable from a source checkout. Set the requested Oakestra revision and run the corresponding startup script, or render and start the Compose file directly. Use `--remove-orphans` when upgrading from Promtail so Compose removes the retired collector after Alloy is created:
@@ -50,14 +52,10 @@ To run Oakestra without the complete observability stack:
 
 ```bash
 export OVERRIDE_FILES=override-no-observe.yml
-oak install full <VERSION_WITH_OBSERVABILITY>
+oak install full alpha-v0.4.412
 ```
 
 The metrics stack requires rootful Linux Docker Engine 25 or newer on AMD64 or ARM64. If Docker stores data outside `/var/lib/docker`, set `DOCKER_ROOT_DIR` before installation. The core orchestrator can still run on an unsupported metrics host with `override-no-observe.yml`.
-
-{{< callout context="caution" title="Version availability" icon="outline/alert-triangle" >}}
-Do not use the published `alpha-v0.4.412` tag to validate this complete architecture. Confirm that the selected Oakestra revision includes Alloy, Loki, Grafana, Prometheus, node_exporter, and cAdvisor; documentation can be staged before every image in an alpha line has been rebuilt.
-{{< /callout >}}
 
 ## Expected services
 
