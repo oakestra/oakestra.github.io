@@ -30,6 +30,8 @@ The Grafana dashboards are exposed at `<root_orchestrator_ip>:3000` and `<cluste
 The cluster Grafana dashboard is not available for single machine deployments. For this setup, all the data is aggregated in the same dashboard.
 {{< /callout >}}
 
+The provisioned Logs dashboard supports component and severity selection, full-line search, structured-field filters, time navigation, and shared-ID correlation links. The Log Statistics and Resources dashboards cover trends and resource usage separately. See [Observability Operations](../../observability/) for the complete workflow, queries, local-data boundaries, and troubleshooting steps.
+
 ![](control-plane-grafanalogs.png)
 
 ### Using Docker logs 
