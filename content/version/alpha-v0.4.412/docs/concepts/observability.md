@@ -21,15 +21,16 @@ This page describes the observability architecture included in Oakestra `alpha-v
 
 Observability is split into separate concerns:
 
-| Capability              | Purpose                                                       | Data source                             |
-| ----------------------- | ------------------------------------------------------------- | --------------------------------------- |
-| Log collection          | Discover control-plane containers and copy stdout/stderr      | Grafana Alloy                           |
-| Log storage and queries | Retain log streams and execute LogQL                          | Loki                                    |
-| Log browsing            | Read, filter, search, and correlate individual records        | Grafana **Orchestrator Logs** dashboard |
-| Log statistics          | Display volume, severity, and noisy-component trends          | Grafana **Log Statistics** dashboard    |
-| Log alerting            | Detect error-level records and stacktrace markers             | Grafana-managed alert rules over Loki   |
-| Metrics collection      | Scrape host and container resource measurements               | Prometheus, node_exporter, and cAdvisor |
-| Resource visualization  | Display host and per-service CPU, memory, filesystem, and I/O | Grafana **Resources** dashboard         |
+| Capability              | Purpose                                                                   | Data source                                                    |
+| ----------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Log collection          | Discover control-plane containers and copy stdout/stderr                  | Grafana Alloy                                                  |
+| Log storage and queries | Retain log streams and execute LogQL                                      | Loki                                                           |
+| Log browsing            | Read, filter, search, and correlate individual records                    | Grafana **Orchestrator Logs** dashboard                        |
+| Log statistics          | Display volume, severity, and noisy-component trends                      | Grafana **Log Statistics** dashboard                           |
+| Log alerting            | Detect error-level records and stacktrace markers                         | Grafana-managed alert rules over Loki                          |
+| Metrics collection      | Scrape host, container-resource, and Docker-state measurements            | Prometheus, node_exporter, cAdvisor, and Docker-state exporter |
+| Resource visualization  | Display host and per-service CPU, memory, filesystem, and I/O             | Grafana **Resources** dashboard                                |
+| Container alerting      | Detect missing containers, automatic restarts, and lost monitoring inputs | Grafana-managed alert rules over Prometheus                    |
 
 These capabilities share Grafana, but they are not interchangeable. Alloy transports logs; it does not store them and does not replace Prometheus. Loki stores log lines, while Prometheus stores numeric time series. Dashboards visualize existing data, and alert rules evaluate queries independently of whether a dashboard is open.
 
@@ -37,14 +38,15 @@ Distributed tracing is not part of this stack. The shared-ID links in the Logs d
 
 The deployment currently uses the following components:
 
-| Component     | Deployed image                             | Responsibility                                       |
-| ------------- | ------------------------------------------ | ---------------------------------------------------- |
-| Grafana Alloy | `grafana/alloy:v1.17.0`                    | Docker discovery, log processing, and delivery       |
-| Loki          | `grafana/loki:2.9.2`                       | Local log storage and LogQL                          |
-| Grafana       | `grafana/grafana`                          | Dashboards, Explore, datasources, and managed alerts |
-| Prometheus    | `prom/prometheus:v3.13.2-distroless`       | Local metric scraping, TSDB, and PromQL              |
-| node_exporter | `quay.io/prometheus/node-exporter:v1.12.1` | Physical-host metrics                                |
-| cAdvisor      | `ghcr.io/google/cadvisor:v0.60.5`          | Docker container resource metrics                    |
+| Component             | Deployed image                              | Responsibility                                       |
+| --------------------- | ------------------------------------------- | ---------------------------------------------------- |
+| Grafana Alloy         | `grafana/alloy:v1.17.0`                     | Docker discovery, log processing, and delivery       |
+| Loki                  | `grafana/loki:2.9.2`                        | Local log storage and LogQL                          |
+| Grafana               | `grafana/grafana`                           | Dashboards, Explore, datasources, and managed alerts |
+| Prometheus            | `prom/prometheus:v3.13.2-distroless`        | Local metric scraping, TSDB, and PromQL              |
+| node_exporter         | `quay.io/prometheus/node-exporter:v1.12.1`  | Physical-host metrics                                |
+| cAdvisor              | `ghcr.io/google/cadvisor:v0.60.5`           | Docker container resource metrics                    |
+| Docker-state exporter | `ghcr.io/davidborzek/docker-exporter:0.7.0` | Docker container state and restart counters          |
 
 Alloy replaces Promtail as the log collector. Do not run both collectors against the same containers because doing so duplicates ingestion.
 
@@ -60,10 +62,14 @@ Grafana Alloy ───────► local Loki ───────► Grafa
 
 physical host ───────► node_exporter ─┐
 Docker containers ───► cAdvisor ──────┼──► local Prometheus ───► Grafana Resources dashboard
-Prometheus itself ─────────────────────┘       PromQL
+Docker state ─────────► state exporter ┤       PromQL               Grafana container alerts
+Compose inventory ────► node_exporter ─┤
+Prometheus itself ─────────────────────┘
 ```
 
-Alloy uses `discovery.docker` and `loki.source.docker` against the local Docker socket. It refreshes discovery every five seconds, processes each record, and pushes it to the Loki instance in the same deployment. Prometheus pulls metrics every 15 seconds with a 10-second timeout. Root Prometheus scrapes itself, node_exporter, and cAdvisor; Cluster and 1-DOC Prometheus also scrape Cluster Manager's application metrics.
+Alloy uses `discovery.docker` and `loki.source.docker` against the local Docker socket. It refreshes discovery every five seconds, processes each record, and pushes it to the Loki instance in the same deployment. Prometheus pulls metrics every 15 seconds with a 10-second timeout. Root Prometheus scrapes itself, node_exporter, cAdvisor, and the Docker-state exporter; Cluster and 1-DOC Prometheus also scrape Cluster Manager's application metrics.
+
+cAdvisor measures resource consumption but does not expose the Docker restart-policy counter. The Docker-state exporter supplies running state and restart counters. A startup-generated node_exporter textfile supplies the desired replica count from the resolved Compose configuration, allowing Prometheus to detect a service that was deleted or never created rather than merely noticing that an observed series disappeared.
 
 ## Local ownership and isolation
 
@@ -100,6 +106,8 @@ Compatibility labels such as `container_name` and `job` remain available. Values
 
 cAdvisor retains only containers assigned to the local Oakestra collector and maps Docker metadata to the Prometheus labels `cluster_id` and `compose_service`. Host metrics use `host_scope=root`, `host_scope=cluster`, or `host_scope=one-doc`; a physical host is not given a fabricated Cluster identity.
 
+Container lifecycle recording rules join observed Docker state with the generated inventory and retain `cluster_id`, `compose_service`, and `compose_project`. The project label prevents services with the same Compose key in separate projects from being combined. Regenerate the inventory whenever an intentional Compose, profile, override, or replica change alters the expected deployment.
+
 ## Severity normalization
 
 Python services using `oakestra_logging` emit a versioned JSON record with an explicit lowercase `level`. Alloy accepts that value only from expected Python services when the schema header and service identity are valid. Other service-specific stages recognize MongoDB JSON, observability logfmt, Redis markers, Nginx headers, scheduler output, and strict legacy Oakestra headers.
@@ -116,6 +124,7 @@ The stack uses separate storage layers:
 - Alloy stores read positions in a named volume, preventing normal collector restarts from unnecessarily rereading log files.
 - Loki stores chunks and indexes in a named volume. The current local configuration has no automatic retention deletion, so operators must monitor disk usage and choose an explicit retention policy for long-running installations.
 - Prometheus stores its TSDB in a named volume with `7d` and `1GB` retention limits. Whichever limit is reached first removes the oldest persistent blocks; a busy host can therefore retain less than seven days. The 1-GB policy is not an exact filesystem quota because the WAL, active head, and compaction need additional space.
+- The generated expected-container inventory persists on the host so a removed container does not erase its own desired-state record.
 - Dashboards, datasources, and alert definitions are files mounted into Grafana. Grafana recreates these provisioned resources from version-controlled configuration.
 
 Normal container recreation preserves named volumes. `docker compose down -v`, `oak uninstall cleanup`, or manual volume deletion removes the corresponding local history. The local Loki and Prometheus stores are neither replicated nor backups.
@@ -132,12 +141,13 @@ The default bridge-mode exposure is intentionally narrow:
 | cAdvisor diagnostics and metrics |        `127.0.0.1:8081` |        `127.0.0.1:8082` | Host loopback only                                                       |
 | Prometheus                       |                Internal |                Internal | Reached by Grafana over Docker networking                                |
 | node_exporter                    | Private metrics gateway | Private metrics gateway | Not published as a normal host port                                      |
+| Docker-state exporter            |                Internal |                Internal | No host port; scraped only by local Prometheus                           |
 
 With the host-network overrides, Prometheus is exposed only on loopback at `127.0.0.1:10010` for Root and `127.0.0.1:10009` for Cluster.
 
-Alloy and cAdvisor receive read-only mounts of the Docker socket. A read-only socket mount does not restrict Docker API methods: both containers remain inside the Docker daemon's trust boundary. cAdvisor also receives read-only host filesystem and runtime mounts. The services drop Linux capabilities, use read-only filesystems where supported, and keep diagnostics on loopback, but operators must still trust the pinned images and prevent remote access to those endpoints.
+Alloy, cAdvisor, and the Docker-state exporter receive read-only mounts of the Docker socket. A read-only socket mount does not restrict Docker API methods: these containers remain inside the Docker daemon's trust boundary. cAdvisor also receives read-only host filesystem and container-runtime mounts. The services drop Linux capabilities, use read-only filesystems where supported, and keep diagnostics on loopback, but operators must still trust the pinned images and prevent remote access to those endpoints.
 
-The metrics pipeline requires rootful Linux Docker Engine 25 or newer on AMD64 or ARM64. Deployments that cannot satisfy this requirement can use `override-no-observe.yml`, which disables Grafana, Loki, Alloy, Prometheus, node_exporter, and cAdvisor together.
+The metrics pipeline requires rootful Linux Docker Engine 25 or newer on AMD64 or ARM64. Deployments that cannot satisfy this requirement can use `override-no-observe.yml`, which disables Grafana, Loki, Alloy, Prometheus, node_exporter, cAdvisor, and the Docker-state exporter together.
 
 ## Configuration ownership
 
@@ -153,8 +163,10 @@ run-a-cluster/
 │   ├── grafana-datasources.yml
 │   ├── grafana-dashboards.yml
 │   ├── alerts/
+│   ├── container-inventory/
 │   └── dashboards/
 └── prometheus/
+    ├── container-lifecycle-rules.yml
     └── prometheus*.yml
 ```
 

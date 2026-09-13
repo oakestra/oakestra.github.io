@@ -67,11 +67,11 @@ docker ps --format 'table {{.Names}}\t{{.Status}}'
 
 The observability containers are:
 
-| Deployment | Expected containers                                                                                                   |
-| ---------- | --------------------------------------------------------------------------------------------------------------------- |
-| Root       | `alloy`, `loki`, `grafana`, `root_prometheus`, `root_node_exporter`, `root_cadvisor`                                  |
-| Cluster    | `cluster_alloy`, `cluster_loki`, `cluster_grafana`, `cluster_prometheus`, `cluster_node_exporter`, `cluster_cadvisor` |
-| 1-DOC      | `alloy`, `loki`, `grafana`, `prometheus`, `node_exporter`, `cadvisor`                                                 |
+| Deployment | Expected containers                                                                                                                                    |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Root       | `alloy`, `loki`, `grafana`, `root_prometheus`, `root_node_exporter`, `root_cadvisor`, `root_docker_state_exporter`                                     |
+| Cluster    | `cluster_alloy`, `cluster_loki`, `cluster_grafana`, `cluster_prometheus`, `cluster_node_exporter`, `cluster_cadvisor`, `cluster_docker_state_exporter` |
+| 1-DOC      | `alloy`, `loki`, `grafana`, `prometheus`, `node_exporter`, `cadvisor`, `docker_state_exporter`                                                         |
 
 1-DOC intentionally runs one observability pipeline for its one physical host. It does not need duplicate Root and Cluster exporters.
 
@@ -144,6 +144,8 @@ Use **[Oakestra] Log Statistics** for trends rather than individual lines. It pr
 The dashboard shares Cluster, Source, and Component filters with the Logs dashboard. Error panels combine `error` and `critical`; the distribution keeps them separate. **Unparsed** means Alloy did not recognize a supported severity format—it does not mean that the record is harmless.
 
 The default refresh is one minute. Trend panels limit resolution and use a minimum interval to avoid overwhelming Loki with concurrent queries. A rejected query can appear as **No data**, so check Loki logs for HTTP 429 responses before concluding that history is missing.
+
+The collapsible **Active log alerts** row lists pending and firing instances of the provisioned log rule. It reads Grafana's current alert state, so the dashboard time range and Cluster, Source, and Component filters do not change that list.
 
 ### Resources
 
@@ -224,6 +226,12 @@ Use `cluster_prometheus` on a standalone Cluster and `prometheus` in 1-DOC. The 
 sum by (cluster_id, compose_service) (
   rate(container_cpu_usage_seconds_total{compose_service!=""}[5m])
 ) * 100
+
+oakestra:container_monitoring_ready
+
+oakestra:container_missing_replicas
+
+oakestra:container_restarts_5m
 ```
 
 Sampling windows mean container CPU and memory values will not exactly match a single `docker stats` snapshot.
@@ -232,12 +240,36 @@ Sampling windows mean container CPU and memory values will not exactly match a s
 
 Grafana provisions **Orchestrator error or stacktrace detected** and evaluates it against local Loki every 30 seconds. It has two detection paths:
 
-1. For schema-v1 Python and Gunicorn records, `level=error|critical` plus `schema_version=1` is authoritative. An Info record containing the word `ERROR` does not fire.
-2. For records outside schema v1, a compatibility path recognizes strict uppercase error markers, Oakestra compact errors, Python traceback markers, and Go panic/runtime stack markers.
+1. For every record carrying Alloy's normalized `level` label, `error` or `critical` is authoritative. An Info record containing the word `ERROR` does not fire.
+2. For records without a normalized level, a compatibility path recognizes strict error headers, Oakestra compact errors, Python traceback markers, and Go panic/runtime stack markers.
 
-The compatibility path excludes schema-v1 lines to avoid double counting. Observability services are excluded from this log alert to avoid self-generated recursive noise. An alert instance is grouped by `cluster_id` and `compose_service`, remains pending for one minute, and keeps firing for one minute after its two-minute query window clears. Notifications wait 30 seconds for grouping and repeat every four hours while the condition persists.
+The compatibility path explicitly excludes schema-v1 lines and does not broadly search for the word `error`, reducing double counting and false positives. Observability services are excluded from this log alert to avoid self-generated recursive noise. An alert instance is grouped by `cluster_id` and `compose_service`, remains pending for one minute, and keeps firing for one minute after its two-minute query window clears. Notifications wait 30 seconds for grouping and repeat every four hours while the condition persists.
 
 Open **Alerting → Alert rules** to inspect rule evaluation and **Alerting → Notification configuration → Contact points** to inspect delivery.
+
+## Container lifecycle alerts
+
+Grafana provisions four Prometheus-backed rules in addition to the log rule:
+
+| Rule                                        | Meaning                                                                                    |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Expected container is not running**       | Fewer replicas are running than the generated Compose inventory expects for one minute     |
+| **Container restarted automatically**       | Docker's restart-policy counter increased during the last five minutes                     |
+| **Container monitoring unavailable**        | Docker-state or node_exporter collection is unavailable or reports an error for one minute |
+| **Expected container inventory is missing** | Monitoring works, but the generated inventory is absent or empty for one minute            |
+
+The startup scripts generate `oakestra_expected_container_replicas` from the resolved Compose configuration before deployment. If you use Compose directly, regenerate the inventory from exactly the same files, overrides, project, environment, and profiles whenever the intended topology changes:
+
+```bash
+set -o pipefail
+compose=(docker compose -f root_orchestrator/docker-compose.yml)
+"${compose[@]}" config --format json |
+  python3 scripts/utils/generateContainerInventory.py \
+    --output root_orchestrator/config/container-inventory/containers.prom
+"${compose[@]}" up -d
+```
+
+Use the corresponding Compose and inventory paths for Cluster or 1-DOC. Missing-container and restart instances carry `cluster_id`, `compose_service`, and `compose_project`; shared monitoring-input alerts do not invent a Cluster identity. A manual restart or recreation is not a Docker automatic restart and may not increment the restart-policy counter. These rules detect container state, not whether a running application is responsive. Independent monitoring is still required to detect failure of the Docker host, local Grafana, Prometheus, or the notification path itself.
 
 ## Configure notifications
 
@@ -310,6 +342,8 @@ curl -fsS http://127.0.0.1:3000/api/health | jq .
 
 In Grafana, open **Connections → Data sources** and test both `Loki` and `Prometheus`. Confirm exactly one Logs, Log Statistics, and Resources dashboard is provisioned.
 
+For container alerting, `oakestra:container_monitoring_ready` must be `1`. The expected-container inventory must contain the enabled services, and a healthy stable deployment must report zero missing replicas and zero recent automatic restarts. In **Alerting → Alert rules**, confirm the log rule and all four container rules are provisioned without evaluation errors.
+
 ### Configuration checks from a source checkout
 
 ```bash
@@ -376,7 +410,15 @@ Open the contact point and inspect its last delivery error. The default webhook 
 
 ### Prometheus target is down
 
-Query `up`, inspect **Explore** with the Prometheus datasource, and check the target container logs. Verify Docker Engine compatibility, `DOCKER_ROOT_DIR`, the private metrics gateway, and the read-only host mounts. In host-network mode, Root Grafana uses loopback Prometheus port `10010` and Cluster Grafana uses `10009`.
+Query `up`, inspect **Explore** with the Prometheus datasource, and check the target container logs. Verify Docker Engine compatibility, `DOCKER_ROOT_DIR`, the private metrics gateway, and the read-only host mounts. The `docker-state` and `node-exporter` targets must both be up for lifecycle monitoring. In host-network mode, Root Grafana uses loopback Prometheus port `10010` and Cluster Grafana uses `10009`.
+
+### Container monitoring reports unavailable
+
+Query `oakestra:container_monitoring_ready`, then inspect the `docker-state` and `node-exporter` targets and their logs. Verify the Docker socket mount, exporter permissions, node_exporter textfile collector, and inventory file. Per-service alerts are deliberately suppressed when monitoring inputs are unavailable; their recovery during this condition is not proof that the application containers recovered.
+
+### Expected-container inventory is missing or stale
+
+Regenerate it from the same resolved Compose configuration used for deployment. Different overrides, profiles, project names, environment variables, or replica counts produce a different desired state. Do not delete an expectation to hide an unplanned failure; silence the relevant alert during planned maintenance.
 
 ### cAdvisor does not show container filesystem usage
 
@@ -388,6 +430,6 @@ Check whether the deployment was stopped with `docker compose down -v`, `oak uni
 
 ## Scope of this alpha stack
 
-The documented stack collects Docker control-plane logs, host metrics, container resource metrics, and Cluster Manager metrics. It provides three dashboards and error/stacktrace log alerting. It does not centralize telemetry from standalone Clusters into the Root, ingest NodeEngine's host log files, provide distributed traces, prove application health from container state, or provide durable remote storage. Later observability work can add capabilities without changing these boundaries.
+The documented stack collects Docker control-plane logs, host metrics, container resource metrics, Docker lifecycle state, and Cluster Manager metrics. It provides three dashboards, error/stacktrace log alerting, and container missing/restart alerts. It does not centralize telemetry from standalone Clusters into the Root, ingest NodeEngine's host log files, provide distributed traces, prove application health from container state, or provide durable remote storage. Later observability work can add capabilities without changing these boundaries.
 
 For log-authoring rules and the Python JSON contract, continue with [Structured Python Logging](structured-logging/).

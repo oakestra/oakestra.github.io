@@ -221,7 +221,7 @@ Application fields such as `event`, `logger`, and `context.job_id` stay queryabl
 
 ## Relationship to alerts
 
-Grafana treats `level=error|critical` plus `schema_version=1` as authoritative for standardized Python and Gunicorn records. An Info message containing the text `ERROR` must not trigger the structured path. A separate compatibility path handles known raw Python, Go, and legacy formats and explicitly excludes schema-v1 records to avoid double counting.
+Grafana treats Alloy's normalized `level=error|critical` label as authoritative. For schema-v1 Python and Gunicorn records, that label comes from the validated structured level. An Info message containing the text `ERROR` must not trigger an alert. A separate compatibility path handles known records without a normalized level and explicitly excludes schema-v1 lines to avoid double counting.
 
 As more components adopt structured output, compatibility matching can become narrower. Do not weaken the schema path by guessing severity from arbitrary message text.
 
