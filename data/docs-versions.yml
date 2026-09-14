@@ -46,14 +46,31 @@
 #     - v: "4.5"
 #     - v: "4.6"
 
-- group: v0.4.400
-  baseurl: "/docs"
-  description: "Current major release."
+- group: alpha-v0.4.412
+  baseurl: "/version"
+  description: "In-development alpha preview of the next release."
+  weight: 40
   versions:
-    - v: "0.4.400"
+    - v: "alpha-v0.4.412"
+
+- group: v0.4.411
+  baseurl: "/docs"
+  description: "Current release."
+  current: true
+  weight: 30
+  versions:
+    - v: "0.4.411"
+
+- group: v0.4.400
+  baseurl: "/version"
+  description: "Previous release."
+  weight: 20
+  versions:
+    - v: "v0.4.400"
 
 - group: v0.4.300
-  baseurl: "/version/0.4.301"
+  baseurl: "/version"
   description: "Old release."
+  weight: 10
   versions:
     - v: "0.4.301"

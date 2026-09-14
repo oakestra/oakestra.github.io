@@ -56,7 +56,7 @@ mainSections = ["docs"]
 
   # Versioning
   docsVersioning = true # false (default) or true
-  docsVersion = "0.4.410"
+  docsVersion = "0.4.411"
 
   # UX
   headerBar = true # true (default) or false
