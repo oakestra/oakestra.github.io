@@ -79,6 +79,9 @@ copyRight = "Copyright (c) 2020-2024 Thulite"
       name = "date"
       weight = 10
 
+[security]
+  allowContent = ["! ^text/org$"]
+
 [imaging]
   anchor = "Center"
   bgColor = "#ffffff"
