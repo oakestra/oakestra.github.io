@@ -2,7 +2,7 @@
 title: "Structured Python Logging"
 summary: "Write safe, queryable schema-v1 logs for Oakestra Python services"
 draft: false
-weight: 10313010000
+weight: 10314000000
 toc: true
 seo:
   title: "Structured Python Logging in Oakestra"
@@ -247,4 +247,4 @@ For a service change, also run its tests, Ruff, Python compilation, and a contai
 - standard-library and Gunicorn records pass through the same handler;
 - Alloy attaches the expected `cluster_id`, `compose_service`, and normalized `level` labels.
 
-Read [Observability Operations](../) for dashboards, queries, alert destinations, and troubleshooting.
+Read [Observability Stack Operations](../observability/) for dashboards, queries, alert destinations, and troubleshooting.

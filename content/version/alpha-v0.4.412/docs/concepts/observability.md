@@ -1,21 +1,17 @@
 ---
-title: "Observability Architecture"
+title: "Observability Stack"
 summary: "How Oakestra collects, stores, and presents control-plane logs and metrics"
 draft: false
 weight: 10205000000
 toc: true
 seo:
-  title: "Oakestra Observability Architecture"
+  title: "Oakestra Observability Stack"
   description: "Understand how Oakestra collects, stores, isolates, secures, and visualizes control-plane logs and resource metrics"
   canonical: ""
   noindex: false
 ---
 
 Oakestra includes a host-local observability stack for its Root and Cluster control planes. It collects container logs and resource metrics, stores them locally, and makes them available through provisioned Grafana dashboards and alert rules.
-
-{{< callout context="note" title="Alpha documentation" icon="outline/info-circle" >}}
-This page describes the observability architecture included in Oakestra `alpha-v0.4.412`. The wider observability roadmap is still being developed, so later versions may add dashboards, metrics, and alert rules without changing the data-ownership model described here.
-{{< /callout >}}
 
 ## Capabilities
 
@@ -175,4 +171,4 @@ run-a-cluster/
 
 The files are similar but not interchangeable: service names, ports, collector scopes, metric gateways, and datasource URLs vary by deployment. Keep the Compose manifest, overrides, downloaded configuration, and image version from the same Oakestra revision.
 
-Continue with the [Observability Operations](../../manuals/observability/) manual to deploy, query, validate, and troubleshoot the stack. Contributors adding Python log events should also read [Structured Python Logging](../../manuals/observability/structured-logging/).
+Continue with the [Observability Stack Operations](../../manuals/observability/) manual to deploy, query, validate, and troubleshoot the stack. Contributors adding Python log events should also read [Structured Python Logging](../../manuals/structured-logging/).

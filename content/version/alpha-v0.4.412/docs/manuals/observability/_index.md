@@ -1,5 +1,5 @@
 ---
-title: "Observability Operations"
+title: "Observability Stack Operations"
 description: "Deploy, query, validate, secure, and troubleshoot the Oakestra observability stack across every orchestrator mode"
 summary: "Operate the Oakestra observability stack"
 draft: false
@@ -8,17 +8,13 @@ toc: true
 sidebar:
   collapsed: true
 seo:
-  title: "Oakestra Observability Operations"
+  title: "Oakestra Observability Stack Operations"
   description: "Operate Oakestra logs, metrics, dashboards, and alerts across standalone Root, standalone Cluster, and 1-DOC deployments"
   canonical: ""
   noindex: false
 ---
 
-This manual explains how to operate the observability stack described in [Observability Architecture](../../concepts/observability/). It covers Root, Cluster, and 1-DOC deployments, but every standalone orchestrator reads only its own local Loki and Prometheus.
-
-{{< callout context="note" title="Alpha documentation" icon="outline/info-circle" >}}
-This guide applies to the observability stack included in Oakestra `alpha-v0.4.412`. The wider observability roadmap is still being developed, so later versions may extend the documented dashboards, metrics, and alert rules.
-{{< /callout >}}
+This manual explains how to operate the stack described in [Observability Stack](../../concepts/observability/). It covers Root, Cluster, and 1-DOC deployments, but every standalone orchestrator reads only its own local Loki and Prometheus.
 
 ## Install or upgrade
 
@@ -27,16 +23,16 @@ The startup scripts and `oak install` commands download configuration for the se
 For a 1-DOC installation:
 
 ```bash
-oak install full alpha-v0.4.412
+oak install full <VERSION>
 ```
 
 For separate hosts, install the Root first, configure the Cluster's Root address, and then install the Cluster using the same version:
 
 ```bash
-oak install root alpha-v0.4.412
+oak install root <VERSION>
 
 oak config set root_orchestrator_address <ROOT_ADDRESS>
-oak install cluster alpha-v0.4.412
+oak install cluster <VERSION>
 ```
 
 The observability changes are also testable from a source checkout. Set the requested Oakestra revision and run the corresponding startup script, or render and start the Compose file directly. Use `--remove-orphans` when upgrading from Promtail so Compose removes the retired collector after Alloy is created:
@@ -52,7 +48,7 @@ To run Oakestra without the complete observability stack:
 
 ```bash
 export OVERRIDE_FILES=override-no-observe.yml
-oak install full alpha-v0.4.412
+oak install full <VERSION>
 ```
 
 The metrics stack requires rootful Linux Docker Engine 25 or newer on AMD64 or ARM64. If Docker stores data outside `/var/lib/docker`, set `DOCKER_ROOT_DIR` before installation. The core orchestrator can still run on an unsupported metrics host with `override-no-observe.yml`.
@@ -264,6 +260,8 @@ Grafana provisions **Orchestrator error or stacktrace detected** and evaluates i
 
 The compatibility path explicitly excludes schema-v1 lines and does not broadly search for the word `error`, reducing double counting and false positives. Observability services are excluded from this log alert to avoid self-generated recursive noise. An alert instance is grouped by `cluster_id` and `compose_service`, remains pending for one minute, and keeps firing for one minute after its two-minute query window clears. Notifications wait 30 seconds for grouping and repeat every four hours while the condition persists.
 
+This is a Grafana-managed rule that queries Loki. It is not stored in Loki's ruler. The provisioned Loki datasource therefore sets `manageAlerts: false`; this hides unsupported data source-managed rule operations without disabling the LogQL rule.
+
 Open **Alerting → Alert rules** to inspect rule evaluation and **Alerting → Notification configuration → Contact points** to inspect delivery.
 
 ## Container lifecycle alerts
@@ -322,7 +320,7 @@ The resource alerts link to the matching CPU, memory, or disk panel in **[Oakest
 
 ## Configure notifications
 
-Both **Oakestra Alert Webhook** and **Oakestra Alert Email** are provisioned. The default webhook points to an intentionally inactive local address: alert evaluation works, but delivery fails until you configure a real destination.
+Both **Oakestra Alert Webhook** and **Oakestra Alert Email** are provisioned. The default webhook points to the intentionally inactive `http://127.0.0.1:65535/oakestra-alerts`: alert evaluation works, but delivery reports connection refused until you configure a real destination. Oakestra does not start a server on that address.
 
 Configure a webhook before creating or recreating Grafana:
 
@@ -461,6 +459,10 @@ Verify the deployed Alloy configuration matches the service images. New Python a
 
 Open the contact point and inspect its last delivery error. The default webhook and email addresses are placeholders. Confirm the selected `OAKESTRA_ALERT_CONTACT_POINT`, destination variables, SMTP settings, DNS, certificates, firewall, and receiver availability, then use Grafana's contact-point test.
 
+### Grafana reports a Loki rule API `404`
+
+Oakestra uses Grafana-managed LogQL alerts and does not enable Loki's ruler API. Confirm the provisioned Loki datasource contains `jsonData.manageAlerts: false`, then recreate Grafana so it reloads datasource provisioning. This setting hides unsupported Loki-managed rule operations; it does not disable the Oakestra log alert.
+
 ### Prometheus target is down
 
 Query `up`, inspect **Explore** with the Prometheus datasource, and check the target container logs. Verify Docker Engine compatibility, `DOCKER_ROOT_DIR`, the private metrics gateway, and the read-only host mounts. The `docker-state` and `node-exporter` targets must both be up for lifecycle monitoring. In host-network mode, Root Grafana uses loopback Prometheus port `10010` and Cluster Grafana uses `10009`.
@@ -485,8 +487,8 @@ Storage-driver and protected-layer behavior can make `container_fs_usage_bytes` 
 
 Check whether the deployment was stopped with `docker compose down -v`, `oak uninstall cleanup`, or an equivalent volume-removal command. Named-volume deletion is destructive and cannot be recovered unless the data was backed up externally.
 
-## Scope of this alpha stack
+## Scope and limitations
 
 The documented stack collects Docker control-plane logs, host metrics, container resource metrics, Docker lifecycle state, and Cluster Manager metrics. It provides three provisioned dashboards, optional imported Grafana dashboards, error/stacktrace log alerting, container missing/restart alerts, and host CPU/memory/disk alerts. It does not centralize telemetry from standalone Clusters into the Root, ingest NodeEngine's host log files, provide distributed traces, prove application health from container state, or provide durable remote storage. Later observability work can add capabilities without changing these boundaries.
 
-For log-authoring rules and the Python JSON contract, continue with [Structured Python Logging](structured-logging/).
+For log-authoring rules and the Python JSON contract, continue with [Structured Python Logging](../structured-logging/).
