@@ -162,6 +162,21 @@ Cluster, Source, Component, and Top-N affect container panels only. Host panels 
 
 Prometheus keeps at most seven days or approximately 1 GB of persistent blocks, whichever policy is reached first. Therefore the size policy can shorten the available history. Restarting the container preserves the named volume; removing the volume deletes the history.
 
+### Import another Grafana dashboard
+
+The provisioned Oakestra dashboards are the supported defaults, but Grafana can also import community or custom dashboards:
+
+1. Open **Dashboards** in Grafana.
+2. Select **New → Import**.
+3. Paste a Grafana.com dashboard ID or URL, or upload a dashboard JSON file.
+4. Select **Load**.
+5. Map the dashboard datasource to the local `Prometheus` or `Loki` datasource requested by the dashboard.
+6. Select **Import**, then check every panel for query or label errors.
+
+For example, enter ID `1860` to try [Node Exporter Full](https://grafana.com/grafana/dashboards/1860-node-exporter-full/) and select the Oakestra `Prometheus` datasource. Community dashboards can expect different job names, labels, collectors, or metric versions, so some panels may need query changes. An imported dashboard reads only this Grafana instance and its local datasource; importing it on Root does not expose remote Cluster data.
+
+A dashboard imported through the UI is stored in the Grafana volume, not version-controlled in Oakestra and not installed on other hosts. Export its JSON and add it to the Grafana provisioning directory if it should become a reviewed, reproducible deployment feature. Use a new stable UID rather than replacing an Oakestra dashboard UID.
+
 ## Query logs with LogQL
 
 Use Grafana **Explore**, select the `Loki` datasource, and start with an indexed stream selector:
@@ -211,6 +226,10 @@ Prometheus is internal in normal bridge deployments, so query it through Grafana
 ```bash
 docker exec root_prometheus \
   promtool query instant http://127.0.0.1:9090 up
+
+docker exec root_prometheus \
+  promtool query instant http://127.0.0.1:9090 \
+  'count by (host_scope, instance) (oakestra_resource_alert_threshold_percent{job="node-exporter"})'
 
 docker exec root_prometheus \
   promtool query instant http://127.0.0.1:9090 prometheus_tsdb_head_series
@@ -270,6 +289,36 @@ compose=(docker compose -f root_orchestrator/docker-compose.yml)
 ```
 
 Use the corresponding Compose and inventory paths for Cluster or 1-DOC. Missing-container and restart instances carry `cluster_id`, `compose_service`, and `compose_project`; shared monitoring-input alerts do not invent a Cluster identity. A manual restart or recreation is not a Docker automatic restart and may not increment the restart-policy counter. These rules detect container state, not whether a running application is responsive. Independent monitoring is still required to detect failure of the Docker host, local Grafana, Prometheus, or the notification path itself.
+
+## Host resource alerts
+
+Grafana provisions six Prometheus-backed resource rules plus one configuration-health rule:
+
+| Rule                                         |                                                 Default threshold | Pending period |
+| -------------------------------------------- | ----------------------------------------------------------------: | -------------: |
+| Host CPU warning / critical                  |                                                    80% / 90% used |        5m / 2m |
+| Host memory warning / critical               |                                               15% / 10% available |        5m / 2m |
+| Host disk warning / critical                 |                                                    15% / 10% free |        5m / 2m |
+| Resource threshold configuration unavailable | Fewer or more than six threshold series while node_exporter is up |             1m |
+
+Warning ranges stop at the critical threshold, so one resource does not emit warning and critical alerts simultaneously. CPU uses a five-minute non-idle rate. Disk rules evaluate real, writable, non-zero filesystems and retain the affected `device` and `mountpoint`. Resource instances retain `host_scope` and `instance`: node_exporter measures one physical host, and 1-DOC must not fabricate separate Root and Cluster host measurements.
+
+Configure deployment-specific thresholds before installation or Compose inventory generation:
+
+```bash
+export OAKESTRA_RESOURCE_CPU_WARNING_PERCENT=80
+export OAKESTRA_RESOURCE_CPU_CRITICAL_PERCENT=90
+export OAKESTRA_RESOURCE_MEMORY_WARNING_AVAILABLE_PERCENT=15
+export OAKESTRA_RESOURCE_MEMORY_CRITICAL_AVAILABLE_PERCENT=10
+export OAKESTRA_RESOURCE_DISK_WARNING_FREE_PERCENT=15
+export OAKESTRA_RESOURCE_DISK_CRITICAL_FREE_PERCENT=10
+```
+
+All values must be finite percentages from 0 through 100. CPU warning must be lower than CPU critical. Available-memory and free-disk warning values must be higher than their critical values. Invalid or misordered values stop the generator without replacing the previous inventory file.
+
+Grafana dashboard variables cannot configure server-side alert rules because alert evaluation has no dashboard context. The startup inventory generator therefore validates these deployment variables and exposes six `oakestra_resource_alert_threshold_percent` series through the node_exporter textfile collector. After changing thresholds in a manual Compose deployment, rerun the same inventory-generation command shown above and wait for the next node_exporter scrape. See [Grafana Prometheus alerting limitations](https://grafana.com/docs/grafana/latest/datasources/prometheus/alerting/).
+
+The resource alerts link to the matching CPU, memory, or disk panel in **[Oakestra] Resources**. They reuse the contact point configured below and keep firing for two minutes after recovery to avoid notification flapping.
 
 ## Configure notifications
 
@@ -337,12 +386,16 @@ Expect `cluster_id`, `compose_service`, `container`, `logstream`, and—for reco
 docker exec root_prometheus \
   promtool query instant http://127.0.0.1:9090 up
 
+docker exec root_prometheus \
+  promtool query instant http://127.0.0.1:9090 \
+  "count by (host_scope, instance) (oakestra_resource_alert_threshold_percent{job=\"node-exporter\"})"
+
 curl -fsS http://127.0.0.1:3000/api/health | jq .
 ```
 
 In Grafana, open **Connections → Data sources** and test both `Loki` and `Prometheus`. Confirm exactly one Logs, Log Statistics, and Resources dashboard is provisioned.
 
-For container alerting, `oakestra:container_monitoring_ready` must be `1`. The expected-container inventory must contain the enabled services, and a healthy stable deployment must report zero missing replicas and zero recent automatic restarts. In **Alerting → Alert rules**, confirm the log rule and all four container rules are provisioned without evaluation errors.
+For container alerting, `oakestra:container_monitoring_ready` must be `1`. The expected-container inventory must contain the enabled services, and a healthy stable deployment must report zero missing replicas and zero recent automatic restarts. Resource threshold count must be exactly six for each node_exporter target. In **Alerting → Alert rules**, confirm the log rule, all four container lifecycle rules, and all seven host resource rules are provisioned without evaluation errors.
 
 ### Configuration checks from a source checkout
 
@@ -420,6 +473,10 @@ Query `oakestra:container_monitoring_ready`, then inspect the `docker-state` and
 
 Regenerate it from the same resolved Compose configuration used for deployment. Different overrides, profiles, project names, environment variables, or replica counts produce a different desired state. Do not delete an expectation to hide an unplanned failure; silence the relevant alert during planned maintenance.
 
+### Resource threshold configuration is unavailable
+
+Query `count by (host_scope, instance) (oakestra_resource_alert_threshold_percent{job="node-exporter"})`; every local node_exporter target must report exactly six series. Also check `node_textfile_scrape_error{job="node-exporter"}`. Regenerate inventory after fixing missing, non-numeric, out-of-range, or misordered threshold variables. Dashboard variables do not repair server-side alert configuration.
+
 ### cAdvisor does not show container filesystem usage
 
 Storage-driver and protected-layer behavior can make `container_fs_usage_bytes` unavailable even when CPU, memory, network, and disk-I/O metrics work. Check cAdvisor's `/metrics`, Docker's storage driver, and host mount permissions before treating the entire pipeline as unavailable.
@@ -430,6 +487,6 @@ Check whether the deployment was stopped with `docker compose down -v`, `oak uni
 
 ## Scope of this alpha stack
 
-The documented stack collects Docker control-plane logs, host metrics, container resource metrics, Docker lifecycle state, and Cluster Manager metrics. It provides three dashboards, error/stacktrace log alerting, and container missing/restart alerts. It does not centralize telemetry from standalone Clusters into the Root, ingest NodeEngine's host log files, provide distributed traces, prove application health from container state, or provide durable remote storage. Later observability work can add capabilities without changing these boundaries.
+The documented stack collects Docker control-plane logs, host metrics, container resource metrics, Docker lifecycle state, and Cluster Manager metrics. It provides three provisioned dashboards, optional imported Grafana dashboards, error/stacktrace log alerting, container missing/restart alerts, and host CPU/memory/disk alerts. It does not centralize telemetry from standalone Clusters into the Root, ingest NodeEngine's host log files, provide distributed traces, prove application health from container state, or provide durable remote storage. Later observability work can add capabilities without changing these boundaries.
 
 For log-authoring rules and the Python JSON contract, continue with [Structured Python Logging](structured-logging/).

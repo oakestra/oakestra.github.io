@@ -31,6 +31,7 @@ Observability is split into separate concerns:
 | Metrics collection      | Scrape host, container-resource, and Docker-state measurements            | Prometheus, node_exporter, cAdvisor, and Docker-state exporter |
 | Resource visualization  | Display host and per-service CPU, memory, filesystem, and I/O             | Grafana **Resources** dashboard                                |
 | Container alerting      | Detect missing containers, automatic restarts, and lost monitoring inputs | Grafana-managed alert rules over Prometheus                    |
+| Resource alerting       | Detect sustained high CPU, low available memory, and low free disk        | Grafana-managed alert rules over Prometheus                    |
 
 These capabilities share Grafana, but they are not interchangeable. Alloy transports logs; it does not store them and does not replace Prometheus. Loki stores log lines, while Prometheus stores numeric time series. Dashboards visualize existing data, and alert rules evaluate queries independently of whether a dashboard is open.
 
@@ -63,7 +64,7 @@ Grafana Alloy ───────► local Loki ───────► Grafa
 physical host ───────► node_exporter ─┐
 Docker containers ───► cAdvisor ──────┼──► local Prometheus ───► Grafana Resources dashboard
 Docker state ─────────► state exporter ┤       PromQL               Grafana container alerts
-Compose inventory ────► node_exporter ─┤
+Compose inventory ────► node_exporter ─┤                            Grafana resource alerts
 Prometheus itself ─────────────────────┘
 ```
 
@@ -107,6 +108,8 @@ Compatibility labels such as `container_name` and `job` remain available. Values
 cAdvisor retains only containers assigned to the local Oakestra collector and maps Docker metadata to the Prometheus labels `cluster_id` and `compose_service`. Host metrics use `host_scope=root`, `host_scope=cluster`, or `host_scope=one-doc`; a physical host is not given a fabricated Cluster identity.
 
 Container lifecycle recording rules join observed Docker state with the generated inventory and retain `cluster_id`, `compose_service`, and `compose_project`. The project label prevents services with the same Compose key in separate projects from being combined. Regenerate the inventory whenever an intentional Compose, profile, override, or replica change alters the expected deployment.
+
+The same node_exporter textfile contains six validated deployment-specific thresholds for CPU, available memory, and free disk. Host resource alerts use `host_scope` and `instance`, rather than inventing a `cluster_id` for physical-host measurements. Filesystem alerts additionally retain `device` and `mountpoint`.
 
 ## Severity normalization
 
