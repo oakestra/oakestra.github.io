@@ -22,7 +22,7 @@ The metrics exporters and Prometheus are internal to the deployment in normal br
 
 ## Check targets
 
-Open Grafana **Explore**, select `Prometheus`, and query `up`. Each configured target should return `1`. On a standalone Root host you can also query Prometheus from its container:
+Open Grafana **Explore** and select the `Prometheus` datasource. In **Builder**, choose the `up` metric and leave Label and Value filters empty; alternatively, switch to **Code** and type `up`. Click **Run query**. Each configured target should return `1` when its scrape succeeds (`0` means the scrape failed). On a standalone Root host you can also query Prometheus from its container:
 
 ```bash
 docker exec root_prometheus \

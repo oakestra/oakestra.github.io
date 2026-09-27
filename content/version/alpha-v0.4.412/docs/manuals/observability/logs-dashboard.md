@@ -6,7 +6,7 @@ weight: 10313400000
 toc: true
 ---
 
-Open **[Oakestra] Orchestrator Logs** in the Grafana instance for the host you are investigating. It reads that host's local Loki. A standalone Root cannot browse a remote Cluster's records; open the Cluster Grafana to do that. All three Oakestra dashboards are provisioned from version-controlled JSON, so a UI experiment is not a durable dashboard edit.
+Open **[Oakestra] Orchestrator Logs** in the Grafana instance for the host you are investigating. It reads that host's local Loki. A standalone Root cannot browse a remote Cluster's records; open the Cluster Grafana to do that. Grafana permits UI edits to the provisioned dashboards, but saves them only in its database. A later update to the version-controlled JSON can overwrite those edits; change the JSON in the Oakestra repository to make a lasting change.
 
 ## Select records
 
@@ -31,7 +31,7 @@ For structured Python records, enter this in **Advanced field filter (LogQL)** t
 | json schema="schema_version", event_name="event" | schema="1" | event_name="cluster.registration.completed"
 ```
 
-For a nested field, use `| json job_id="context.job_id" | job_id="<JOB_ID>"`. The control expects pipeline stages, not a complete selector; use the panel's **Explore** action to edit unrestricted LogQL. Parsing a field at query time does not create a new indexed Loki label. The [LogQL query analyzer](https://grafana.com/docs/loki/latest/query/analyzer/) helps inspect a query.
+For a nested field, use `| json job_id="context.job_id" | job_id="<JOB_ID>"`. The control expects pipeline stages, not a complete selector. Parsing a field at query time does not create a new indexed Loki label. The [LogQL query analyzer](https://grafana.com/docs/loki/latest/query/analyzer/) helps inspect a query.
 
 ## Follow a shared ID
 
@@ -40,9 +40,9 @@ Expand a log line containing a 24-character Oakestra ID and use its **Open in...
 
 Select a window of at most 30 days. Grafana's generic picker may offer longer ranges, but Loki 2.9 rejects a single query exceeding `30d1h`. Move a shorter absolute window backward to read older retained records.
 
-## Explore examples
+## Optional: full LogQL queries
 
-In Grafana **Explore**, select the `Loki` datasource:
+The dashboard controls cover routine searches. To write a complete LogQL query instead, open the logs panel menu, choose **Explore**, select `Loki`, and switch the query editor to **Code**. For example:
 
 ```logql
 {cluster_id="root", compose_service="system_manager"}
