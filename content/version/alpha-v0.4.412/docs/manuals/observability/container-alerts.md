@@ -15,7 +15,7 @@ Grafana provisions four Prometheus-backed container lifecycle alerts:
 | **Container monitoring unavailable** | Docker-state or node_exporter collection is unavailable or reports an error for one minute. |
 | **Expected container inventory is missing** | Monitoring works, but the inventory is absent or empty for one minute. |
 
-![Provisioned container alert rules in Grafana, with the log and host-resource groups listed below](<img/observability stack/Alert rules.png>)
+{{< screenshot src="img/observability stack/Alert rules.png" alt="Provisioned container alert rules in Grafana, with the log and host-resource groups listed below" >}}
 
 cAdvisor reports resource usage but lacks the Docker restart-policy counter. The Docker-state exporter supplies running state and restart data. The startup scripts generate `oakestra_expected_container_replicas` from resolved Compose JSON into a node_exporter textfile. This makes a service that never started detectable; merely watching cAdvisor's previously seen series could not do that.
 

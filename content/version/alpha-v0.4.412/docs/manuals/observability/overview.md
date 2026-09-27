@@ -8,7 +8,7 @@ toc: false
 
 Oakestra collects control-plane logs and metrics on each orchestrator host. Read the [Observability concepts](../../../concepts/observability/overview/) for the architecture and the boundary between standalone Root, standalone Cluster, and 1-DOC. Then choose the task you need:
 
-![Three provisioned Oakestra dashboards in Grafana](<img/observability stack/All dashboards.png>)
+{{< screenshot src="img/observability stack/All dashboards.png" alt="Three provisioned Oakestra dashboards in Grafana" >}}
 
 1. [Deployment and upgrades](../deployment/) — match configuration and images, generate expected-container inventory, and migrate from Promtail.
 2. [Log collection and storage](../log-collection/) — inspect Alloy, normalized levels, Loki, and log history.

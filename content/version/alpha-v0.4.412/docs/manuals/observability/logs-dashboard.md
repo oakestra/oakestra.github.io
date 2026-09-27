@@ -21,7 +21,7 @@ Open **[Oakestra] Orchestrator Logs** in the Grafana instance for the host you a
 | **Advanced field filter (LogQL)** | Appends LogQL stages for parsing and filtering fields inside matching lines. |
 | Time picker | Chooses the time window and lets you scroll back through retained history. |
 
-![The Logs dashboard showing filters, search controls, and recent orchestrator logs](<img/observability stack/Logs dashboard.png>)
+{{< screenshot src="img/observability stack/Logs dashboard.png" alt="The Logs dashboard showing filters, search controls, and recent orchestrator logs" >}}
 
 Compact display changes presentation after filtering; it does not rewrite Loki records. Search `worker|mqtt` to find either term, or a literal 24-character Oakestra ID to look for the same ID across components. The default `^` pattern matches every line without highlighting the whole line.
 

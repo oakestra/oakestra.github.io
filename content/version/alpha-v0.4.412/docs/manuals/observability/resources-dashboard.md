@@ -8,7 +8,7 @@ toc: true
 
 **[Oakestra] Resources** is provisioned from JSON and queries the local `Prometheus` datasource. A standalone Root or Cluster shows its own physical host and managed containers; 1-DOC shows one physical host and containers from both orchestration levels.
 
-![The Resources dashboard showing host CPU, memory, and filesystem panels](<img/observability stack/Resources dashboard.png>)
+{{< screenshot src="img/observability stack/Resources dashboard.png" alt="The Resources dashboard showing host CPU, memory, and filesystem panels" >}}
 
 ## Host panels
 

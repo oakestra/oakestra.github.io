@@ -10,7 +10,7 @@ toc: true
 
 The dashboard shows total lines and average lines per second across the selected range, warning and error/critical counts, throughput trends by component, separate warning and error/critical rates by component and Cluster, and top-N components ranked by average severity rate. Its distribution keeps `critical` separate from `error` and displays records without a normalized `level` as **Unparsed**. Unparsed does not mean harmless: Alloy simply could not classify the line's format.
 
-![The Log Statistics selected-range overview and throughput trend](<img/observability stack/Log statistics dashboard.png>)
+{{< screenshot src="img/observability stack/Log statistics dashboard.png" alt="The Log Statistics selected-range overview and throughput trend" >}}
 
 **Cluster**, **Source**, and **Component** filter the log queries. **Top N** changes the ranking size (5, 10, or 20). A standalone Grafana queries only its local Loki, so a Cluster selector with one value is expected. In 1-DOC, the shared Loki can contain Root, local Cluster, and shared infrastructure identities.
 

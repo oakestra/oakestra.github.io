@@ -32,7 +32,7 @@ Standalone Root and Cluster deployments expose Grafana at `http://<root-orchestr
 
 The provisioned Logs dashboard supports component and severity selection, full-line search, structured-field filters, time navigation, and shared-ID correlation links. The Log Statistics and Resources dashboards cover trends and resource usage separately. See the [Observability manuals](../../observability/overview/) for queries, local-data boundaries, and troubleshooting steps.
 
-![The current Oakestra Logs dashboard with filters and recent records](<img/observability stack/Logs dashboard.png>)
+{{< screenshot src="img/observability stack/Logs dashboard.png" alt="The current Oakestra Logs dashboard with filters and recent records" >}}
 
 ### Using Docker logs 
 
