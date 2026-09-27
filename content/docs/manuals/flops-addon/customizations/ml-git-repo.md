@@ -22,24 +22,25 @@ The diagram shows additional details of the ML code repositories from the core m
 The repository needs a dedicated file that lists all necessary dependencies to train its model.
 
 {{< callout context="danger" title="Why the explicit Dependencies?" icon="outline/alert-octagon" >}}
-  Having proper, minimal, and compatible dependencies is crucial for ML and FLOps.
-  Dependencies significantly impact all aspects, from image-building speeds, sizes, deployment times, and more.
-  Minor errors in the provided/used dependencies can break your FLOps project.
+Having proper, minimal, and compatible dependencies is crucial for ML and FLOps.
+Dependencies significantly impact all aspects, from image-building speeds, sizes, deployment times, and more.
+Minor errors in the provided/used dependencies can break your FLOps project.
 
-  Theoretically, it should be possible to extract these requirements dynamically by inspecting the code.
-  However, this is a complex and error-prone endeavor.
-  To avoid issues, you must provide and check these dependencies as part of your ML repository.
+Theoretically, it should be possible to extract these requirements dynamically by inspecting the code.
+However, this is a complex and error-prone endeavor.
+To avoid issues, you must provide and check these dependencies as part of your ML repository.
 
-  We recommend using [mlflow's auto-logging feature](https://mlflow.org/docs/latest/tracking/autolog.html?highlight=autologging%20dependencies) to extract those dependencies.
-  For this you can temporarily and effortlessly wrap your code with mlflow and use examplary data to run a single training and evaluation cycle for your ML model.
+We recommend using [mlflow's auto-logging feature](https://mlflow.org/docs/latest/tracking/autolog.html?highlight=autologging%20dependencies) to extract those dependencies.
+For this you can temporarily and effortlessly wrap your code with mlflow and use examplary data to run a single training and evaluation cycle for your ML model.
 
-  Always verify if your provided dependency list is correct and in itself compatible. (Even mlflow's extracted dependencies can be erroneous!)
+Always verify if your provided dependency list is correct and in itself compatible. (Even mlflow's extracted dependencies can be erroneous!)
 {{< /callout >}}
 
 To help your code to fulfill this necessary structure, please follow these templates:
 
 {{< details "**DataManager Template**">}}
-```python
+
+````python
 from abc import ABC, abstractmethod
 from typing import Any, Tuple
 
@@ -68,10 +69,12 @@ class DataManagerTemplate(ABC):
         Examples:
         - self.training_data, self.testing_data
         """
-```
+````
+
 {{< /details >}}
 
 {{< details "**ModelManager Template**">}}
+
 ```python
 class ModelManagerTemplate(ABC):
     @abstractmethod
@@ -152,31 +155,35 @@ class ModelManagerTemplate(ABC):
         pass
 
 ```
+
 {{< /details >}}
 
 {{< callout context="note" title="flops-utils is here to help!" icon="outline/first-aid-kit" >}}
-  [flops-utils](https://github.com/oakestra/addon-FLOps/tree/main/utils_library) is a [pip package](https://pypi.org/project/flops-utils/) that helps you work with FLOps - including creating your ML repositories. 
+[flops-utils](https://github.com/oakestra/addon-FLOps/tree/main/utils_library) is a [pip package](https://pypi.org/project/flops-utils/) that helps you work with FLOps - including creating your ML repositories.
 
-  You can import the templates from above into your code to inherit from them:
-  ```python
-  from flops_utils.ml_repo_templates import DataManagerTemplate
-  ```
+You can import the templates from above into your code to inherit from them:
 
-  `flops-utils` is necessary to build a proper `DataManager`.
-  It offers the auxiliary method to be augmented during image building to load the local data for learning.
-  Your `DataManager` implementation has to call it.
-  ```python
-  from flops_utils.ml_repo_building_blocks import load_dataset 
-  ```
+```python
+from flops_utils.ml_repo_templates import DataManagerTemplate
+```
 
-  Install flops-utils now: `pip install flops-utils`
+`flops-utils` is necessary to build a proper `DataManager`.
+It offers the auxiliary method to be augmented during image building to load the local data for learning.
+Your `DataManager` implementation has to call it.
 
-  *FLOps is using flops-utils throughout its code base.*
+```python
+from flops_utils.ml_repo_building_blocks import load_dataset
+```
+
+Install flops-utils now: `pip install flops-utils`
+
+_FLOps is using flops-utils throughout its code base._
 {{< /callout >}}
 
 The following are exemplary implementations of the required files:
 
 {{< details "**conda.yml**">}}
+
 ```yaml
 channels:
   - conda-forge
@@ -194,9 +201,11 @@ dependencies:
 
 name: mlflow-env
 ```
+
 {{< /details >}}
 
 {{< details "**data_manager.py**">}}
+
 ```python
 from typing import Any, Tuple
 
@@ -223,10 +232,12 @@ class DataManager(DataManagerTemplate):
 
     def get_data(self) -> Tuple[Any, Any]:
         return (self.x_train, self.x_test), (self.y_train, self.y_test)
-  ```
+```
+
 {{< /details >}}
 
 {{< details "**model_manager.py**">}}
+
 ```python
 import warnings
 from typing import Any, Tuple
@@ -243,7 +254,7 @@ class ModelManager(ModelManagerTemplate):
         self.model = LogisticRegression(
             penalty="l2",
             max_iter=1,  # local epoch
-            warm_start=True,  
+            warm_start=True,
         )
         self._set_init_params()
 
@@ -299,8 +310,8 @@ class ModelManager(ModelManagerTemplate):
         accuracy = self.model.score(self.x_test, self.y_test)
         return loss, accuracy, len(self.x_test)
 ```
-{{< /details >}}
 
+{{< /details >}}
 
 ### How is FLOps using your ML code?
 
@@ -312,16 +323,14 @@ As a result, you do not need to implement the FL (boilerplate) code yourself.
 Therefore, a learner’s `getParameters` method uses the `getParameters` method described in the user’s ML repository with additional logic.
 
 {{< card-grid >}}
-    {{< link-card
+{{< link-card
     title="Image Building Process"
-    description="Learn how FLOps uses your ML code to build fitting FL actor images" 
-    href="/docs/concepts/flops/internals/image-building-process"
-    >}}
-    {{< link-card
+    description="Learn how FLOps uses your ML code to build fitting FL actor images"
+    href="/docs/concepts/flops/internals/image-building-process"    >}}
+{{< link-card
     title="Local ML Data Management"
-    description="Explore how FLOps synergizes local data with your augmented ML components for training" 
-    href="/docs/concepts/flops/internals/ml-data-management/"
-    >}}
+    description="Explore how FLOps synergizes local data with your augmented ML components for training"
+    href="/docs/concepts/flops/internals/ml-data-management/"    >}}
 {{< /card-grid >}}
 
 <br>

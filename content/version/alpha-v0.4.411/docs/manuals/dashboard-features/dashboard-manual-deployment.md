@@ -25,9 +25,10 @@ The dashboard is automatically deployed when you start Oakestra using the standa
 ## Prerequisites
 
 {{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}}
+
 - You have a running Root Orchestrator
 - You can access the APIs at `<IP_OF_ROOT_ORCHESTRATOR>:10000`
-{{< /callout >}}
+  {{< /callout >}}
 
 ## Manual Deployment Steps
 

@@ -37,8 +37,6 @@ This new section transforms how you monitor your available resources. It's no lo
 What are you waiting for? Try out the new dashboard and deploy the latest Oakestra release now! [Read our getting started guide](/docs/getting-started/oak-environment/create-your-first-oakestra-orchestrator/)
 {{< /callout >}}
 
-
-
 ## Under the Hood: Bug Fixes and Performance Improvements
 
 Beyond the exciting new cluster view, `v0.4.207` also delivers a series of important bug fixes and general improvements, further enhancing the stability and usability of the Oakestra Dashboard. We've paid particular attention to:

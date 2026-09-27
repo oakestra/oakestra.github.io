@@ -16,6 +16,7 @@ In this page you will find a set of steps to troubleshoot and hopefully fix your
 # Where to start:
 
 On each machine where you installed oakestra you can run:
+
 ```bash
 oak doctor <component>
 ```
@@ -28,16 +29,17 @@ With such command, you can either check the status of the root, cluster or worke
 
 # What to do next?
 
-
 {{< tabs "Troubleshoot" >}}
 {{< tab "🤖 Troubleshoot with AI" >}}
 
 You can use Claude AI to pinpoint your problem and help you fix your innfrastructure configuration
 
 First you need to install Claude CLI. Then you can run
+
 ```bash
 oak config claude
 ```
+
 This command installs the **Oakestra Troubleshooting Skill** in your Claude CLI.
 
 Then you can use:
@@ -54,11 +56,12 @@ You can either perform a general check or describe a specific issue.
 <h3> Be Carefull 💸 </h3>
 
 Oak doctor with the `-ai-troubleshoot` flag uses Claude CLI. It requires either an active subscription or a payment method configured for your token consumptions. Check the pricing <a href=https://claude.com/pricing>here</a>.
+
 </div>
 
 ### You don't like Claude? Use your preferred AI instead
-If you want to use your own AI agent to help you troubleshoot your Oakestra deployment, you can request assistence to you agent by manually installing the [troubleshoot oakestra skill](https://raw.githubusercontent.com/oakestra/oakestra/refs/heads/develop/SKILLS/troubleshoot-oakestra.md).
 
+If you want to use your own AI agent to help you troubleshoot your Oakestra deployment, you can request assistence to you agent by manually installing the [troubleshoot oakestra skill](https://raw.githubusercontent.com/oakestra/oakestra/refs/heads/develop/SKILLS/troubleshoot-oakestra.md).
 
 {{< /tab >}}
 {{< tab "👾 Manual Troubleshooting" >}}
@@ -88,6 +91,7 @@ docker ps -a --format "table {{.Names}}\t{{.Status}}"
 **Cluster** expects: `mqtt`, `cluster_mongo`, `cluster_mongo_net`, `cluster_service_manager`, `cluster_manager`, `cluster_scheduler`, `cluster_resource_abstractor`, `cluster_redis`, `prometheus`, `cluster_grafana`, `cluster_loki`, `cluster_promtail`
 
 If a container is `Exited` or `Restarting`, read its logs immediately:
+
 ```bash
 docker logs --tail 100 <container_name> 2>&1
 ```
@@ -96,16 +100,16 @@ docker logs --tail 100 <container_name> 2>&1
 
 ## 2. Common errors and quick fixes
 
-| Symptom | Likely cause | Fix |
-|---|---|---|
-| Container keeps restarting | Dependency (DB/Redis) not ready | `docker restart <container>` after deps are healthy |
-| `Connection refused` to mongo/redis | Wrong URL env var or DB not ready | Check env vars; restart affected container |
-| `no such host` | Host-network mode: DNS names don't work | Use IPs, not container names in env vars |
-| `JWT` errors in system_manager | `jwt_generator` not started | `docker restart jwt_generator` |
-| Cluster not registering with root | Wrong `SYSTEM_MANAGER_URL` (using `localhost`) | Use the root machine's real IP, not `localhost` |
-| Jobs stuck in `CLUSTER_SCHEDULED` | Worker not acknowledged or MQTT down | Check worker logs and MQTT health |
-| Worker can't connect to MQTT | Firewall blocking port 10003 | `sudo ufw allow 10003/tcp` on cluster machine |
-| Port already in use | Another process on the port | `sudo ss -tlnp sport = :<port>`, then kill the PID |
+| Symptom                             | Likely cause                                   | Fix                                                 |
+| ----------------------------------- | ---------------------------------------------- | --------------------------------------------------- |
+| Container keeps restarting          | Dependency (DB/Redis) not ready                | `docker restart <container>` after deps are healthy |
+| `Connection refused` to mongo/redis | Wrong URL env var or DB not ready              | Check env vars; restart affected container          |
+| `no such host`                      | Host-network mode: DNS names don't work        | Use IPs, not container names in env vars            |
+| `JWT` errors in system_manager      | `jwt_generator` not started                    | `docker restart jwt_generator`                      |
+| Cluster not registering with root   | Wrong `SYSTEM_MANAGER_URL` (using `localhost`) | Use the root machine's real IP, not `localhost`     |
+| Jobs stuck in `CLUSTER_SCHEDULED`   | Worker not acknowledged or MQTT down           | Check worker logs and MQTT health                   |
+| Worker can't connect to MQTT        | Firewall blocking port 10003                   | `sudo ufw allow 10003/tcp` on cluster machine       |
+| Port already in use                 | Another process on the port                    | `sudo ss -tlnp sport = :<port>`, then kill the PID  |
 
 ---
 
@@ -132,6 +136,7 @@ docker exec cluster_redis redis-cli -p 6479 -a clusterRedis ping
 ```
 
 Check for stuck jobs:
+
 ```bash
 docker exec root_redis    redis-cli -a rootRedis    llen "asynq:{schedule:job}:failed"
 docker exec cluster_redis redis-cli -p 6479 -a clusterRedis llen "asynq:{schedule:job}:failed"
@@ -211,14 +216,14 @@ oak install root   # or cluster or full
 
 ## 10. Required open ports (multi-machine)
 
-| Port | Used by | Direction |
-|---|---|---|
-| 10000 | Root API | Cluster → Root |
-| 10099 | Root service manager | Cluster → Root |
-| 10003 | MQTT | Worker → Cluster |
-| 10100 | Cluster manager | Worker → Cluster |
+| Port  | Used by                 | Direction        |
+| ----- | ----------------------- | ---------------- |
+| 10000 | Root API                | Cluster → Root   |
+| 10099 | Root service manager    | Cluster → Root   |
+| 10003 | MQTT                    | Worker → Cluster |
+| 10100 | Cluster manager         | Worker → Cluster |
 | 10110 | Cluster service manager | Worker → Cluster |
-| 80 | Dashboard | Browser → Root |
+| 80    | Dashboard               | Browser → Root   |
 
 ---
 
@@ -228,6 +233,7 @@ oak install root   # or cluster or full
 ## Still stuck?
 
 [Open an issue](https://github.com/oakestra/oakestra/issues) or ask in our [discord channel](https://discord.gg/7F8EhYCJDf) and include:
+
 - Output of `docker ps -a`
 - Logs of the failing container (`docker logs <name> 2>&1`)
 - Your deployment type (1-DOC / multi-machine)

@@ -45,29 +45,26 @@ Just comment on an unassigned issue, stating you want to work on it. Once you ge
 There are other ways you can contribute without writing a single line of code. Here are a few things you can do to help out:
 
 1. **Reporting Bugs**  
-   Found a bug? Please report it by creating a GitHub issue. Clear and detailed bug reports are invaluable.
+    Found a bug? Please report it by creating a GitHub issue. Clear and detailed bug reports are invaluable.
    {{< link-card
-  description="Submit a bug report"
-  href="https://github.com/oakestra/oakestra/issues/new?assignees=&labels=&projects=&template=bug.md&title="
-  target="_blank"
-   >}}
+   description="Submit a bug report"
+   href="https://github.com/oakestra/oakestra/issues/new?assignees=&labels=&projects=&template=bug.md&title="
+   target="\_blank" >}}
 
 1. **Suggesting Features**  
-   Have a new feature idea? Feature requests are welcome! Please submit them as GitHub issues with details on why it would be useful and any implementation suggestions.
+    Have a new feature idea? Feature requests are welcome! Please submit them as GitHub issues with details on why it would be useful and any implementation suggestions.
    {{< link-card
-  description="Suggest a feature idea"
-  href="https://github.com/oakestra/oakestra/issues/new?assignees=&labels=&projects=&template=proposal.md&title="
-  target="_blank"
-   >}}
+   description="Suggest a feature idea"
+   href="https://github.com/oakestra/oakestra/issues/new?assignees=&labels=&projects=&template=proposal.md&title="
+   target="\_blank" >}}
 
 1. **Improving Documentation**  
-   Documentation improvements are always appreciated! If you find something unclear or missing, feel free to submit an issue.
+    Documentation improvements are always appreciated! If you find something unclear or missing, feel free to submit an issue.
 
    {{< link-card
-  description="Suggest documentation improvements"
-  href="https://github.com/oakestra/documentation/issues"
-  target="_blank"
-   >}}
+   description="Suggest documentation improvements"
+   href="https://github.com/oakestra/documentation/issues"
+   target="\_blank" >}}
 
 ## Reviewing and Merging Pull Requests
 

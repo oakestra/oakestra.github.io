@@ -1,57 +1,36 @@
 {{ define "main" }}
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 <div class="container-fluid px-0 pubs-list">
-  <article>
-    <h1 class="text-center mt-0 mb-3">
-      {{ if eq .CurrentSection .FirstSection }}
-        {{ .Section | humanize }}
-      {{ else }}
-        {{ .Title }}
-      {{ end }}
-    </h1>
+    <article>
+        <h1 class="text-center mt-0 mb-3">{{ if eq .CurrentSection .FirstSection }} {{ .Section | humanize }} {{ else }} {{ .Title }} {{ end }}</h1>
 
-    {{ with .Content }}
-      <div class="text-center mb-4">{{ . }}</div>
-    {{ end }}
+        {{ with .Content }}
+        <div class="text-center mb-4">{{ . }}</div>
+        {{ end }} {{ $currentSection := .CurrentSection }} {{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
+        <div class="row pub-item align-items-start mb-4">
+            <div class="col-12 col-md-3 text-center p-3">
+                <a href="{{ .Params.pdf }}" target="_blank" class="no-decoration">
+                    <img class="img-fluid pubs_img" src="{{ .Params.img }}" alt="Publication Image" />
+                </a>
+            </div>
+            <div class="col-12 col-md-9 p-3">
+                <h3 class="pubs_title mt-0 mb-2 p-3">
+                    <a href="{{ .Params.pdf }}" target="_blank" class="text-decoration-none text-dark"> {{ .Params.title }} </a>
+                </h3>
+                <p class="pubs_authors mb-1 p-3">{{ .Params.authors }}</p>
 
-    {{ $currentSection := .CurrentSection }}
-    {{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
-      <div class="row pub-item align-items-start mb-4">
-        <div class="col-12 col-md-3 text-center p-3">
-          <a href="{{ .Params.pdf }}" target="_blank" class="no-decoration">
-            <img
-              class="img-fluid pubs_img"
-              src="{{ .Params.img }}"
-              alt="Publication Image"
-            />
-          </a>
+                {{ if .Params.conference }}
+                <p class="pubs_type mb-2 p-3">
+                    <span class="highlighted-conference">{{ .Params.conference }}</span>
+                </p>
+                {{ end }}
+
+                <a class="btn btn-sm btn-outline-primary p-1" href="{{ .Params.doi }}" target="_blank"> <i class="fa fa-globe" aria-hidden="true"></i> DOI </a>
+            </div>
         </div>
-        <div class="col-12 col-md-9 p-3">
-          <h3 class="pubs_title mt-0 mb-2 p-3">
-            <a href="{{ .Params.pdf }}"
-               target="_blank"
-               class="text-decoration-none text-dark">
-              {{ .Params.title }}
-            </a>
-          </h3>
-          <p class="pubs_authors mb-1 p-3">{{ .Params.authors }}</p>
-
-          {{ if .Params.conference }}
-            <p class="pubs_type mb-2 p-3">
-              <span class="highlighted-conference">{{ .Params.conference }}</span>
-            </p>
-          {{ end }}
-
-          <a class="btn btn-sm btn-outline-primary p-1"
-             href="{{ .Params.doi }}"
-             target="_blank">
-            <i class="fa fa-globe" aria-hidden="true"></i> DOI
-          </a>
-        </div>
-      </div>
-    {{ end }}
-  </article>
+        {{ end }}
+    </article>
 </div>
 {{ end }}

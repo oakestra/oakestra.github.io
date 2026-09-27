@@ -17,11 +17,12 @@ seo:
 ---
 
 {{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}}
+
 - You have a running Oakestra deployment.
 - You have at least one Worker Node registered
 - (Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured.
 - You can access the APIs at `<root-orch-ip>:10000/api/docs`
-{{< /callout >}}
+  {{< /callout >}}
 
 Let's try deploying an Nginx server and a client using the API.
 
@@ -36,69 +37,13 @@ deployment in the system.
 The following is an example of an Oakestra deployment descriptor:
 
 ```yaml {title="deploy_curl_application.yaml"}
-{
-  "applications": [
-    {
-      "applicationID": "",
-      "application_desc": "Simple demo with curl client and Nginx server",
-      "application_name": "clientsrvr",
-      "application_namespace": "test",
-      "microservices": [
-        {
-          "added_files": [],
-          "bandwidth_in": 0,
-          "bandwidth_out": 0,
-          "cmd": [
-            "sh",
-            "-c",
-            "curl 10.30.30.30 ; sleep 5"
-          ],
-          "code": "docker.io/curlimages/curl:7.82.0",
-          "constraints": [],
-          "memory": 100,
-          "microserviceID": "",
-          "microservice_name": "curl",
-          "microservice_namespace": "test",
-          "port": "",
-          "state": "",
-          "storage": 0,
-          "vcpus": 1,
-          "vgpus": 0,
-          "virtualization": "container",
-          "vtpus": 0
-        },
-        {
-          "added_files": [],
-          "addresses": {
-            "rr_ip": "10.30.30.30"
-          },
-          "bandwidth_in": 0,
-          "bandwidth_out": 0,
-          "cmd": [],
-          "code": "docker.io/library/nginx:latest",
-          "memory": 100,
-          "microserviceID": "",
-          "microservice_name": "nginx",
-          "microservice_namespace": "test",
-          "port": "6080:80/tcp",
-          "state": "",
-          "storage": 0,
-          "vcpus": 1,
-          "vgpus": 0,
-          "virtualization": "container",
-          "vtpus": 0
-        }
-      ]
-    }
-  ],
-  "customerID": "Admin",
-  "sla_version": "v2.0"
-}
+{ "applications": [{ "applicationID": "", "application_desc": "Simple demo with curl client and Nginx server", "application_name": "clientsrvr", "application_namespace": "test", "microservices": [{ "added_files": [], "bandwidth_in": 0, "bandwidth_out": 0, "cmd": ["sh", "-c", "curl 10.30.30.30 ; sleep 5"], "code": "docker.io/curlimages/curl:7.82.0", "constraints": [], "memory": 100, "microserviceID": "", "microservice_name": "curl", "microservice_namespace": "test", "port": "", "state": "", "storage": 0, "vcpus": 1, "vgpus": 0, "virtualization": "container", "vtpus": 0 }, { "added_files": [], "addresses": { "rr_ip": "10.30.30.30" }, "bandwidth_in": 0, "bandwidth_out": 0, "cmd": [], "code": "docker.io/library/nginx:latest", "memory": 100, "microserviceID": "", "microservice_name": "nginx", "microservice_namespace": "test", "port": "6080:80/tcp", "state": "", "storage": 0, "vcpus": 1, "vgpus": 0, "virtualization": "container", "vtpus": 0 }] }], "customerID": "Admin", "sla_version": "v2.0" }
 ```
 
 Save this description as `deploy_curl_application.yaml` and upload it to the system using the APIs.
 
-This deployment descriptor example generates one application named *clientserver* with the `test` namespace and two microservices:
+This deployment descriptor example generates one application named _clientserver_ with the `test` namespace and two microservices:
+
 - nginx server with test namespace, namely `clientsrvr.test.nginx.test`
 - curl client with test namespace, namely `clientrvr.test.curl.test`
 
@@ -111,27 +56,30 @@ After running a cluster you can use the debug OpenAPI page at `<root_orch_ip>:10
 Authenticate using the following procedure:
 
 1. Locate the login method and use the try-out button
-![try-login](pngs/login-try.png)
+   ![try-login](pngs/login-try.png)
 
 2. Use the **default Admin credentials** to login
+
 ```
   username: "Admin"
   password: "Admin"
 ```
+
 ![execute-login](pngs/login-execute.png)
 
 3. Copy the result login token
-![token-login](pngs/login-token-copy.png)
+   ![token-login](pngs/login-token-copy.png)
 
 4. Go to the top of the page and authenticate with this token
-![auth-login](pngs/authorize.png)
-![auth2-login](pngs/authorize-2.png)
+   ![auth-login](pngs/authorize.png)
+   ![auth2-login](pngs/authorize-2.png)
 
 ### Register an application and the services
+
 After you authenticate with the login function, you can try out to deploy the first application.
 
 1. Upload the deployment description to the system. You can try using the deployment descriptor above.
-![post app](pngs/post-app.png)
+   ![post app](pngs/post-app.png)
 
 The response contains the Application id and the id for all the application's services. Now the application and the services are registered to the platform. It's time to deploy the service instances!
 

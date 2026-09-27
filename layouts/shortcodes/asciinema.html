@@ -1,57 +1,63 @@
 <!-- Reference: https://docs.asciinema.org/manual/player/options/ -->
 
-<link rel="stylesheet" href="/css/asciinema-player.css">
+<link rel="stylesheet" href="/css/asciinema-player.css" />
 <style>
-  .macos-window {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-    background: #1e1e1e;
-    display: inline-block;
-    width: 100%;
-  }
-  .macos-titlebar {
-    background: #3c3c3c;
-    padding: 10px 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .macos-btn {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  .macos-btn.close  { background: #ff5f57; }
-  .macos-btn.min    { background: #febc2e; }
-  .macos-btn.max    { background: #28c840; }
+    .macos-window {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        background: #1e1e1e;
+        display: inline-block;
+        width: 100%;
+    }
+    .macos-titlebar {
+        background: #3c3c3c;
+        padding: 10px 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .macos-btn {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .macos-btn.close {
+        background: #ff5f57;
+    }
+    .macos-btn.min {
+        background: #febc2e;
+    }
+    .macos-btn.max {
+        background: #28c840;
+    }
 </style>
 <div class="macos-window">
-  <div class="macos-titlebar">
-    <span class="macos-btn close"></span>
-    <span class="macos-btn min"></span>
-    <span class="macos-btn max"></span>
-  </div>
-  <div id='{{ with .Get "key" }}{{ . }}{{ else }}default-key{{ end }}'></div>
+    <div class="macos-titlebar">
+        <span class="macos-btn close"></span>
+        <span class="macos-btn min"></span>
+        <span class="macos-btn max"></span>
+    </div>
+    <div id='{{ with .Get "key" }}{{ . }}{{ else }}default-key{{ end }}'></div>
 </div>
 <script src="/js/asciinema-player.min.js"></script>
 <script>
-AsciinemaPlayer.create('/casts/{{ with .Get "key" }}{{ . }}{{ else }}default-key{{ end }}.cast', document.getElementById('{{ with .Get "key" }}{{ . }}{{ else }}default-key{{ end }}'),
-{
-  {{ if .Get "cols" }}cols: "{{ .Get "cols" }}",{{ end }}
-  {{ if .Get "rows" }}rows: "{{ .Get "rows" }}",{{ end }}
-  {{ if .Get "autoPlay" }}autoPlay: "{{ .Get "autoPlay" }}",{{ end }}
-  preload: {{ .Get "preload" | default "false" }},
-  loop: {{ if .Get "loop" }}true{{ else }}false{{ end }},
-  startAt: {{ .Get "startAt" | default "0" }},
-  {{ if .Get "speed" }}speed: "{{ .Get "speed" }}",{{ end }}
-  idleTimeLimit: {{ .Get "idleTimeLimit" | default "2" }},
-  {{ if .Get "theme" }}theme: "{{ .Get "theme" }}",{{ end }}
-  {{ if .Get "fit" }}fit: "{{ .Get "fit" }}",{{ end }}
-  {{ if .Get "terminalFontSize" }}terminalFontSize: "{{ .Get "terminalFontSize" }}",{{ end }}
-  {{ if .Get "terminalFontFamily" }}terminalFontFamily: "{{ .Get "terminalFontFamily" }}",{{ end }}
-  {{ if .Get "terminalLineHeight" }}terminalLineHeight: "{{ .Get "terminalLineHeight" }}",{{ end }}
-  {{ if .Get "poster" }}poster: "npt:{{ .Get "poster" }}",{{ end }}
-});
+    AsciinemaPlayer.create('/casts/{{ with .Get "key" }}{{ . }}{{ else }}default-key{{ end }}.cast', document.getElementById('{{ with .Get "key" }}{{ . }}{{ else }}default-key{{ end }}'),
+    {
+      {{ if .Get "cols" }}cols: "{{ .Get "cols" }}",{{ end }}
+      {{ if .Get "rows" }}rows: "{{ .Get "rows" }}",{{ end }}
+      {{ if .Get "autoPlay" }}autoPlay: "{{ .Get "autoPlay" }}",{{ end }}
+      preload: {{ .Get "preload" | default "false" }},
+      loop: {{ if .Get "loop" }}true{{ else }}false{{ end }},
+      startAt: {{ .Get "startAt" | default "0" }},
+      {{ if .Get "speed" }}speed: "{{ .Get "speed" }}",{{ end }}
+      idleTimeLimit: {{ .Get "idleTimeLimit" | default "2" }},
+      {{ if .Get "theme" }}theme: "{{ .Get "theme" }}",{{ end }}
+      {{ if .Get "fit" }}fit: "{{ .Get "fit" }}",{{ end }}
+      {{ if .Get "terminalFontSize" }}terminalFontSize: "{{ .Get "terminalFontSize" }}",{{ end }}
+      {{ if .Get "terminalFontFamily" }}terminalFontFamily: "{{ .Get "terminalFontFamily" }}",{{ end }}
+      {{ if .Get "terminalLineHeight" }}terminalLineHeight: "{{ .Get "terminalLineHeight" }}",{{ end }}
+      {{ if .Get "poster" }}poster: "npt:{{ .Get "poster" }}",{{ end }}
+    });
 </script>

@@ -17,7 +17,7 @@ Let's get you up to speed with the easiest possible setup. You'll be able to run
 You can install all required dependencies for Oakestra setup on your machine using the `oak-cli`. Simply use the command
 
 ```bash
-oak i fundamentals 
+oak i fundamentals
 ```
 
 Learn more about installing the `oak-cli` in the [CLI Setup](../../deploy-app/deploy-cli/) page.
@@ -26,22 +26,22 @@ Learn more about installing the `oak-cli` in the [CLI Setup](../../deploy-app/de
 
 ### Startup the Orchestrators in a Single Machine
 
-In this guide, we'll perform a Single Machine Setup. This setup is the easiest way to get started with Oakestra with a single Cluster managed by a single machine. To do so, we'll install the **Root Orchestrator** and the **Cluster Orchestrator** together, as shown in the following figure. 
+In this guide, we'll perform a Single Machine Setup. This setup is the easiest way to get started with Oakestra with a single Cluster managed by a single machine. To do so, we'll install the **Root Orchestrator** and the **Cluster Orchestrator** together, as shown in the following figure.
 
-After the orchestrators are up and running, you can add Edge Devices as workers to your cluster (see: [Add Edge Devices (Workers) to Your Setup](../your-first-worker/)). 
+After the orchestrators are up and running, you can add Edge Devices as workers to your cluster (see: [Add Edge Devices (Workers) to Your Setup](../your-first-worker/)).
 
 {{< svg "deploy-orchestrators" >}}
 
 You can install the **Root** and **Cluster Orchestrator** in a single machine using the following command:
 
 ```bash
-curl -sfL oakestra.io/getstarted.sh | sh - 
+curl -sfL oakestra.io/getstarted.sh | sh -
 ```
 
-This command downloads and runs the Oakestra's docker compose files in `~/oakestra` folder. 
+This command downloads and runs the Oakestra's docker compose files in `~/oakestra` folder.
 
 {{< callout context="note" title="Did you know?" icon="outline/info-circle" >}}
-You can set a multi-cluster infrastructure by installing each **Cluster Orchestrator** on a different machine. 
+You can set a multi-cluster infrastructure by installing each **Cluster Orchestrator** on a different machine.
 Check out [Advanced Oakestra Clusters Setup](../../../manuals/advanced-cluster-setup/) section for more details.
 {{< /callout >}}
 
@@ -59,4 +59,3 @@ To stop your **Root & Cluster** orchestrator components run:
 ```bash
 docker compose -f ~/oakestra/1-DOC.yaml down
 ```
-

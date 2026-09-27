@@ -55,7 +55,7 @@ In the ACM EuroSys 2025 main conference program, the Oakestra team presented an 
 
 {{< video src="poster-working" autoplay="true" muted="true" width="50%" >}}
 
-The team clinched the **Best Poster Award at ACM EuroSys 2025**. 
+The team clinched the **Best Poster Award at ACM EuroSys 2025**.
 
 <div style="display: flex; gap: 20px;">
   <div style="flex: 1.6;">

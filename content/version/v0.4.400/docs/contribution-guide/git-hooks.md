@@ -28,13 +28,13 @@ Without automated checks, simple issues like linting errors can slip into the co
 By default, Git hooks live only on the local machine and aren’t shared with others. This means each developer would need to set them up manually. **Pre-commit** solves this problem by allowing you to define hook configurations in a shared `.pre-commit-config.yaml` file. Once committed to the repository, these configurations ensure every contributor runs the same hooks.
 
 {{< callout context="note" icon="outline/info-circle" >}}
-Despite the name, *pre-commit* can manage multiple hook types (such as `pre-push`). [Learn more about pre-commit](https://pre-commit.com/).
+Despite the name, _pre-commit_ can manage multiple hook types (such as `pre-push`). [Learn more about pre-commit](https://pre-commit.com/).
 {{< /callout >}}
 
 ### Setting Up
 
-1. **Install pre-commit**  
-   
+1. **Install pre-commit**
+
    ```bash
    pip install pre-commit
    # or
@@ -52,6 +52,7 @@ We chose pre-push to give developers flexibility. They can commit freely, fix li
 For more configuration details, visit the [official pre-commit documentation](https://pre-commit.com/).
 
 ## Contributing Code
+
 When you’re ready to push your changes:
 
 - Perform `git push` as usual.
@@ -59,10 +60,3 @@ When you’re ready to push your changes:
 - If issues are found, the push will be aborted so you can fix them before retrying.
 
 By integrating pre-commit hooks into our workflow we ensure consistent code quality and a cleaner commit history.
-
-
-
-
-
-
-

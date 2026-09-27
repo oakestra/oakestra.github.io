@@ -18,9 +18,10 @@ reservations, before we discuss [semantic addressing](../load-balancing/).
 
 {{<svg-smaller "overlay-layers">}}
 
-The network abstraction enabling service-to-service communication within Oakestra spans *three* different layers.
+The network abstraction enabling service-to-service communication within Oakestra spans _three_ different layers.
 
 ### Physical layer
+
 At the very bottom of the hierarchy, we have the physical layer, where we address machines rather than microservices
 or containers.
 In this layer, an IP address is an address that can be used to **uniquely identify a machine** to reach it. In Oakestra,
@@ -32,8 +33,8 @@ Each worker node exposes the network stack required to enable the upper layers o
 
 Each physical machine is provisioned with a **virtual subnetwork**. This subnetwork is assigned by the root orchestrator.
 When instantiating a container, the system provides a so-called **Namespace IP**, which is an address provisioned from
-the virtual subnetwork of the node. This address is used to *route the traffic within the platform to the running
-containers*. The current implementation uses a default fixed network mask of 26 bits in IPv4 / 120 bits in IPv6,
+the virtual subnetwork of the node. This address is used to _route the traffic within the platform to the running
+containers_. The current implementation uses a default fixed network mask of 26 bits in IPv4 / 120 bits in IPv6,
 for the node subnetwork from the private `10.18.0.0/16` / `fc00::/7` network, allowing over 1000+ devices,
 each supporting 64 containers, for a maximum of 65536 containers.
 
@@ -43,8 +44,7 @@ changing the default subnetwork to, i.e., 10.0.0.0/8 or even further transitioni
 {{< link-card
   title="IPv6 Addressing in Oakestra"
   href="/docs/manuals/networking-internals/ipv6-addressing"
-  target="_blank"
->}}
+  target="_blank" >}}
 
 ### Service layer
 
@@ -56,11 +56,11 @@ instances** and that can be used to **transparently pick the right instance and 
 expresses an inherent balancing policy, and, for each service, we have as many Service IPs as the implemented system
 balancing policies.
 
-A subset of the Service IPs are the **Instance IPs**. They *route the traffic always to a specific instance of
-a service*. Therefore, when deploying a service, the system will provision the following addresses:
+A subset of the Service IPs are the **Instance IPs**. They _route the traffic always to a specific instance of
+a service_. Therefore, when deploying a service, the system will provision the following addresses:
 
-* 1x load balanced Service IP for each balancing policy implemented in the system
-* 1x Instance IP for each new instance of the service that has been deployed.
+- 1x load balanced Service IP for each balancing policy implemented in the system
+- 1x Instance IP for each new instance of the service that has been deployed.
 
 {{< callout context="note" title="What's the difference between an Instance IP and a Namespace IP?" icon="outline/help-circle">}}
 They operate on two different abstraction layers. The Namespace IP depends on the virtualized subnetwork
@@ -70,5 +70,5 @@ Therefore, it identifies an instance regardless of migration operations, scales 
 provisioned even before the deployment of a service instance.
 {{< /callout >}}
 
-Now that you know what types of different addresses there are in Oakestra, continue with how we actually use those 
+Now that you know what types of different addresses there are in Oakestra, continue with how we actually use those
 in [IPv4 addressing](../ipv4-addressing/).

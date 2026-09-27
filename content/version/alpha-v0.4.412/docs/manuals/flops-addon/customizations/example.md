@@ -28,9 +28,8 @@ For the training, you can use the default mock data provider.
 ```
 
 {{< callout context="note" title="Do you want to injest your own data?" icon="outline/settings-question" >}}
-  FLOps uses Arrow Flight for data ingestion. Each Learner Node uses a Arrow Flight server and client combination. Check out [here](/docs/concepts/flops/internals/ml-data-management/) how this works.
+FLOps uses Arrow Flight for data ingestion. Each Learner Node uses a Arrow Flight server and client combination. Check out [here](/docs/concepts/flops/internals/ml-data-management/) how this works.
 {{< /callout >}}
-
 
 {{< tabs "mnist" >}}
 {{< tab "Small" >}}
@@ -98,17 +97,17 @@ and then you can run the project using
 {{< /tabs >}}
 
 #### Core differences between these examples
-| Name    | `mode` | `rounds` | `clients` | `cycles` | `post_training` | `arch`
-| --------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| Small    | classic | 3 | 2 | N/A | build & deploy trained model | amd64 |
-| Large | classic | 10 | 4 | N/A | build & deploy trained model  | amd64 |
-| Hierarchical S | hierarchical | 3 | 2 | 2 | build & deploy trained model | amd64 |
-| Hierarchical L | hierarchical | 5 | 3 | 10 | build & deploy trained model | amd64 |
+
+| Name           | `mode`       | `rounds` | `clients` | `cycles` | `post_training`              | `arch` |
+| -------------- | ------------ | -------- | --------- | -------- | ---------------------------- | ------ |
+| Small          | classic      | 3        | 2         | N/A      | build & deploy trained model | amd64  |
+| Large          | classic      | 10       | 4         | N/A      | build & deploy trained model | amd64  |
+| Hierarchical S | hierarchical | 3        | 2         | 2        | build & deploy trained model | amd64  |
+| Hierarchical L | hierarchical | 5        | 3         | 10       | build & deploy trained model | amd64  |
 
 {{< callout context="note" icon="outline/info-circle">}}
-  Check out [FLOps SLA configuration](../slas) page to learn how to customize your project.
+Check out [FLOps SLA configuration](../slas) page to learn how to customize your project.
 {{< /callout >}}
-
 
 # Object Recognition
 
@@ -122,9 +121,8 @@ For the training, you can use the default mock data provider for this example.
 ```
 
 {{< callout context="note" title="Do you want to injest your own data?" icon="outline/settings-question" >}}
-  FLOps uses Arrow Flight for data ingestion. Each Learner Node uses a Arrow Flight server and client combination. Check out [here](/docs/concepts/flops/internals/ml-data-management/) how this works.
+FLOps uses Arrow Flight for data ingestion. Each Learner Node uses a Arrow Flight server and client combination. Check out [here](/docs/concepts/flops/internals/ml-data-management/) how this works.
 {{< /callout >}}
-
 
 Then, you can download the SLA for this example running
 
@@ -141,10 +139,11 @@ and finally you can run the project using
 Here a summary of the settings for this default SLA
 
 #### Standard Example Configuration
-| Name    | `mode` | `flavor` | `rounds` | `clients` | `post_training` | `arch` |
-| --------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| cifar10_pytorch    | classic | pyTorch | 3 | 2 | build & deploy trained model | amd64 |
+
+| Name            | `mode`  | `flavor` | `rounds` | `clients` | `post_training`              | `arch` |
+| --------------- | ------- | -------- | -------- | --------- | ---------------------------- | ------ |
+| cifar10_pytorch | classic | pyTorch  | 3        | 2         | build & deploy trained model | amd64  |
 
 {{< callout context="note" icon="outline/info-circle">}}
-  Check out [FLOps SLA configuration](../slas) page to learn how to customize your project.
+Check out [FLOps SLA configuration](../slas) page to learn how to customize your project.
 {{< /callout >}}

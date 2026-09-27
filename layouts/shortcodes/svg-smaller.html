@@ -1,21 +1,12 @@
-{{ $svgName := index .Params 0 }}
-{{ $caption := index .Params 1 }}
-{{ $pageDir := .Page.File.Dir }}
-
-{{ $lightSvgPath := printf "%ssvgs/%s/light.svg" $pageDir $svgName }}
-{{ $darkSvgPath := printf "%ssvgs/%s/dark.svg" $pageDir $svgName }}
+{{ $svgName := index .Params 0 }} {{ $caption := index .Params 1 }} {{ $pageDir := .Page.File.Dir }} {{ $lightSvgPath := printf "%ssvgs/%s/light.svg" $pageDir $svgName }} {{ $darkSvgPath := printf "%ssvgs/%s/dark.svg" $pageDir $svgName }}
 
 <div class="container">
     <div class="box" style="width: 75%">
-        <figure class="svg-lightmode constrain-image">
-            {{ readFile $lightSvgPath | safeHTML }}
-        </figure>
-        <figure class="svg-darkmode constrain-image">
-            {{ readFile $darkSvgPath | safeHTML }}
-        </figure>
+        <figure class="svg-lightmode constrain-image">{{ readFile $lightSvgPath | safeHTML }}</figure>
+        <figure class="svg-darkmode constrain-image">{{ readFile $darkSvgPath | safeHTML }}</figure>
         {{ if $caption }}
-            <figcaption>{{ $caption | markdownify }}</figcaption>
-            <br>
+        <figcaption>{{ $caption | markdownify }}</figcaption>
+        <br />
         {{ end }}
     </div>
 </div>

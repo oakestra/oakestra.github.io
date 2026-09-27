@@ -21,37 +21,38 @@ You can also manage your infrastructure and deploy/monitor applications using Oa
 </span>
 
 {{< callout context="tip" title="Dashboard features" icon="outline/rocket">}}
+
 - View the applications currently running on the cluster
 - Create and modify individual services
 - Check the status of running services
 - Configure service-level agreements (SLAs)
-{{< /callout >}}
-
+  {{< /callout >}}
 
 ## Deployment
 
 {{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}}
+
 - You have a running Root Orchestrator.
 - You can access the APIs at `<IP_OF_CLUSTER_ORCHESTRATOR>:10000`
-{{< /callout >}}
+  {{< /callout >}}
 
 If you deployed your cluster with one of the provided docker-compose files, this has already been done for you and you can simply head over to `<http://IP_OF_CLUSTER_ORCHESTRATOR>`. Otherwise follow the instructions below for manual configuration.
 
 ### Manual deployment
 
-*0)* Clone the repository
+_0)_ Clone the repository
 
 ```bash
 git clone https://github.com/oakestra/dashboard.git && cd dashboard
 ```
 
-*1)* Create a file that contains the environment variables
+_1)_ Create a file that contains the environment variables
 
 ```bash
 echo "API_ADDRESS=<IP_OF_CLUSTER_ORCHESTRATOR>:10000" > .env
 ```
 
-*2)* Run the dashboard
+_2)_ Run the dashboard
 
 ```bash
 sudo docker-compose up
@@ -82,21 +83,21 @@ This user can create and manage other users and organizations within the system,
 
 ## Organization Login
 
-To log in to an organization check the *Organization login* box and enter the organization name. If the box is not checked or the organization
+To log in to an organization check the _Organization login_ box and enter the organization name. If the box is not checked or the organization
 name is left empty, then you will logged in to the default root organization.
 
 {{< link-card
-  title="Organizations"
-  description="More on organizations"
-  href="../../../manuals/dashboard-features/organizations/"
-  target="_blank"
->}}
+title="Organizations"
+description="More on organizations"
+href="../../../manuals/dashboard-features/organizations/"
+target="\_blank" >}}
 
-Here you can see the login to the *sampleOrga* organization.
+Here you can see the login to the _sampleOrga_ organization.
 
 ![](orga-login.gif)
 
 <!-- Todo: Move somewhere else -->
+
 ## Applications, Services, Namespaces
 
 In Oakestra there are applications, services and namespaces. One Application can encompass multiple services and one user can create
@@ -125,9 +126,8 @@ Hit save and your service is ready for deployment!
 
 ### Service Details
 
-Once a service has been created and deployed, you can check on it's status and other details. Choose a service from the *Service List* and from the drop-down
-menu, choose an instance and click on *View Instance Details*. 
-
+Once a service has been created and deployed, you can check on it's status and other details. Choose a service from the _Service List_ and from the drop-down
+menu, choose an instance and click on _View Instance Details_.
 
 {{< callout context="note" title="Something Missing?" icon="outline/building-factory">}}
 If you have any new feature ideas or if you find any bugs please open an issue in the [GitHub repository](https://github.com/oakestra/dashboard).

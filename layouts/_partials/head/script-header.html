@@ -1,8 +1,28 @@
 <!-- Insert scripts NOT needed by stylesheets here -->
-{{- /* Color mode script - enables dark mode toggle */ -}}
-{{- if eq site.Params.doks.colorMode "auto" }}
+{{- /* Color mode script - enables dark mode toggle */ -}} {{- if eq site.Params.doks.colorMode "auto" }}
 <script>
-(()=>{"use strict";
-const e=localStorage.getItem("theme"),t=()=>e?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light",a=function(e){"auto"===e&&window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.setAttribute("data-bs-theme","dark"):document.documentElement.setAttribute("data-bs-theme",e)};a(t()),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{"light"!==e&&"dark"!==e||a(t())}),window.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("[data-bs-theme-value]").forEach(e=>{e.addEventListener("click",()=>{const t=e.getAttribute("data-bs-theme-value");localStorage.setItem("theme",t),a(t)})})})})();
+    (() => {
+        'use strict';
+        const e = localStorage.getItem('theme'),
+            t = () =>
+                e ? e
+                : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark'
+                : 'light',
+            a = function (e) {
+                'auto' === e && window.matchMedia('(prefers-color-scheme: dark)').matches ? document.documentElement.setAttribute('data-bs-theme', 'dark') : document.documentElement.setAttribute('data-bs-theme', e);
+            };
+        (a(t()),
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                ('light' !== e && 'dark' !== e) || a(t());
+            }),
+            window.addEventListener('DOMContentLoaded', () => {
+                document.querySelectorAll('[data-bs-theme-value]').forEach((e) => {
+                    e.addEventListener('click', () => {
+                        const t = e.getAttribute('data-bs-theme-value');
+                        (localStorage.setItem('theme', t), a(t));
+                    });
+                });
+            }));
+    })();
 </script>
 {{- end }}

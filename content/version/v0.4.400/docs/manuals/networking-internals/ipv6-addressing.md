@@ -15,7 +15,7 @@ Oakestra makes use of the reserved private IPv6 subnet `fc00::/7` for its servic
 following network split for IPv6 networking
 
 | Subnet                                                  | Subnet description                    | Tag        |
-|---------------------------------------------------------|---------------------------------------|------------|
+| ------------------------------------------------------- | ------------------------------------- | ---------- |
 | `fc00::/7`                                              | full Oakestra network                 | `all`      |
 | `fc00::/120 - fdfd:ffff:ffff:ffff:ffff:ffff:ffff:0/120` | Worker subnets                        | `worker`   |
 | `fdfe::/16`                                             | reserved for future use               | `reserved` |
@@ -33,12 +33,12 @@ following network split for IPv6 networking
 
 In the following we give a short meaning for each tag.
 
-* `all` : entire Oakestra platform
-* `worker` : subnet assigned to a single worker node associated with a cluster inside Oakestra
-* `service` : semantic service address subnet
-* `instance` : single semantic service address mapped to a service instance throughout the lifetime of the instance
-* `balance` : semantic service address, addressing all multiple instance addresses of a service in order to enable
-semantic addressing for balance policies
+- `all` : entire Oakestra platform
+- `worker` : subnet assigned to a single worker node associated with a cluster inside Oakestra
+- `service` : semantic service address subnet
+- `instance` : single semantic service address mapped to a service instance throughout the lifetime of the instance
+- `balance` : semantic service address, addressing all multiple instance addresses of a service in order to enable
+  semantic addressing for balance policies
 
 {{< callout context="danger" title="Exhausted Address Space" icon="outline/alert-triangle" >}}
 Oakestra makes use of the whole IPv6 address space available.
@@ -53,19 +53,17 @@ If we deploy an example application A with Service S and two instances (S1 and S
 an example address configuration can be the following:
 
 | App A    | Addresses / Subnets assigned                                |
-|----------|-------------------------------------------------------------|
+| -------- | ----------------------------------------------------------- |
 | Worker W | `fc00::c0:ffee:/120`                                        |
 | S        | Round Robin: `fdff:2000::30`                                |
 | S1       | Instance IP: `fdff::2f`<br> Namespace IP: `fc00::c0:ffee:2` |
-| S2       | Instance IP: `fdff::30`<br> Namespace IP: `fc00::c0:ffee:3` | 
-
+| S2       | Instance IP: `fdff::30`<br> Namespace IP: `fc00::c0:ffee:3` |
 
 {{< callout context="caution" title="Limited IPv6 Capabilities" icon="outline/alert-triangle" >}}
-The Oakestra platform currently only supports a very basic form of IPv6 addressing in the sense that there is a 
+The Oakestra platform currently only supports a very basic form of IPv6 addressing in the sense that there is a
 strict 1-to-1 mapping between IPv4 and IPv6 addresses.
 The limiting factor remains the IPv4 address space and there currently is **no** support for standalone IPv6 networking.
 {{< /callout >}}
-
 
 ## Extending the Network Capabilities
 

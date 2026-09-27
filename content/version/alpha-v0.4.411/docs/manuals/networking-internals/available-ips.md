@@ -33,10 +33,10 @@ The endpoint is part of the `pubnet` API blueprint.
 
 #### Parameters
 
-| Parameter | Type | In | Description | Default |
-| :--- | :--- | :--- | :--- | :--- |
-| `x` | `integer` | **Path** | The number of IP addresses to retrieve. | `1` |
-| `v` | `string` | **Query** | IP version filter. Values: `"4"` (IPv4), `"6"` (IPv6). If omitted, both are returned. | `None` (Both) |
+| Parameter | Type      | In        | Description                                                                           | Default       |
+| :-------- | :-------- | :-------- | :------------------------------------------------------------------------------------ | :------------ |
+| `x`       | `integer` | **Path**  | The number of IP addresses to retrieve.                                               | `1`           |
+| `v`       | `string`  | **Query** | IP version filter. Values: `"4"` (IPv4), `"6"` (IPv6). If omitted, both are returned. | `None` (Both) |
 
 {{< callout context="caution" title="Important: No Reservation" icon="outline/alert-triangle" >}}
 This endpoint returns the **next available** IP addresses but **does not reserve** them in the system.
@@ -53,58 +53,61 @@ Call the endpoint without specifying `x` to get one available address for both v
 
 {{< details "Request & Response" open >}}
 **Request:**
+
 ```bash
 GET http://<root-orchestrator-ip>:10099/api/pubnet/service/netinfo/available-ip
 Authorization: Bearer <your-jwt-token>
 ```
 
 **Response:**
+
 ```json
 {
-  "available_service_ips": [
-    "10.30.0.5",
-    "fdff:0:0:0:0:0:0:5"
-  ]
+  "available_service_ips": ["10.30.0.5", "fdff:0:0:0:0:0:0:5"]
 }
 ```
 
 {{< /details >}}
+
 #### 2. Retrieve multiple IPv4 addresses
+
 Specify the number of IPs in the path and filter by version `v=4`.
 
-{{< details "Request & Response" >}} 
+{{< details "Request & Response" >}}
 **Request:**
+
 ```bash
 GET http://<root-orchestrator-ip>:10099/api/pubnet/service/netinfo/available-ip/3?v=4
 Authorization: Bearer <your-jwt-token>
 ```
+
 **Response:**
+
 ```json
 {
-  "available_service_ips": [
-    "10.30.0.12",
-    "10.30.0.13",
-    "10.30.0.14"
-  ]
+  "available_service_ips": ["10.30.0.12", "10.30.0.13", "10.30.0.14"]
 }
 ```
+
 {{< /details >}}
 
 #### 3. Retrieve multiple IPv6 addresses
+
 Filter by version `v=6`.
 {{< details "Request & Response" >}}
 **Request:**
+
 ```bash
 GET http://<root-orchestrator-ip>:10099/api/pubnet/service/netinfo/available-ip/2?v=6
 Authorization: Bearer <your-jwt-token>
 ```
+
 **Response:**
+
 ```json
 {
-  "available_service_ips": [
-    "fdff:0:0:0:0:0:0:a1",
-    "fdff:0:0:0:0:0:0:a2"
-  ]
+  "available_service_ips": ["fdff:0:0:0:0:0:0:a1", "fdff:0:0:0:0:0:0:a2"]
 }
 ```
+
 {{< /details >}}

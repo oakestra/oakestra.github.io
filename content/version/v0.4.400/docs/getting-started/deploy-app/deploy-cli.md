@@ -22,14 +22,14 @@ Besides using the API directly or clicking through the dashboard UI, you can als
 </span>
 
 {{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}}
-  - You have a running Oakestra setup.
-  - You can access the APIs at `<IP_OF_CLUSTER_ORCHESTRATOR>:10000`
-{{< /callout >}}
 
+- You have a running Oakestra setup.
+- You can access the APIs at `<IP_OF_CLUSTER_ORCHESTRATOR>:10000`
+  {{< /callout >}}
 
 ## The `oak-cli`
 
-{{< callout context="note" title="Benefits of `oak-cli`" icon="outline/rocket">}} 
+{{< callout context="note" title="Benefits of `oak-cli`" icon="outline/rocket">}}
 
 - Easy installation via `pip`
 - Native interface for the Oakestra APIs
@@ -38,29 +38,29 @@ Besides using the API directly or clicking through the dashboard UI, you can als
   - Removes the need to memorize necessary API endpoints
   - The CLI commands can be chained together and used in custom scripts
   - Automates tedious tasks away (e.g. acquiring login token)
-{{< /callout >}}
-
-  
-
+    {{< /callout >}}
 
 ## CLI Setup
-You can install the CLI via `pip install oak-cli`. 
+
+You can install the CLI via `pip install oak-cli`.
 
 {{< callout context="note" title="Helpful tip!" icon="outline/info-circle" >}}
-  You may need to setup a Python virtual environment first to avoid conflicts with other Python packages.
-  ```bash
-  python3 -m venv venv
+You may need to setup a Python virtual environment first to avoid conflicts with other Python packages.
 
-  source ~/.venv/bin/activate
-  ```
+```bash
+python3 -m venv venv
+
+source ~/.venv/bin/activate
+```
+
 {{< /callout >}}
 
 Execute `oak` and you will be welcomed into the Oakestra CLI world 🌎
 
 ![`oak-cli` Initial Welcome ASCII Art](./cli-images/welcome-message.png)
 
-
 ### Configurating the CLI
+
 The `oak-cli` supports different scenarios based on the concrete Oakestra use case and user preferences.
 
 This CLI initially hides many of its commands to avoid overwhelming new users.
@@ -69,12 +69,12 @@ Additionally, not every user needs every available command, and not every comman
 To configure the set of shown commands run `oak configuration local-machine-purpose`.
 
 {{< callout context="note" title="FYI - Using Command Shortcuts" icon="outline/bolt" >}}
-  Most `oak` commands have aliases that enable shorter commands and easier combinations, thus faster workflows.
+Most `oak` commands have aliases that enable shorter commands and easier combinations, thus faster workflows.
 
-  E.g. Instead of typing out `oak configuration local-machine-purpose`.
-  Simply run `oak c l`.
+E.g. Instead of typing out `oak configuration local-machine-purpose`.
+Simply run `oak c l`.
 
-  The available aliases are shown directly in the `-h` output.
+The available aliases are shown directly in the `-h` output.
 {{< /callout >}}
 
 The CLI will ask you a set of questions about your intended use and your target environment.
@@ -88,18 +88,18 @@ You can always revert your configuration to its initial state.
 
 For further information about the CLI configuration see the [CLI Configuration Manuals](../../../manuals/cli/features/configuration/).
 
-
 ## Basic CLI Usage
+
 The root command for the CLI is **oak**
 
 {{< callout context="note" title="Need Help?" icon="outline/info-circle" >}}
-  Every `oak` CLI command comes with its own help text to support your understanding.
+Every `oak` CLI command comes with its own help text to support your understanding.
 
-  Simply add `--help` or `-h` to any command to find out more.
+Simply add `--help` or `-h` to any command to find out more.
 {{< /callout >}}
 
-
 ### Working with Application SLAs
+
 As detailed in the [API Approach]({{< relref "deploy-api.md" >}}) Oakestra apps and services are defined in SLAs.<br>
 The `oak-cli` comes with a set of pre-defined default SLAs.<br>
 All available SLAs can be inspected via the `oak application sla` command.
@@ -120,16 +120,16 @@ It gets automatically created when you install the CLI.
 To modify or add new custom SLAs just modify the content of your `~/oak_cli/SLAs` folder.
 E.g. The `mysla.json` is a custom SLA that we added after installing the CLI.
 
-
 ### Managing Applications
+
 Now that you are familiar with the SLAs we can start creating applications based on them.<br>
 Run `oak application show` (`oak a s`) to see the currently orchestrated applications.<br>
 The `oak application create` (`oak a c`) command asks you what SLA should be used as the blueprint for the new application and creates that app for you.<br>
 Delete one or all currently running apps via `oak application delete` (`oak a d`).
 {{< asciinema key="cli_create_default_app_demo" poster="0:10" >}}
 
-
 ### Deploying Services
+
 The services of our applications are not yet deployed.<br>
 To deploy instances of these services we need to know the service IDs.<br>
 The IDs are visible when running `oak service show` (`oak s s`).<br>
@@ -141,36 +141,35 @@ You can undeploy all instances of a service or only specific ones by providing t
 `oak service undeploy --service-id <YOUR_SERVICE_ID> / --instance-id <INSTANCE_ID>`.
 
 {{< callout context="note" title="Combine Create & Deploy" icon="outline/bolt" >}}
-  You can create an application and automatically deploy its services by providing the `-d` *(for deploy)* flag to the `oak app create (-d)` command. 
+You can create an application and automatically deploy its services by providing the `-d` _(for deploy)_ flag to the `oak app create (-d)` command.
 {{< /callout >}}
 
 {{< callout context="note" title="Advanced Observation Features " icon="outline/eye" >}}
-  You can display apps and services with different levels of verbosity/detail and automatically refresh the display to stay in the know about the latest changes.
-  ![Detailed Service Display](./cli-images/detailed_service_display.png)
-  You can even display and automatically follow the latest service logs.
-  ![Inspected Service](./cli-images/inspect_service.png)
+You can display apps and services with different levels of verbosity/detail and automatically refresh the display to stay in the know about the latest changes.
+![Detailed Service Display](./cli-images/detailed_service_display.png)
+You can even display and automatically follow the latest service logs.
+![Inspected Service](./cli-images/inspect_service.png)
 
-  For further details and recorded examples see the [CLI Services Manuals](../../../manuals/cli/features/services/).
+For further details and recorded examples see the [CLI Services Manuals](../../../manuals/cli/features/services/).
 {{< /callout >}}
 
-
 ## Further Details
+
 This page only highlights a small subset of available `oak-cli` capabilities.
 
 {{< link-card
-  title="CLI Manuals"
-  description="Explore every available CLI command in detail and more"
-  href="../../../manuals/cli/overview/"
-  target="_blank"
->}}
+title="CLI Manuals"
+description="Explore every available CLI command in detail and more"
+href="../../../manuals/cli/overview/"
+target="\_blank" >}}
 
 {{< callout context="note" title="Maximize Speed & Convenience" icon="outline/bolt" >}}
-  The `oak-cli` is powered by [Typer](https://github.com/fastapi/typer) which supports tab autocompletion natively.
+The `oak-cli` is powered by [Typer](https://github.com/fastapi/typer) which supports tab autocompletion natively.
 
-  This means that you can press your **tab** key to either automatically complete the command you are currently typing or get a list of matching available commands.
-  There is no need to memorize or fully type out the commands.
+This means that you can press your **tab** key to either automatically complete the command you are currently typing or get a list of matching available commands.
+There is no need to memorize or fully type out the commands.
 
-  ![Command Recommendation via Tab Auto-Completion](./cli-images/autocomplete.png)
+![Command Recommendation via Tab Auto-Completion](./cli-images/autocomplete.png)
 
-  Simply run `oak --install-completion` to enable this feature.
+Simply run `oak --install-completion` to enable this feature.
 {{< /callout >}}

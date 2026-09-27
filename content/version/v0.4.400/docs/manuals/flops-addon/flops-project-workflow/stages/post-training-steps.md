@@ -48,15 +48,14 @@ $ oak s i
 ```
 
 {{< link-card
-  title="Want to know more about the trained model image build?"
-  description="Learn how the logged trained model gets transformed into a container image" 
-  href="../../../../../concepts/flops/internals/image-building-process/"
->}}
+title="Want to know more about the trained model image build?"
+description="Learn how the logged trained model gets transformed into a container image"
+href="../../../../../concepts/flops/internals/image-building-process/" >}}
 
 ## Step B: Deploy Trained Model Image
 
 {{< callout context="caution" icon="outline/alert-triangle">}}
-  Relies on step A to be successful and the trained model image to be present in your FLOps image registry. 
+Relies on step A to be successful and the trained model image to be present in your FLOps image registry.
 {{< /callout >}}
 
 FLOps lets you directly and automatically deploy the built-trained model/inference server image onto an orchestrated worker node.
@@ -91,51 +90,51 @@ One way to do this is via the `oak s s -v exhaustive` command:
 ```json
 ...
 {
-  'RR_ip': '10.30.77.4',                                                                          
-  'RR_ip_v6': None,                                                                               
-  '_id': {'$oid': '67a46d2998d83ad599b91a8a'},                                                    
-  'addresses': {'rr_ip': '10.30.77.4'},                                                           
-  'app_name': 'helper',                                                                           
-  'app_ns': 'helper',                                                                             
-  'applicationID': '67a46d2998d83ad599b91a89',                                                    
-  'cmd': [],                                                                                      
-  'code': '192.168.178.74:5073/admin/trained_model:98afa654c6b441cb95b8185be5856163',             
-  'image': '192.168.178.74:5073/admin/trained_model:98afa654c6b441cb95b8185be5856163',            
-  'instance_list': [{'cluster_id': '679cba79af4c1923eb5df1ae',                                    
-                      'cluster_location': '49.8717,8.6503,1000',                                   
-                      'cpu': '0.003675',                                                           
-                      'cpu_history': '(hidden by CLI)',                                            
-                      'disk': '331776',                                                            
-                      'instance_number': 0,                                                        
-                      'logs': '(hidden by CLI)',                                                   
-                      'memory': '0.000000',                                                        
-                      'memory_history': '(hidden by CLI)',                                         
-                      'publicip': '192.168.178.74',                                                
-                      'status': 'RUNNING',                                                         
-                      'status_detail': None}],                                                     
-  'job_name': 'helper.helper.trmodel7bbd83d3a548.trmodel',                                        
-  'memory': 200,                                                                                  
-  'microserviceID': '67a46d2998d83ad599b91a8a',                                                   
-  'microservice_name': 'trmodel7bbd83d3a548',                                                     
-  'microservice_namespace': 'trmodel',                                                            
-  'next_instance_progressive_number': 1,                                                          
-  'one_shot': False,                                                                              
-  'port': '8088:8080',                                                                            
-  'privileged': False,                                                                           
-  'service_name': 'trmodel7bbd83d3a548',                                                          
-  'service_ns': 'trmodel',                                                                        
-  'status': 'NODE_SCHEDULED',                                                                     
-  'status_detail': 'Waiting for scheduling decision',                                             
-  'storage': 0,                                                                                   
-  'vcpus': 1,                                                                                     
+  'RR_ip': '10.30.77.4',
+  'RR_ip_v6': None,
+  '_id': {'$oid': '67a46d2998d83ad599b91a8a'},
+  'addresses': {'rr_ip': '10.30.77.4'},
+  'app_name': 'helper',
+  'app_ns': 'helper',
+  'applicationID': '67a46d2998d83ad599b91a89',
+  'cmd': [],
+  'code': '192.168.178.74:5073/admin/trained_model:98afa654c6b441cb95b8185be5856163',
+  'image': '192.168.178.74:5073/admin/trained_model:98afa654c6b441cb95b8185be5856163',
+  'instance_list': [{'cluster_id': '679cba79af4c1923eb5df1ae',
+                      'cluster_location': '49.8717,8.6503,1000',
+                      'cpu': '0.003675',
+                      'cpu_history': '(hidden by CLI)',
+                      'disk': '331776',
+                      'instance_number': 0,
+                      'logs': '(hidden by CLI)',
+                      'memory': '0.000000',
+                      'memory_history': '(hidden by CLI)',
+                      'publicip': '192.168.178.74',
+                      'status': 'RUNNING',
+                      'status_detail': None}],
+  'job_name': 'helper.helper.trmodel7bbd83d3a548.trmodel',
+  'memory': 200,
+  'microserviceID': '67a46d2998d83ad599b91a8a',
+  'microservice_name': 'trmodel7bbd83d3a548',
+  'microservice_namespace': 'trmodel',
+  'next_instance_progressive_number': 1,
+  'one_shot': False,
+  'port': '8088:8080',
+  'privileged': False,
+  'service_name': 'trmodel7bbd83d3a548',
+  'service_ns': 'trmodel',
+  'status': 'NODE_SCHEDULED',
+  'status_detail': 'Waiting for scheduling decision',
+  'storage': 0,
+  'vcpus': 1,
   'virtualization': 'docker'
 }
 ...
 ```
+
 We copy the `'RR_ip': '10.30.77.4'`.
 
-
-Inference serving depends on the concrete model signature, which includes input/data types and formats. 
+Inference serving depends on the concrete model signature, which includes input/data types and formats.
 This model signature can differ significantly between models.
 Therefore, FLOps does not provide a universally applicable inference test service.
 For our base-case example, we provide a ready-made image and SLA for you.
@@ -144,10 +143,9 @@ Once deployed, the inference tester service will automatically prepare test samp
 The test service will continue requesting predictions in a loop until it is removed manually.
 
 {{< link-card
-  title="Base-case Inference Tester Implementation"
-  description="Look at the source code of the base-case inference tester"
-  href="https://github.com/oakestra/addon-FLOps/tree/main/trained_model_image_inference_testers/mnist_sklearn"
->}}
+title="Base-case Inference Tester Implementation"
+description="Look at the source code of the base-case inference tester"
+href="https://github.com/oakestra/addon-FLOps/tree/main/trained_model_image_inference_testers/mnist_sklearn" >}}
 
 ```json
 {
@@ -191,9 +189,8 @@ The test service will continue requesting predictions in a loop until it is remo
 ```
 
 {{< callout context="note" title="Add your SLA to the CLI" icon="outline/bolt" >}}
-  You can add a new app for your `oak-cli` by adding this SLA as a `.json` file to your `~/oak_cli/SLAs/` folder.
+You can add a new app for your `oak-cli` by adding this SLA as a `.json` file to your `~/oak_cli/SLAs/` folder.
 {{< /callout >}}
-
 
 The following demo shows the intended base-case inference test workflow.
 
@@ -235,9 +232,9 @@ The first two examples (1 & 9) were correct, but the model did not correctly pre
 This behavior matches our logged model accuracy, which is around 80% after only three training rounds.
 
 {{< callout context="tip" title="*Base Case Completed!*" icon="outline/confetti" >}}
-  Congratulations on reaching the end of the base-case FLOps project!
+Congratulations on reaching the end of the base-case FLOps project!
 
-  Feel free to reset/flush your components and try it again, or dive straight into creating customized projects.
+Feel free to reset/flush your components and try it again, or dive straight into creating customized projects.
 {{< /callout >}}
 
 FLOps' base case is just a demonstration to get you familiar with the core functionalities and workflow.

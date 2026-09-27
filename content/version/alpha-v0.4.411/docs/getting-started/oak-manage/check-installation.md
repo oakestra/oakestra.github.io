@@ -14,22 +14,22 @@ seo:
 In this wiki we'll help you check if your Oakestra installation is up and running as you expected.
 
 ## Check your clusters status
+
 This is how you can check your clusters' status.
 
 {{< tabs "Check_Clusters" >}}
 {{< tab "Use the Terminal" >}}
 Simply run:
+
 ```bash
 oak cluster ls
 ```
-
-
 
 Did you know? You can install the Oakestra CLI on any machine and manage your Oakestra cluster remotely. Check [our CLI wiki](../../deploy-app/deploy-cli/).
 {{< /tab >}}
 {{< tab "Use the Dashboard" >}}
 
-Reach your Oakestra Dashboard at `http://<ROOT_ORCHESTRATOR_IP>`, log in and click the *Available Clusters* section.
+Reach your Oakestra Dashboard at `http://<ROOT_ORCHESTRATOR_IP>`, log in and click the _Available Clusters_ section.
 
 ![](dashboard.png)
 
@@ -43,13 +43,11 @@ Or use the Swagger API documentation available at `http://<ROOT_ORCHESTRATOR_IP>
 {{< /tab >}}
 {{< /tabs >}}
 
-
 {{< callout context="tip" title="Oakestra Addons" icon="outline/rocket" >}}
 
 Check out [addons](../../../concepts/oakestra-extensions/addons) for the Oakestra customization options!
 
 {{< /callout >}}
-
 
 ## Check the installed components
 
@@ -84,7 +82,6 @@ oak doctor worker
 This will show you if the NodeEngine and NetManager components, the living soul of your worker node, are up and running as expected.
 {{< /tab >}}
 {{< /tabs >}}
-
 
 {{< callout context="caution" title="Something is not working?" icon="outline/alert-triangle">}}
 If something is not working, please check out our [Troubleshooting Guide](../../../manuals/troubleshooting).

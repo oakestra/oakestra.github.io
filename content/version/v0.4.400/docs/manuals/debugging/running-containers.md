@@ -5,7 +5,7 @@ draft: false
 weight: 310040000
 toc: true
 seo:
-  title: "Monitoring and Debugging Options for Running Containers" 
+  title: "Monitoring and Debugging Options for Running Containers"
   description: "This guide will show you how, after a deployment, you can attatch yourself to a running container and execute commands"
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
@@ -26,7 +26,7 @@ In `containerd`, there are two key concepts:
 sudo ctr -n oakestra container ls
 ```
 
-To check all running tasks you can use the following: 
+To check all running tasks you can use the following:
 
 ```bash
 sudo ctr -n oakestra task ls
@@ -36,16 +36,17 @@ sudo ctr -n oakestra task ls
 
 To attach to a running container and execute commands inside it:
 
-
 ```bash
 sudo ctr -n oakestra task exec --exec-id tty <your task name here> <the command you wish to execute>
 ```
 
->For example, to use a shell inside the container x.y.z we can use
+> For example, to use a shell inside the container x.y.z we can use
+>
 > ```bash
 > sudo ctr -n oakestra task exec --exec-id tty x.y.z /bin/sh
 > ```
->![Screenshot 2024-06-05 at 09.47.05](running-containers-debug.png)
+>
+> ![Screenshot 2024-06-05 at 09.47.05](running-containers-debug.png)
 
 ## Where are the logfiles stored?
 
@@ -56,4 +57,3 @@ The `stdout` and `stderr` of each container or unikernel is stored under `/tmp/<
 ## What about Unikernels?
 
 You cannot attach directly to a running unikernel, but their logs are stored in the same way as containers. Check the `/tmp` directory structure as described above to access and review their logs.
-

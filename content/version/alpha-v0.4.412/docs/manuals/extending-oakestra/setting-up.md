@@ -12,22 +12,23 @@ seo:
 ---
 
 The addons system consists of three subsystems:
+
 - The addons engine
 - The addons dashboard
 - The addons marketplace
 
 The cluster and root orchestrator each deploy an instance of the:
-* Addons engine
-* Addons dashboard
+
+- Addons engine
+- Addons dashboard
 
 While sharing an instance of the addons marketplace, which is deployed at the root.
 
 {{< link-card
-  title="Addons"
-  description="Learn more about addons"
-  href="../../../concepts/oakestra-extensions/addons"
-  target="_blank"
->}}
+title="Addons"
+description="Learn more about addons"
+href="../../../concepts/oakestra-extensions/addons"
+target="\_blank" >}}
 
 ## Visiting the Dashboard
 
@@ -45,9 +46,11 @@ After starting the orchestrator the dashboard is reachable at (replace localhost
 {{< callout context="note" title="Do you prefer to use the API?" icon="outline/info-circle" >}}
 
 You can find a detailed outline of all the API endpoints at:
+
 ```bash
 <marketplace-ip>:11102/api/docs
 ```
+
 {{< /callout >}}
 
 ### Configuration
@@ -58,25 +61,29 @@ The dashboard intefaces with the addons marketplace, addons engine and the resou
 
 {{< details "Default Ports" >}}
 
-| | Root | Cluster |
-|:---| :--- | :--- |
-| Marktetplace | 11102 | - |
-| Addons Engine | 11101 | 11201 |
-| Resource Abstractor | 11011 | 11012 |
+|                     | Root  | Cluster |
+| :------------------ | :---- | :------ |
+| Marktetplace        | 11102 | -       |
+| Addons Engine       | 11101 | 11201   |
+| Resource Abstractor | 11011 | 11012   |
 
 {{< /details >}}
 
 ## Disable the Addons System
 
-To disable the addons system when deploying Oakestra components, you need to export the following *override file* before using the startup command:
+To disable the addons system when deploying Oakestra components, you need to export the following _override file_ before using the startup command:
+
 ```bash
  export OVERRIDE_FILES=override-no-addons.yaml
 ```
+
 To start a single machine root and cluster orchestrator with the addons engine and the marketplace disabled, you can use:
- ```bash
-  export OVERRIDE_FILES=override-no-addons.yaml
-  curl -sfL oakestra.io/getstarted.sh | sh - 
-  ```
+
+```bash
+ export OVERRIDE_FILES=override-no-addons.yaml
+ curl -sfL oakestra.io/getstarted.sh | sh -
+```
+
 {{< callout context="tip" title="Did you know?" icon="outline/rocket" >}}
-The environment variable `OVERRIDE_FILES` is used at Oakestra startup to customize the services composing the control plane. These files are simple docker compose files integrated into Oakestra via the  [override](https://docs.docker.com/compose/how-tos/multiple-compose-files/merge/) functionality.
+The environment variable `OVERRIDE_FILES` is used at Oakestra startup to customize the services composing the control plane. These files are simple docker compose files integrated into Oakestra via the [override](https://docs.docker.com/compose/how-tos/multiple-compose-files/merge/) functionality.
 {{< /callout >}}

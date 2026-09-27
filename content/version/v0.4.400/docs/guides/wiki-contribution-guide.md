@@ -28,12 +28,14 @@ The color palette used in the Oakestra documentation is as follows:
 ![OakGreen](wiki-contribution-guide/oak-green.png) Oakestra Tree Green: R:125 B:195 G:132 #7DC384
 
 ## Drawio files in the docs
+
 For each picture `xyz.png`/`xyz.svg` in the wiki we MUST have a `xyz.drawio` source file. This ensures pictures versioning and source availability. In every folder containing a picture we MUST always be able to find its source file.
 
-- These files should be kept up to date. 
-- Make sure to always have the CMU Sans Serif font installed on your machine otherwise, figures might not be rendered correctly. 
+- These files should be kept up to date.
+- Make sure to always have the CMU Sans Serif font installed on your machine otherwise, figures might not be rendered correctly.
 
 ### Working with SVGs
+
 Please follow this structure to ensure uniformity.
 
 Let's say you are working on `my-wiki.md` located in `content/docs/concepts/`.
@@ -44,6 +46,7 @@ Export your figure as SVG in dark and light mode with transparent background.
 Make sure to use the font from above.
 
 The final file structure has to look like this:
+
 ```
 .
 ├── ...
@@ -56,6 +59,7 @@ The final file structure has to look like this:
 ```
 
 You can use this SVG in your `.md` file like this:
+
 ```
 {{<svg "my-fig">}}
 ```
@@ -63,6 +67,7 @@ You can use this SVG in your `.md` file like this:
 Let`s say you have many figures in your doc and the svgs folder gets crowded because it gets shared with other pages in the same directory.
 
 Do this:
+
 ```
 .
 ├── ...
@@ -79,13 +84,14 @@ Do this:
             ├── dark.svg
             └── light.svg
 ```
+
 ```
 {{<svg "my-wiki/my-fig-1">}}
 ...
 {{<svg "my-wiki/my-fig-2">}}
 ```
 
-## Documentation versioning 
+## Documentation versioning
 
 To archive the current version of the docs you need to do the following:
 
@@ -108,6 +114,7 @@ To archive the current version of the docs you need to do the following:
 4. Update the versions selector `layouts/partials/versions.html` with the new version.
 
 E.g. append the following code to the versions selector:
+
 ```
 <li><a class="dropdown-item " href="/version/0.4.400/docs/getstarted/get-started-cluster/">v0.4.400</a></li>
 ```

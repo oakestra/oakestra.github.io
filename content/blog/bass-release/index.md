@@ -19,7 +19,7 @@ seo:
 asciinema: true
 ---
 
-We are proud to announce that **Oakestra v0.4.4 (codename: Bass 🎸)** is here! *This is the second major release for Oakestra and it packs several goodies!*
+We are proud to announce that **Oakestra v0.4.4 (codename: Bass 🎸)** is here! _This is the second major release for Oakestra and it packs several goodies!_
 
 Here are the new features introduced in this version!
 
@@ -67,7 +67,7 @@ Learn how to use the `oak-cli` to create your first Oakestra application [here](
 
 ## Federated Learning Support
 
-Embracing the future of machine learning, our new FLOps addon introduces robust federated learning capabilities into Oakestra. Wondering *"What is Federated Learning?"* —check out our [brief explanation](https://www.oakestra.io/docs/concepts/flops/fl-basics/).
+Embracing the future of machine learning, our new FLOps addon introduces robust federated learning capabilities into Oakestra. Wondering _"What is Federated Learning?"_ —check out our [brief explanation](https://www.oakestra.io/docs/concepts/flops/fl-basics/).
 
 {{<svg "flops_overview">}}
 
@@ -105,7 +105,7 @@ Extend Oakestra functionality by defining your own addons. Learn more in our [de
 
 ## Lifecycle Hooks
 
-With the Bass release, Oakestra introduces lifecycle hooks. Hooks allow developers to register, listen to, and react on lifecycle events of your applications. We now support *Creation*, *Update*, and *Deletion* hooks. Synchronous hooks block operations until a response is received, while asynchronous hooks notify subscribers without delay.
+With the Bass release, Oakestra introduces lifecycle hooks. Hooks allow developers to register, listen to, and react on lifecycle events of your applications. We now support _Creation_, _Update_, and _Deletion_ hooks. Synchronous hooks block operations until a response is received, while asynchronous hooks notify subscribers without delay.
 
 {{<svg "hooks">}}
 
@@ -120,7 +120,7 @@ For more details, visit our [wiki](https://www.oakestra.io/docs/concepts/oakestr
 For advanced use cases requiring elevated system access, the new privileged containers feature is a game changer. By setting the `"privileged": true` flag in your SLA microservice description, you can deploy containers with full system privileges—ideal for scenarios demanding direct hardware access or specialized kernel operations. This feature remains securely disabled by default and is enabled only when explicitly needed.
 
 {{< callout context="caution" title="Important" icon="outline/alert-triangle" >}}
-Privileged containers unlock enhanced functionality but must be used with care due to their elevated permissions. 
+Privileged containers unlock enhanced functionality but must be used with care due to their elevated permissions.
 {{< /callout >}}
 
 ## Fixes and Improvements
@@ -165,8 +165,8 @@ We’re expanding our social media presence—join us on X (formerly Twitter) an
 
 ### Oakestra Developer and Maintainer Meetups
 
-The Oakestra community continues to grow with in-person meetups, hackathons, and social gatherings.  
-  
+The Oakestra community continues to grow with in-person meetups, hackathons, and social gatherings.
+
 ![office-meetup](oakestra-office-meetup.jpg)
 
 Oakestra was also present at the Oktoberfest in Munich 🍻:

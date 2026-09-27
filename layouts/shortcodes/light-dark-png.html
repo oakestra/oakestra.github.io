@@ -1,9 +1,4 @@
-{{ $pngName := index .Params 0 }}
-{{ $caption := index .Params 1 }}
-{{ $pageDir := .Page.File.Dir }}
-
-{{ $lightPngPath := printf "%simages/%s/light.png" $pageDir $pngName }}
-{{ $darkPngPath := printf "%simages/%s/dark.png" $pageDir $pngName }}
+{{ $pngName := index .Params 0 }} {{ $caption := index .Params 1 }} {{ $pageDir := .Page.File.Dir }} {{ $lightPngPath := printf "%simages/%s/light.png" $pageDir $pngName }} {{ $darkPngPath := printf "%simages/%s/dark.png" $pageDir $pngName }}
 
 <style>
     .constrain-image {
@@ -14,14 +9,14 @@
 
 <div>
     <figure class="svg-lightmode constrain-image">
-        <img src="{{ $lightPngPath | relURL }}" alt="light">
+        <img src="{{ $lightPngPath | relURL }}" alt="light" />
     </figure>
 
     <figure class="svg-darkmode constrain-image">
-        <img src="{{ $darkPngPath | relURL }}" alt="dark">
+        <img src="{{ $darkPngPath | relURL }}" alt="dark" />
     </figure>
     {{ if $caption }}
-        <figcaption>{{ $caption | markdownify }}</figcaption>
-        <br>
+    <figcaption>{{ $caption | markdownify }}</figcaption>
+    <br />
     {{ end }}
 </div>

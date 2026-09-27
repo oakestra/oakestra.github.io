@@ -17,9 +17,8 @@ Git pipelines often fail because of linting issues, which then requires another 
 
 Git hooks are not shared across the repo, and it's only available locally. This means every developer will need to implement their own hooks. Hence we use a tool called `pre-commit`. Through this tool, developers define a configuration file that is commited to the repository, ensuring that all contributors have access to the same hook configurations.
 
-*Note that the tool name, `pre-commit`, is misleading as it implies it only provides pre-commit hooks, however it also provides other stages/hooks such as `pre-push`.*
+_Note that the tool name, `pre-commit`, is misleading as it implies it only provides pre-commit hooks, however it also provides other stages/hooks such as `pre-push`._
 More information on the tool can be found [here](https://pre-commit.com/)
-
 
 ## Setting Up:
 
@@ -32,14 +31,15 @@ brew install pre-commit
 ```
 
 2. **Install the git hooks scripts**:
-In the Oakestra repo, there is a file called `.pre-commit-config.yaml` containing git hooks. They can be installed by running:
+   In the Oakestra repo, there is a file called `.pre-commit-config.yaml` containing git hooks. They can be installed by running:
+
 ```sh
 pre-commit install --hook-type pre-push
 ```
+
 Note: `--hook-type` specifies the the type of hook. In our case we want to do the checks before pushing to remote repo. Our team felt that git hook type `pre-push` offers a good compromise, where developers just want to commit anyways but not yet push and just fix the linting issues later. With `pre-push` hook users avoid force pushing and can just squash their changes locally and do a normal push.
 
 For more information on how to configure this file visit the [official website](https://pre-commit.com/) of the tool.
-
 
 ## Contributing Code
 

@@ -1,21 +1,12 @@
 {{ define "main" }}
 <!-- LOCAL HOME.HTML -->
 <section class="section container-fluid mt-n3 pb-3">
-  <div class="row justify-content-center">
-    <div class="col-lg-12 col-xl-12 text-center">
-      {{ .Content }}
+    <div class="row justify-content-center">
+        <div class="col-lg-12 col-xl-12 text-center">{{ .Content }}</div>
     </div>
-  </div>
 </section>
-{{ end }}
-
-{{ define "sidebar-prefooter" }}
-{{ if site.Params.doks.backgroundDots -}}
+{{ end }} {{ define "sidebar-prefooter" }} {{ if site.Params.doks.backgroundDots -}}
 <div class="d-flex justify-content-start">
-  <div class="bg-dots"></div>
+    <div class="bg-dots"></div>
 </div>
-{{ end -}}
-{{ end }}
-
-{{ define "sidebar-footer" }}
-{{ end }}
+{{ end -}} {{ end }} {{ define "sidebar-footer" }} {{ end }}

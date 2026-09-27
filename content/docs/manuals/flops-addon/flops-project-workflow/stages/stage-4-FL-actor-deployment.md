@@ -18,18 +18,17 @@ The aggregator image has a superset of the learner image dependencies, so pullin
 
 {{< callout context="tip" title="*Aggregator Size*" icon="outline/weight" >}}
 
-  The aggregator is the prime target for tracking results and performing other MLOps tasks, including logging the trained model with its dependencies.
-  To do so, the aggregator keeps a copy of the model that it updates to create the global FL model.
-  It needs to be capable of setting and extracting this model's parameters.
-  For this, the aggregator is calling the user-defined get/set model parameter methods, which rely on the model ML dependencies.
-  That is why the aggregator requires the same dependencies as the learners even though it is not training itself.
-  In addition, the aggregator needs mlflow and related dependencies to perform MLOps tasks.
+The aggregator is the prime target for tracking results and performing other MLOps tasks, including logging the trained model with its dependencies.
+To do so, the aggregator keeps a copy of the model that it updates to create the global FL model.
+It needs to be capable of setting and extracting this model's parameters.
+For this, the aggregator is calling the user-defined get/set model parameter methods, which rely on the model ML dependencies.
+That is why the aggregator requires the same dependencies as the learners even though it is not training itself.
+In addition, the aggregator needs mlflow and related dependencies to perform MLOps tasks.
 
 {{< /callout >}}
 
 Each actor service needs some time to spin up properly and connect to one another.
 The learner services need to fetch and process their local training data before establishing a connection with their aggregator.
-
 
 ```bash
 ╭──────────────────────┬──────────────────────────┬────────────────┬──────────────────┬──────────────────────────╮

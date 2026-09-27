@@ -27,18 +27,18 @@ oak uninstall worker && oak uninstall cluster && oak uninstall root
 {{< /tab >}}
 {{< tab "Worker Node" >}}
 
-
 In each worker node machine run:
+
 ```bash
 oak worker stop
 oak uninstall worker
 ```
 
-
 {{< /tab >}}
 {{< tab "Cluster Orchestrator" >}}
 
 In each cluster orchestrator machine run:
+
 ```bash
 oak uninstall cluster
 ```
@@ -47,17 +47,21 @@ oak uninstall cluster
 {{< tab "Root Orchestrator" >}}
 
 In your root orchestrator machine run:
+
 ```bash
 oak uninstall root
 ```
+
 {{< /tab >}}
 {{< tab "Cleanup" >}}
 
 Bruteforce removal of all Oakestra containers, volumes, images, and worker binaries.
 In each machine, run:
+
 ```bash
 oak uninstall cleanup
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -76,14 +80,17 @@ Then, how can you update your Oakestra to the latest version?
 
 First you need to uninstall the old Oakestra components
 On each worker node run:
+
 ```bash
 sudo NodeEngine stop
 curl -sfL oakestra.io/oak.sh | bash
 oak uninstall worker
 ```
+
 And follow the on-screen instructions
 
 On each **cluster** orchestrator and **root** orchestrator node run:
+
 ```bash
 curl -sfL oakestra.io/oak.sh | bash
 oak uninstall cleanup #this command will cleanup the previous oakestra installation

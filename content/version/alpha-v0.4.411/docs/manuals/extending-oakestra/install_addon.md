@@ -21,15 +21,19 @@ Installing an addon is as simple as pressing the button.
 
 {{< details "With the API" >}}
 To install an addon, send a `POST` request to the addons engine - `/api/v1/addons`. The request body should have the following form:
+
 ```json
 {
   "marketplace_id": "{addon_marketplace_id}"
 }
 ```
+
 {{< /details >}}
 
 ## Verify Installation
+
 The Addons Manager will:
+
 - Retrieve the addon from the marketplace.
 - Pull the Docker image associated with the addon.
 - Deploy and integrate the addon into the Oakestra environment.
@@ -45,7 +49,6 @@ Once the addon is deployed it will switch to **active**
 You can verify the installation by checking the addon’s status using the addons manager API - `[GET] /api/v1/addons/{addons_id}`
 {{< /details >}}
 
-
 ## Uninstall an Addon
 
 To uninstall an addon, you must first disable it. One it has finished **disabling** you can select "Uninstall".
@@ -55,5 +58,3 @@ To uninstall an addon, you must first disable it. One it has finished **disablin
 {{< details "With the API" >}}
 To uninstall an addon send a `DELETE` request to the addons manager - `/api/v1/addons/{addons_id}`
 {{< /details >}}
-
-

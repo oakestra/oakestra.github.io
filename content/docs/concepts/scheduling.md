@@ -13,7 +13,7 @@ seo:
 
 ## How does the scheduling work in Oakestra?
 
-Oakestra's architecture consists of a two-tier design where resources are organized into clusters. Each cluster represents an aggregation of all its resources. When a job is submitted, it is first scheduled to a cluster. The cluster's scheduler then determines the target worker node to execute the job.  
+Oakestra's architecture consists of a two-tier design where resources are organized into clusters. Each cluster represents an aggregation of all its resources. When a job is submitted, it is first scheduled to a cluster. The cluster's scheduler then determines the target worker node to execute the job.
 
 {{< svg "scheduling/cluster-worker-selection" >}}
 
@@ -42,9 +42,9 @@ The Scheduler supports linking in different scheduling algorithms through the Go
 criteria or consider different resources.
 
 Scheduling algorithms typically evaluate the available candidates in two passes:
-* **Filtering Stage:** All candidates are filtered with respect to the minimum service requirements and constraints
-* **Evaluation Stage:** The remaining candidates are sorted according to an optimisation criterium. The best candidate is returned
 
+- **Filtering Stage:** All candidates are filtered with respect to the minimum service requirements and constraints
+- **Evaluation Stage:** The remaining candidates are sorted according to an optimisation criterium. The best candidate is returned
 
 ### Interested Resources
 
@@ -74,6 +74,7 @@ For example, the following constraint:
             }
           ]
 ```
+
 limits the deployment to the node `xavier1` of the cluster `cluster1`. While the following constraint:
 
 ```json
@@ -84,4 +85,5 @@ limits the deployment to the node `xavier1` of the cluster `cluster1`. While the
             }
           ]
 ```
+
 limits the deployment to all worker nodes within the cluster `gpu`.

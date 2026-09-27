@@ -24,31 +24,31 @@ We are proud of the passion, respect, and insights shared weekly during our main
 
 Therefore, let's take a moment to congratulate all the amazing contributors to this project:
 
->[Luca G. Pinta](https://github.com/TheDarkPyotr),
->[Mahmoud ElKodary](https://github.com/melkodary),
->[Ben Julian Riegel](https://github.com/MrSarius),
->[Tomas Agata](https://github.com/tomasagata),
->[Patrick Sabanic](https://github.com/sabtf),
->[Oliver Halu](https://github.com/oliverhalu),
->[Jackob Kempter](https://github.com/JakobKe),
->[Ivo Raimondi](https://github.com/HMF2475),
->[Alexander Malyuk](https://github.com/Malyuk-A),
->[Simon Zelenski](https://github.com/smnzlnsk),
->[Mehdi Yosofie](https://github.com/meeeehdiiii),
->[Daniel Mair](https://github.com/danimair9),
->[Philipp Kleber](https://github.com/axiphi),
->[Matthew Humphreys](https://github.com/Mjaethers),
->[Giovanni Bartolomeo](https://github.com/giobart),
->[Jörg Ott](),
->[Nitinder Mohan](https://github.com/nitindermohan)
-
+> [Luca G. Pinta](https://github.com/TheDarkPyotr),
+> [Mahmoud ElKodary](https://github.com/melkodary),
+> [Ben Julian Riegel](https://github.com/MrSarius),
+> [Tomas Agata](https://github.com/tomasagata),
+> [Patrick Sabanic](https://github.com/sabtf),
+> [Oliver Halu](https://github.com/oliverhalu),
+> [Jackob Kempter](https://github.com/JakobKe),
+> [Ivo Raimondi](https://github.com/HMF2475),
+> [Alexander Malyuk](https://github.com/Malyuk-A),
+> [Simon Zelenski](https://github.com/smnzlnsk),
+> [Mehdi Yosofie](https://github.com/meeeehdiiii),
+> [Daniel Mair](https://github.com/danimair9),
+> [Philipp Kleber](https://github.com/axiphi),
+> [Matthew Humphreys](https://github.com/Mjaethers),
+> [Giovanni Bartolomeo](https://github.com/giobart),
+> [Jörg Ott](),
+> [Nitinder Mohan](https://github.com/nitindermohan)
 
 # Our very first community award 🥇
 
 This year, for the very first time, we also wanted to celebrate someone who has distinguished themselves from an already amazing team of people. In particular, we want to show a small token of appreciation to a person who has substantially impacted the community with their ideas.
 
 ### Thank you [Alexander Malyuk](https://github.com/Malyuk-A) for your incredible contribution to the Oakestra Community 🎉
-![](award.png) 
+
+![](award.png)
 
 We decided to give this recognition to [Alex](https://github.com/Malyuk-A) for his continuous effort in providing valuable insights and suggestions. He also radically changed the way weekly meetings are organized, and brought countless quality of life improvements.
 

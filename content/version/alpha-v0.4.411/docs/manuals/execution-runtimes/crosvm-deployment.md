@@ -61,14 +61,14 @@ RUN systemctl enable my-app
 title="Looking for a real-world example?"
 description="See the Wolf cloud gaming image for a complete example of a crosvm-compatible image, including the base image Dockerfile."
 href="https://github.com/axiphi/oakestra-wolf"
-target="_blank"
->}}
+target="\_blank" >}}
 
 ### Creating a Service Deployment Descriptor
 
 The crosvm runtime integrates with the standard Oakestra SLA format.
 
 {{< details "Example SLA for a VM-based service" open >}}
+
 ```json {title="crosvm-service.json"}
 {
   "sla_version": "v2.0",
@@ -95,9 +95,7 @@ The crosvm runtime integrates with the standard Oakestra SLA format.
           "image": "containers-docker://registry.example.com/my-app:latest",
           "port": "8080:8080",
           "arch": ["amd64"],
-          "env": [
-            "MY_CONFIG_VALUE=hello"
-          ],
+          "env": ["MY_CONFIG_VALUE=hello"],
           "state": "",
           "added_files": []
         }
@@ -106,6 +104,7 @@ The crosvm runtime integrates with the standard Oakestra SLA format.
   ]
 }
 ```
+
 {{< /details >}}
 
 **Key fields to note:**
@@ -141,6 +140,7 @@ that compiles and packages them for you.
 **1: Run the build script**
 
 From the directory containing `build.sh`, run it with no arguments:
+
 ```bash
 ./build.sh
 ```

@@ -9,4 +9,3 @@ hide_summary: true
 sidebar:
   collapsed: true
 ---
-

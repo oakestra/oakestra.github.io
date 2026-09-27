@@ -89,10 +89,10 @@ sender receives the response.
 {{< /callout >}}
 
 {{< callout context="caution" title="Why Service IPs? Why do we need multiple balancing policies?" icon="outline/help-circle" >}}
-At the Edge, Oakestra's net component enables flexibility in the way developers can balance the traffic without 
+At the Edge, Oakestra's net component enables flexibility in the way developers can balance the traffic without
 the requirement of adapting the code. Just by using a Service IP instead of a regular IP, a developer can achieve
 balancing by using any protocol based on UDP or TCP and can also customize the balancing behavior of each request
-accordingly to their need. Edge computing brings resources closer to the users, so one might need to forward some 
+accordingly to their need. Edge computing brings resources closer to the users, so one might need to forward some
 traffic with very low latency using Closest balancing policy, or one might just want to evenly balance another
 endpoint with Round Robin policy.
 {{< /callout >}}

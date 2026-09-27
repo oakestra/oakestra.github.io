@@ -18,7 +18,7 @@ seo:
   noindex: false # false (default) or true
 ---
 
-We are proud to announce that Oakestra v0.4.301 (codename: **Accordion** 🪗) is here! *This is also the first major release for Oakestra and marks the beginning of a periodic release cycle.*
+We are proud to announce that Oakestra v0.4.301 (codename: **Accordion** 🪗) is here! _This is also the first major release for Oakestra and marks the beginning of a periodic release cycle._
 
 Here are the new features introduced in this version!
 
@@ -50,28 +50,26 @@ Try out this deployment descriptor to deploy your first [unikraft](unikraft.org)
 
 ```json
 {
-      "microservices": [
-        {
-          "microserviceID": "",
-          "microservice_name": "nginx",
-          "microservice_namespace": "nginx",
-          "virtualization": "unikernel",
-          "cmd": [""],
-          "memory": 400,
-          "vcpus": 1,
-          "vgpus": 0,
-          "vtpus": 0,
-          "code": "https://github.com/oakestra/oakestra/releases/download/alpha-v0.4.301/nginx_amd64.tar.gz",
-          "arch": [
-            "amd64"
-          ],
-          "state": "",
-          "port": "80:80",
-          "addresses": {},
-          "added_files": [],
-          "constraints": []
-        }
-    ]
+  "microservices": [
+    {
+      "microserviceID": "",
+      "microservice_name": "nginx",
+      "microservice_namespace": "nginx",
+      "virtualization": "unikernel",
+      "cmd": [""],
+      "memory": 400,
+      "vcpus": 1,
+      "vgpus": 0,
+      "vtpus": 0,
+      "code": "https://github.com/oakestra/oakestra/releases/download/alpha-v0.4.301/nginx_amd64.tar.gz",
+      "arch": ["amd64"],
+      "state": "",
+      "port": "80:80",
+      "addresses": {},
+      "added_files": [],
+      "constraints": []
+    }
+  ]
 }
 ```
 
@@ -82,7 +80,6 @@ To enable a unikraft capable worker node in your cluster, you simply need to:
 - Run your node engine as usual but using the `-u=true`. E.g., `sudo NodeEngine -n 6000 -p 10100 -a <Cluster Orchestrator IP Address> -u=true`
 
 {{< /callout >}}
-
 
 A general unikraft unikernel tar file should be composed as follows:
 
@@ -101,27 +98,27 @@ To provision a round robin IPv6 address to your service you can use the `rr_ip_v
 
 ```json
 {
-    "microserviceID": "",
-    "microservice_name": "nginx",
-    "microservice_namespace": "test",
-    "virtualization": "container",
-    "cmd": [],
-    "memory": 100,
-    "vcpus": 1,
-    "vgpus": 0,
-    "vtpus": 0,
-    "bandwidth_in": 0,
-    "bandwidth_out": 0,
-    "storage": 0,
-    "code": "docker.io/library/nginx:latest",
-    "state": "",
-    "port": "",
-    "addresses": {
-        "rr_ip": "10.30.55.55",
-        "rr_ip_v6": "fdff:2000::55:55"
-    },
-    "added_files": [],
-    "constraints": []
+  "microserviceID": "",
+  "microservice_name": "nginx",
+  "microservice_namespace": "test",
+  "virtualization": "container",
+  "cmd": [],
+  "memory": 100,
+  "vcpus": 1,
+  "vgpus": 0,
+  "vtpus": 0,
+  "bandwidth_in": 0,
+  "bandwidth_out": 0,
+  "storage": 0,
+  "code": "docker.io/library/nginx:latest",
+  "state": "",
+  "port": "",
+  "addresses": {
+    "rr_ip": "10.30.55.55",
+    "rr_ip_v6": "fdff:2000::55:55"
+  },
+  "added_files": [],
+  "constraints": []
 }
 ```
 
@@ -141,10 +138,11 @@ The service status page of your dashboard now provides the `stdout`and `stderr` 
 Your root orchestrator and cluster orchestrator now expose a Grafana dashboard showing the current control plane status, logs, and alerts.
 
 Access it via:
+
 - From the frontend click the `Infrastructure Dashboard` button
 - Or directly at
-    - `<root_orchestrator_ip>:3000` for the root dashboard
-    - `<cluster_orchestrator_ip>:3001` for the cluster dashboard
+  - `<root_orchestrator_ip>:3000` for the root dashboard
+  - `<cluster_orchestrator_ip>:3001` for the cluster dashboard
 
 {{< callout context="note" title="Note" icon="outline/info-circle" >}}
 1-DOC deployments will only expose a unique root-cluster dashboard at `<root_orchestrator_ip>:3000`
@@ -229,7 +227,7 @@ Oakestra developers are hard at work on the next release, which will include sev
 - Gateway component for external workloads
 - K8s cluster integration
 - ... and more
-{{< /callout >}}
+  {{< /callout >}}
 
 #### Acknowledgments:
 

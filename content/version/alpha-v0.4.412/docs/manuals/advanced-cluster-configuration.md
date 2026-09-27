@@ -11,7 +11,6 @@ seo:
   noindex: false # false (default) or true
 ---
 
-
 **Root Orchestrator Environment Variables**
 
 In a complex network environment, you might want to reach your Root Orchestrator from a specific IP. You can customize the default IP by exporting the following environment variable before the Root Orchestrator installation command.
@@ -37,12 +36,12 @@ The Root Orchestrator has to be reachable by the Cluster Orchestrator. When not 
 address!
 {{< /callout >}}
 
-
 ### Choose a Different Installation Version
 
 By default, these scripts will use the latest version of Oakestra from the latest stable release. However, this can be changed by appending a specific Oakestra version for each component.
 
 E.g.
+
 ```bash
 oak install root alpha-v0.4.411 #this installs the alpha-v0.4.411 of oakestra root
 ```
@@ -60,51 +59,56 @@ Oakestra has many features that have not yet been released. You can check out wh
 Since Oakestra uses docker-compose to build the components, we can use overrides to fine-tune our build environment.
 
 To use the override files, specify them in a comma-separated list by setting the `OVERRIDE_FILES` env variable <u>before running the installation scripts</u>.
+
 ```bash
 export OVERRIDE_FILES=override-ipv6-enabled.yml
 ```
 
 {{< details "*Click to see an overview of Root Orchestrator overrides*" >}}
-* `override-no-addons.yml`: Disable the [addons](../extending-oakestra/create_addon/) engine and marketplace.
-* `override-no-dashboard.yml`: Do not deploy the dashboard.
-* `override-no-network.yml`: Exclude network components.
-* `override-ipv6-enabled.yml`: Enable IPv6 for container deployments.
-* `override-no-observe.yml`: Disable the [observability stack](https://github.com/oakestra/oakestra/blob/7107115a747cf83268aea592df1478cd20933907/root_orchestrator/config/README.md).
-{{< /details >}}
+
+- `override-no-addons.yml`: Disable the [addons](../extending-oakestra/create_addon/) engine and marketplace.
+- `override-no-dashboard.yml`: Do not deploy the dashboard.
+- `override-no-network.yml`: Exclude network components.
+- `override-ipv6-enabled.yml`: Enable IPv6 for container deployments.
+- `override-no-observe.yml`: Disable the [observability stack](https://github.com/oakestra/oakestra/blob/7107115a747cf83268aea592df1478cd20933907/root_orchestrator/config/README.md).
+  {{< /details >}}
 
 {{< details "*Click to see an overview of Cluster Orchestrator overrides*" >}}
-* `override-ipv6-enabled.yml`: Enable IPv6 for container deployments.
-* `override-no-observe.yml`: Disable the [observability stack](https://github.com/oakestra/oakestra/blob/7107115a747cf83268aea592df1478cd20933907/root_orchestrator/config/README.md).
-* `override-mosquitto-auth.yml`: Enable [MQTT Authentication](../networking-internals/mqtt-authentication/).
-* `override-no-network.yml`: Exclude network components.
-* `override-no-observe.yml`: Disable the [observability stack](https://github.com/oakestra/oakestra/blob/7107115a747cf83268aea592df1478cd20933907/root_orchestrator/config/README.md).
-{{< /details >}}
 
+- `override-ipv6-enabled.yml`: Enable IPv6 for container deployments.
+- `override-no-observe.yml`: Disable the [observability stack](https://github.com/oakestra/oakestra/blob/7107115a747cf83268aea592df1478cd20933907/root_orchestrator/config/README.md).
+- `override-mosquitto-auth.yml`: Enable [MQTT Authentication](../networking-internals/mqtt-authentication/).
+- `override-no-network.yml`: Exclude network components.
+- `override-no-observe.yml`: Disable the [observability stack](https://github.com/oakestra/oakestra/blob/7107115a747cf83268aea592df1478cd20933907/root_orchestrator/config/README.md).
+  {{< /details >}}
 
 ### Advanced Network Configuration
 
 If you run into a restricted network (e.g., on a cloud VM), you need to configure the firewall rules accordingly.
 
 Root:
-  - External APIs: port 10000
-  - Cluster APIs: ports 10099, 10000
+
+- External APIs: port 10000
+- Cluster APIs: ports 10099, 10000
 
 Cluster:
-  - Worker's Broker: port 10003
-  - Worker's APIs: port 10100
+
+- Worker's Broker: port 10003
+- Worker's APIs: port 10100
 
 Worker:
-  - P2P tunnel towards other workers: port 50103
 
+- P2P tunnel towards other workers: port 50103
 
 Additionally, the NetManager component, responsible for the worker nodes' P2P tunnel, must be configured. Therefore, follow these steps on every **Worker Node**:
 
-1) Shutdown your worker node components using
+1. Shutdown your worker node components using
+
 ```bash
 sudo worker stop
-````
+```
 
-2) Edit the NetManager configuration file `/etc/netmanager/netcfg.json` as follows:
+2. Edit the NetManager configuration file `/etc/netmanager/netcfg.json` as follows:
 
 ```json
 {
@@ -118,7 +122,7 @@ sudo worker stop
 
 N.b. leave ClusterUrl to `0.0.0.0`, this field is populated using the NodeEngine data.
 
-3) If necessary, you can customize the NodeEngine cluster configuration
+3. If necessary, you can customize the NodeEngine cluster configuration
 
 use `oak worker config cluster` command to configure a custom cluster URL.
 
@@ -132,12 +136,13 @@ Flags:
 ```
 
 Example:
+
 ```bash
 oak worker config cluster 192.168.10.1
 ```
 
-4) Restart the NodeEngine
+4. Restart the NodeEngine
+
 ```bash
 oak worker -d
 ```
-

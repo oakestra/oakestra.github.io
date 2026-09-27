@@ -1,610 +1,780 @@
 {{ define "main" }}
 <style>
-  /* ── Scoped to this page only ── */
-  :root {
-    --oi-gold:  #f5c842;
-    --oi-amber: #e07b20;
-    --oi-rust:  #b84a00;
-    --oi-cream: #fdf6e3;
-    --oi-dark:  #0e0b07;
-    --oi-dark2: #1a1408;
-    --oi-dark3: #2a1f0d;
-    --oi-muted: #aca296;
-    --oi-glow:  rgba(245, 200, 66, 0.22);
-  }
+    /* ── Scoped to this page only ── */
+    :root {
+        --oi-gold: #f5c842;
+        --oi-amber: #e07b20;
+        --oi-rust: #b84a00;
+        --oi-cream: #fdf6e3;
+        --oi-dark: #0e0b07;
+        --oi-dark2: #1a1408;
+        --oi-dark3: #2a1f0d;
+        --oi-muted: #aca296;
+        --oi-glow: rgba(245, 200, 66, 0.22);
+    }
 
-  .oak-instruments {
-    color: var(--oi-cream);
-    font-family: 'Georgia', 'Times New Roman', serif;
-    min-height: 80vh;
-    position: relative;
-    overflow: hidden;
-    padding: 3rem 1.5rem 8rem;
-  }
+    .oak-instruments {
+        color: var(--oi-cream);
+        font-family: 'Georgia', 'Times New Roman', serif;
+        min-height: 80vh;
+        position: relative;
+        overflow: hidden;
+        padding: 3rem 1.5rem 8rem;
+    }
 
-  .oak-instruments::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse at 60% 30%, rgba(200,100,0,0.07) 0%, transparent 30%),
-      radial-gradient(ellipse at 80% 70%, rgba(245,200,66,0.05) 0%, transparent 55%),
-      radial-gradient(ellipse at 50% 10%, rgba(120,60,0,0.1) 0%, transparent 40%);
-    pointer-events: none;
-  }
+    .oak-instruments::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 60% 30%, rgba(200, 100, 0, 0.07) 0%, transparent 30%), radial-gradient(ellipse at 80% 70%, rgba(245, 200, 66, 0.05) 0%, transparent 55%), radial-gradient(ellipse at 50% 10%, rgba(120, 60, 0, 0.1) 0%, transparent 40%);
+        pointer-events: none;
+    }
 
-  .oi-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 720px;
-    margin: 0 auto;
-  }
+    .oi-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 720px;
+        margin: 0 auto;
+    }
 
-  /* ── Header ── */
-  .oi-header {
-    text-align: center;
-    padding: 2rem 0 1rem;
-  }
+    /* ── Header ── */
+    .oi-header {
+        text-align: center;
+        padding: 2rem 0 1rem;
+    }
 
-  .oi-secret-badge {
-    display: inline-block;
-    font-family: 'Courier New', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--oi-amber);
-    border: 1px solid var(--oi-amber);
-    padding: 0.25em 0.9em;
-    border-radius: 2em;
-    margin-bottom: 1.6rem;
-    animation: oi-pulse-badge 3s ease-in-out infinite;
-  }
+    .oi-secret-badge {
+        display: inline-block;
+        font-family: 'Courier New', monospace;
+        font-size: 0.8rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--oi-amber);
+        border: 1px solid var(--oi-amber);
+        padding: 0.25em 0.9em;
+        border-radius: 2em;
+        margin-bottom: 1.6rem;
+        animation: oi-pulse-badge 3s ease-in-out infinite;
+    }
 
-  @keyframes oi-pulse-badge {
-    0%, 100% { opacity: 0.7; }
-    50%       { opacity: 1; box-shadow: 0 0 12px var(--oi-amber); }
-  }
+    @keyframes oi-pulse-badge {
+        0%,
+        100% {
+            opacity: 0.7;
+        }
+        50% {
+            opacity: 1;
+            box-shadow: 0 0 12px var(--oi-amber);
+        }
+    }
 
-  .oi-header h1 {
-    font-size: clamp(2rem, 6vw, 3.2rem);
-    font-weight: 700;
-    line-height: 1.15;
-    background: linear-gradient(135deg, var(--oi-gold) 0%, var(--oi-amber) 50%, var(--oi-rust) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -0.01em;
-    margin-bottom: 0.6rem;
-    filter: drop-shadow(0 2px 12px rgba(245,200,66,0.3));
-  }
+    .oi-header h1 {
+        font-size: clamp(2rem, 6vw, 3.2rem);
+        font-weight: 700;
+        line-height: 1.15;
+        background: linear-gradient(135deg, var(--oi-gold) 0%, var(--oi-amber) 50%, var(--oi-rust) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -0.01em;
+        margin-bottom: 0.6rem;
+        filter: drop-shadow(0 2px 12px rgba(245, 200, 66, 0.3));
+    }
 
-  .oi-subtitle {
-    color: var(--oi-muted);
-    font-style: italic;
-    font-size: 1.05rem;
-  }
+    .oi-subtitle {
+        color: var(--oi-muted);
+        font-style: italic;
+        font-size: 1.05rem;
+    }
 
-  /* ── Divider ── */
-  .oi-divider {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 2.5rem 0;
-  }
-  .oi-divider::before, .oi-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--oi-amber), transparent);
-  }
-  .oi-divider-icon {
-    font-size: 1.4rem;
-    animation: oi-spin 8s linear infinite;
-  }
-  @keyframes oi-spin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-  }
+    /* ── Divider ── */
+    .oi-divider {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 2.5rem 0;
+    }
+    .oi-divider::before,
+    .oi-divider::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--oi-amber), transparent);
+    }
+    .oi-divider-icon {
+        font-size: 1.4rem;
+        animation: oi-spin 8s linear infinite;
+    }
+    @keyframes oi-spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
 
-  /* ── Instruments list ── */
-  .oi-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    padding: 0;
-    margin: 0 0 2.5rem;
-  }
+    /* ── Instruments list ── */
+    .oi-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 0;
+        margin: 0 0 2.5rem;
+    }
 
-  .oi-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    background: linear-gradient(135deg, var(--oi-dark2) 0%, var(--oi-dark3) 100%);
-    border: 1px solid rgba(245,200,66,0.12);
-    border-radius: 16px;
-    padding: 1.1rem 1.5rem;
-    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-    overflow: hidden;
-  }
+    .oi-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        background: linear-gradient(135deg, var(--oi-dark2) 0%, var(--oi-dark3) 100%);
+        border: 1px solid rgba(245, 200, 66, 0.12);
+        border-radius: 16px;
+        padding: 1.1rem 1.5rem;
+        transition:
+            transform 0.25s,
+            box-shadow 0.25s,
+            border-color 0.25s;
+        overflow: hidden;
+    }
 
-  .oi-item::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 16px;
-    background: radial-gradient(ellipse at 0% 50%, var(--oi-glow), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
+    .oi-item::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        background: radial-gradient(ellipse at 0% 50%, var(--oi-glow), transparent 60%);
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
 
-  .oi-item:hover { transform: translateX(6px); box-shadow: 0 4px 32px rgba(245,200,66,0.12), -4px 0 0 var(--oi-amber); border-color: rgba(245,200,66,0.3); }
-  .oi-item:hover::before { opacity: 1; }
+    .oi-item:hover {
+        transform: translateX(6px);
+        box-shadow:
+            0 4px 32px rgba(245, 200, 66, 0.12),
+            -4px 0 0 var(--oi-amber);
+        border-color: rgba(245, 200, 66, 0.3);
+    }
+    .oi-item:hover::before {
+        opacity: 1;
+    }
 
-  .oi-letter {
-    font-size: 2.6rem;
-    font-weight: 900;
-    line-height: 1;
-    min-width: 2.2rem;
-    background: linear-gradient(135deg, var(--oi-gold), var(--oi-rust));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 0 8px rgba(245,200,66,0.4));
-  }
+    .oi-letter {
+        font-size: 2.6rem;
+        font-weight: 900;
+        line-height: 1;
+        min-width: 2.2rem;
+        background: linear-gradient(135deg, var(--oi-gold), var(--oi-rust));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0 0 8px rgba(245, 200, 66, 0.4));
+    }
 
-  .oi-connector { color: var(--oi-muted); font-size: 1rem; flex-shrink: 0; }
-  .oi-body     { flex: 1; }
+    .oi-connector {
+        color: var(--oi-muted);
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+    .oi-body {
+        flex: 1;
+    }
 
-  .oi-name {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--oi-cream);
-    letter-spacing: 0.01em;
-  }
+    .oi-name {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--oi-cream);
+        letter-spacing: 0.01em;
+    }
 
-  .oi-version {
-    font-family: 'Courier New', monospace;
-    font-size: 0.72rem;
-    color: var(--oi-muted);
-    margin-top: 0.15rem;
-    letter-spacing: 0.08em;
-  }
+    .oi-version {
+        font-family: 'Courier New', monospace;
+        font-size: 0.72rem;
+        color: var(--oi-muted);
+        margin-top: 0.15rem;
+        letter-spacing: 0.08em;
+    }
 
-  .oi-emoji { font-size: 2rem; line-height: 1; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }
+    .oi-emoji {
+        font-size: 2rem;
+        line-height: 1;
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+    }
 
-  .oi-badge-released {
-    font-family: 'Courier New', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--oi-dark);
-    background: linear-gradient(90deg, var(--oi-gold), var(--oi-amber));
-    padding: 0.18em 0.7em;
-    border-radius: 2em;
-    flex-shrink: 0;
-  }
+    .oi-badge-released {
+        font-family: 'Courier New', monospace;
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--oi-dark);
+        background: linear-gradient(90deg, var(--oi-gold), var(--oi-amber));
+        padding: 0.18em 0.7em;
+        border-radius: 2em;
+        flex-shrink: 0;
+    }
 
-  .oi-badge-upcoming {
-    font-family: 'Courier New', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--oi-muted);
-    border: 1px dashed var(--oi-muted);
-    padding: 0.18em 0.7em;
-    border-radius: 2em;
-    flex-shrink: 0;
-    animation: oi-blink 2.2s step-end infinite;
-  }
+    .oi-badge-upcoming {
+        font-family: 'Courier New', monospace;
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--oi-muted);
+        border: 1px dashed var(--oi-muted);
+        padding: 0.18em 0.7em;
+        border-radius: 2em;
+        flex-shrink: 0;
+        animation: oi-blink 2.2s step-end infinite;
+    }
 
-  @keyframes oi-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+    @keyframes oi-blink {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.35;
+        }
+    }
 
-  /* ── Congrats section ── */
-  .oi-congrats {
-    text-align: center;
-    background: linear-gradient(135deg, rgba(245,200,66,0.06), rgba(200,80,0,0.06));
-    border: 1px solid rgba(245, 200, 66, 0.369);
-    border-radius: 20px;
-    padding: 2rem 1.5rem;
-    margin: 2.5rem 0;
-  }
+    /* ── Congrats section ── */
+    .oi-congrats {
+        text-align: center;
+        background: linear-gradient(135deg, rgba(245, 200, 66, 0.06), rgba(200, 80, 0, 0.06));
+        border: 1px solid rgba(245, 200, 66, 0.369);
+        border-radius: 20px;
+        padding: 2rem 1.5rem;
+        margin: 2.5rem 0;
+    }
 
-  .oi-congrats-emoji {
-    font-size: 2.8rem;
-    display: block;
-    margin-bottom: 0.8rem;
-    animation: oi-bounce 1.8s ease-in-out infinite;
-  }
+    .oi-congrats-emoji {
+        font-size: 2.8rem;
+        display: block;
+        margin-bottom: 0.8rem;
+        animation: oi-bounce 1.8s ease-in-out infinite;
+    }
 
-  @keyframes oi-bounce { 0%, 100% { transform: translateY(0); } 45% { transform: translateY(-10px); } }
+    @keyframes oi-bounce {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        45% {
+            transform: translateY(-10px);
+        }
+    }
 
-  .oi-congrats h2 { font-size: 1.5rem; color: var(--oi-gold); margin-bottom: 0.6rem; }
-  .oi-congrats p  { color: #b89a70; font-size: 1rem; line-height: 1.65; max-width: 520px; margin: 0 auto 1.4rem; }
+    .oi-congrats h2 {
+        font-size: 1.5rem;
+        color: var(--oi-gold);
+        margin-bottom: 0.6rem;
+    }
+    .oi-congrats p {
+        color: #b89a70;
+        font-size: 1rem;
+        line-height: 1.65;
+        max-width: 520px;
+        margin: 0 auto 1.4rem;
+    }
 
-  .oi-join-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--oi-gold), var(--oi-amber));
-    color: var(--oi-dark);
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.04em;
-    padding: 0.75em 2em;
-    border-radius: 3em;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 20px rgba(245,200,66,0.3);
-  }
-  .oi-join-btn:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 8px 32px rgba(245,200,66,0.45); }
+    .oi-join-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--oi-gold), var(--oi-amber));
+        color: var(--oi-dark);
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 0.04em;
+        padding: 0.75em 2em;
+        border-radius: 3em;
+        border: none;
+        cursor: pointer;
+        transition:
+            transform 0.2s,
+            box-shadow 0.2s;
+        box-shadow: 0 4px 20px rgba(245, 200, 66, 0.3);
+    }
+    .oi-join-btn:hover {
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(245, 200, 66, 0.45);
+    }
 
-  /* ── Musicians section ── */
-  .oi-musicians { margin-top: 3rem; }
+    /* ── Musicians section ── */
+    .oi-musicians {
+        margin-top: 3rem;
+    }
 
-  .oi-musicians-title {
-    text-align: center;
-    font-size: 0.75rem;
-    font-family: 'Courier New', monospace;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--oi-muted);
-    margin-bottom: 1.4rem;
-  }
+    .oi-musicians-title {
+        text-align: center;
+        font-size: 0.75rem;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--oi-muted);
+        margin-bottom: 1.4rem;
+    }
 
-  .oi-bubbles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-  }
+    .oi-bubbles {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
 
-  .oi-bubble {
-    display: block;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid rgba(245,200,66,0.25);
-    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-    text-decoration: none;
-    flex-shrink: 0;
-  }
+    .oi-bubble {
+        display: block;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid rgba(245, 200, 66, 0.25);
+        transition:
+            transform 0.2s,
+            border-color 0.2s,
+            box-shadow 0.2s;
+        cursor: pointer;
+        text-decoration: none;
+        flex-shrink: 0;
+    }
 
-  .oi-bubble:hover { transform: scale(1.15) translateY(-3px); border-color: var(--oi-amber); box-shadow: 0 4px 18px rgba(245,200,66,0.35); }
-  .oi-bubble img   { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .oi-bubble:hover {
+        transform: scale(1.15) translateY(-3px);
+        border-color: var(--oi-amber);
+        box-shadow: 0 4px 18px rgba(245, 200, 66, 0.35);
+    }
+    .oi-bubble img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
 
-  /* ── Back button (fixed bottom-right) ── */
-  .oi-back-btn {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    display: inline-block;
-    color: var(--oi-muted);
-    font-size: 0.82rem;
-    font-family: 'Georgia', serif;
-    letter-spacing: 0.04em;
-    text-decoration: none;
-    background: var(--oi-dark2);
-    border: 1px solid rgba(138,112,80,0.3);
-    padding: 0.5em 1.2em;
-    border-radius: 2em;
-    z-index: 50;
-    transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
-  }
-  .oi-back-btn:hover { color: var(--oi-cream); border-color: var(--oi-amber); box-shadow: 0 0 16px rgba(224,123,32,0.25); }
+    /* ── Back button (fixed bottom-right) ── */
+    .oi-back-btn {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        display: inline-block;
+        color: var(--oi-muted);
+        font-size: 0.82rem;
+        font-family: 'Georgia', serif;
+        letter-spacing: 0.04em;
+        text-decoration: none;
+        background: var(--oi-dark2);
+        border: 1px solid rgba(138, 112, 80, 0.3);
+        padding: 0.5em 1.2em;
+        border-radius: 2em;
+        z-index: 50;
+        transition:
+            color 0.2s,
+            border-color 0.2s,
+            box-shadow 0.2s;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    }
+    .oi-back-btn:hover {
+        color: var(--oi-cream);
+        border-color: var(--oi-amber);
+        box-shadow: 0 0 16px rgba(224, 123, 32, 0.25);
+    }
 
-  /* ── Modal ── */
-  .oi-modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(5,3,1,0.85);
-    backdrop-filter: blur(6px);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-  }
-  .oi-modal-overlay.open { display: flex; }
+    /* ── Modal ── */
+    .oi-modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(5, 3, 1, 0.85);
+        backdrop-filter: blur(6px);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+    .oi-modal-overlay.open {
+        display: flex;
+    }
 
-  .oi-modal {
-    background: var(--oi-dark2);
-    border: 1px solid rgba(245,200,66,0.22);
-    border-radius: 20px;
-    padding: 2rem 2rem 2.2rem;
-    max-width: 440px;
-    width: 100%;
-    position: relative;
-    box-shadow: 0 16px 64px rgba(0,0,0,0.7), 0 0 40px rgba(245,200,66,0.08);
-    animation: oi-modal-in 0.3s cubic-bezier(0.34,1.56,0.64,1);
-  }
+    .oi-modal {
+        background: var(--oi-dark2);
+        border: 1px solid rgba(245, 200, 66, 0.22);
+        border-radius: 20px;
+        padding: 2rem 2rem 2.2rem;
+        max-width: 440px;
+        width: 100%;
+        position: relative;
+        box-shadow:
+            0 16px 64px rgba(0, 0, 0, 0.7),
+            0 0 40px rgba(245, 200, 66, 0.08);
+        animation: oi-modal-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
 
-  @keyframes oi-modal-in {
-    from { transform: scale(0.88) translateY(20px); opacity: 0; }
-    to   { transform: scale(1) translateY(0); opacity: 1; }
-  }
+    @keyframes oi-modal-in {
+        from {
+            transform: scale(0.88) translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+    }
 
-  .oi-modal-close {
-    position: absolute; top: 1rem; right: 1.1rem;
-    background: none; border: none;
-    color: var(--oi-muted); font-size: 1.4rem; cursor: pointer; line-height: 1;
-    transition: color 0.2s;
-  }
-  .oi-modal-close:hover { color: var(--oi-cream); }
+    .oi-modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1.1rem;
+        background: none;
+        border: none;
+        color: var(--oi-muted);
+        font-size: 1.4rem;
+        cursor: pointer;
+        line-height: 1;
+        transition: color 0.2s;
+    }
+    .oi-modal-close:hover {
+        color: var(--oi-cream);
+    }
 
-  .oi-modal h3      { font-size: 1.3rem; color: var(--oi-gold); margin-bottom: 0.3rem; }
-  .oi-modal-sub     { font-size: 0.88rem; color: var(--oi-muted); font-style: italic; margin-bottom: 1.6rem; }
+    .oi-modal h3 {
+        font-size: 1.3rem;
+        color: var(--oi-gold);
+        margin-bottom: 0.3rem;
+    }
+    .oi-modal-sub {
+        font-size: 0.88rem;
+        color: var(--oi-muted);
+        font-style: italic;
+        margin-bottom: 1.6rem;
+    }
 
-  .oi-form-group { margin-bottom: 1.1rem; }
+    .oi-form-group {
+        margin-bottom: 1.1rem;
+    }
 
-  .oi-form-group label {
-    display: block; font-size: 0.82rem; letter-spacing: 0.06em;
-    text-transform: uppercase; color: var(--oi-amber); margin-bottom: 0.4rem;
-  }
+    .oi-form-group label {
+        display: block;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--oi-amber);
+        margin-bottom: 0.4rem;
+    }
 
-  .oi-form-group input {
-    width: 100%;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(245,200,66,0.2);
-    border-radius: 8px;
-    color: var(--oi-cream);
-    font-size: 0.95rem;
-    padding: 0.6em 0.9em;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    outline: none;
-    font-family: inherit;
-  }
-  .oi-form-group input:focus { border-color: var(--oi-amber); box-shadow: 0 0 0 3px rgba(224,123,32,0.15); }
-  .oi-form-group input::placeholder { color: rgba(138,112,80,0.6); }
+    .oi-form-group input {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(245, 200, 66, 0.2);
+        border-radius: 8px;
+        color: var(--oi-cream);
+        font-size: 0.95rem;
+        padding: 0.6em 0.9em;
+        transition:
+            border-color 0.2s,
+            box-shadow 0.2s;
+        outline: none;
+        font-family: inherit;
+    }
+    .oi-form-group input:focus {
+        border-color: var(--oi-amber);
+        box-shadow: 0 0 0 3px rgba(224, 123, 32, 0.15);
+    }
+    .oi-form-group input::placeholder {
+        color: rgba(138, 112, 80, 0.6);
+    }
 
-  .oi-form-note { font-size: 0.78rem; color: var(--oi-muted); margin-top: 0.3rem; }
+    .oi-form-note {
+        font-size: 0.78rem;
+        color: var(--oi-muted);
+        margin-top: 0.3rem;
+    }
 
-  .oi-send-btn {
-    width: 100%; margin-top: 1.2rem;
-    background: linear-gradient(135deg, var(--oi-gold), var(--oi-amber));
-    color: var(--oi-dark); font-weight: 700; font-size: 1rem; letter-spacing: 0.03em;
-    padding: 0.75em; border-radius: 10px; border: none; cursor: pointer;
-    transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
-    box-shadow: 0 4px 18px rgba(245,200,66,0.25);
-  }
-  .oi-send-btn:hover  { transform: translateY(-1px); box-shadow: 0 8px 28px rgba(245,200,66,0.4); }
-  .oi-send-btn:active { transform: translateY(1px); opacity: 0.85; }
+    .oi-send-btn {
+        width: 100%;
+        margin-top: 1.2rem;
+        background: linear-gradient(135deg, var(--oi-gold), var(--oi-amber));
+        color: var(--oi-dark);
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+        padding: 0.75em;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        transition:
+            transform 0.15s,
+            box-shadow 0.15s,
+            opacity 0.15s;
+        box-shadow: 0 4px 18px rgba(245, 200, 66, 0.25);
+    }
+    .oi-send-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 28px rgba(245, 200, 66, 0.4);
+    }
+    .oi-send-btn:active {
+        transform: translateY(1px);
+        opacity: 0.85;
+    }
 
-  .oi-form-success { display: none; text-align: center; padding: 1rem 0; }
-  .oi-success-emoji { font-size: 3rem; display: block; margin-bottom: 0.8rem; }
-  .oi-form-success h4 { color: var(--oi-gold); font-size: 1.2rem; margin-bottom: 0.5rem; }
-  .oi-form-success p  { color: var(--oi-muted); font-size: 0.9rem; line-height: 1.6; }
+    .oi-form-success {
+        display: none;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    .oi-success-emoji {
+        font-size: 3rem;
+        display: block;
+        margin-bottom: 0.8rem;
+    }
+    .oi-form-success h4 {
+        color: var(--oi-gold);
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    .oi-form-success p {
+        color: var(--oi-muted);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
 
-  /* ── Floating music notes ── */
-  .oi-note {
-    position: fixed; pointer-events: none; font-size: 1.6rem;
-    opacity: 0; animation: oi-float linear forwards; z-index: 9999;
-  }
-  @keyframes oi-float {
-    0%   { opacity: 0; transform: translateY(0) rotate(0deg); }
-    15%  { opacity: 0.8; }
-    85%  { opacity: 0.6; }
-    100% { opacity: 0; transform: translateY(-180px) rotate(25deg); }
-  }
+    /* ── Floating music notes ── */
+    .oi-note {
+        position: fixed;
+        pointer-events: none;
+        font-size: 1.6rem;
+        opacity: 0;
+        animation: oi-float linear forwards;
+        z-index: 9999;
+    }
+    @keyframes oi-float {
+        0% {
+            opacity: 0;
+            transform: translateY(0) rotate(0deg);
+        }
+        15% {
+            opacity: 0.8;
+        }
+        85% {
+            opacity: 0.6;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-180px) rotate(25deg);
+        }
+    }
 
-  /* ── Inner footer line ── */
-  .oi-footer {
-    text-align: center;
-    color: rgba(138,112,80,0.4);
-    font-size: 0.75rem;
-    font-family: 'Courier New', monospace;
-    letter-spacing: 0.08em;
-    margin-top: 4rem;
-  }
+    /* ── Inner footer line ── */
+    .oi-footer {
+        text-align: center;
+        color: rgba(138, 112, 80, 0.4);
+        font-size: 0.75rem;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 0.08em;
+        margin-top: 4rem;
+    }
 </style>
 
 <div class="oak-instruments">
-  <div class="oi-inner">
+    <div class="oi-inner">
+        <!-- Header -->
+        <header class="oi-header">
+            <div class="oi-secret-badge">✦ Secret Page ✦</div>
+            <h1>The Oakestra<br />Instruments</h1>
+            <p class="oi-subtitle">A musical journey through our releases</p>
+        </header>
 
-    <!-- Header -->
-    <header class="oi-header">
-      <div class="oi-secret-badge">✦ Secret Page ✦</div>
-      <h1>The Oakestra<br>Instruments</h1>
-      <p class="oi-subtitle">A musical journey through our releases</p>
-    </header>
+        <div class="oi-divider"><span class="oi-divider-icon">✦</span></div>
 
-    <div class="oi-divider"><span class="oi-divider-icon">✦</span></div>
+        <!-- Instruments list -->
+        <ul class="oi-list">
+            <li class="oi-item">
+                <span class="oi-letter">A</span>
+                <span class="oi-connector">for</span>
+                <div class="oi-body">
+                    <div class="oi-name">Accordion</div>
+                    <div class="oi-version">v0.4.200 · First major release · April 2024</div>
+                </div>
+                <span class="oi-emoji">🪗</span>
+                <span class="oi-badge-released">Released</span>
+            </li>
 
-    <!-- Instruments list -->
-    <ul class="oi-list">
+            <li class="oi-item">
+                <span class="oi-letter">B</span>
+                <span class="oi-connector">for</span>
+                <div class="oi-body">
+                    <div class="oi-name">Bass</div>
+                    <div class="oi-version">v0.4.300 · Second major release · February 2025</div>
+                </div>
+                <span class="oi-emoji">🎸</span>
+                <span class="oi-badge-released">Released</span>
+            </li>
 
-      <li class="oi-item">
-        <span class="oi-letter">A</span>
-        <span class="oi-connector">for</span>
-        <div class="oi-body">
-          <div class="oi-name">Accordion</div>
-          <div class="oi-version">v0.4.200 · First major release · April 2024</div>
+            <li class="oi-item">
+                <span class="oi-letter">C</span>
+                <span class="oi-connector">for</span>
+                <div class="oi-body">
+                    <div class="oi-name">Conga</div>
+                    <div class="oi-version">v0.4.410 · Third major release · April 2026</div>
+                </div>
+                <span class="oi-emoji">🪘</span>
+                <span class="oi-badge-released">Released</span>
+            </li>
+
+            <li class="oi-item" style="opacity: 0.6">
+                <span class="oi-letter">D</span>
+                <span class="oi-connector">for</span>
+                <div class="oi-body">
+                    <div class="oi-name">???</div>
+                    <div class="oi-version">Coming in 2027...</div>
+                </div>
+                <span class="oi-emoji">🎵</span>
+                <span class="oi-badge-upcoming">Upcoming</span>
+            </li>
+        </ul>
+
+        <div class="oi-divider"><span class="oi-divider-icon">♪</span></div>
+
+        <!-- Congrats + CTA -->
+        <div class="oi-congrats">
+            <span class="oi-congrats-emoji">🎉</span>
+            <h2>Congrats for finding this page!</h2>
+            <p>
+                You've discovered the secret Oakestra musicians room.<br />
+                Only the most curious explorers make it here.<br />
+                Want your name on the list?
+            </p>
+            <button class="oi-join-btn" onclick="oiOpenModal()">🎼 Join the secret Oakestra musicians list!</button>
         </div>
-        <span class="oi-emoji">🪗</span>
-        <span class="oi-badge-released">Released</span>
-      </li>
 
-      <li class="oi-item">
-        <span class="oi-letter">B</span>
-        <span class="oi-connector">for</span>
-        <div class="oi-body">
-          <div class="oi-name">Bass</div>
-          <div class="oi-version">v0.4.300 · Second major release · February 2025</div>
-        </div>
-        <span class="oi-emoji">🎸</span>
-        <span class="oi-badge-released">Released</span>
-      </li>
-
-      <li class="oi-item">
-        <span class="oi-letter">C</span>
-        <span class="oi-connector">for</span>
-        <div class="oi-body">
-          <div class="oi-name">Conga</div>
-          <div class="oi-version">v0.4.410 · Third major release · April 2026</div>
-        </div>
-        <span class="oi-emoji">🪘</span>
-        <span class="oi-badge-released">Released</span>
-      </li>
-
-      <li class="oi-item" style="opacity: 0.6;">
-        <span class="oi-letter">D</span>
-        <span class="oi-connector">for</span>
-        <div class="oi-body">
-          <div class="oi-name">???</div>
-          <div class="oi-version">Coming in 2027... </div>
-        </div>
-        <span class="oi-emoji">🎵</span>
-        <span class="oi-badge-upcoming">Upcoming</span>
-      </li>
-
-    </ul>
-
-    <div class="oi-divider"><span class="oi-divider-icon">♪</span></div>
-
-    <!-- Congrats + CTA -->
-    <div class="oi-congrats">
-      <span class="oi-congrats-emoji">🎉</span>
-      <h2>Congrats for finding this page!</h2>
-      <p>
-        You've discovered the secret Oakestra musicians room.<br>
-        Only the most curious explorers make it here.<br>
-        Want your name on the list?
-      </p>
-      <button class="oi-join-btn" onclick="oiOpenModal()">
-        🎼 Join the secret Oakestra musicians list!
-      </button>
-    </div>
-
-    <!-- Secret musicians list -->
-    <!--
+        <!-- Secret musicians list -->
+        <!--
       HOW TO ADD A MUSICIAN:
       Duplicate the <a> tag below and change the GitHub username.
       The avatar loads automatically from github.com/USERNAME.png
     -->
-    <div class="oi-musicians">
-      <p class="oi-musicians-title">✦ Secret Musicians ✦</p>
-      <div class="oi-bubbles" id="oi-bubbles">
-
-        <!-- ADD MUSICIANS HERE — duplicate this line and change the username -->
-        <a class="oi-bubble" data-gh="Mjaethers" href="https://github.com/Mjaethers" target="_blank" rel="noopener" title="Mjaethers"></a>
-        <a class="oi-bubble" data-gh="giobart" href="https://github.com/giobart" target="_blank" rel="noopener" title="giobart"></a>
-        <a class="oi-bubble" data-gh="axiphi" href="https://github.com/axiphi" target="_blank" rel="noopener" title="axiphi"></a>
-        <a class="oi-bubble" data-gh="HMF2475" href="https://github.com/HMF2475" target="_blank" rel="noopener" title="HMF2475"></a>
-      </div>
+        <div class="oi-musicians">
+            <p class="oi-musicians-title">✦ Secret Musicians ✦</p>
+            <div class="oi-bubbles" id="oi-bubbles">
+                <!-- ADD MUSICIANS HERE — duplicate this line and change the username -->
+                <a class="oi-bubble" data-gh="Mjaethers" href="https://github.com/Mjaethers" target="_blank" rel="noopener" title="Mjaethers"></a>
+                <a class="oi-bubble" data-gh="giobart" href="https://github.com/giobart" target="_blank" rel="noopener" title="giobart"></a>
+                <a class="oi-bubble" data-gh="axiphi" href="https://github.com/axiphi" target="_blank" rel="noopener" title="axiphi"></a>
+                <a class="oi-bubble" data-gh="HMF2475" href="https://github.com/HMF2475" target="_blank" rel="noopener" title="HMF2475"></a>
+            </div>
+        </div>
     </div>
-
-  </div><!-- /.oi-inner -->
-</div><!-- /.oak-instruments -->
-
+    <!-- /.oi-inner -->
+</div>
+<!-- /.oak-instruments -->
 
 <!-- Modal -->
 <div class="oi-modal-overlay" id="oi-modal-overlay" onclick="oiHandleOverlay(event)">
-  <div class="oi-modal" role="dialog" aria-modal="true" aria-labelledby="oi-modal-title">
-    <button class="oi-modal-close" onclick="oiCloseModal()" aria-label="Close">✕</button>
+    <div class="oi-modal" role="dialog" aria-modal="true" aria-labelledby="oi-modal-title">
+        <button class="oi-modal-close" onclick="oiCloseModal()" aria-label="Close">✕</button>
 
-    <div id="oi-form-body">
-      <h3 id="oi-modal-title">🎸 Join the Musicians</h3>
-      <p class="oi-modal-sub">An admin will add your profile to the secret list</p>
+        <div id="oi-form-body">
+            <h3 id="oi-modal-title">🎸 Join the Musicians</h3>
+            <p class="oi-modal-sub">An admin will add your profile to the secret list</p>
 
-      <form onsubmit="oiSendForm(event)">
-        <div class="oi-form-group">
-          <label for="oi-github">GitHub Profile</label>
-          <input id="oi-github" name="github" type="text" placeholder="github.com/yourname or just yourname" />
+            <form onsubmit="oiSendForm(event)">
+                <div class="oi-form-group">
+                    <label for="oi-github">GitHub Profile</label>
+                    <input id="oi-github" name="github" type="text" placeholder="github.com/yourname or just yourname" />
+                </div>
+                <div class="oi-form-group">
+                    <label for="oi-nickname">Nickname <span style="opacity: 0.55; font-size: 0.78rem; text-transform: none">(optional)</span></label>
+                    <input id="oi-nickname" name="nickname" type="text" placeholder="How should we call you?" />
+                    <p class="oi-form-note">We'll add your GitHub avatar and link to the musicians wall.</p>
+                </div>
+                <button class="oi-send-btn" type="submit">🥁 Send my info to the admins</button>
+            </form>
         </div>
-        <div class="oi-form-group">
-          <label for="oi-nickname">Nickname <span style="opacity:0.55;font-size:0.78rem;text-transform:none;">(optional)</span></label>
-          <input id="oi-nickname" name="nickname" type="text" placeholder="How should we call you?" />
-          <p class="oi-form-note">We'll add your GitHub avatar and link to the musicians wall.</p>
-        </div>
-        <button class="oi-send-btn" type="submit">🥁 Send my info to the admins</button>
-      </form>
-    </div>
 
-    <div class="oi-form-success" id="oi-success">
-      <span class="oi-success-emoji">✉️</span>
-      <h4>Message sent!</h4>
-      <p>Your email client is opening with the request pre-filled.<br>
-         An admin will review it and add you to the musicians list. 🎶</p>
+        <div class="oi-form-success" id="oi-success">
+            <span class="oi-success-emoji">✉️</span>
+            <h4>Message sent!</h4>
+            <p>
+                Your email client is opening with the request pre-filled.<br />
+                An admin will review it and add you to the musicians list. 🎶
+            </p>
+        </div>
     </div>
-  </div>
 </div>
 
 <div id="oi-notes" aria-hidden="true"></div>
 
 <script>
-(function () {
-  /* ── Load GitHub avatars ── */
-  document.querySelectorAll('.oi-bubble[data-gh]').forEach(function (el) {
-    var u = el.getAttribute('data-gh');
-    var img = document.createElement('img');
-    img.src = 'https://github.com/' + u + '.png?size=112';
-    img.alt = u;
-    img.loading = 'lazy';
-    el.appendChild(img);
-  });
+    (function () {
+        /* ── Load GitHub avatars ── */
+        document.querySelectorAll('.oi-bubble[data-gh]').forEach(function (el) {
+            var u = el.getAttribute('data-gh');
+            var img = document.createElement('img');
+            img.src = 'https://github.com/' + u + '.png?size=112';
+            img.alt = u;
+            img.loading = 'lazy';
+            el.appendChild(img);
+        });
 
-  /* ── Modal ── */
-  window.oiOpenModal = function () {
-    document.getElementById('oi-modal-overlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    oiSpawnNotes();
-  };
-  window.oiCloseModal = function () {
-    document.getElementById('oi-modal-overlay').classList.remove('open');
-    document.body.style.overflow = '';
-  };
-  window.oiHandleOverlay = function (e) {
-    if (e.target === document.getElementById('oi-modal-overlay')) oiCloseModal();
-  };
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') oiCloseModal();
-  });
+        /* ── Modal ── */
+        window.oiOpenModal = function () {
+            document.getElementById('oi-modal-overlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+            oiSpawnNotes();
+        };
+        window.oiCloseModal = function () {
+            document.getElementById('oi-modal-overlay').classList.remove('open');
+            document.body.style.overflow = '';
+        };
+        window.oiHandleOverlay = function (e) {
+            if (e.target === document.getElementById('oi-modal-overlay')) oiCloseModal();
+        };
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') oiCloseModal();
+        });
 
-  /* ── Form ── */
-  window.oiSendForm = function (e) {
-    e.preventDefault();
-    var github   = document.getElementById('oi-github').value.trim();
-    var nickname = document.getElementById('oi-nickname').value.trim();
-    if (!github) { alert('Please fill in your GitHub profile.'); return; }
+        /* ── Form ── */
+        window.oiSendForm = function (e) {
+            e.preventDefault();
+            var github = document.getElementById('oi-github').value.trim();
+            var nickname = document.getElementById('oi-nickname').value.trim();
+            if (!github) {
+                alert('Please fill in your GitHub profile.');
+                return;
+            }
 
-    var lines = ['Hello Oakestra admins,', '', 'A new secret musician wants to join!', '',
-                 'GitHub:   ' + github];
-    if (nickname) lines.push('Nickname: ' + nickname);
-    lines.push('', '— Sent from the secret Oakestra Instruments page');
+            var lines = ['Hello Oakestra admins,', '', 'A new secret musician wants to join!', '', 'GitHub:   ' + github];
+            if (nickname) lines.push('Nickname: ' + nickname);
+            lines.push('', '— Sent from the secret Oakestra Instruments page');
 
-    window.location.href = 'mailto:admin@oakestra.io?subject='
-      + encodeURIComponent('SECRET_MUSICIAN') + '&body=' + encodeURIComponent(lines.join('\n'));
+            window.location.href = 'mailto:admin@oakestra.io?subject=' + encodeURIComponent('SECRET_MUSICIAN') + '&body=' + encodeURIComponent(lines.join('\n'));
 
-    document.getElementById('oi-form-body').style.display = 'none';
-    document.getElementById('oi-success').style.display   = 'block';
-    oiSpawnNotes();
-  };
+            document.getElementById('oi-form-body').style.display = 'none';
+            document.getElementById('oi-success').style.display = 'block';
+            oiSpawnNotes();
+        };
 
-  /* ── Floating notes ── */
-  var noteChars = ['♩','♪','♫','♬','🎵','🎶','🎸','🪘','🪗'];
-  function oiSpawnNotes() {
-    var container = document.getElementById('oi-notes');
-    for (var i = 0; i < 12; i++) {
-      (function (i) {
-        setTimeout(function () {
-          var n = document.createElement('span');
-          n.className = 'oi-note';
-          n.textContent = noteChars[Math.floor(Math.random() * noteChars.length)];
-          n.style.left              = (10 + Math.random() * 80) + 'vw';
-          n.style.bottom            = (5  + Math.random() * 20) + 'vh';
-          n.style.animationDuration = (1.8 + Math.random() * 1.5) + 's';
-          n.style.fontSize          = (1.2 + Math.random() * 1.4) + 'rem';
-          container.appendChild(n);
-          n.addEventListener('animationend', function () { n.remove(); });
-        }, i * 110);
-      })(i);
-    }
-  }
-  window.oiSpawnNotes = oiSpawnNotes;
-  setTimeout(oiSpawnNotes, 600);
-})();
+        /* ── Floating notes ── */
+        var noteChars = ['♩', '♪', '♫', '♬', '🎵', '🎶', '🎸', '🪘', '🪗'];
+        function oiSpawnNotes() {
+            var container = document.getElementById('oi-notes');
+            for (var i = 0; i < 12; i++) {
+                (function (i) {
+                    setTimeout(function () {
+                        var n = document.createElement('span');
+                        n.className = 'oi-note';
+                        n.textContent = noteChars[Math.floor(Math.random() * noteChars.length)];
+                        n.style.left = 10 + Math.random() * 80 + 'vw';
+                        n.style.bottom = 5 + Math.random() * 20 + 'vh';
+                        n.style.animationDuration = 1.8 + Math.random() * 1.5 + 's';
+                        n.style.fontSize = 1.2 + Math.random() * 1.4 + 'rem';
+                        container.appendChild(n);
+                        n.addEventListener('animationend', function () {
+                            n.remove();
+                        });
+                    }, i * 110);
+                })(i);
+            }
+        }
+        window.oiSpawnNotes = oiSpawnNotes;
+        setTimeout(oiSpawnNotes, 600);
+    })();
 </script>
 {{ end }}

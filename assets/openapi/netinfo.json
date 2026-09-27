@@ -19,9 +19,7 @@
             }
           }
         },
-        "tags": [
-          "netinfo"
-        ]
+        "tags": ["netinfo"]
       },
       "parameters": [
         {
@@ -49,9 +47,7 @@
             }
           }
         },
-        "tags": [
-          "netinfo"
-        ]
+        "tags": ["netinfo"]
       },
       "parameters": [
         {

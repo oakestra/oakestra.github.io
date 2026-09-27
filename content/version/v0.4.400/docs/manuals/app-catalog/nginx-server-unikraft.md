@@ -15,19 +15,17 @@ seo:
 ![Nginx Balancing](balancing-unikraft.png)
 
 {{< callout context="caution" title="Unikernels within Oakestra" icon="outline/alert-triangle">}}
-This guide is (almost) a clone of the containers Nginx client-server applications described in [previous walkthrough](../nginx-server/), however, we instead use Unikraft Nginx server. 
+This guide is (almost) a clone of the containers Nginx client-server applications described in [previous walkthrough](../nginx-server/), however, we instead use Unikraft Nginx server.
 
 {{< /callout >}}
 
 We can deploy Nginx using [Unikraft](https://unikraft.org). This will allow us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
 
 {{< link-card
-  title="Unikraft Runtime"
-  description="To enable unikernel support, please refer to the Unikernel Support manual section."
-  href="../../execution-runtimes/unikernel-operations/"
-  target="_blank"
->}}
-
+title="Unikraft Runtime"
+description="To enable unikernel support, please refer to the Unikernel Support manual section."
+href="../../execution-runtimes/unikernel-operations/"
+target="\_blank" >}}
 
 <!-- {{< callout context="note" title="Unikernel Support" icon="outline/rocket">}} To enable unikernel support, please refer to the Unikernel Support manual section{{< /callout >}} -->
 
@@ -59,9 +57,7 @@ Refer to the following SLA template to deploy the services.
           "microservice_name": "nginx",
           "microservice_namespace": "nginx",
           "virtualization": "unikernel",
-          "cmd": [
-            ""
-          ],
+          "cmd": [""],
           "memory": 400,
           "vcpus": 1,
           "vgpus": 0,
@@ -71,9 +67,7 @@ Refer to the following SLA template to deploy the services.
           "port": "9000:80",
           "storage": 0,
           "code": "https://github.com/oakestra/oakestra/releases/download/alpha-v0.4.301/nginx_amd64.tar.gz",
-          "arch": [
-            "amd64"
-          ],
+          "arch": ["amd64"],
           "state": "",
           "addresses": {
             "rr_ip": "10.30.30.31"
@@ -85,11 +79,7 @@ Refer to the following SLA template to deploy the services.
           "microservice_name": "curl",
           "microservice_namespace": "nginx",
           "virtualization": "container",
-          "cmd": [
-            "sh",
-            "-c",
-            "curl 10.30.30.31 ; sleep 15"
-          ],
+          "cmd": ["sh", "-c", "curl 10.30.30.31 ; sleep 15"],
           "memory": 100,
           "vcpus": 1,
           "vgpus": 0,
@@ -114,16 +104,15 @@ In this guide we'll use the Oakestra CLI tool to interact with the Oakestra plat
 
  {{< /callout >}} -->
 
- {{< callout context="tip" title="Oakestra CLI Tool" icon="outline/rocket">}}
+{{< callout context="tip" title="Oakestra CLI Tool" icon="outline/rocket">}}
 
-In this guide we'll use the comprehensive Oakestra CLI toolkit to interact with the Oakestra-managed infrastructure. 
+In this guide we'll use the comprehensive Oakestra CLI toolkit to interact with the Oakestra-managed infrastructure.
 
 {{< link-card
-  title="Get Started with the Oakestra CLI"
-  description="Check out how to deploy your first application with the CLI."
-  href="../../../getting-started/deploy-app/deploy-cli/"
-  target="_blank"
->}}
+title="Get Started with the Oakestra CLI"
+description="Check out how to deploy your first application with the CLI."
+href="../../../getting-started/deploy-app/deploy-cli/"
+target="\_blank" >}}
 
 <br>
 You can check if `oak-cli` is installed by running the following command:
@@ -131,10 +120,11 @@ You can check if `oak-cli` is installed by running the following command:
 ```bash
 oak v
 ```
- {{< /callout >}}
 
+{{< /callout >}}
 
 ## Let's deploy the services
+
 ```bash
  oak a c --sla-file-name unikernel-nginx-client-server.json -d
 ```
@@ -145,22 +135,26 @@ oak v
  oak a c --sla-file-name $(pwd)/unikernel-nginx-client-server.json -d
 ```
 
- {{< /callout >}}
+{{< /callout >}}
 
 Now the `curl` service will perform a `curl` request to `nginx`, then it will fail. Oakestra will re-deploy a new instance, and so the cycle will continue.
 
 ## Scale up the Nginx service
-Let's fetch the Nginx's Service ID using 
+
+Let's fetch the Nginx's Service ID using
+
 ```bash
 oak s s
 ```
 
 Then let's deploy a second Nginx instance using:
+
 ```bash
 oak s d <Nginx Service's ID>
 ```
 
 By running `oak s s` you should now see two instances of the Nginx service running.
+
 ```bash
 ╭──────────────┬──────────────────────────┬────────────────┬────────────┬──────────────────────────╮
 │ Service Name │ Service ID               │ Instances      │ App Name   │ App ID                   │
@@ -172,11 +166,15 @@ By running `oak s s` you should now see two instances of the Nginx service runni
 │              │                          │  1 RUNNING ●   │            │                          │
 ╰──────────────┴──────────────────────────┴────────────────┴────────────┴──────────────────────────╯
 ```
+
 ## Sit down, relax, and watch the magic happen 🪄
+
 Use the following command to check the instance's logs:
+
 ```bash
 oak s i <Nginx Service ID>
 ```
+
 You'll see the nginx logs of both instances, and the effects of the resulting balancing.
 For this example we used the command `oak s i 672cf97ff7728660d15a5852`
 
@@ -196,4 +194,4 @@ For this example we used the command `oak s i 672cf97ff7728660d15a5852`
 ╰───────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
-As you can see both instances got requests from the single client we have, even is the client is always using the same IP address. 
+As you can see both instances got requests from the single client we have, even is the client is always using the same IP address.

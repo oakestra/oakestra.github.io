@@ -10,13 +10,14 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
+
 <span class="lead">
 Oakestra is a flexible and lightweight orchestration framework designed for all your edge computing needs. Accelerate your next-generation applications with Oakestra!
 </span>
 
 ## What is Oakestra?
 
-Oakestra is an open-source orchestration framework designed to optimize the deployment and execution of containerized applications in edge and cloud environments. Under-the-hood, Oakestra uses several clever techniques for *efficient resource management* and *workload orchestration* to address the challenges of running modern, distributed applications in constrained and dynamic edge-cloud computing continuum.
+Oakestra is an open-source orchestration framework designed to optimize the deployment and execution of containerized applications in edge and cloud environments. Under-the-hood, Oakestra uses several clever techniques for _efficient resource management_ and _workload orchestration_ to address the challenges of running modern, distributed applications in constrained and dynamic edge-cloud computing continuum.
 
 {{< callout context="tip" title="Did you know?" icon="outline/rocket" >}}
 Oakestra is built from the ground-up to support computational flexibility of edge devices while remaining compatible with cloud-native ecosystem. You can be confident that your applications will run smoothly on a variety of hardware, from small edge devices to powerful cloud servers.
@@ -29,7 +30,7 @@ Oakestra is built from the ground-up to support computational flexibility of edg
 Oakestra prioritizes minimal overhead to address the computational, storage, and network limitations of edge nodes to unlock the full potential of edge-cloud continuum.
 
 - [Set up your first Oakestra environment](../oak-environment/high-level-view/)
-{{< /card >}}
+  {{< /card >}}
 
 {{< card title="Efficient App Management" icon="outline/layout-dashboard" color="blue" >}}
 Take full control of your microservices with Oakestra's powerful API and intuitive management tools.
@@ -50,10 +51,10 @@ Designed with a plug-and-play approach, Oakestra supports customizable orchestra
 - [Addons](../../concepts/oakestra-extensions/addons/)
 - [Hooks](../../concepts/oakestra-extensions/hooks/)
 - [Custom Resources](../../concepts/oakestra-extensions/custom_resources/)
-{{< /card >}}
+  {{< /card >}}
 
 {{< card title="Bleeding-Edge Features" icon="outline/adjustments-star" color="red" >}}
-Leverage several innovative techniques Oakestra uses to make your applications edge-cloud efficient. 
+Leverage several innovative techniques Oakestra uses to make your applications edge-cloud efficient.
 
 - [Multi-Virtualization Support](../../manuals/execution-runtimes/supported-runtimes/)
 - [Semantic Networking](../../concepts/networking/)
@@ -75,21 +76,18 @@ Whether you're a beginner or advanced user, joining our community is the best wa
 
 {{< card-grid >}}
 {{< link-card
-  title="Contribute to Oakestra"
-  description="Read our contribution guide"
-  href="../../contribution-guide/contributing-guide/"
->}}
+title="Contribute to Oakestra"
+description="Read our contribution guide"
+href="../../contribution-guide/contributing-guide/" >}}
 
 {{< link-card
-  title="Join us"
-  description="Meet our lively Discord community"
-  href="https://discord.gg/7F8EhYCJDf"
->}}
+title="Join us"
+description="Meet our lively Discord community"
+href="https://discord.gg/7F8EhYCJDf" >}}
 
 {{< link-card
-  title="Follow us"
-  description="See our updates on X"
-  href="https://x.com/oakestra"
->}}
+title="Follow us"
+description="See our updates on X"
+href="https://x.com/oakestra" >}}
 
 {{< /card-grid >}}

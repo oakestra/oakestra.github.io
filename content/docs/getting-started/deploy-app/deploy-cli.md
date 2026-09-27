@@ -22,9 +22,9 @@ You can interact with your Oakestra installation using any terminal on any machi
 </span>
 
 {{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}}
-  - You have a running Oakestra setup.
-{{< /callout >}}
 
+- You have a running Oakestra setup.
+  {{< /callout >}}
 
 ## The `oak-cli`
 
@@ -36,25 +36,29 @@ You can interact with your Oakestra installation using any terminal on any machi
 - Accelerated & simpler workflows.
   - Removes the need to memorize necessary API endpoints.
   - The CLI commands can be chained together and used in custom scripts.
-{{< /callout >}}
-
+    {{< /callout >}}
 
 ## CLI Setup
+
 **Any machine where you have installed at least one Oakestra component already has the CLI installed.**
 If you want to install the CLI on an external machine and manage your Oakestra deployment from there, follow these commands:
 
 {{< tabs "Install" >}}
 {{< tab "🐧 Linux/ 🍎 MacOS" >}}
 From your terminal, run:
+
 ```bash
 curl -sfL oakestra.io/oak.sh | bash
 ```
+
 {{< /tab >}}
 {{< tab " 🚮 Windows" >}}
 From your terminal, run:
+
 ```bash
 irm oakestra.io/oak.ps1 | iex
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -75,6 +79,7 @@ For further information about the CLI configuration, see the [CLI Configuration 
 Deploying your first app with the CLI is simple. The Oak CLI already provides three default application descriptors that you can use right away.
 
 **Step 1**: Create your default application.
+
 ```bash
 oak app create
 ```
@@ -95,6 +100,7 @@ This is an application composed of a client and a server.
 - Every time the client exits, Oakestra redeploys it, and the cycle continues.
 
 **Step 2**: Deploy all the services of your application.
+
 ```bash
 oak service deploy --all
 ```
@@ -116,11 +122,12 @@ This is an application composed of 3 micorservices.
 - The Proxy: a proxy linking the client and the server.
 
 **Step 2**: Deploy all the services of your application
+
 ```bash
 oak service deploy --all
 ```
 
-**Step 3**: There is no step 3! 🥳 Read the rest of this Wiki to learn how to monitor your services and get the logs. To configure your game, take a look at the [Minecraft in Oakestra](https://github.com/oakestra/app-minecraft-client-server-example) repository and check out the *Step 7* and *Step 8*.
+**Step 3**: There is no step 3! 🥳 Read the rest of this Wiki to learn how to monitor your services and get the logs. To configure your game, take a look at the [Minecraft in Oakestra](https://github.com/oakestra/app-minecraft-client-server-example) repository and check out the _Step 7_ and _Step 8_.
 
 Pro tip: you can obtain the IP of your proxy and client in the cli using this command respectively: `oak s i proxy` and `oak s i client`
 
@@ -128,16 +135,17 @@ Pro tip: you can obtain the IP of your proxy and client in the cli using this co
 {{< /tabs >}}
 
 ## Basic CLI Usage
+
 The root command for the CLI is **oak**
 
 {{< callout context="note" title="Need Help?" icon="outline/info-circle" >}}
-  Every `oak` CLI command comes with its own help text to support your understanding.
+Every `oak` CLI command comes with its own help text to support your understanding.
 
-  Simply add `--help` or `-h` to any command to find out more.
+Simply add `--help` or `-h` to any command to find out more.
 {{< /callout >}}
 
-
 ### Working with deployment descriptors
+
 Oakestra apps and services are described in deployment descriptor files called `SLA`.<br>
 The `oak-cli` comes with a set of pre-defined default SLAs inside the folder `~/oak_cli/SLAs`.<br>
 All available SLAs can be inspected via the `oak application sla` command.
@@ -148,16 +156,17 @@ Your personal SLA files describing your applications can be stored in any folder
 {{< link-card title="Learn more about the SLA specifications" href="/docs/reference/app-sla">}}
 
 ### Managing Applications
+
 Now that you are familiar with the SLAs we can start creating applications based on them.<br>
 
 - Run `oak application show` (`oak a s`) to see the currently registered applications.<br>
 - The `oak application create` (`oak a c`) command asks you what SLA from the **predefined** ones should be used as the blueprint for the new application and creates that app for you.<br>
 - The `oak application create [file]` (`oak a c [file]`) allows you to specify a custom SLA file to be used for the creation of an application and its services. E.g. `oak a c mysla.json`, assuming we have a local SLA called `mysla.json`
 - Delete one or all currently running apps via `oak application delete` (`oak a d`).
-{{< asciinema key="create_app" poster="0:32" idleTimeLimit="1" >}}
-
+  {{< asciinema key="create_app" poster="0:32" idleTimeLimit="1" >}}
 
 ### Deploying Services
+
 The services of our applications are not yet deployed.<br>
 To deploy instances of these services we need to know the service IDs.<br>
 The IDs are visible when running `oak service show` (`oak s s`).<br>
@@ -169,7 +178,7 @@ You can undeploy all instances of a service or only specific ones by providing t
 `oak service undeploy <service-id|name> [instance-number]`.
 
 {{< callout context="note" title="Combine Create & Deploy" icon="outline/bolt" >}}
-  You can create an application and automatically deploy its services by providing the `-d` *(for deploy)* flag to the `oak app create (-d)` command.
+You can create an application and automatically deploy its services by providing the `-d` _(for deploy)_ flag to the `oak app create (-d)` command.
 {{< /callout >}}
 
 ### Inspecting Services
@@ -187,22 +196,22 @@ The `oak service scale up <SERVICE_ID|SERVICE_NAME> <number>` allows you to scal
 {{< asciinema key="oakscale" poster="0:13" idleTimeLimit="1">}}
 
 ## Further Details
+
 This page only highlights a small subset of available `oak-cli` capabilities.
 
 {{< link-card
-  title="CLI Reference"
-  description="Explore every available CLI command in detail and more"
-  href="../../../reference/cli/oak"
-  target="_blank"
->}}
+title="CLI Reference"
+description="Explore every available CLI command in detail and more"
+href="../../../reference/cli/oak"
+target="\_blank" >}}
 
 {{< callout context="note" title="Maximize Speed & Convenience" icon="outline/bolt" >}}
-  The `oak-cli` supports tab autocompletion natively.
+The `oak-cli` supports tab autocompletion natively.
 
-  This means that you can press your **tab** key to either automatically complete the command you are currently typing or get a list of matching available commands.
-  There is no need to memorize or fully type out the commands.
+This means that you can press your **tab** key to either automatically complete the command you are currently typing or get a list of matching available commands.
+There is no need to memorize or fully type out the commands.
 
-  ![Command Recommendation via Tab Auto-Completion](./cli-images/autocomplete.png)
+![Command Recommendation via Tab Auto-Completion](./cli-images/autocomplete.png)
 
-  Simply after installation, make sure you open up a new terminal to get the up to date autocompletion setup.
+Simply after installation, make sure you open up a new terminal to get the up to date autocompletion setup.
 {{< /callout >}}

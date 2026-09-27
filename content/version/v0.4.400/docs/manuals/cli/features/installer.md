@@ -12,8 +12,8 @@ seo:
 ---
 
 {{< callout context="note" title="Overview" icon="outline/info-circle" >}}
-  Oakestra requires several dependencies to be installed on the machine to run, such as [Docker](https://www.docker.com/), the Docker [compose plugin](https://docs.docker.com/compose/), [Git](https://git-scm.com/), and [Go](https://go.dev/).
-  The `oak-cli` installs these fundamental dependencies via ansible for you.
+Oakestra requires several dependencies to be installed on the machine to run, such as [Docker](https://www.docker.com/), the Docker [compose plugin](https://docs.docker.com/compose/), [Git](https://git-scm.com/), and [Go](https://go.dev/).
+The `oak-cli` installs these fundamental dependencies via ansible for you.
 {{< /callout >}}
 
 {{< include-sphinx-html "/static/automatically_generated_oak_cli_docs/installer.html" >}}

@@ -1,55 +1,51 @@
 {{ if .Params.asciinema -}}
-<link rel="stylesheet" type="text/css" href="/css/asciinema-player.css">
-{{- end }}
-{{ if .Params.swaggerui }}
-    {{ with resources.GetRemote "https://raw.githubusercontent.com/swagger-api/swagger-ui/refs/tags/v5.22.0/dist/swagger-ui-bundle.js" }}
-        <script src="{{ .RelPermalink }}"></script>
-    {{ else }}
-        {{ errorf "Failed to fetch swagger JS resource" }}
-    {{ end }}
-    <script>
-        class SwaggerUI extends HTMLElement {
-            constructor() {
-                super();
-            }
-
-            connectedCallback() {
-                const shadow = this.attachShadow({ mode: 'open' });
-
-                const style = document.createElement('link');
-                style.rel = "stylesheet"
-                {{ with resources.GetRemote "https://raw.githubusercontent.com/swagger-api/swagger-ui/refs/tags/v5.22.0/dist/swagger-ui.css" }}
-                    style.href = "{{ .RelPermalink }}"
-                {{ else }}
-                    {{ errorf "Failed to fetch swagger CSS resource" }}
-                {{ end }}
-
-                const styleDark = document.createElement('link');
-                styleDark.disabled = document.documentElement.getAttribute("data-bs-theme") !== "dark"
-                styleDark.rel = "stylesheet"
-                {{ with resources.Get "swagger-ui/swagger-ui-dark.css" }}
-                styleDark.href = "{{ .RelPermalink }}"
-                {{ end }}
-
-                const container = document.createElement('div');
-                container.classList.add('swagger-ui-root')
-                SwaggerUIBundle({
-                    url: this.getAttribute('spec'),
-                    domNode: container,
-                });
-
-                shadow.append(style, styleDark, container);
-
-                this.observer = new MutationObserver(() => {
-                    styleDark.disabled = document.documentElement.getAttribute("data-bs-theme") !== "dark"
-                })
-                this.observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-bs-theme"] })
-            }
-
-            disconnectedCallback() {
-                this.observer.disconnect()
-            }
+<link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
+{{- end }} {{ if .Params.swaggerui }} {{ with resources.GetRemote "https://raw.githubusercontent.com/swagger-api/swagger-ui/refs/tags/v5.22.0/dist/swagger-ui-bundle.js" }}
+<script src="{{ .RelPermalink }}"></script>
+{{ else }} {{ errorf "Failed to fetch swagger JS resource" }} {{ end }}
+<script>
+    class SwaggerUI extends HTMLElement {
+        constructor() {
+            super();
         }
-        customElements.define('swagger-ui', SwaggerUI);
-    </script>
+
+        connectedCallback() {
+            const shadow = this.attachShadow({ mode: 'open' });
+
+            const style = document.createElement('link');
+            style.rel = "stylesheet"
+            {{ with resources.GetRemote "https://raw.githubusercontent.com/swagger-api/swagger-ui/refs/tags/v5.22.0/dist/swagger-ui.css" }}
+                style.href = "{{ .RelPermalink }}"
+            {{ else }}
+                {{ errorf "Failed to fetch swagger CSS resource" }}
+            {{ end }}
+
+            const styleDark = document.createElement('link');
+            styleDark.disabled = document.documentElement.getAttribute("data-bs-theme") !== "dark"
+            styleDark.rel = "stylesheet"
+            {{ with resources.Get "swagger-ui/swagger-ui-dark.css" }}
+            styleDark.href = "{{ .RelPermalink }}"
+            {{ end }}
+
+            const container = document.createElement('div');
+            container.classList.add('swagger-ui-root')
+            SwaggerUIBundle({
+                url: this.getAttribute('spec'),
+                domNode: container,
+            });
+
+            shadow.append(style, styleDark, container);
+
+            this.observer = new MutationObserver(() => {
+                styleDark.disabled = document.documentElement.getAttribute("data-bs-theme") !== "dark"
+            })
+            this.observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-bs-theme"] })
+        }
+
+        disconnectedCallback() {
+            this.observer.disconnect()
+        }
+    }
+    customElements.define('swagger-ui', SwaggerUI);
+</script>
 {{ end }}

@@ -23,30 +23,30 @@ Modern computing environments often combine different types of runtimes. For exa
 You are no longer limited to a single runtime for your applications. With Oakestra, you can use fully isolated unikernels for maximizing your Nginx operations and a Docker container for deploying your machine learning models; and have them work together!
 
 This unique functionality allows you to:
-- *Optimize Performance*: Pick the runtime that meets your specific speed and resource requirements.
-- *Enhance Security and Isolation*: Run sensitive workloads in more secure, isolated environments when needed.
-- *Maintain Flexibility*: Easily switch runtimes as your needs evolve.
-{{< /callout >}}
+
+- _Optimize Performance_: Pick the runtime that meets your specific speed and resource requirements.
+- _Enhance Security and Isolation_: Run sensitive workloads in more secure, isolated environments when needed.
+- _Maintain Flexibility_: Easily switch runtimes as your needs evolve.
+  {{< /callout >}}
 
 ### Supported Runtimes
 
 Currently, Oakestra supports the following virtualization runtimes.
 
-| **Technology**    | **Type** |  **Description** |
-| --------- | ----------- | ----------- |
-| Containerd    | Container Execution Runtime | Ideal for deploying applications that require easy portability and management. |
-| Unikraft | Unikernel Execution Runtime |  Specialized, lightweight virtual machines that are optimized for high performance and security. |
+| **Technology** | **Type**                    | **Description**                                                                                 |
+| -------------- | --------------------------- | ----------------------------------------------------------------------------------------------- |
+| Containerd     | Container Execution Runtime | Ideal for deploying applications that require easy portability and management.                  |
+| Unikraft       | Unikernel Execution Runtime | Specialized, lightweight virtual machines that are optimized for high performance and security. |
 
 ### How to Choose a Runtime
 
 Picking the right runtime depends on your workload’s priorities. Are you looking for the fastest startup times? Then unikernels might be best suited for your service. Do you need to support complex applications with multiple dependencies? Containers like Docker might be a good choice.
 
-With Oakestra, you can easily switch between runtimes to find the best fit for your workload. *Or* you can package different virtualizations for different microservices of your application to truly unlock the **hybrid virtualization of edge computing**. Oakestra makes it easy to manage and orchestrate different runtimes, so you can focus on building and deploying your applications.
+With Oakestra, you can easily switch between runtimes to find the best fit for your workload. _Or_ you can package different virtualizations for different microservices of your application to truly unlock the **hybrid virtualization of edge computing**. Oakestra makes it easy to manage and orchestrate different runtimes, so you can focus on building and deploying your applications.
 
 {{< link-card
-  description="Learn more about deploying container-based applications with Oakestra"
-  href="../../../getting-started/deploy-app/"
-  target="_blank"
->}}
+description="Learn more about deploying container-based applications with Oakestra"
+href="../../../getting-started/deploy-app/"
+target="\_blank" >}}
 
 Or continue reading to deploy your unikernel applications with Oakestra.

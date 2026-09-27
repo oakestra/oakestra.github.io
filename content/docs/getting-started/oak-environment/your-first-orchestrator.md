@@ -27,12 +27,14 @@ After the orchestrators are up and running, you can add edge devices as workers 
 
 You can install the **Root** and **Cluster Orchestrator** on a single machine using the following commands:
 
-1) Install the `oak` CLI on your machine:
+1. Install the `oak` CLI on your machine:
+
 ```bash
 curl -sfL oakestra.io/oak.sh | bash
 ```
 
-2) Perform a full Root + Cluster + Worker installation using:
+2. Perform a full Root + Cluster + Worker installation using:
+
 ```bash
 oak install full
 ```
@@ -41,11 +43,12 @@ That's it! You should be good to go now.
 **Take a look at the example below.**
 {{< asciinema key="install" poster="0:15" idleTimeLimit="1">}}
 
->The installer asks whether to start your worker right away.
->**If you choose not to start it immediately**, you can do so later using:
->```
->oak worker -d
->```
+> The installer asks whether to start your worker right away.
+> **If you choose not to start it immediately**, you can do so later using:
+>
+> ```
+> oak worker -d
+> ```
 
 {{< callout context="note" title="Did you know?" icon="outline/info-circle" >}}
 You can set up a multi-cluster infrastructure by installing each **Cluster Orchestrator** and **Worker Node** on a different machine.
@@ -57,6 +60,7 @@ If you run into a restricted network (e.g., on a cloud VM), you need to configur
 {{< /callout >}}
 
 If the installation command succeeded, you can now check if your cluster is showing up correctly using the command:
+
 ```bash
 oak cluster ls
 ```
@@ -75,12 +79,15 @@ oak worker stop
 
 {{< callout context="note" title="Restart your worker" icon="outline/info-circle" >}}
 If you stop your worker without uninstalling it, you can use the following command to restart it in the background:
+
 ```bash
 oak worker -d
 ```
+
 {{< /callout >}}
 
 To uninstall your **Worker node**, run:
+
 ```bash
 oak uninstall worker
 ```

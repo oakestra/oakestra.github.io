@@ -17,16 +17,15 @@ seo:
 </span>
 
 {{< callout context="note" icon="outline/info-circle">}}
-  To see project SLAs in action have a look at [Stage 1: Project Start](/docs/manuals/flops-addon/flops-project-workflow/stages/stage-1-project-start/).
+To see project SLAs in action have a look at [Stage 1: Project Start](/docs/manuals/flops-addon/flops-project-workflow/stages/stage-1-project-start/).
 {{< /callout >}}
-
 
 ```json
 {
   % This key enables more verbose logging in the manager and project observer.
   "verbose": true, % default=false, optional
   % This ID should be the same as for the orchestrator.
-  "customerID": "Admin", 
+  "customerID": "Admin",
   % FLOps has only been tested for GitHub so far.
   "ml_repo_url": "https://github.com/Malyuk-A/flops_ml_repo_mnist_sklearn",
   % Supported flavors include: sklearn, pytorch, tensorflow, keras.
@@ -70,7 +69,6 @@ seo:
 The following SLA shows a simple classic FL project configuration with both post-training steps enabled.
 It requires two learners for training.
 
-
 ```json
 {
   "verbose": true,
@@ -78,12 +76,12 @@ It requires two learners for training.
   "ml_repo_url": "https://github.com/Malyuk-A/flops_ml_repo_mnist_sklearn",
   "ml_model_flavor": "sklearn",
   "training_configuration": {
-      "data_tags": ["mnist"],
-      "min_available_clients": 2,
-      "min_fit_clients": 2,
-      "min_evaluate_clients": 2
+    "data_tags": ["mnist"],
+    "min_available_clients": 2,
+    "min_fit_clients": 2,
+    "min_evaluate_clients": 2
   },
-  "post_training_steps": ["build_image_for_trained_model", "deploy_trained_model_image"],
+  "post_training_steps": ["build_image_for_trained_model", "deploy_trained_model_image"]
 }
 ```
 
@@ -96,15 +94,15 @@ The next SLA displays a more advanced configuration with HFL, multi-platform sup
   "ml_model_flavor": "pytorch",
   "supported_platforms": ["linux/amd64", "linux/arm64"],
   "training_configuration": {
-      "mode": "hierarchical",
-      "data_tags": ["cifar10"],
-      "training_cycles": 10,
-      "training_rounds": 5,
-      "min_available_clients":3,
-      "min_fit_clients": 3,
-      "min_evaluate_clients": 3
+    "mode": "hierarchical",
+    "data_tags": ["cifar10"],
+    "training_cycles": 10,
+    "training_rounds": 5,
+    "min_available_clients": 3,
+    "min_fit_clients": 3,
+    "min_evaluate_clients": 3
   },
-  "post_training_steps": ["build_image_for_trained_model", "deploy_trained_model_image"],
+  "post_training_steps": ["build_image_for_trained_model", "deploy_trained_model_image"]
 }
 ```
 

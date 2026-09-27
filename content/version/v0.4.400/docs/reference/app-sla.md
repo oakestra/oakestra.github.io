@@ -21,44 +21,7 @@ The SLA deployment descriptor is a JSON file that describes the deployment of an
 An example SLA of application `X` with two microservices `X1` and `X3` can be as follows.
 
 ```yaml
-{
-  "sla_version" : "v2.0",
-  "customerID" : "Admin",
-  "applications" : [
-    {
-      "applicationID" : "",
-      "application_name" : "X",
-      "application_namespace" : "default",
-      "application_desc" : "X application",
-      "microservices" : [
-        {
-          "microserviceID": "",
-          "microservice_name": "X1",
-          "microservice_namespace": "default",
-          "virtualization": "container",
-          "vcpu": 1,
-          "storage": 100,
-          "code": "docker.io/X/X1",
-          "addresses": {
-            "rr_ip": "10.30.0.1"
-          },
-        },
-        {
-          "microserviceID": "",
-          "microservice_name": "X3",
-          "microservice_namespace": "default",
-          "vcpu": 2,
-          "storage": 200,
-          "virtualization": "container",
-          "code": "docker.io/X/X3",
-          "addresses": {
-            "rr_ip": "10.30.1.30"
-          	},
-        }
-      ]
-    }
-  ]
-}
+{ "sla_version": "v2.0", "customerID": "Admin", "applications": [{ "applicationID": "", "application_name": "X", "application_namespace": "default", "application_desc": "X application", "microservices": [{ "microserviceID": "", "microservice_name": "X1", "microservice_namespace": "default", "virtualization": "container", "vcpu": 1, "storage": 100, "code": "docker.io/X/X1", "addresses": { "rr_ip": "10.30.0.1" } }, { "microserviceID": "", "microservice_name": "X3", "microservice_namespace": "default", "vcpu": 2, "storage": 200, "virtualization": "container", "code": "docker.io/X/X3", "addresses": { "rr_ip": "10.30.1.30" } }] }] }
 ```
 
 ## Format
@@ -67,21 +30,21 @@ The file is composed of the following fields:
 
 - `sla_version`: the current version
 - `customerID`: id of the user, default is Admin
-- *application list*, in a single deployment descriptor it is possible to define multiple applications, each containing:
+- _application list_, in a single deployment descriptor it is possible to define multiple applications, each containing:
   - Fully qualified app name: A fully qualified name in Oakestra is composed of
-      - `application_name`: unique name representing the application (max 10 char, no symbols)
-      - `application_namespace`: namespace of the app, used to reference different deployment of the same application. Examples of namespace name can be `default` or `production` or `test` (max 10 char, no symbols)
-      - `applicationID`: leave it empty for new deployments, this is needed only to edit an existing deployment.
+    - `application_name`: unique name representing the application (max 10 char, no symbols)
+    - `application_namespace`: namespace of the app, used to reference different deployment of the same application. Examples of namespace name can be `default` or `production` or `test` (max 10 char, no symbols)
+    - `applicationID`: leave it empty for new deployments, this is needed only to edit an existing deployment.
 
   - `application_desc`: Short description of the application
 
-  - *microservice list* is a list of the microservices composing the application. For each microservice the user can specify:
+  - _microservice list_ is a list of the microservices composing the application. For each microservice the user can specify:
     - `microserviceID`: leave it empty for new deployments, this is needed only to edit an existing deployment.
     - Fully qualified service name: Similar to applicattion name, it is composed of
       - `microservice_name`: name of the service (max 10 char, no symbols)
       - `microservice_namespace`: namespace of the service, used to reference different deployment of the same service. Examples of namespace name can be `default` or `production` or `test` (max 10 char, no symbols)
 
-    - `virtualization`: Starting with  :accordion: Accordion `v0.4.301`, Oakestra supports both `container` and `unikernel` virtualization
+    - `virtualization`: Starting with :accordion: Accordion `v0.4.301`, Oakestra supports both `container` and `unikernel` virtualization
     - `cmd`: list of the commands to be executed inside the container at startup
     - `vcpu`: minimum cpu vcores needed to run the container
     - `vgpu`: minimum gpu vcores needed to run the container
@@ -93,7 +56,7 @@ The file is composed of the following fields:
       - `rr\_ip`: [optional filed] This field allows you to setup a custom Round Robin network address to reference all the instances belonging to this service. This address is going to be permanently bounded to the service. The address MUST be in the form `10.30.x.y` and must not collide with any other Instance Address or Service IP in the system, otherwise an error will be returned. If you don't specify a RR_ip and you don't set this field, a new address will be generated by the system.
     - `constraints`: array of constraints regarding the service.
       - `type`: constraint type
-        - `direct`: Send a deployment to a specific cluster and a specific list of eligible nodes. You can specify `"node":"node1;node2;...;noden"` a list of node's hostnames. These are the only eligible worker nodes.  `"cluster":"cluster_name"` The name of the cluster where this service must be scheduled. E.g.:
+        - `direct`: Send a deployment to a specific cluster and a specific list of eligible nodes. You can specify `"node":"node1;node2;...;noden"` a list of node's hostnames. These are the only eligible worker nodes. `"cluster":"cluster_name"` The name of the cluster where this service must be scheduled. E.g.:
       ```
       "constraints":[
                   {

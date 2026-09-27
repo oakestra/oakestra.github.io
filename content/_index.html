@@ -7,244 +7,290 @@ layout = "index"
 +++
 
 <style>
-  /* ── Hero ─────────────────────────────────────────────── */
-  .oak-hero {
-    text-align: center;
-    min-height: 70vh;
-  }
-  .oak-hero img.oak-logo {
-    width: 40em !important;
-    margin: 0 auto 0.5rem;
-    display: block;
-  }
-  .oak-hero .oak-tagline {
-    font-size: 1.35rem;
-    color: var(--bs-secondary-color, #6c757d);
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.6;
-  }
+    /* ── Hero ─────────────────────────────────────────────── */
+    .oak-hero {
+        text-align: center;
+        min-height: 70vh;
+    }
+    .oak-hero img.oak-logo {
+        width: 40em !important;
+        margin: 0 auto 0.5rem;
+        display: block;
+    }
+    .oak-hero .oak-tagline {
+        font-size: 1.35rem;
+        color: var(--bs-secondary-color, #6c757d);
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.6;
+    }
 
-  /* ── Install box ──────────────────────────────────────── */
-  .oak-install {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: var(--bs-code-bg, #f8f9fa);
-    border: 1px solid var(--bs-border-color, #dee2e6);
-    border-radius: 0.5rem;
-    padding: 0.6rem 1rem;
-    font-family: var(--bs-font-monospace, monospace);
-    font-size: 0.95rem;
-    max-width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .oak-install .oak-install-label {
-    font-family: var(--bs-body-font-family);
-    font-weight: 600;
-    color: #497286;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    white-space: nowrap;
-  }
-  [data-bs-theme="dark"] .oak-install {
-    background: #1e2530;
-    border-color: rgba(255, 255, 255, 0.12);
-  }
-  [data-bs-theme="dark"] .oak-install-label {
-    color: #7ecfe0;
-  }
-  .oak-install code {
-    background: none;
-    padding: 0;
-    color: var(--bs-body-color);
-    word-break: break-all;
-  }
-  [data-bs-theme="dark"] .oak-install code {
-    color: #e2e8f0;
-  }
-  .oak-copy-btn {
-    background: none;
-    border: 1px solid var(--bs-border-color, #dee2e6);
-    border-radius: 0.35rem;
-    padding: 0.2rem 0.5rem;
-    cursor: pointer;
-    font-size: 0.8rem;
-    color: #497286;
-    transition: background 0.15s, color 0.15s;
-    white-space: nowrap;
-  }
-  [data-bs-theme="dark"] .oak-copy-btn {
-    color: #7ecfe0;
-    border-color: rgba(126,207,224,.35);
-  }
-  .oak-copy-btn:hover { background: #497286; color: #fff; }
+    /* ── Install box ──────────────────────────────────────── */
+    .oak-install {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: var(--bs-code-bg, #f8f9fa);
+        border: 1px solid var(--bs-border-color, #dee2e6);
+        border-radius: 0.5rem;
+        padding: 0.6rem 1rem;
+        font-family: var(--bs-font-monospace, monospace);
+        font-size: 0.95rem;
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .oak-install .oak-install-label {
+        font-family: var(--bs-body-font-family);
+        font-weight: 600;
+        color: #497286;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+    }
+    [data-bs-theme='dark'] .oak-install {
+        background: #1e2530;
+        border-color: rgba(255, 255, 255, 0.12);
+    }
+    [data-bs-theme='dark'] .oak-install-label {
+        color: #7ecfe0;
+    }
+    .oak-install code {
+        background: none;
+        padding: 0;
+        color: var(--bs-body-color);
+        word-break: break-all;
+    }
+    [data-bs-theme='dark'] .oak-install code {
+        color: #e2e8f0;
+    }
+    .oak-copy-btn {
+        background: none;
+        border: 1px solid var(--bs-border-color, #dee2e6);
+        border-radius: 0.35rem;
+        padding: 0.2rem 0.5rem;
+        cursor: pointer;
+        font-size: 0.8rem;
+        color: #497286;
+        transition:
+            background 0.15s,
+            color 0.15s;
+        white-space: nowrap;
+    }
+    [data-bs-theme='dark'] .oak-copy-btn {
+        color: #7ecfe0;
+        border-color: rgba(126, 207, 224, 0.35);
+    }
+    .oak-copy-btn:hover {
+        background: #497286;
+        color: #fff;
+    }
 
-  .oak-cta-row {
-    display: flex;
-    gap: 0.75rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-  .oak-btn {
-    display: inline-block;
-    padding: 0.55rem 1.4rem;
-    border-radius: 0.4rem;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-decoration: none !important;
-    transition: transform 0.15s, box-shadow 0.15s;
-  }
-  .oak-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,.12); }
-  .oak-btn-primary {
-    background: #497286;
-    color: #fff !important;
-    border: 1.5px solid #497286;
-  }
-  .oak-btn-primary:hover { background: #3c5d6e; border-color: #3c5d6e; }
-  .oak-btn-outline {
-    background: transparent;
-    color: #497286 !important;
-    border: 1.5px solid #497286;
-  }
-  .oak-btn-outline:hover { background: #497286; color: #fff !important; }
+    .oak-cta-row {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+    .oak-btn {
+        display: inline-block;
+        padding: 0.55rem 1.4rem;
+        border-radius: 0.4rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none !important;
+        transition:
+            transform 0.15s,
+            box-shadow 0.15s;
+    }
+    .oak-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+    .oak-btn-primary {
+        background: #497286;
+        color: #fff !important;
+        border: 1.5px solid #497286;
+    }
+    .oak-btn-primary:hover {
+        background: #3c5d6e;
+        border-color: #3c5d6e;
+    }
+    .oak-btn-outline {
+        background: transparent;
+        color: #497286 !important;
+        border: 1.5px solid #497286;
+    }
+    .oak-btn-outline:hover {
+        background: #497286;
+        color: #fff !important;
+    }
 
-  /* ── Divider ──────────────────────────────────────────── */
-  .oak-divider {
-    border: none;
-    border-top: 1px solid var(--bs-border-color, #dee2e6);
-    margin: 3rem auto;
-    max-width: 800px;
-  }
+    /* ── Divider ──────────────────────────────────────────── */
+    .oak-divider {
+        border: none;
+        border-top: 1px solid var(--bs-border-color, #dee2e6);
+        margin: 3rem auto;
+        max-width: 800px;
+    }
 
-  /* ── Features ─────────────────────────────────────────── */
-  .oak-section-title {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  .oak-section-subtitle {
-    text-align: center;
-    color: var(--bs-secondary-color, #6c757d);
-    margin-bottom: 2.5rem;
-    max-width: 580px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .oak-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1.25rem;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  .oak-feature-card {
-    border: 1px solid var(--bs-border-color, #dee2e6);
-    border-radius: 0.6rem;
-    padding: 1.4rem 1.25rem;
-    background: var(--bs-body-bg);
-    transition: box-shadow 0.2s, transform 0.2s;
-  }
-  .oak-feature-card:hover {
-    box-shadow: 0 4px 18px rgba(0,0,0,.08);
-    transform: translateY(-2px);
-  }
-  .oak-feature-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.75rem;
-    color: #497286;
-  }
-  [data-bs-theme="dark"] .oak-feature-icon { color: #7ecfe0; }
-  .oak-feature-icon svg { width: 22px; height: 22px; flex-shrink: 0; display: block; }
-  .oak-feature-card h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 0 0 0.4rem;
-  }
-  .oak-feature-card p {
-    font-size: 0.88rem;
-    color: var(--bs-secondary-color, #6c757d);
-    margin: 0;
-    line-height: 1.55;
-  }
+    /* ── Features ─────────────────────────────────────────── */
+    .oak-section-title {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    .oak-section-subtitle {
+        text-align: center;
+        color: var(--bs-secondary-color, #6c757d);
+        margin-bottom: 2.5rem;
+        max-width: 580px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .oak-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1.25rem;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    .oak-feature-card {
+        border: 1px solid var(--bs-border-color, #dee2e6);
+        border-radius: 0.6rem;
+        padding: 1.4rem 1.25rem;
+        background: var(--bs-body-bg);
+        transition:
+            box-shadow 0.2s,
+            transform 0.2s;
+    }
+    .oak-feature-card:hover {
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
+    }
+    .oak-feature-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.75rem;
+        color: #497286;
+    }
+    [data-bs-theme='dark'] .oak-feature-icon {
+        color: #7ecfe0;
+    }
+    .oak-feature-icon svg {
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+        display: block;
+    }
+    .oak-feature-card h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin: 0 0 0.4rem;
+    }
+    .oak-feature-card p {
+        font-size: 0.88rem;
+        color: var(--bs-secondary-color, #6c757d);
+        margin: 0;
+        line-height: 1.55;
+    }
 
-  /* ── Link cards ───────────────────────────────────────── */
-  .oak-link-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.25rem;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 1rem 3rem;
-  }
-  .oak-link-card {
-    border: 1.5px solid var(--bs-border-color, #dee2e6);
-    border-radius: 0.6rem;
-    padding: 1.5rem 1.25rem;
-    text-decoration: none !important;
-    background: var(--bs-body-bg);
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-    color: inherit !important;
-  }
-  .oak-link-card:hover {
-    border-color: #497286;
-    box-shadow: 0 4px 18px rgba(73,114,134,.14);
-    transform: translateY(-2px);
-  }
-  .oak-link-card .oak-link-icon {
-    display: flex;
-    justify-content: center;
-    color: #497286;
-  }
-  [data-bs-theme="dark"] .oak-link-card .oak-link-icon { color: #7ecfe0; }
-  .oak-link-card .oak-link-icon svg { width: 22px; height: 22px; display: block; }
-  .oak-link-card .oak-link-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #497286;
-  }
-  .oak-link-card .oak-link-desc {
-    font-size: 0.85rem;
-    color: var(--bs-secondary-color, #6c757d);
-    line-height: 1.5;
-  }
-  .oak-link-card .oak-link-arrow {
-    margin-top: auto;
-    padding-top: 0.75rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #497286;
-  }
+    /* ── Link cards ───────────────────────────────────────── */
+    .oak-link-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.25rem;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1rem 3rem;
+    }
+    .oak-link-card {
+        border: 1.5px solid var(--bs-border-color, #dee2e6);
+        border-radius: 0.6rem;
+        padding: 1.5rem 1.25rem;
+        text-decoration: none !important;
+        background: var(--bs-body-bg);
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        transition:
+            border-color 0.2s,
+            box-shadow 0.2s,
+            transform 0.2s;
+        color: inherit !important;
+    }
+    .oak-link-card:hover {
+        border-color: #497286;
+        box-shadow: 0 4px 18px rgba(73, 114, 134, 0.14);
+        transform: translateY(-2px);
+    }
+    .oak-link-card .oak-link-icon {
+        display: flex;
+        justify-content: center;
+        color: #497286;
+    }
+    [data-bs-theme='dark'] .oak-link-card .oak-link-icon {
+        color: #7ecfe0;
+    }
+    .oak-link-card .oak-link-icon svg {
+        width: 22px;
+        height: 22px;
+        display: block;
+    }
+    .oak-link-card .oak-link-title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #497286;
+    }
+    .oak-link-card .oak-link-desc {
+        font-size: 0.85rem;
+        color: var(--bs-secondary-color, #6c757d);
+        line-height: 1.5;
+    }
+    .oak-link-card .oak-link-arrow {
+        margin-top: auto;
+        padding-top: 0.75rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #497286;
+    }
 </style>
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
 <section class="oak-hero">
-  <img src="img/logo/color-full.png" alt="Oakestra" class="oak-logo" data-bs-theme-src-dark="img/logo/logo_dark.png">
+    <img src="img/logo/color-full.png" alt="Oakestra" class="oak-logo" data-bs-theme-src-dark="img/logo/logo_dark.png" />
 
-  <p class="oak-tagline">
-    A lightweight orchestration framework for deploying containerized workloads across the edge&#8209;cloud continuum.
-  </p>
+    <p class="oak-tagline">A lightweight orchestration framework for deploying containerized workloads across the edge&#8209;cloud continuum.</p>
 
-  <!-- Install box -->
-  <div class="oak-install">
-    <span class="oak-install-label">Get Started</span>
-    <code id="oak-cmd">curl -sfL oakestra.io/oak.sh | bash</code>
-    <button class="oak-copy-btn" onclick="(function(b){navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('oak-cmd').textContent).then(function(){var t=b.textContent;b.textContent='Copied!';setTimeout(function(){b.textContent=t},1500)})})(this)">Copy</button>
-  </div>
+    <!-- Install box -->
+    <div class="oak-install">
+        <span class="oak-install-label">Get Started</span>
+        <code id="oak-cmd">curl -sfL oakestra.io/oak.sh | bash</code>
+        <button
+            class="oak-copy-btn"
+            onclick="
+                (function (b) {
+                    navigator.clipboard &&
+                        navigator.clipboard.writeText(document.getElementById('oak-cmd').textContent).then(function () {
+                            var t = b.textContent;
+                            b.textContent = 'Copied!';
+                            setTimeout(function () {
+                                b.textContent = t;
+                            }, 1500);
+                        });
+                })(this)
+            ">
+            Copy
+        </button>
+    </div>
 
-  <div class="oak-cta-row">
-    <a href="/docs/getting-started/welcome-to-oakestra/" class="oak-btn oak-btn-primary">Read the docs</a>
-    <a href="https://github.com/oakestra/oakestra" class="oak-btn oak-btn-outline" target="_blank" rel="noopener">GitHub</a>
-  </div>
+    <div class="oak-cta-row">
+        <a href="/docs/getting-started/welcome-to-oakestra/" class="oak-btn oak-btn-primary">Read the docs</a>
+        <a href="https://github.com/oakestra/oakestra" class="oak-btn oak-btn-outline" target="_blank" rel="noopener">GitHub</a>
+    </div>
 </section>
-

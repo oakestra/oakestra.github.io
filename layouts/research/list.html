@@ -1,89 +1,58 @@
 {{ define "main" }}
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 <!-- Full-width container, no horizontal padding -->
 <div class="container-fluid px-1">
-  <article>
-    <!-- Title with minimal margin -->
-    <h1 class="text-center mt-0 mb-3">
-      {{ if eq .CurrentSection .FirstSection }}
-        {{ .Section | humanize }}
-      {{ else }}
-        {{ .Title }}
-      {{ end }}
-    </h1>
+    <article>
+        <!-- Title with minimal margin -->
+        <h1 class="text-center mt-0 mb-3">{{ if eq .CurrentSection .FirstSection }} {{ .Section | humanize }} {{ else }} {{ .Title }} {{ end }}</h1>
 
-    <!-- Optional page description/content -->
-    {{ with .Content }}
-      <div class="text-center mb-4">{{ . }}</div>
-    {{ end }}
-
-    {{ $currentSection := .CurrentSection }}
-    {{ range where .Site.RegularPages.ByWeight "Section" .Section }}
-      {{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
+        <!-- Optional page description/content -->
+        {{ with .Content }}
+        <div class="text-center mb-4">{{ . }}</div>
+        {{ end }} {{ $currentSection := .CurrentSection }} {{ range where .Site.RegularPages.ByWeight "Section" .Section }} {{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
         <!-- Use g-0 to remove default gutters; each column has its own padding -->
         <div class="row pub-item align-items-start mx-auto pubs-list">
-          <!-- Image column:
+            <!-- Image column:
                - full width on XS
                - 2 columns on MD and up -->
-          <div class="col-md-2 text-center p-3">
-            <a href="{{ .Params.pdf }}" target="_blank" class="no-decoration">
-              <img
-                class="img-fluid pubs_img"
-                src="{{ .Params.img }}"
-                alt="Publication Image"
-              />
-            </a>
-          </div>
+            <div class="col-md-2 text-center p-3">
+                <a href="{{ .Params.pdf }}" target="_blank" class="no-decoration">
+                    <img class="img-fluid pubs_img" src="{{ .Params.img }}" alt="Publication Image" />
+                </a>
+            </div>
 
-          <!-- Text column:
+            <!-- Text column:
                - full width on XS -->
-          <div class="col-12 col-md-12 p-3">
-
-            <!-- Only show conference highlight if it exists -->
-            {{ if .Params.conference }}
-              <p class="pubs_type mb-2">
-                <span class="highlighted-conference">{{ .Params.conference }}</span>
-                {{ if .Params.award }}
-                <span class="highlighted-award">{{ .Params.award }}</span>
+            <div class="col-12 col-md-12 p-3">
+                <!-- Only show conference highlight if it exists -->
+                {{ if .Params.conference }}
+                <p class="pubs_type mb-2">
+                    <span class="highlighted-conference">{{ .Params.conference }}</span>
+                    {{ if .Params.award }}
+                    <span class="highlighted-award">{{ .Params.award }}</span>
+                    {{ end }}
+                </p>
                 {{ end }}
-              </p>
-            {{ end }}
 
-            
-            
-            <h3 class="pubs_title mt-0 mb-2">
-              <a href="{{ .Params.pdf }}"
-                 target="_blank"
-                 class="text-decoration-none text-dark">
-                {{ .Params.title }}
-              </a>
-            </h3>
-            <p class="pubs_authors mb-1">{{ .Params.authors }}</p>
+                <h3 class="pubs_title mt-0 mb-2">
+                    <a href="{{ .Params.pdf }}" target="_blank" class="text-decoration-none text-dark"> {{ .Params.title }} </a>
+                </h3>
+                <p class="pubs_authors mb-1">{{ .Params.authors }}</p>
 
-            <!-- DOI link with icon -->
-            {{ if .Params.doi }}
-            <a class="btn btn-md btn-outline-primary pub-btn"
-            href="{{ .Params.doi }}"
-            target="_blank">
-              <i class="fa fa-globe" aria-hidden="true"></i> DOI
-            </a>
-            {{ end }}
+                <!-- DOI link with icon -->
+                {{ if .Params.doi }}
+                <a class="btn btn-md btn-outline-primary pub-btn" href="{{ .Params.doi }}" target="_blank"> <i class="fa fa-globe" aria-hidden="true"></i> DOI </a>
+                {{ end }}
 
-            <!-- Video link with icon (only if video parameter exists) -->
-            {{ if .Params.video }}
-            <a class="btn btn-md btn-outline-primary pub-btn"
-               href="{{ .Params.video }}"
-               target="_blank">
-              <i class="fa fa-video-camera" aria-hidden="true"></i> Video
-            </a>
-          {{ end }}
-
-          </div>
+                <!-- Video link with icon (only if video parameter exists) -->
+                {{ if .Params.video }}
+                <a class="btn btn-md btn-outline-primary pub-btn" href="{{ .Params.video }}" target="_blank"> <i class="fa fa-video-camera" aria-hidden="true"></i> Video </a>
+                {{ end }}
+            </div>
         </div>
-      {{ end }}
-    {{ end }}
-  </article>
+        {{ end }} {{ end }}
+    </article>
 </div>
 {{ end }}

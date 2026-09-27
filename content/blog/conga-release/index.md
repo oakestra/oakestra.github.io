@@ -18,7 +18,7 @@ seo:
   noindex: false # false (default) or true
 ---
 
-We are proud to announce that Oakestra Conga 🪘 (v0.4.410) is here! *This is the third major release of Oakestra and the rhythm of the new features will have you dancing!*
+We are proud to announce that Oakestra Conga 🪘 (v0.4.410) is here! _This is the third major release of Oakestra and the rhythm of the new features will have you dancing!_
 
 {{< card-grid >}}
 {{< link-card description="A new CLI" href="#new-cli" >}}
@@ -33,7 +33,6 @@ We are proud to announce that Oakestra Conga 🪘 (v0.4.410) is here! *This is t
 {{< link-card description="Dashboard SLA Editor" href="#dashboard-deployment-descriptor" >}}
 {{< link-card description="A Step Closer to a Production Release" href="#a-step-closer-to-a-production-release" >}}
 {{< /card-grid >}}
-
 
 # New CLI
 
@@ -50,7 +49,6 @@ From here you can:
 - 📊 Monitor deployment status and service information (such as deployment failures, logs, resource usage, and more!)
 - 🤖 You can even use Claude AI to solve your Oakestra setup problems
 
-
 ### Check how `oak doctor` can verify your installation
 
 <div style="max-width:50em;margin-right:auto;margin-left:auto">
@@ -66,7 +64,7 @@ You can use Claude AI 🤖 to help you troubleshooting your infrastructure!
 
 Check out the troubleshooting [wiki](/docs/manuals/troubleshooting/).
 
- {{< /callout >}}
+{{< /callout >}}
 
 # New Installation Procedure
 
@@ -130,8 +128,8 @@ This release introduces plenty of under-the-hood improvements for system stabili
 
 Get in touch with us and help us grow stronger. We've got plenty of open issues and exciting problems to work on.
 
-
 {{< rawhtml >}}
+
 <style>
   @keyframes conga-shake {
     0%   { transform: rotate(0deg) scale(1); }
@@ -184,14 +182,14 @@ Get in touch with us and help us grow stronger. We've got plenty of open issues 
   var clicks = 0;
   var hints = ['🥁 Again…', '🥁 One more!', '🎵 Here we go!'];
 
-  var audio = new Audio('/audio/conga.mp3');
+var audio = new Audio('/audio/conga.mp3');
 
-  egg.addEventListener('click', function () {
-    audio.currentTime = 0;
-    audio.play().catch(error => {
-    console.error("Audio failed to play:", error);
-    hint.textContent = "Audio Error: " + error.message;
-  });
+egg.addEventListener('click', function () {
+audio.currentTime = 0;
+audio.play().catch(error => {
+console.error("Audio failed to play:", error);
+hint.textContent = "Audio Error: " + error.message;
+});
 
     egg.classList.remove('shaking');
     void egg.offsetWidth; // force reflow to restart animation
@@ -208,11 +206,12 @@ Get in touch with us and help us grow stronger. We've got plenty of open issues 
         window.location.href = '/oakestra-instruments/';
       }, 520);
     }
-  });
 
-  egg.addEventListener('animationend', function () {
-    egg.classList.remove('shaking');
-  });
+});
+
+egg.addEventListener('animationend', function () {
+egg.classList.remove('shaking');
+});
 })();
 </script>
 {{< /rawhtml >}}

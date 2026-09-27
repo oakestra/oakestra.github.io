@@ -15,16 +15,18 @@ Managing volumes at the Edge is not an easy job. Where do we maintain the storag
 </span>
 
 ### Overview
+
 Oakestra assumes that by default, no edge nodes support volumes. Every worker must explicitly declare the availability for storage that can support volumes. That's because edge devices might have different sizes, and can support different storage.
 
 Oakestra supports Volumes in the form of [CSI](https://github.com/container-storage-interface/spec) Plugins. Meaning that, a volume plugin must be **installed** and **enabled** on each worker node that is planning on accepting volumes mounts.
 
 ### Install the Volumes support on your worker nodes.
 
-On each worker node of your infrastructure that would like to support local volume mounts in a *path* of the *host*, you need to install and enable the *csi.oakestra.io/hostpath* CSI Plugin.
+On each worker node of your infrastructure that would like to support local volume mounts in a _path_ of the _host_, you need to install and enable the _csi.oakestra.io/hostpath_ CSI Plugin.
 
 **Step 1.**
 Startup the **hostpath** CSI Plugin.
+
 ```bash
 docker run -d \
   --name oakestra-hostpath-csi \
@@ -38,13 +40,16 @@ docker run -d \
 
 **Step 2.**
 Enable the CSI Plugin in your worker node.
+
 ```bash
 oak worker config csi add csi.oakestra.io/hostpath unix:///var/lib/oakestra/csi/hostpath.sock
 ```
-*N.b. `oak worker` is jsut an alias for the `NodeEngine` command line utility.*
+
+_N.b. `oak worker` is jsut an alias for the `NodeEngine` command line utility._
 
 **Step 3.**
 Restart your worker node.
+
 ```bash
 oak worker stop
 oak worker -d
@@ -61,7 +66,6 @@ oak cluster info <cluster_name>
 {{< asciinema key="csi" poster="0:15" idleTimeLimit="3">}}
 
 If your cluster supports the `csi.oakestra.io/hostpath` plugin your should see it listed in the **CSI drivers** list.
-
 
 ### Usage Examples
 
