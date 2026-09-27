@@ -1,11 +1,11 @@
 ---
-title: "Structured Python Logging"
+title: "Writing Python logs"
 summary: "Write safe, queryable schema-v1 logs for Oakestra Python services"
 draft: false
-weight: 10314000000
+weight: 10401000000
 toc: true
 seo:
-  title: "Structured Python Logging in Oakestra"
+  title: "Writing Python logs in Oakestra"
   description: "Write safe, structured Oakestra Python logs with schema-v1 JSON, contextual fields, redaction, and queryable severity"
   canonical: ""
   noindex: false
@@ -19,7 +19,7 @@ This contract currently standardizes Oakestra-owned Python application records, 
 
 ## Configure a service
 
-Call `configure_logging()` once in the service entry point before serving work. `OAKESTRA_SERVICE_NAME` distinguishes runtime roles that share an image, while `LOG_LEVEL` controls verbosity and defaults to `INFO`.
+Call `configure_logging()` once in the service entry point before serving work. `OAKESTRA_SERVICE_NAME` distinguishes runtime roles that share an image. The library's `LOG_LEVEL` fallback is `INFO`; deployment configuration sets Resource Abstractors to `WARNING` by default. An explicit `LOG_LEVEL` overrides the deployment default.
 
 ```python
 import os
@@ -247,4 +247,4 @@ For a service change, also run its tests, Ruff, Python compilation, and a contai
 - standard-library and Gunicorn records pass through the same handler;
 - Alloy attaches the expected `cluster_id`, `compose_service`, and normalized `level` labels.
 
-Read [Observability Stack Operations](../observability/) for dashboards, queries, alert destinations, and troubleshooting.
+Read the [Observability manuals](../../manuals/observability/) for dashboards, queries, alert destinations, and troubleshooting. The [shared package README](https://github.com/oakestra/oakestra/blob/develop/libraries/oakestra_logging/README.md) and [schema](https://github.com/oakestra/oakestra/blob/develop/libraries/oakestra_logging/oakestra_logging/schema/log-event-v1.schema.json) are the authoritative implementation references.

@@ -152,23 +152,8 @@ The metrics pipeline requires rootful Linux Docker Engine 25 or newer on AMD64 o
 
 Each deployment has its own observability configuration:
 
-```text
-root_orchestrator/
-cluster_orchestrator/
-run-a-cluster/
-├── config/
-│   ├── config.alloy
-│   ├── loki.yml
-│   ├── grafana-datasources.yml
-│   ├── grafana-dashboards.yml
-│   ├── alerts/
-│   ├── container-inventory/
-│   └── dashboards/
-└── prometheus/
-    ├── container-lifecycle-rules.yml
-    └── prometheus*.yml
-```
+The Root, Cluster, and 1-DOC configurations live under `root_orchestrator/`, `cluster_orchestrator/`, and `run-a-cluster/`, respectively. Each deployment has its own `config/` directory for Alloy, Loki, Grafana provisioning, dashboards, and inventory, plus a `prometheus/` directory for scrape configuration and recording rules.
 
 The files are similar but not interchangeable: service names, ports, collector scopes, metric gateways, and datasource URLs vary by deployment. Keep the Compose manifest, overrides, downloaded configuration, and image version from the same Oakestra revision.
 
-Continue with the [Observability Stack Operations](../../manuals/observability/) manual to deploy, query, validate, and troubleshoot the stack. Contributors adding Python log events should also read [Structured Python Logging](../../manuals/structured-logging/).
+Continue with the [Observability manuals](../../manuals/observability/) to deploy, query, validate, and troubleshoot the stack. Contributors adding Python log events should read [Writing Python logs](../../contribution-guide/writing-python-logs/).
