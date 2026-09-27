@@ -77,5 +77,6 @@ The awards and recognitions at ACM EuroSys + ASPLOS 2025 underscore the scientif
 {{< link-card
   title="Leverage the power of scientifically-backed Oakestra framework"
   description="Join us as we continue to redefine the future of edge computing."
-  href="/docs/getting-started/welcome-to-oakestra-docs/"
-  target="_blank" >}}
+  href="/docs/getting-started/welcome-to-oakestra/"
+  target="_blank"
+>}}

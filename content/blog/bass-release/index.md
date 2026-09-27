@@ -44,7 +44,7 @@ Here are the new features introduced in this version!
 Our completely overhauled documentation website is more than just a new look—it's a reimagined resource designed to guide you effortlessly through every aspect of Oakestra. Built on modern frameworks, the site adapts seamlessly to desktops, tablets, and smartphones. Whether you’re troubleshooting an issue or learning new features, you always have a smooth and intuitive experience. Every article has been refined for clarity and depth, making it the definitive guide for both beginners and seasoned developers.
 
 {{< callout title="Explore the New Documentation" icon="outline/book" >}}
-Visit our revamped documentation [website](https://www.oakestra.io/docs/getting-started/welcome-to-oakestra-docs/) and share your feedback by submitting an issue [here](https://github.com/oakestra/documentation/issues/new?template=Blank+issue).
+Visit our revamped documentation [website](https://www.oakestra.io/docs/getting-started/welcome-to-oakestra/) and share your feedback by submitting an issue [here](https://github.com/oakestra/documentation/issues/new?template=Blank+issue).
 {{< /callout >}}
 
 ## Developer-Friendly Command Line Interface
