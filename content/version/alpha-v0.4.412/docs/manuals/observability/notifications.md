@@ -8,6 +8,8 @@ toc: true
 
 Grafana provisions **Oakestra Alert Webhook** and **Oakestra Alert Email**. `OAKESTRA_ALERT_CONTACT_POINT` chooses the destination for the alert rules; it defaults to the webhook. The webhook's default URL, `http://127.0.0.1:65535/oakestra-alerts`, is intentionally inactive. Alert rules still evaluate, but deliveries fail with connection refused until a real receiver is configured. Oakestra does not run a service at that address.
 
+![Provisioned webhook and email contact points in Grafana](<img/observability stack/Contact points.png>)
+
 ## Webhook
 
 Set the destination before creating or recreating Grafana:

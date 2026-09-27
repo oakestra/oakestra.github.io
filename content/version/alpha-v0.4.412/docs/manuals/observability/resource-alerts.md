@@ -16,6 +16,8 @@ Grafana provisions six Prometheus rules for host resources and one rule for miss
 
 Warning ranges stop where critical begins, preventing simultaneous warning and critical instances for one resource. CPU uses a five-minute non-idle rate. Disk rules evaluate real, writable, non-zero filesystems and retain `device` and `mountpoint`. A seventh rule reports missing or duplicate threshold series after one minute.
 
+In **Alerting → Alert rules**, expand **Oakestra host resource alerts** to inspect the provisioned rules. The [Container alerts](../container-alerts/) page shows where these groups appear in Grafana.
+
 Configure deployment-specific thresholds before running the startup script or [inventory generator](../deployment/):
 
 ```bash

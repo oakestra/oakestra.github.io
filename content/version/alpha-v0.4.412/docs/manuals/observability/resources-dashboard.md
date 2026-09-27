@@ -8,6 +8,8 @@ toc: true
 
 **[Oakestra] Resources** is provisioned from JSON and queries the local `Prometheus` datasource. A standalone Root or Cluster shows its own physical host and managed containers; 1-DOC shows one physical host and containers from both orchestration levels.
 
+![The Resources dashboard showing host CPU, memory, and filesystem panels](<img/observability stack/Resources dashboard.png>)
+
 ## Host panels
 
 Host panels use node_exporter. They show CPU busy percentage and trend, memory used and available, root-filesystem usage, usage by real mountpoint, and disk read/write throughput by device. These panels describe the physical machine. Selecting a different Cluster or Component does not change them, including in 1-DOC.

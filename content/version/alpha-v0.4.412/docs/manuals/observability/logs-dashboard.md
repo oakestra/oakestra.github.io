@@ -21,6 +21,8 @@ Open **[Oakestra] Orchestrator Logs** in the Grafana instance for the host you a
 | **Advanced field filter (LogQL)** | Appends LogQL stages for parsing and filtering fields inside matching lines. |
 | Time picker | Chooses the time window and lets you scroll back through retained history. |
 
+![The Logs dashboard showing filters, search controls, and recent orchestrator logs](<img/observability stack/Logs dashboard.png>)
+
 Compact display changes presentation after filtering; it does not rewrite Loki records. Search `worker|mqtt` to find either term, or a literal 24-character Oakestra ID to look for the same ID across components. The default `^` pattern matches every line without highlighting the whole line.
 
 For structured Python records, enter this in **Advanced field filter (LogQL)** to select a specific event:
@@ -34,6 +36,7 @@ For a nested field, use `| json job_id="context.job_id" | job_id="<JOB_ID>"`. Th
 ## Follow a shared ID
 
 Expand a log line containing a 24-character Oakestra ID and use its **Open in...** link. Grafana preserves the time range, switches to the linked component, and places the ID in **Full-line search** so you can see what that component logged about it. A link finds shared text; it does not prove that two events are causally related or reconstruct a distributed trace. If the destination did not log that ID in the selected time range, it shows no lines.
+
 
 Select a window of at most 30 days. Grafana's generic picker may offer longer ranges, but Loki 2.9 rejects a single query exceeding `30d1h`. Move a shorter absolute window backward to read older retained records.
 

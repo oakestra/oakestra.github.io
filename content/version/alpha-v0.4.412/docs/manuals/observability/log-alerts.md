@@ -8,6 +8,8 @@ toc: true
 
 Grafana provisions **Orchestrator error or stacktrace detected** and evaluates it against the instance's local Loki every 30 seconds. The rule groups instances by `cluster_id` and `compose_service`, identifying the affected deployment and Compose service.
 
+In **Alerting → Alert rules**, expand **Oakestra log alerts** to inspect the provisioned rule. The [Container alerts](../container-alerts/) page shows where these groups appear in Grafana.
+
 ## Detection
 
 The first path trusts Alloy's normalized indexed `level` label for recognized records: `error` and `critical` match. A valid Info line containing the word `ERROR` does not match. The second path inspects records without a normalized level and recognizes strict legacy error headers, Python traceback headers, Go panic/runtime markers, and related stack frames. It excludes schema-v1 lines so a structured record is not counted a second time. A raw record with an unfamiliar error format may be missed; broad searches for the word “error” would cause false positives.

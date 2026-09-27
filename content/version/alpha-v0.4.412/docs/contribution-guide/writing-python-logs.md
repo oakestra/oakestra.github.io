@@ -2,7 +2,7 @@
 title: "Writing Python logs"
 summary: "Write safe, queryable schema-v1 logs for Oakestra Python services"
 draft: false
-weight: 10401000000
+weight: 10402500000
 toc: true
 seo:
   title: "Writing Python logs in Oakestra"
@@ -247,4 +247,6 @@ For a service change, also run its tests, Ruff, Python compilation, and a contai
 - standard-library and Gunicorn records pass through the same handler;
 - Alloy attaches the expected `cluster_id`, `compose_service`, and normalized `level` labels.
 
-Read the [Observability manuals](../../manuals/observability/) for dashboards, queries, alert destinations, and troubleshooting. The [shared package README](https://github.com/oakestra/oakestra/blob/develop/libraries/oakestra_logging/README.md) and [schema](https://github.com/oakestra/oakestra/blob/develop/libraries/oakestra_logging/oakestra_logging/schema/log-event-v1.schema.json) are the authoritative implementation references.
+Read the [Observability manuals](../../manuals/observability/overview/) for dashboards, queries, alert destinations, and troubleshooting. The [shared package README](https://github.com/oakestra/oakestra/blob/feat/566-standardize-python-orchestrator-logging-as-structured-json/libraries/oakestra_logging/README.md) and [schema](https://github.com/oakestra/oakestra/blob/feat/566-standardize-python-orchestrator-logging-as-structured-json/libraries/oakestra_logging/oakestra_logging/schema/log-event-v1.schema.json) are the authoritative implementation references.
+
+<!-- TODO(release): Point the package links to the released Oakestra tag after the structured-logging branch merges. -->

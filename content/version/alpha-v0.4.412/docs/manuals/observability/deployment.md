@@ -6,7 +6,7 @@ weight: 10313100000
 toc: true
 ---
 
-Root, Cluster, and 1-DOC deployments each use the configuration for their own Compose manifest. Start separate installations on the Root host first, then install each Cluster with the Root address. See [Observability Stack](../../../concepts/observability/) for the data flow and why standalone installations keep their telemetry locally.
+Root, Cluster, and 1-DOC deployments each use the configuration for their own Compose manifest. Start separate installations on the Root host first, then install each Cluster with the Root address. See [Observability concepts](../../../concepts/observability/overview/) for the data flow and why standalone installations keep their telemetry locally.
 
 ## Install with the CLI
 
