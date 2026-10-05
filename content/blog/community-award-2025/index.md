@@ -31,7 +31,7 @@ Therefore, let's take a moment to congratulate all the amazing contributors to t
 >[Patrick Sabanic](https://github.com/sabtf),
 >[Oliver Halu](https://github.com/oliverhalu),
 >[Jackob Kempter](https://github.com/JakobKe),
->[Ivo Raimondi](https://github.com/HMF2475),
+>[Ivo Raimondi](https://github.com/Ivoraimar),
 >[Alexander Malyuk](https://github.com/Malyuk-A),
 >[Simon Zelenski](https://github.com/smnzlnsk),
 >[Mehdi Yosofie](https://github.com/meeeehdiiii),
