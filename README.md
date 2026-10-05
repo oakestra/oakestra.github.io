@@ -7,7 +7,7 @@ This project includes ready-to-use development environments for DevContainer and
 
 ## Dependencies
 
-In order to build the webside you need to install:
+In order to build the website you need to install:
 - [`npm`](https://nodejs.org/en/download/package-manager)
 - [`golang`](https://go.dev/doc/install)
 

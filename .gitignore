@@ -1,6 +1,6 @@
 # Generated files by hugo
 public/
-resources/_gen/
+resources/
 hugo_stats.json
 
 # Executable may be added to repository
@@ -13,24 +13,15 @@ hugo.linux
 .env
 .netlify
 
-public/
 node_modules/
-resources/_gen/
-.DS_Store
+auxiliary/oak_cli/documentation_automation/docs/build/
 
 # IDE Files
 .vscode
 .idea
-
-node_modules/
-auxiliary/oak_cli/documentation_automation/docs/build/
 
 # draio bkp files
 *.bkp
 
 # macOS
 .DS_Store
-
-node_modules
-public
-resources
