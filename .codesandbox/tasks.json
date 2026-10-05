@@ -3,7 +3,7 @@
   "setupTasks": [
     {
       "name": "Install Hugo",
-      "command": "wget -q https://github.com/gohugoio/hugo/releases/download/v0.152.2/hugo_extended_0.152.2_Linux-64bit.tar.gz && tar -xzf hugo_extended_0.152.2_Linux-64bit.tar.gz && sudo mv hugo /usr/local/bin/ && rm hugo_extended_0.152.2_Linux-64bit.tar.gz && hugo version"
+      "command": "wget -q https://github.com/gohugoio/hugo/releases/download/v0.167.0/hugo_extended_0.167.0_Linux-64bit.tar.gz && tar -xzf hugo_extended_0.167.0_Linux-64bit.tar.gz && sudo mv hugo /usr/local/bin/ && rm hugo_extended_0.167.0_Linux-64bit.tar.gz && hugo version"
     },
     {
       "name": "Install Dependencies",

@@ -117,6 +117,9 @@ mainSections = ["docs"]
 
 # SEO (@thulite/seo)
 [seo]
+  # @thulite/seo calls isset on this table and warns when it's missing.
+  [seo.description]
+    summaryFallback = true
   [seo.title]
     separator = " | "
     suffix = ""
