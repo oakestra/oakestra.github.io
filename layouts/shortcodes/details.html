@@ -1,0 +1,7 @@
+{{- /* Same as the doks-core shortcode, but rendered with .Page.RenderString instead of
+  markdownify. markdownify hands the link render hook the home page, so in-page links like
+  [x](#some-heading) crash fragment validation and would point at / instead of this page. */ -}}
+<details{{ with .Get 1 }} {{ . | safeHTML }}{{ end -}}>
+  <summary>{{ with .Get 0 -}}{{ . | $.Page.RenderString }}{{ else -}}{{ errorf "No summary provided"}}{{ end -}}</summary>
+  {{ with .Inner -}}{{ . | $.Page.RenderString (dict "display" "block") }}{{ else -}}{{ errorf "No details provided"}}{{ end -}}
+</details>
