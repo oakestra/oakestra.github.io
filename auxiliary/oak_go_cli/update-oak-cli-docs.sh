@@ -3,41 +3,38 @@
 # NOTE: This is a shortcut cmd that is defined in package.json
 # It can be run like this: 'npm run update-oak-cli-docs'
 
+set -euo pipefail
+
 # Ask for the version
-read -p "Enter version (default: main): " GIVEN_VERSION
+read -r -p "Enter version (default: main): " GIVEN_VERSION
 
-# Set VERSION variable
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+AUTO_DOC_PATH="${SCRIPT_DIR}/documentation_automation"
+IMAGE_NAME="oak-cli-documentation-automator"
+CONTAINER_NAME="oak-cli-docs-automator"
+
 if [ -z "$GIVEN_VERSION" ] || [ "$GIVEN_VERSION" == "main" ]; then
-    unset VERSION
+    TARGET_DIR="${REPO_ROOT}/content/docs/reference/cli"
 else
-    VERSION=$GIVEN_VERSION
+    TARGET_DIR="${REPO_ROOT}/content/version/${GIVEN_VERSION}/docs/reference/cli"
 fi
 
-SCRIPT_PATH="${BASH_SOURCE[0]}"
-AUTO_DOC_PATH="$(dirname "${SCRIPT_PATH}")/documentation_automation"
-AUTO_DOCS_DIR_NAME="cli_docs"
-ARCHIVE_NAME="oak_docs_html_files.tar.gz"
-
-MAIN_VERSION_DIR="../../../content/docs/reference/cli"
-OTHER_VERSION_DIR="../../../content/version/$VERSION/docs/reference/cli"
-
-DEPLOY_DIR="../../../static/${AUTO_DOCS_DIR_NAME}"
-
-cd "${AUTO_DOC_PATH}"
-docker build -t oak-cli-documentation-automator .
-docker run -d --name oak-cli-docs-automator oak-cli-documentation-automator sleep infinity
-
-if [ -z "$VERSION" ]; then
-    cd "${MAIN_VERSION_DIR}"
-else
-    cd "${OTHER_VERSION_DIR}"
+# Fail before touching anything, otherwise the cleanup below would run in the wrong place.
+if [ ! -d "${TARGET_DIR}" ]; then
+    echo "Target directory ${TARGET_DIR} does not exist" >&2
+    exit 1
 fi
 
-current_dir_name=$(basename "$PWD")
+# The Dockerfile clones oakestra-cli, so a cached build would silently regenerate stale docs.
+docker build --no-cache -t "${IMAGE_NAME}" "${AUTO_DOC_PATH}"
 
-# delete all files in current dir
-rm -rf ./*
-# copy _index.md
-cp $SCRIPT_PATH/_index.md .
-docker cp "oak-cli-docs-automator:/app/oak_go_cli/docs/." .
-docker rm -f oak-cli-docs-automator
+docker rm -f "${CONTAINER_NAME}" >/dev/null 2>&1 || true
+trap 'docker rm -f "${CONTAINER_NAME}" >/dev/null 2>&1 || true' EXIT
+docker create --name "${CONTAINER_NAME}" "${IMAGE_NAME}" >/dev/null
+
+# The generated docs already contain _index.md (see the Dockerfile).
+find "${TARGET_DIR}" -mindepth 1 -delete
+docker cp "${CONTAINER_NAME}:/app/oak_go_cli/docs/." "${TARGET_DIR}"
+
+echo "CLI docs written to ${TARGET_DIR}"
