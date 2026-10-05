@@ -10,6 +10,10 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
+{{< callout context="caution" title="Potential breaking change in v0.4.412" icon="outline/alert-triangle" >}}
+Potential breaking change in v0.4.412 related to the APIs. If your Oakestra setup uses custom integrations with the root APIs, please check the [v0.4.412 release notes](https://github.com/oakestra/oakestra/releases/tag/v0.4.412) and [PR #484](https://github.com/oakestra/oakestra/pull/484) for further details.
+{{< /callout >}}
+
 <span class="lead">
 Oakestra is a flexible and lightweight orchestration framework designed for all your edge computing needs. Accelerate your next-generation applications with Oakestra!
 </span>

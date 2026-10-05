@@ -47,7 +47,7 @@ curl -sfL oakestra.io/oak.sh | bash
 
 2) Install the Root orchestrator using:
 ```bash
-oak install root alpha-v0.4.412
+oak install root alpha-v0.4.413
 ```
 
 *What is this doing?* This script downloads the required files to the directory `~/.oakestra/root_orchestrator`. From there it executes the root orchestrator using docker compose.
@@ -78,7 +78,7 @@ oak config set cluster_name <UNIQUE NAME FOR YOUR CLUSTER>
 
 3) Install and startup your cluster
 ```bash
-oak install cluster alpha-v0.4.412
+oak install cluster alpha-v0.4.413
 ```
 
 **Be carefull:** this install script asks you to confirm the address, name and position of your cluster.
@@ -116,7 +116,7 @@ oak config set root_orchestrator_address <IP OF ROOT ORCHESTRATOR> #Only if diff
 
 3) Install and run your worker node:
 ```bash
-oak install worker alpha-v0.4.412
+oak install worker alpha-v0.4.413
 ```
 
 At the end of the installation, it will ask you the following:
