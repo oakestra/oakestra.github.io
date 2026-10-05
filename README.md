@@ -10,6 +10,7 @@ This project includes ready-to-use development environments for DevContainer and
 In order to build the website you need to install:
 - [Node.js](https://nodejs.org/en/download) 24, see `.nvmrc`
 - [Hugo extended](https://gohugo.io/installation/) v0.167.0
+- [Dart Sass](https://github.com/sass/dart-sass/releases) v1.105.1
 
 then you can install all the project dependencies using
 
