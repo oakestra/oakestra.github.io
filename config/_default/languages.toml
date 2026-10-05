@@ -5,5 +5,5 @@ weight = 10
 [en.params]
 languageISO = "EN"
 languageTag = "en-US"
-footer = '© 2025 The Oakestra Authors. All rights reserved.'
+footer = '© 2026 The Oakestra Authors. All rights reserved.'
 alertText = '<a class="alert-link stretched-link fw-normal" href="/blog/oakestra-releases-v0.4.410-conga/" target="_blank">Oakestra Conga 🪘 (v0.4.410) just launched! Check out the latest features. </a>'
