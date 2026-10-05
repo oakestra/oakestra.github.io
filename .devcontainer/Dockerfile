@@ -1,14 +1,6 @@
-FROM golang:1.22-bookworm
+FROM node:24-bookworm
 
-RUN apt-get update && apt-get install -y ca-certificates curl gnupg && \
-    mkdir -p /etc/apt/keyrings && \
-    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
-    echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list && \
-    apt-get update && \
-    apt-get install -y nodejs wget && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
-
-ARG HUGO_VERSION="0.152.2"
+ARG HUGO_VERSION="0.167.0"
 
 RUN ARCH=$(uname -m) && \
     if [ "$ARCH" = "x86_64" ]; then \

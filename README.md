@@ -8,8 +8,8 @@ This project includes ready-to-use development environments for DevContainer and
 ## Dependencies
 
 In order to build the website you need to install:
-- [`npm`](https://nodejs.org/en/download/package-manager)
-- [`golang`](https://go.dev/doc/install)
+- [Node.js](https://nodejs.org/en/download) 24, see `.nvmrc`
+- [Hugo extended](https://gohugo.io/installation/) v0.167.0
 
 then you can install all the project dependencies using
 
@@ -63,12 +63,12 @@ This project supports multiple development environments:
 ### DevContainer (Recommended)
 - Open in VS Code with Dev Containers extension
 - Configuration: `.devcontainer/devcontainer.json`
-- Hugo version: **v0.152.2**
+- Hugo version: **v0.167.0**
 
 ### CodeSandbox
 - Open at: `https://codesandbox.io/p/github/oakestra/documentation`
 - Configuration: `.codesandbox/tasks.json`
-- Hugo version: **v0.152.2** (installed automatically on setup)
+- Hugo version: **v0.167.0** (installed automatically on setup)
 
 ## Weights Explained
 
