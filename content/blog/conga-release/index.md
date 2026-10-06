@@ -223,7 +223,7 @@ Many thanks to the contributors for this release:
 
 - [@Mjaethers](https://github.com/Mjaethers)
 - [@axiphi](https://github.com/axiphi)
-- [@HMF2475](https://github.com/HMF2475)
+- [@Ivoraimar](https://github.com/Ivoraimar)
 - [@melkodary](https://github.com/melkodary)
 - [@smnzlnsk](https://github.com/smnzlnsk)
 - [@giobart](https://github.com/giobart)
