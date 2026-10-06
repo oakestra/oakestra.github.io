@@ -22,15 +22,17 @@ At this stage, you should be familiar with the steps of configuring and running 
 The first debugging step is to identify where the issue is coming from. The Root and Cluster orchestrators are the main components of the Oakestra system. They are responsible for managing the applications and the workers in the cluster.
 You have two ways to access operational logs from the components 
 
-### Using Grafana Dashboard
+### Using Grafana
 
-The Grafana dashboards are exposed at `<root_orchestrator_ip>:3000` and `<cluster_orchestrator_ip>:3001`, respectively. 
+Standalone Root and Cluster deployments expose Grafana at `http://<root-orchestrator-ip>:3000` and `http://<cluster-orchestrator-ip>:3001`, respectively. Each instance reads its own local Loki and Prometheus.
 
-{{< callout context="caution" title="Caution" icon="outline/alert-triangle" >}}
-The cluster Grafana dashboard is not available for single machine deployments. For this setup, all the data is aggregated in the same dashboard.
+{{< callout context="note" title="1-DOC deployments" icon="outline/info-circle" >}}
+1-DOC runs Root and Cluster on one host and uses one Grafana instance at `http://<host-ip>:3000`. Its separate Logs, Log Statistics, and Resources dashboards read the shared local Loki and Prometheus; there is no second Grafana on port `3001`.
 {{< /callout >}}
 
-![](control-plane-grafanalogs.png)
+The provisioned Logs dashboard supports component and severity selection, full-line search, structured-field filters, time navigation, and shared-ID correlation links. The Log Statistics and Resources dashboards cover trends and resource usage separately. See the [Observability manuals](../../observability/overview/) for queries, local-data boundaries, and troubleshooting steps.
+
+{{< screenshot src="img/observability stack/Logs dashboard.png" alt="The current Oakestra Logs dashboard with filters and recent records" >}}
 
 ### Using Docker logs 
 

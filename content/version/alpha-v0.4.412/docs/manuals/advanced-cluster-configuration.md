@@ -69,15 +69,15 @@ export OVERRIDE_FILES=override-ipv6-enabled.yml
 * `override-no-dashboard.yml`: Do not deploy the dashboard.
 * `override-no-network.yml`: Exclude network components.
 * `override-ipv6-enabled.yml`: Enable IPv6 for container deployments.
-* `override-no-observe.yml`: Disable the [observability stack](https://github.com/oakestra/oakestra/blob/7107115a747cf83268aea592df1478cd20933907/root_orchestrator/config/README.md).
+* `override-no-observe.yml`: Disable the complete [observability stack](../observability/overview/).
 {{< /details >}}
 
 {{< details "*Click to see an overview of Cluster Orchestrator overrides*" >}}
 * `override-ipv6-enabled.yml`: Enable IPv6 for container deployments.
-* `override-no-observe.yml`: Disable the [observability stack](https://github.com/oakestra/oakestra/blob/7107115a747cf83268aea592df1478cd20933907/root_orchestrator/config/README.md).
+* `override-no-observe.yml`: Disable the complete [observability stack](../observability/overview/).
 * `override-mosquitto-auth.yml`: Enable [MQTT Authentication](../networking-internals/mqtt-authentication/).
 * `override-no-network.yml`: Exclude network components.
-* `override-no-observe.yml`: Disable the [observability stack](https://github.com/oakestra/oakestra/blob/7107115a747cf83268aea592df1478cd20933907/root_orchestrator/config/README.md).
+
 {{< /details >}}
 
 
@@ -140,4 +140,3 @@ oak worker config cluster 192.168.10.1
 ```bash
 oak worker -d
 ```
-

@@ -18,6 +18,8 @@ Oakestra is composed of *three* key building blocks:
 * The [Worker Node](#worker-node) machine that executes application microservices.
 {{< /callout >}}
 
+Root and Cluster orchestrators also run host-local logging and metrics services. See the [Observability concepts](../observability/overview/) for the data flows, deployment boundaries, storage, and security model.
+
 ## Root Orchestrator
 
 The root orchestrator is the centralized control plane that coordinates the participating clusters.

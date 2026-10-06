@@ -1,0 +1,12 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+{{- with resources.Get $src -}}
+  <figure class="docs-screenshot">
+    <a href="{{ .RelPermalink }}" data-screenshot-lightbox aria-label="Enlarge screenshot: {{ $alt }}">
+      <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+    </a>
+    <figcaption>Click the screenshot to enlarge it.</figcaption>
+  </figure>
+{{- else -}}
+  {{- errorf "Screenshot %q not found in assets (page %q)" $src .Page.File.Path -}}
+{{- end -}}

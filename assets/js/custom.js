@@ -30,3 +30,54 @@
         attributeFilter: ['data-bs-theme']
     });
 })();
+
+// Enlarge documentation screenshots without leaving the current page.
+(function() {
+    if (typeof HTMLDialogElement === 'undefined') return;
+
+    let dialog;
+    let image;
+    let opener;
+
+    function getDialog() {
+        if (dialog) return dialog;
+
+        dialog = document.createElement('dialog');
+        dialog.className = 'docs-screenshot-lightbox';
+        dialog.setAttribute('aria-label', 'Enlarged screenshot');
+
+        const close = document.createElement('button');
+        close.type = 'button';
+        close.className = 'docs-screenshot-lightbox__close';
+        close.setAttribute('aria-label', 'Close screenshot');
+        close.textContent = '×';
+        close.addEventListener('click', () => dialog.close());
+
+        image = document.createElement('img');
+        dialog.append(close, image);
+        document.body.append(dialog);
+
+        dialog.addEventListener('click', (event) => {
+            if (event.target === dialog) dialog.close();
+        });
+        dialog.addEventListener('close', () => {
+            if (opener) opener.focus();
+            opener = null;
+        });
+        return dialog;
+    }
+
+    document.addEventListener('click', (event) => {
+        const link = event.target.closest('[data-screenshot-lightbox]');
+        if (!link || event.defaultPrevented || event.button !== 0 ||
+            event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+        event.preventDefault();
+        opener = link;
+        const lightbox = getDialog();
+        const preview = link.querySelector('img');
+        image.src = link.href;
+        image.alt = preview ? preview.alt : '';
+        lightbox.showModal();
+    });
+})();
