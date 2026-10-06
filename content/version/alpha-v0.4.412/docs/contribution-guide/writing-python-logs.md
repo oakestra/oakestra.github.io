@@ -103,6 +103,8 @@ Use lowercase dotted event names for operational events that may be queried, cou
 
 Good context is small and bounded: identifiers, counts, enum-like states, durations, retry numbers, field names, and target components. Do not log complete requests, users, SLAs, MQTT messages, database documents, HTTP responses, environment dictionaries, or resource snapshots. Prefer `payload_size`, `field_count`, or a necessary identifier.
 
+Logging must not fail while summarizing invalid input. Check the type before calling `len()` or accessing nested fields, and leave the original input unchanged for validation.
+
 ### Bind operation context
 
 When several records belong to one operation, bind shared fields to a local logger:
@@ -156,13 +158,32 @@ except DeploymentError:
     raise
 ```
 
-The package stores the exception type, message, and escaped traceback in one `exception` object and emits one line. Do not also call `traceback.print_exc()` or log the same failure at every layer. Use `warning` or `error` with a safe `error_type` when a traceback adds no diagnostic value.
+The package stores the exception type, message, and escaped traceback in one `exception` object and emits one line. Do not also call `traceback.print_exc()` or log the same failure at every layer.
+
+For a recoverable failure where a traceback adds little value, include a sanitized reason rather than only the exception class:
+
+```python
+from oakestra_logging import exception_context
+from requests.exceptions import ConnectionError
+
+try:
+    contact_cluster(cluster_id)
+except ConnectionError as exc:
+    logger.warning(
+        "Cluster request will be retried",
+        event_name="cluster.request.retry",
+        cluster_id=cluster_id,
+        **exception_context(exc),
+    )
+```
+
+`exception_context()` provides `context.error_type` and `context.error_message`. It truncates the diagnostic message after 2,048 characters and appends a truncation marker. Use this only when the caller actually retries or handles the failure; do not hide an unhandled failure behind a warning.
 
 ## Redaction and sensitive data
 
 The logging processor recursively redacts values stored under keys representing passwords, secrets, tokens, authorization headers, cookies, API keys, private keys, and credentials. Redaction is case-insensitive and applies to nested mappings.
 
-It is a final safeguard, not permission to log secrets. It cannot discover a token embedded in a message, exception text, opaque string, or innocent-looking field. Exclude sensitive and personal data at the call site and do not construct exceptions that contain credentials or complete payloads.
+Exception messages and tracebacks also mask common credential syntax: URL credentials and query strings, Basic/Bearer values, and sensitive assignments. This is not a general secret scanner and does not sanitize every free-form message or opaque context string. Exclude sensitive and personal data at the call site and do not construct exceptions that contain credentials or complete payloads.
 
 ## Standard-library and Gunicorn integration
 
