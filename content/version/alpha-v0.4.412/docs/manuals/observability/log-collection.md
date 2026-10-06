@@ -12,6 +12,19 @@ Each orchestrator's Alloy discovers Docker containers through `discovery.docker`
 
 Compose labels determine which collector owns a container. `oakestra.logging.collector` has the value `root`, `cluster`, or `one-doc`. `oakestra.cluster.id` is `root`, the configured Cluster name, or `one-doc` for shared 1-DOC infrastructure. A Cluster's database-generated ID is not available when Docker creates its containers, so the log label `cluster_id` is a deployment name rather than the database ID.
 
+Grafana, Loki, and Alloy have `oakestra.logging.enabled: "false"` by default. Alloy drops those containers before reading their logs, reducing the logging pipeline's own traffic. Their output remains available through `docker logs`, and their metrics and container lifecycle monitoring are unchanged. Other containers assigned to the collector remain eligible when the label is absent or set to `"true"`.
+
+To collect a diagnostic service's logs, set the label to `"true"` in a Compose override. For example, to enable Grafana logging in Root or 1-DOC:
+
+```yaml
+services:
+  grafana:
+    labels:
+      oakestra.logging.enabled: "true"
+```
+
+Use `cluster_grafana`, `cluster_loki`, or `cluster_alloy` as the service key in a standalone Cluster; Root and 1-DOC use `grafana`, `loki`, and `alloy`. Add the override to the same Compose configuration used for deployment and recreate the selected service. Keep its collector and cluster labels. This changes collection, whereas the dashboard's **Source** filter only changes which stored records are displayed.
+
 Alloy adds indexed Loki labels including `cluster_id`, `compose_service`, `container`, `logstream`, and, when recognized, `level`. `compose_service` is the Compose service key; `container` is the readable Docker container name. A Python record's JSON `service` field identifies the emitting application role and remains in the log body. Request and job IDs also stay in the body so they do not multiply indexed streams.
 
 ## Severity and raw lines

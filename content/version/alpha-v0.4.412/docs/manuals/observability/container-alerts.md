@@ -8,16 +8,18 @@ toc: true
 
 Grafana provisions four Prometheus-backed container lifecycle alerts:
 
-| Rule | What it detects |
-| --- | --- |
-| **Expected container is not running** | Fewer running replicas than the resolved Compose inventory expects for one minute. |
-| **Container restarted automatically** | An increase in Docker's restart-policy counter over the last five minutes. |
-| **Container monitoring unavailable** | Docker-state or node_exporter collection is unavailable or reports an error for one minute. |
-| **Expected container inventory is missing** | Monitoring works, but the inventory is absent or empty for one minute. |
+| Rule                                        | What it detects                                                                             |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| **Expected container is not running**       | Fewer running replicas than the resolved Compose inventory expects for one minute.          |
+| **Container restarted automatically**       | An increase in Docker's restart-policy counter over the last five minutes.                  |
+| **Container monitoring unavailable**        | Docker-state or node_exporter collection is unavailable or reports an error for one minute. |
+| **Expected container inventory is missing** | Monitoring works, but the inventory is absent or empty for one minute.                      |
 
 {{< screenshot src="img/observability stack/Alert rules.png" alt="Provisioned container alert rules in Grafana, with the log and host-resource groups listed below" >}}
 
 cAdvisor reports resource usage but lacks the Docker restart-policy counter. The Docker-state exporter supplies running state and restart data. The startup scripts generate `oakestra_expected_container_replicas` from resolved Compose JSON into a node_exporter textfile. This makes a service that never started detectable; merely watching cAdvisor's previously seen series could not do that.
+
+The startup scripts skip inventory generation if the selected Compose configuration has no Docker-state exporter. When the exporter is enabled, the generator and a valid inventory remain required. This does not make inventory optional for a monitored deployment.
 
 For manual Compose deployment, generate inventory before startup as shown in [Deployment and upgrades](../deployment/). Regenerate it after an intended change in Compose services, profiles, overrides, project name, or scale. Use exactly the same resolved configuration for inventory and deployment. Do not remove an expectation to hide an unplanned failure.
 

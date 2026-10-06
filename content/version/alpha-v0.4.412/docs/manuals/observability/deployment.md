@@ -21,22 +21,26 @@ oak install cluster <VERSION>
 
 For one host running both orchestration levels and a worker, use `oak install full <VERSION>`. The repository's startup scripts (`scripts/StartOakestraRoot.sh`, `scripts/StartOakestraCluster.sh`, and `scripts/StartOakestraFull.sh`) also download configuration for the selected revision. To test unpushed local Compose or configuration changes, use the local files directly as described below. Match configuration, Compose files, overrides, and images to the same Oakestra revision.
 
+All three startup scripts stop if configuration downloads fail, before reaching Compose startup. They generate expected-container inventory when the resolved Compose services include the Docker-state exporter. If a selected configuration does not include it, they skip that step. When it is included, a missing generator or invalid inventory stops startup rather than silently disabling monitoring.
+
 The metrics services require rootful Linux Docker Engine 25 or newer on AMD64 or ARM64. If Docker stores data outside `/var/lib/docker`, set `DOCKER_ROOT_DIR`. If Docker uses its containerd snapshotter, cAdvisor needs the socket configured by `CONTAINERD_SOCKET` (default `/run/containerd/containerd.sock`). On a host that cannot meet those requirements, use `override-no-observe.yml` to disable the complete observability stack.
 
 ## Run from local Compose files
 
-Manual Compose deployment must produce the expected-container inventory *before* starting services. Run from the Oakestra repository root with Python 3 and Docker Compose available. Set the deployment variables first, including `SYSTEM_MANAGER_URL`, `CLUSTER_ADDRESS`, `CLUSTER_NAME`, and `CLUSTER_LOCATION` where the chosen manifest requires them. For a standalone Root:
+Manual Compose deployment with lifecycle monitoring must produce the expected-container inventory _before_ starting services. Run these Bash commands from the Oakestra repository root with Python 3 and Docker Compose available. Set the deployment variables first, including `SYSTEM_MANAGER_URL`, `CLUSTER_ADDRESS`, `CLUSTER_NAME`, and `CLUSTER_LOCATION` where the chosen manifest requires them. For a standalone Root:
 
 ```bash
 set -o pipefail
 compose=(docker compose -p oakestra-root -f root_orchestrator/docker-compose.yml)
 "${compose[@]}" config --format json |
   python3 scripts/utils/generateContainerInventory.py \
-    --output root_orchestrator/config/container-inventory/containers.prom
-"${compose[@]}" up -d --build --remove-orphans
+    --output root_orchestrator/config/container-inventory/containers.prom &&
+  "${compose[@]}" up -d --build --remove-orphans
 ```
 
 For a standalone Cluster, use `cluster_orchestrator/docker-compose.yml`, its `config/container-inventory/containers.prom`, and a distinct Compose project name. For 1-DOC, use `run-a-cluster/1-DOC.yaml` and `run-a-cluster/config/container-inventory/containers.prom`. Add exactly the same `-f` overrides, profiles, environment variables, and project name to both the inventory-rendering and startup commands. Regenerate the inventory after any intended topology or threshold change. The generator fails rather than replacing a valid inventory when the resolved Compose input or resource thresholds are invalid.
+
+The `&&` starts services only when both Compose rendering and inventory generation succeed. If the chosen configuration disables lifecycle monitoring, such as with `override-no-observe.yml`, omit inventory generation and start Compose with that same configuration.
 
 ## Upgrade from Promtail
 

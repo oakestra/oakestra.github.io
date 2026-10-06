@@ -8,13 +8,15 @@ toc: true
 
 Grafana provisions six Prometheus rules for host resources and one rule for missing threshold configuration:
 
-| Resource | Warning | Critical | Pending time, warning / critical |
-| --- | --- | --- | --- |
-| CPU used | At least 80% | At least 90% | 5 minutes / 2 minutes |
-| Memory available | At most 15% | At most 10% | 5 minutes / 2 minutes |
-| Disk free | At most 15% | At most 10% | 5 minutes / 2 minutes |
+| Resource         | Warning      | Critical     | Pending time, warning / critical |
+| ---------------- | ------------ | ------------ | -------------------------------- |
+| CPU used         | At least 80% | At least 90% | 5 minutes / 2 minutes            |
+| Memory available | At most 15%  | At most 10%  | 5 minutes / 2 minutes            |
+| Disk free        | At most 15%  | At most 10%  | 5 minutes / 2 minutes            |
 
-Warning ranges stop where critical begins, preventing simultaneous warning and critical instances for one resource. CPU uses a five-minute non-idle rate. Disk rules evaluate real, writable, non-zero filesystems and retain `device` and `mountpoint`. A seventh rule reports missing or duplicate threshold series after one minute.
+Warning conditions remain true at critical values. This keeps a warning's pending timer from resetting when usage crosses the critical threshold. Warning and critical alerts can both fire and notify once their respective pending times have elapsed; the provisioned configuration does not inhibit warning notifications while a critical alert is firing.
+
+CPU uses a five-minute non-idle rate. Disk rules evaluate real, writable, non-zero filesystems and retain `device` and `mountpoint`. A seventh rule reports missing or duplicate threshold series after one minute.
 
 In **Alerting → Alert rules**, expand **Oakestra host resource alerts** to inspect the provisioned rules. The [Container alerts](../container-alerts/) page shows where these groups appear in Grafana.
 
