@@ -68,7 +68,7 @@
 [[mounts]]
   source = "node_modules/@thulite/doks-core/layouts"
   target = "layouts"
-  files = ["! _partials/header/header.html", "! _partials/head/head.html"]
+  files = ["! _partials/header/header.html", "! _partials/head/head.html", "! _shortcodes/details.html", "! _shortcodes/card.html"]
 
 [[mounts]]
   source = "node_modules/@thulite/inline-svg/layouts"
