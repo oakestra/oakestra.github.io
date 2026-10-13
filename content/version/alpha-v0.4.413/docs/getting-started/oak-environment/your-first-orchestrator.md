@@ -34,7 +34,7 @@ curl -sfL oakestra.io/oak.sh | bash
 
 2) Perform a full Root + Cluster + Worker installation using:
 ```bash
-oak install full alpha-v0.4.411
+oak install full alpha-v0.4.413
 ```
 
 That's it! You should be good to go now.
