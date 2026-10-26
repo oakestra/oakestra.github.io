@@ -1,12 +1,12 @@
 {
   "name": "documentation",
   "version": "1.8.0",
-  "description": "Doks theme",
-  "author": "Thulite",
+  "private": true,
+  "description": "Oakestra documentation website",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oakestra"
+    "url": "https://github.com/oakestra/oakestra.github.io"
   },
   "scripts": {
     "create": "hugo new",
@@ -14,7 +14,6 @@
     "format": "prettier **/** -w -c",
     "build": "hugo --minify --gc",
     "serve": "http-server public -p 8000 -c-1 -g",
-    "preview": "vite preview --outDir public",
     "update-oak-cli-docs": "bash ./auxiliary/oak_go_cli/update-oak-cli-docs.sh"
   },
   "dependencies": {
@@ -26,17 +25,10 @@
     "thulite": "2.5.0"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.5.1",
-    "@changesets/cli": "^2.29.5",
     "http-server": "^14.1.1",
-    "prettier": "^3.6.2",
-    "vite": "^7.0.6"
+    "prettier": "^3.6.2"
   },
   "engines": {
     "node": ">=20.11.0"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   }
 }
