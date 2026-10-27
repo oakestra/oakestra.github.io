@@ -27,7 +27,7 @@ MQTT is a lightweight messaging protocol that supports publishing/subscribing to
 ## MQTTS
 MQTT supports exchanging certificates to establish a TLS-secured channel. For this, the server (MQTT Broker) and every client require a certificate-key file pair signed against the same certificate Authority (CA). The MQTT broker can be configured to only accept incoming secured connections and to identify devices by their certificate common name (CN) entry.
 MQTT supports the exchanging of certificates to establish a TLS secured channel. For this the server (MQTT Broker) and every 
-client require a certificate-keyfile pair singed against the same certificate Authority (CA).
+client require a certificate-keyfile pair signed against the same certificate Authority (CA).
 The MQTT broker can be configured to only accept incoming secured connection, and to identify devices by their certificate common name (CN) entry.
 
 ## Enable Mosquitto Authentication
@@ -126,7 +126,7 @@ Navigate into the `cluster_orchestrator` directory in the oakestra repository.
     ```
 
 ### Configuring a Node
-<!--- Subject to change when NodeEngine and NetManager are demonized -->
+<!--- Subject to change when NodeEngine and NetManager are daemonized -->
 
 1. Copy the `ca.crt` and `ca.key` files to the worker node.
 2. Generate the certificates
@@ -168,7 +168,7 @@ contains many useful scripts such as ones for [creating MQTTS certificate files]
 
 ### Finishing up
 
-Let's check if all the components succesfully registered with the MQTT Broker via TLS.
+Let's check if all the components successfully registered with the MQTT Broker via TLS.
 1. **Cluster Manager:** Check the docker compose logs with
     ```bash
     docker compose logs | grep cluster_manager
@@ -184,4 +184,4 @@ Let's check if all the components succesfully registered with the MQTT Broker vi
     MQTT - Configuring TLS
     ```
 
-If everything looks good then Congrats 🎉, your MQTT channels are now secured! When adding any further components, be sure to always give them a unique CN, as this is used to identify the device.
+If everything looks good, then congrats 🎉, your MQTT channels are now secured! When adding any further components, be sure to always give them a unique CN, as this is used to identify the device.

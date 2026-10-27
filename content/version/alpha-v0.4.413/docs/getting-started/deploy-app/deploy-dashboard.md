@@ -115,7 +115,7 @@ You will have to choose a virtualization method (Container or Unikernel) and tel
 Hit save and your service is ready for deployment!
 
 {{< tabs "service" >}}
-{{< tab "Use the From" >}}
+{{< tab "Use the Form" >}}
 ![](create-service.gif)
 {{< /tab >}}
 {{< tab "Use the SLA" >}}
@@ -128,8 +128,8 @@ Hit save and your service is ready for deployment!
 
 {{< tab "📲 Deploy" >}}
 
-After you registered your services, you can start a deployment. This operations uses the Root and Cluser schedulers to install the application in one of your worker nodes.
-You can eihter click "Deploy All" to deploy all the services in your application. Or you can use the service drop down menu to deploy a single instance of a specific service.
+After you registered your services, you can start a deployment. This operation uses the Root and Cluster schedulers to install the application in one of your worker nodes.
+You can either click "Deploy All" to deploy all the services in your application. Or you can use the service drop down menu to deploy a single instance of a specific service.
 
 ![](deploy.gif)
 
@@ -138,7 +138,7 @@ You can eihter click "Deploy All" to deploy all the services in your application
 
 {{< tab "📈 Monitor" >}}
 
-Once a service has been created and deployed, you can check on it's status and other details. Choose a service from the *Service List* and from the drop-down
+Once a service has been created and deployed, you can check on its status and other details. Choose a service from the *Service List* and from the drop-down
 menu, choose an instance and click on *View Instance Details*.
 
 ![](monitor.gif)

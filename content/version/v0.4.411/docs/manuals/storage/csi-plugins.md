@@ -32,7 +32,7 @@ Connect the CSI Plugin to the Worker Node using the following command
 ```bash
 oak worker config csi add <CSI Plugin Name> unix:///<PATH TO THE EXPOSED CSI PLUGIN SOCKET>
 ```
-*N.b. `oak worker` is jsut an alias for the `NodeEngine` command line utility.*
+*N.b. `oak worker` is just an alias for the `NodeEngine` command line utility.*
 
 **Step 3.**
 Restart your worker node.

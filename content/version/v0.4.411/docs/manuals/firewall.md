@@ -44,7 +44,7 @@ The P2P tunnel is used to exchange service traffic across nodes. Each worker nod
 
 Follow these steps on every **Worker Node** attached to the Oakestra cluster.
 
-1) Shutdown your worker node components using:
+1) Shut down your worker node components using:
 ```bash
 sudo NodeEngine stop
 ```

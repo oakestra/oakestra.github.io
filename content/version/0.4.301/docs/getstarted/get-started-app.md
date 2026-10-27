@@ -157,7 +157,7 @@ First we need an API deployment descriptor, which is a JSON file that describes 
 ### Application *Deployment Descriptor*
 
 In order to deploy a container an application *deployment descriptor* must be passed to the application create API endpoint. 
-This file must descripe all the applications, the service compising these applications and their requirements. 
+This file must describe all the applications, the services comprising these applications and their requirements. 
 
 Here an example of an application *deployment descriptor*.
 
@@ -317,7 +317,7 @@ each call to this endpoint generates a new instance of the service
 
 ### Monitor the service status
 
-1. With `GET /api/aplications/<userid>` (or simply /api/aplications/ if you're admin) you can check the list of the deployed application.
+1. With `GET /api/applications/<userid>` (or simply /api/applications/ if you're admin) you can check the list of the deployed application.
 2. With `GET /api/services/<appid>` you can check the services attached to an application
 3. With `GET /api/service/<serviceid>` you can check the status for all the instances of <serviceid>
 
@@ -327,7 +327,7 @@ each call to this endpoint generates a new instance of the service
 - Use `DELETE /api/service/<serviceid>/instance/<instance number>` to delete a specific instance of a service
 - Use `DELETE /api/application/<appid>` to delete all together an application with all the services and instances
 
-### Check if the deployment succeded
+### Check if the deployment succeeded
 
 Familiarize yourself with the API and discover for each one of the service the status and the public address.
 
@@ -392,6 +392,6 @@ It is also possible to use Unikernels by changing the virtulization of the micro
 Differences to Container Deployment:
 - virtualization: set to unikernel
 - code: Specifies a the remote Unikernel accessible via http(s). There can be multiple
-        Unikernels in the same string seperated via ",".
+        Unikernels in the same string separated via ",".
 - arch: Specifies the architecture of the Unikernel given in code. The order of
         architectures must match the order of Unikernles given via the code field

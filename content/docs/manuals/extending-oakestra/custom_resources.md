@@ -36,7 +36,7 @@ Custom resources operate via the **resource abstractor**, which centralizes enti
 ## Using Custom Resources
 
 Custom resources are defined by specifying their type and schema. The schema determines the structure of the data the resource can hold.
-You can add custom resource under the "Custom Reosurces" tab, and then selecting "Create Resource Definition". The following form will apear:
+You can add a custom resource under the "Custom Resources" tab and then select "Create Resource Definition". The following form will appear:
 
 ![custom-resources](pngs/custom-resources.png)
 

@@ -59,7 +59,7 @@ From here you can:
 
 {{< callout context="note" title="Did you know?" icon="outline/rocket">}}
 
-You can use Claude AI 🤖 to help you troubleshooting your infrastructure!
+You can use Claude AI 🤖 to help you troubleshoot your infrastructure!
 
 - Configure the Claude Oakestra Doctor skill using `oak config claude`
 - Then use `oak doctor <component>` command with the `--ai-troubleshoot` flag and let Claude handle the rest.

@@ -12,7 +12,7 @@ seo:
 ---
 
 <span class="lead">
-Custom resources in Oakestra extend the system’s API by enabling the dynamic addition of new data types as a colllection of API endpoints. 
+Custom resources in Oakestra extend the system’s API by enabling the dynamic addition of new data types as a collection of API endpoints. 
 </span>
 
 {{< callout context="tip" icon="outline/skateboarding" >}}

@@ -39,7 +39,7 @@ Please follow this structure to ensure uniformity.
 Let's say you are working on `my-wiki.md` located in `content/docs/concepts/`.
 You want to add a figure called my-fig to this guide.
 Create the figure in drawio.
-Safe the drawio file to be able to modify it easily in the future.
+Save the drawio file to be able to modify it easily in the future.
 Export your figure as SVG in dark and light mode with transparent background.
 Make sure to use the font from above.
 
@@ -60,7 +60,7 @@ You can use this SVG in your `.md` file like this:
 {{<svg "my-fig">}}
 ```
 
-Let`s say you have many figures in your doc and the svgs folder gets crowded because it gets shared with other pages in the same directory.
+Let's say you have many figures in your doc and the svgs folder gets crowded because it gets shared with other pages in the same directory.
 
 Do this:
 ```
@@ -94,7 +94,7 @@ To archive the current version of the docs you need to do the following:
 3. Update the version index file `content/version/v0.4.400/docs/_index.md` with the new version number. E.g.
 
 ```
---
+---
  title: "v0.4.301"
  menus: none
  linkTitle: "v0.4.301"
@@ -118,4 +118,4 @@ This will allow users to navigate to the archived version of the docs at the loc
 
 Oakestra ATC'23 [Slides .pptx](https://docs.google.com/presentation/d/11MNDbxePS_4tSubPijuYlX0jpt6h-V4f/edit?usp=sharing&ouid=104865919160633335116&rtpof=true&sd=true)
 
-Oak Demo University of Helsinki [SLides .pptx](https://docs.google.com/presentation/d/1SookEbwNI1giqW-C-6_L4cZS0opJmq3L/edit?usp=sharing&ouid=104865919160633335116&rtpof=true&sd=true)
+Oak Demo University of Helsinki [Slides .pptx](https://docs.google.com/presentation/d/1SookEbwNI1giqW-C-6_L4cZS0opJmq3L/edit?usp=sharing&ouid=104865919160633335116&rtpof=true&sd=true)

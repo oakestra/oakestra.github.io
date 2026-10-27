@@ -49,7 +49,7 @@ sudo ctr -n oakestra task exec --exec-id tty <your task name here> <the command 
 
 ## Where are the logfiles stored?
 
-The `stdout` and `stderr` of each container or unikernel is stored under `/tmp/<appname>.<appns>.<servicename>.<servicens>.<instancenumber>` of the worker node running the instance.
+The `stdout` and `stderr` of each container or unikernel are stored under `/tmp/<appname>.<appns>.<servicename>.<servicens>.<instancenumber>` of the worker node running the instance.
 
 > For example, to access the latest logs of instance 0 of `x.y.z.y` in my worker node I can run `tail /tmp/x.y.z.y.0`
 

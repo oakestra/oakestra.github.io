@@ -13,12 +13,12 @@ seo:
 
 <span class="lead">
 To install an addon, it first has to be published to the marketplace. Addons are published as a Dockerfile
-containing the addon functionality and a configuration file outlining the addons specifications.
+containing the addon functionality and a configuration file outlining the addon's specifications.
 </span>
 
 {{< callout context="tip" title="Global Marketplace" icon="outline/rocket" >}}
 
-Currently there isn't a global marketplace for addons. Keep an eye our for this in future releases!
+Currently there isn't a global marketplace for addons. Keep an eye out for this in future releases!
 
 {{< /callout >}}
 
@@ -74,6 +74,6 @@ The addons marketplace will validate the descriptor. Once approved, the addon wi
 To create a service that would replace a component inside Oakestra (i.e. a [Plugin](../../../concepts/oakestra-extensions/addons)), the service name should match the name of that component. 
 
 For instance, to replace the scheduler component the service would have to be called by its exact name `cloud_scheduler`.
-Note the difference between a service and an addon, is that an **addon may contain multiple services**.
+Note that the difference between a service and an addon is that an **addon may contain multiple services**.
 
 {{< /callout >}}

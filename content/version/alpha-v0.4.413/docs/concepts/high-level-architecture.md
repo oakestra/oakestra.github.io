@@ -104,7 +104,7 @@ updates, and job updates are pushed and received with this component.
 
 * **Environment Manager:** Responsible for the installation of virtual network interfaces, network namespaces, and iptables.
 * **Proxy:** The component that manages the traffic balancing and the tunneling of packets across nodes.
-* **Translation table:** Table of the Service IP <-> Instance IPs+Balancing Polocy translation for each service. More details in the [networking concepts](../networking) docs.
+* **Translation table:** Table of the Service IP <-> Instance IPs+Balancing Policy translation for each service. More details in the [networking concepts](../networking) docs.
 * **Proxy Table:** Cache for the active proxy translations.
 * **MQTT component:** The interface between the Net Manager and the Cluster Network Component. It is used to resolve Service IP translation requests and ask for the node's subnetwork at startup. -->
 
@@ -114,7 +114,7 @@ updates, and job updates are pushed and received with this component.
 A centralized control plane introduces a single point of failure. Oakestra mitigates this risk by enabling clusters to autonomously satisfy SLAs for deployed applications. Consequently, a Root Orchestrator failure impacts only the following:
 
 - **Deployment of new applications:** System Manager APIs become unavailable, making it impossible to deploy new workloads.
-- **Inter-cluster root discovery:** Pre-existing P2P communication between worker nodes remains unaffected, but new inter-cluster routes cannot be established.
+- **Inter-cluster route discovery:** Pre-existing P2P communication between worker nodes remains unaffected, but new inter-cluster routes cannot be established.
 - **Onboarding new clusters:** New clusters cannot join the infrastructure.
 
 {{< callout context="note" icon="outline/info-circle">}}

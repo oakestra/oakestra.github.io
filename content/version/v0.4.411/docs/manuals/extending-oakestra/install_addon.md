@@ -48,7 +48,7 @@ You can verify the installation by checking the addon’s status using the addon
 
 ## Uninstall an Addon
 
-To uninstall an addon, you must first disable it. One it has finished **disabling** you can select "Uninstall".
+To uninstall an addon, you must first disable it. Once it has finished **disabling** you can select "Uninstall".
 
 ![uninstall](pngs/uninstall.png)
 

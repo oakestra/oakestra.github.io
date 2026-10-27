@@ -81,7 +81,7 @@ E.g. to show the interfaces inside the namespace of the previous example, we can
 sudo ip netns exec test.test.nginx.test.instance.0 sudo ip a s
 ```
 
-## What about the debugging network of my unikernel-based applications?
+## What about debugging the network of my unikernel-based applications?
 
 If you're running unikernels using Oakestra native unikernel virtualization, you'll automatically find the namespace in `ip netns list`.
 

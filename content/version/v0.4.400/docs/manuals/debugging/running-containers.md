@@ -6,7 +6,7 @@ weight: 310040000
 toc: true
 seo:
   title: "Monitoring and Debugging Options for Running Containers" 
-  description: "This guide will show you how, after a deployment, you can attatch yourself to a running container and execute commands"
+  description: "This guide will show you how, after a deployment, you can attach yourself to a running container and execute commands"
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
@@ -49,7 +49,7 @@ sudo ctr -n oakestra task exec --exec-id tty <your task name here> <the command 
 
 ## Where are the logfiles stored?
 
-The `stdout` and `stderr` of each container or unikernel is stored under `/tmp/<appname>.<appns>.<servicename>.<servicens>.<instancenumber>` of the worker node running the instance.
+The `stdout` and `stderr` of each container or unikernel are stored under `/tmp/<appname>.<appns>.<servicename>.<servicens>.<instancenumber>` of the worker node running the instance.
 
 > For example, to access the latest logs of instance 0 of `x.y.z.y` in my worker node I can run `tail /tmp/x.y.z.y.0`
 

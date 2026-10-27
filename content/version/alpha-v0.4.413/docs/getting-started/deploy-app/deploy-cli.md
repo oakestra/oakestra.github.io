@@ -104,12 +104,12 @@ oak service deploy --all
 {{< /tab >}}
 {{< tab "📃 Blank App" >}}
 
-This is just an empty App without services. You can check that the app is registered to the system using the `oak a s` command, but nothing else really hapens here.
+This is just an empty App without services. You can check that the app is registered to the system using the `oak a s` command, but nothing else really happens here.
 
 {{< /tab >}}
 {{< tab "👾 Edge Gaming" >}}
 
-This is an application composed of 3 micorservices.
+This is an application composed of 3 microservices.
 
 - The client: a minecraft client. You connect to this service via your browser to start the game.
 - The server: a minecraft server.
@@ -174,7 +174,7 @@ You can undeploy all instances of a service or only specific ones by providing t
 
 ### Inspecting Services
 
-Using `oak service inspect <SERVICE_ID|SERVICE_NAME> [instance number]` you can either check the status of all the instances of a service or a specific instance if you provide the instance number. From here you can inspect the details of an instance, such as the worker where it is deployed, the detailed status explanation or failures reasons.
+Using `oak service inspect <SERVICE_ID|SERVICE_NAME> [instance number]` you can either check the status of all the instances of a service or a specific instance if you provide the instance number. From here you can inspect the details of an instance, such as the worker where it is deployed, the detailed status explanation or failure reasons.
 
 Using `oak service logs <SERVICE_ID|SERVICE_NAME> <instance number>` you can check the logs of a running instance.
 
@@ -182,7 +182,7 @@ Using `oak service logs <SERVICE_ID|SERVICE_NAME> <instance number>` you can che
 
 ### Scaling up and down multiple instances
 
-The `oak service scale up <SERVICE_ID|SERVICE_NAME> <number>` allows you to scale up or down a certain `<number>` of isntances of a service give its ID or Name.
+The `oak service scale up <SERVICE_ID|SERVICE_NAME> <number>` allows you to scale up or down a certain `<number>` of instances of a service given its ID or name.
 
 {{< asciinema key="oakscale" poster="0:13" idleTimeLimit="1">}}
 

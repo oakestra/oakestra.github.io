@@ -63,7 +63,7 @@ You can check your NodeEngine version by running `NodeEngine version`
 
 ## Accessing Root Orchestrator database component
 
-You can access a live MongoDB shell of each one of the Oakestra's databases by running the following commands:
+You can access a live MongoDB shell of each one of Oakestra's databases by running the following commands:
 
 For the System Manager database run:
 
