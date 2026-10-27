@@ -16,7 +16,7 @@ https://google.github.io/styleguide/pyguide.html#386-punctuation-spelling-and-gr
 
 Besides that, having and enforcing a common code style guide helps the team to stick to and create high quality code that is uniform, thus easier to get used to (onboarding) and comprehend. We want to help and make life easier for our individual team members and not enforce/punish them during their work.
 
-We want to follow industry standarts and not reinvent the wheel, thus we stick to **PEP 8** (https://peps.python.org/pep-0008/)
+We want to follow industry standards and not reinvent the wheel, thus we stick to **PEP 8** (https://peps.python.org/pep-0008/)
 
 To be able to follow this code style easier we utilize the following established production grade tools:
 

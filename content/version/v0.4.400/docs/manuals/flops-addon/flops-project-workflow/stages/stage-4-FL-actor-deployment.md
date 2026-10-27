@@ -13,7 +13,7 @@ asciinema: true
 ---
 
 The FL actor images stored in the FLOps image registry now get deployed on matching worker nodes.
-Thanks to its rather lightweight computations, the aggregator service can be deployed on an arbitrary worker node, whereas learner services can only be deployed on dedicated notes that have the `FLOps-learner` add-on enabled.
+Thanks to its rather lightweight computations, the aggregator service can be deployed on an arbitrary worker node, whereas learner services can only be deployed on dedicated nodes that have the `FLOps-learner` add-on enabled.
 The aggregator image has a superset of the learner image dependencies, so pulling and deploying both actors takes about the same amount of time.
 
 {{< callout context="tip" title="*Aggregator Size*" icon="outline/weight" >}}

@@ -111,7 +111,7 @@ The following example helps you to visualize how we use weights:
                 - 📄 ...
     - 📁 Debugging                    | 00 03 10 00 00 00
     - ...
-- 📁 Contributng Guide                | 00 04 00 00 00 00
+- 📁 Contributing Guide               | 00 04 00 00 00 00
 - 📁 Reference                        | 00 05 00 00 00 00
 ```
 We are working with a maximum document/tree depth of 6
@@ -128,5 +128,5 @@ The first 2 digits are for the documentation version:
 
 The latest docs should have the lowest index
 
-<!-- I was not able to reprocude this: -->
+<!-- I was not able to reproduce this: -->
 <!--The weight should not start with a 0 otherwise errors occur (octal interpretation).-->

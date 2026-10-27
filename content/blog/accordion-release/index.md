@@ -46,7 +46,7 @@ In the code section, you can now provide the link to an OCI image for containers
 
 If a unikernel image is provided you need to add the architecture selector based on the kernel file compatibility. E.g., `"arch": ["amd64"]`, this way the scheduler will place the image only on `amd64` machines with an active unikernel runtime.
 
-Try out this deployment descriptor to deploy your first [unikraft](unikraft.org) powered Nginx service.
+Try out this deployment descriptor to deploy your first [unikraft](https://unikraft.org) powered Nginx service.
 
 ```json
 {
@@ -79,7 +79,7 @@ Try out this deployment descriptor to deploy your first [unikraft](unikraft.org)
 To enable a unikraft capable worker node in your cluster, you simply need to:
 
 - Install KVM
-- Run your node engine as usual but using the `-u=true`. E.g., `sudo NodeEngine -n 6000 -p 10100 -a <Cluster Orchestrator IP Address> -u=true`
+- Run your node engine as usual but using the `-u=true` flag. E.g., `sudo NodeEngine -n 6000 -p 10100 -a <Cluster Orchestrator IP Address> -u=true`
 
 {{< /callout >}}
 
@@ -95,7 +95,7 @@ mytar.tar.gz
 
 ## Oakestra semantic overlay networking now speaks IPv6
 
-The semantic overlay network has been extending to support up to 30 balancing policies in parallel thanks to the new IPv6 implementation. This also enables the provisioning of bigger clusters of resources with up to `2^113` worker nodes.
+The semantic overlay network has been extended to support up to 30 balancing policies in parallel thanks to the new IPv6 implementation. This also enables the provisioning of bigger clusters of resources with up to `2^113` worker nodes.
 
 To provision a round robin IPv6 address to your service you can use the `rr_ip_v6` keyword in your deployment descriptor as follows:
 
@@ -132,7 +132,7 @@ To provision a round robin IPv6 address to your service you can use the `rr_ip_v
 
 ![image](service-logs.png)
 
-The service status page of your dashboard now provides the `stdout`and `stderr` streams of your instances.
+The service status page of your dashboard now provides the `stdout` and `stderr` streams of your instances.
 
 ## Orchestrator Grafana alerts and cluster logs
 
@@ -188,7 +188,7 @@ For example, a `curl` one-shot client looks like this:
 
 ## Quick way to start your Oakestra cluster
 
-Now you can kickstart start a full [1-DOC Cluster](https://www.oakestra.io/docs/getstarted/get-started-cluster/#setup-1-doc-1-device-one-cluster) using a single command:
+Now you can kickstart a full [1-DOC Cluster](https://www.oakestra.io/docs/getstarted/get-started-cluster/#setup-1-doc-1-device-one-cluster) using a single command:
 
 ```bash
 curl -sfL oakestra.io/getstarted.sh | sh -
@@ -196,7 +196,7 @@ curl -sfL oakestra.io/getstarted.sh | sh -
 
 ## Resource abstractor (part one)
 
-We'll slowly abstract the concept of worker or cluster to a general aggregation of resoruces and capabilities. This will enable more general schedulers, which will be easier to replace and improve.
+We'll slowly abstract the concept of worker or cluster to a general aggregation of resources and capabilities. This will enable more general schedulers, which will be easier to replace and improve.
 
 The first step is the `root resource abstractor` component, which gathers the capabilities of a cluster and exposes a standardized interface to the root scheduler.
 
@@ -204,28 +204,28 @@ In upcoming releases, we'll bring this component to the cluster as well, making 
 
 ## Community Activities
 
-### Oakestra as feature education tool in the University of Helsinki 🇫🇮
+### Oakestra as featured education tool at the University of Helsinki 🇫🇮
 
 ![hqdefault](oak-uh.png)
 
-Oakestra was invited as default framework in the course "Networked AI Systems" offered in the University of Helsinki. [Giovanni Bartolomeo](https://www.giovannibartolomeo.it/) gave a guest lecture to an audience of 80+ students and the students were invited to use Oakestra to build various edgeAI applications and usecases.
+Oakestra was invited as default framework in the course "Networked AI Systems" offered in the University of Helsinki. [Giovanni Bartolomeo](https://www.giovannibartolomeo.it/) gave a guest lecture to an audience of 80+ students and the students were invited to use Oakestra to build various edgeAI applications and use cases.
 
 {{< link-card title="Watch the complete video recording of the lecture" href="https://youtu.be/zXekRd9GveQ" >}}
 
-### Oakestra was inivited to IETF 119 in Australia 🇦🇺
+### Oakestra was invited to IETF 119 in Australia 🇦🇺
 
 Internet Engineering Task Force (IETF) is a standards organization for the Internet and is responsible for the technical standards that make up the Internet. Oakestra was invited to attend the **Exposure of Network and Compute information to Support Edge Computing Applications** [side-meeting](https://github.com/communication-compute-exposure/ietf-side-meetings/tree/main/ietf-119-side-meeting) to showcase how applications can be accelerated within Oakestra by sharing internal QoS metrics.
 
 {{< link-card title="Oakestra in IETF 117" description="Oakestra was also presented at COINRG in IETF 117. See the presentation here." href="https://youtu.be/HVfKAzE_wsY?t=2678" >}}
 
-Oakestra was well-appreciated by the IETFers and is making strides as leading orchestration framework for managing edge computing applications and infrastructures.
+Oakestra was well-appreciated by the IETFers and is making strides as a leading orchestration framework for managing edge computing applications and infrastructures.
 
 {{< callout context="tip" title="Stay tuned for more" icon="outline/rocket" >}}
 Oakestra developers are hard at work on the next release, which will include several new features and improvements, such as:
 
 - More simplified startup process including porting to `systemd`
 - Federated Learning workloads support via FLOps
-- Plugin interface and Okaestra plugin marketplace
+- Plugin interface and Oakestra plugin marketplace
 - Gateway component for external workloads
 - K8s cluster integration
 - ... and more

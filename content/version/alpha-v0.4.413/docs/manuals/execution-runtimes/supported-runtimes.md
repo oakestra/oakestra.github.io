@@ -54,20 +54,20 @@ Or continue reading to deploy your unikernel applications with Oakestra.
 
 ### Additional OCI compliant runtimes 
 
-Containerd allows any OCI compliant runtime to be used as plugin. This means that you can use any OCI compliant runtime with Oakestra, including:
+Containerd allows any OCI-compliant runtime to be used as a plugin. This means that you can use any OCI compliant runtime with Oakestra, including:
 - runc
 - runsc 
 - runu 
 
 and many more.
 
-To do so, simply install any compatible runtime on your containerd distirbution. 
+To do so, simply install any compatible runtime on your containerd distribution. 
 
 {{< callout context="tip" title="How do I install Containerd?" icon="outline/rocket" >}}
 Oakestra installation automatically provides you with a containerd distribution that is compatible with the OCI runtime you choose. 
 {{< /callout >}}
 
-**For example, do you with to install gVisor as secure container runtime?**
+**For example, do you wish to install gVisor as a secure container runtime?**
 
 1. Add the following configuration in your containerd configuration file:
 ```toml {title="/etc/containerd/config.toml"}
@@ -89,7 +89,7 @@ Check API documentation from our wiki for more details.
 
 {{< /callout >}}
 
-gVisor secure runtime uses the `runsc` runtime type. Therefore, in your application, simply use `runsc` as virtualization type. An Example application configuration is shown below:
+gVisor secure runtime uses the `runsc` runtime type. Therefore, in your application, simply use `runsc` as virtualization type. An example application configuration is shown below:
 
 ```json
 {

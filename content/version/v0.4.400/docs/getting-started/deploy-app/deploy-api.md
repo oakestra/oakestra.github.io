@@ -140,7 +140,7 @@ Each call to this endpoint generates a new instance of the service
 
 ### Monitor the service status
 
-1. With `GET /api/aplications/<userid>` (or simply /api/aplications/ if you're admin) you can check the list of the deployed application.
+1. With `GET /api/applications/<userid>` (or simply /api/applications/ if you're admin) you can check the list of the deployed application.
 2. With `GET /api/services/<appid>` you can check the services attached to an application
 3. With `GET /api/service/<serviceid>` you can check the status for all the instances of `<serviceid>`
 

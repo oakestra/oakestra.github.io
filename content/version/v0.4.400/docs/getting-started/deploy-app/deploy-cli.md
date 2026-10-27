@@ -60,7 +60,7 @@ Execute `oak` and you will be welcomed into the Oakestra CLI world 🌎
 ![`oak-cli` Initial Welcome ASCII Art](./cli-images/welcome-message.png)
 
 
-### Configurating the CLI
+### Configuring the CLI
 The `oak-cli` supports different scenarios based on the concrete Oakestra use case and user preferences.
 
 This CLI initially hides many of its commands to avoid overwhelming new users.

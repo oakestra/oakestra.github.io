@@ -15,7 +15,7 @@ seo:
 Check out these examples from the community!
 </span>
 
-Here a collection of examples that you can already use to experiment with FLOps.
+Here is a collection of examples that you can already use to experiment with FLOps.
 
 # Handwritten Digits
 
@@ -27,15 +27,15 @@ For the training, you can use the default mock data provider.
   oak addon flops mock-data mnist_multi.json
 ```
 
-{{< callout context="note" title="Do you want to injest your own data?" icon="outline/settings-question" >}}
-  FLOps uses Arrow Flight for data ingestion. Each Learner Node uses a Arrow Flight server and client combination. Check out [here](/docs/concepts/flops/internals/ml-data-management/) how this works.
+{{< callout context="note" title="Do you want to ingest your own data?" icon="outline/settings-question" >}}
+  FLOps uses Arrow Flight for data ingestion. Each Learner Node uses an Arrow Flight server and client combination. Check out [here](/docs/concepts/flops/internals/ml-data-management/) how this works.
 {{< /callout >}}
 
 
 {{< tabs "mnist" >}}
 {{< tab "Small" >}}
 
-This is a small example also used as the example in the [../../flops-project-workflow/overview] section.
+This is a small example also used as the example in the [FLOps Project Workflow](../../flops-project-workflow/overview/) section.
 
 You can download the SLA for this example using
 
@@ -121,8 +121,8 @@ For the training, you can use the default mock data provider for this example.
   oak addon flops mock-data cifar10_simple.json
 ```
 
-{{< callout context="note" title="Do you want to injest your own data?" icon="outline/settings-question" >}}
-  FLOps uses Arrow Flight for data ingestion. Each Learner Node uses a Arrow Flight server and client combination. Check out [here](/docs/concepts/flops/internals/ml-data-management/) how this works.
+{{< callout context="note" title="Do you want to ingest your own data?" icon="outline/settings-question" >}}
+  FLOps uses Arrow Flight for data ingestion. Each Learner Node uses an Arrow Flight server and client combination. Check out [here](/docs/concepts/flops/internals/ml-data-management/) how this works.
 {{< /callout >}}
 
 
@@ -138,11 +138,11 @@ and finally you can run the project using
   oak addon flops p cifar10_pytorch.json
 ```
 
-Here a summary of the settings for this default SLA
+Here is a summary of the settings for this default SLA
 
 #### Standard Example Configuration
 | Name    | `mode` | `flavor` | `rounds` | `clients` | `post_training` | `arch` |
-| --------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| --------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 | cifar10_pytorch    | classic | pyTorch | 3 | 2 | build & deploy trained model | amd64 |
 
 {{< callout context="note" icon="outline/info-circle">}}

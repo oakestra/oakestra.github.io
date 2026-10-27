@@ -38,13 +38,13 @@ oak v
 
 ## SLA Template
 
-For this example, we will create a microservice named `curlv4` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Oakestra semantic IP address of our choice (`10.30.55.55`), then fails. Oakestra will detect the failure and automatically re-deploy the instance indefinitely, and we should observe continous curl requests everytime the service is successfully deployed.
+For this example, we will create a microservice named `curlv4` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Oakestra semantic IP address of our choice (`10.30.55.55`), then fails. Oakestra will detect the failure and automatically re-deploy the instance indefinitely, and we should observe continuous curl requests every time the service is successfully deployed.
 
 {{< callout context="tip" title="Oakestra Dashboard" icon="outline/rocket">}}
-  You can choose the IPv4 addresses for each service arbitrarily. In your deployment descriptor, you can type an IP address in the form `10.30.X.Y` next to the associated balancing policy. In this example,` "rr_ip": "10.30.55.55"`  binds `10.30.55.55` to the round-robin policy for that service. Every time we perform a request towards that address, the packets are balanced across its instances using round-robin balancing. More details are available in the Networking section of the manuals. 
+  You can choose the IPv4 addresses for each service arbitrarily. In your deployment descriptor, you can type an IP address in the form `10.30.X.Y` next to the associated balancing policy. In this example, `"rr_ip": "10.30.55.55"` binds `10.30.55.55` to the round-robin policy for that service. Every time we perform a request towards that address, the packets are balanced across its instances using round-robin balancing. More details are available in the Networking section of the manuals. 
 {{< /callout >}}
 
-Together with the `curlv4` service, we deploy a server microservice named `nginx` using the `nginx:latest` docker image. This service will be assigned a Round-Robin semantic IPv4 address,`10.30.55.55` (as well as a Round-Robin semantic IPv6 address `fdff:2000::55:55`, but this is optional).
+Together with the `curlv4` service, we deploy a server microservice named `nginx` using the `nginx:latest` docker image. This service will be assigned a Round-Robin semantic IPv4 address `10.30.55.55` (as well as a Round-Robin semantic IPv6 address `fdff:2000::55:55`, but this is optional).
 
 {{< callout context="note" title="Good to know" icon="outline/info-circle">}}
 To find out more about networking, please refer to the [Networking](../../networking-internals/) section.
@@ -133,7 +133,7 @@ Now the `curlv4` will perform a `curl` request to `nginx`, then it will fail. Oa
 
 ## Scale up the Nginx service
 
-Now lets try to increase the number of Nginx server instances to see the balancing in action.
+Now let's try to increase the number of Nginx server instances to see the balancing in action.
 Let's fetch the Nginx's Service ID using 
 ```bash
 oak s s
@@ -144,7 +144,7 @@ Copy the service ID displayed. Then let's deploy a second Nginx instance using:
 oak s d <Nginx Service's ID>
 ```
 
-If everything goes well, you should see two instances of the Nginx service operations by running `oak s s` command.
+If everything goes well, you should see two running instances of the Nginx service by running the `oak s s` command.
 ```bash
 ╭──────────────┬──────────────────────────┬────────────────┬────────────┬──────────────────────────╮
 │ Service Name │ Service ID               │ Instances      │ App Name   │ App ID                   │

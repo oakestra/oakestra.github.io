@@ -1,6 +1,6 @@
 ---
 title: "Networking Internals"
-description: "Explore the internal implementation the Oakestra network manager"
+description: "Explore the internal implementation of the Oakestra network manager"
 summary: ""
 draft: false
 weight: 10305000000

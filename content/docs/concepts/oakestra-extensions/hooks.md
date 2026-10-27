@@ -30,7 +30,7 @@ When an event is triggered, all registered subscribers are notified, allowing th
 ## Trigger Modes
 
 Hooks can be triggered in two modes:
-- **Synchronous Mode**: The triggering component waits for a response from the subscriber(s) before proceeding. This is useful when subsequent steps depend on the outcome of the subscriber’s response, such as when network address must be assigned before deployment.
+- **Synchronous Mode**: The triggering component waits for a response from the subscriber(s) before proceeding. This is useful when subsequent steps depend on the outcome of the subscriber’s response, such as when a network address must be assigned before deployment.
 - **Asynchronous Mode**: The triggering component does not wait for the subscriber(s) to respond, allowing the system to continue without delay. This mode is appropriate for non-blocking actions, like logging or notifying external systems.
 
 

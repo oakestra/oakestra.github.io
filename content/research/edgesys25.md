@@ -8,7 +8,7 @@ badges: []
 pdf: "/pubs/edgesys25-multivirt.pdf"
 doi: "https://doi.org/10.1145/3721888.3722093"
 summary: ""
-draft: false"
+draft: false
 weight: 202
 toc: false
 ---

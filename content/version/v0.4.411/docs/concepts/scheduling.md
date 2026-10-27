@@ -30,7 +30,7 @@ To abstract the scheduling targets (candidates), Oakestra employs a **Resource A
 
 The scheduler operates in the following manner:
 
-1. It receives requests in the form of service desriptors from the root or cluster orchestrator via an exposed API endpoint
+1. It receives requests in the form of service descriptors from the root or cluster orchestrator via an exposed API endpoint
 2. The scheduling jobs are enqueued in a task queue
 3. The scheduler queries the [resource abstractor](../resource-management) for a list of available candidates and their resources
 4. An implemented scheduling algorithm is called to evaluate the candidates with respect to the service descriptor
@@ -38,26 +38,26 @@ The scheduler operates in the following manner:
 
 ## Scheduling Algorithms
 
-The Scheduler supports linking in different scheduling algorithms through the Go modules system. This allows the scheduler to optimise for different
+The Scheduler supports linking in different scheduling algorithms through the Go modules system. This allows the scheduler to optimize for different
 criteria or consider different resources.
 
 Scheduling algorithms typically evaluate the available candidates in two passes:
 * **Filtering Stage:** All candidates are filtered with respect to the minimum service requirements and constraints
-* **Evaluation Stage:** The remaining candidates are sorted according to an optimisation criterium. The best candidate is returned
+* **Evaluation Stage:** The remaining candidates are sorted according to an optimization criterion. The best candidate is returned
 
 
 ### Interested Resources
 
 Each scheduling algorithm provides information on which resource types it considers. The interested resources are passed to the resource abstractor when
-quering the available candidates. The resource abstractor will return the available candiates with all of the canonical resources, and the interested non-canonical resources.
+querying the available candidates. The resource abstractor will return the available candidates with all of the canonical resources, and the interested non-canonical resources.
 
 {{< callout context="note" icon="outline/info-circle">}}
 The concept of canonical and non-canonical resources is new to Oakestra since Conga. You can read more under [Resource Management](../resource-management/#canonical-resources)
 {{< /callout >}}
 
-### Contraints
+### Constraints
 
-Constrains are requirements a service may have, that are not resource demands. Currently only direct mapping constraints are implemented.
+Constraints are requirements a service may have, that are not resource demands. Currently only direct mapping constraints are implemented.
 
 #### Direct mapping positioning
 

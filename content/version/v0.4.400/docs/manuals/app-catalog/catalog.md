@@ -11,7 +11,7 @@ seo:
   noindex: false # false (default) or true
 ---
 You can run a wide variety of applications in your Oakestra cluster.
-Here, you'll find some examples applications with their respective SLA template that you can use right away to test out Oakestra. You can also use these examples as a starting point to build your own applications.
+Here, you'll find some example applications with their respective SLA template that you can use right away to test out Oakestra. You can also use these examples as a starting point to build your own applications.
 
 ![header](header.png)
 

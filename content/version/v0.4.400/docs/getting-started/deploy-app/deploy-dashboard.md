@@ -125,7 +125,7 @@ Hit save and your service is ready for deployment!
 
 ### Service Details
 
-Once a service has been created and deployed, you can check on it's status and other details. Choose a service from the *Service List* and from the drop-down
+Once a service has been created and deployed, you can check on its status and other details. Choose a service from the *Service List* and from the drop-down
 menu, choose an instance and click on *View Instance Details*. 
 
 

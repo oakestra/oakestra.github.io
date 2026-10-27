@@ -33,9 +33,9 @@ Addons fall into two primary categories in Oakestra:
 
 ## Addon System Design
 
-Addons in Oakestra are modular components that extend the platforms core functionality while keeping the foundational architecture lightweight. This design ensures that Oakestra remains efficient, avoiding unnecessary bloat in edge computing environments.
+Addons in Oakestra are modular components that extend the platform's core functionality while keeping the foundational architecture lightweight. This design ensures that Oakestra remains efficient, avoiding unnecessary bloat in edge computing environments.
 
-Addons system is composed of two subsystems:
+The addons system is composed of two subsystems:
 - **Addons Marketplace**: Consists of Marketplace Manager and MongoDB client.
 - **Addons Engine**: Consists of Addons Manager, Addons Monitor, and MongoDB Client.
 

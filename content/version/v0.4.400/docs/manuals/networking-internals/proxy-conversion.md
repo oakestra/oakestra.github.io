@@ -20,7 +20,7 @@ based on the IPv4 implementation of the Network Manager component. Note that
 
 Let's assume that we have two worker nodes, namely Node 1 and Node 2, each executing two containers.
 The containers are instantiated and managed by the Node Engine, while
-the Network Manager, creates a network namespace for each container (the cloud surrounding the container),
+the Network Manager creates a network namespace for each container (the cloud surrounding the container),
 enabling the Virtual Layer abstraction.
 
 {{<svg "overlay-example" >}}
@@ -112,7 +112,7 @@ VETH device used to connect the container namespace to the virtual bridge in the
 #### Cache Miss
 
 When receiving the request packet, the proxy does not yet have an active conversion entry in its cache. This results
-in a cache miss. With a cache miss, the proxy tunnel fetches the information required for the conversion to the Environment
+in a cache miss. With a cache miss, the proxy tunnel fetches the information required for the conversion from the Environment
 Manager. This component keeps track of the services deployed internally in the worker node, as well as the relevant
 services deployed on other worker nodes.
 
@@ -219,7 +219,7 @@ convert to:     10.30.0.2:34278 - 10.21.0.1:30443
 
 Notice how the proxy also replaces the `from` address with the **Instance IP** of X1.
 
-In abstract terms, the proxy is converting a the incoming packet from the form of
+In abstract terms, the proxy is converting the incoming packet from the form of
 
 ```
 {
@@ -257,7 +257,6 @@ A response from X3 to X1 then follows the same steps in-order as shown in this e
 
 {{< /tab-icon >}}
 {{< /tabs-icon >}}
-<hr>
 
 ---
 
