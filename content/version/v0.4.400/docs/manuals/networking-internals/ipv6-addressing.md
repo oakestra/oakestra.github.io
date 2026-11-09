@@ -54,7 +54,7 @@ an example address configuration can be the following:
 
 | App A    | Addresses / Subnets assigned                                |
 |----------|-------------------------------------------------------------|
-| Worker W | `fc00::c0:ffee:/120`                                        |
+| Worker W | `fc00::c0:ffee:0/120`                                        |
 | S        | Round Robin: `fdff:2000::30`                                |
 | S1       | Instance IP: `fdff::2f`<br> Namespace IP: `fc00::c0:ffee:2` |
 | S2       | Instance IP: `fdff::30`<br> Namespace IP: `fc00::c0:ffee:3` | 

@@ -11,7 +11,7 @@ seo:
   noindex: false # false (default) or true
 ---
 
-Oakestra's resources are managed by the **Resource Abstractor**. An instance of this component is deployed at the root orchestator and at each cluster
+Oakestra's resources are managed by the **Resource Abstractor**. An instance of this component is deployed at the root orchestrator and at each cluster
 orchestrator.
 
 {{< svg-small "resources/arch-resource-abstractor" >}}
@@ -20,7 +20,7 @@ The resource abstractor exposes a REST API by which resource availability statis
 
 {{< callout context="tip" title="Did you know?" icon="outline/rocket" >}}
 
-Since the Conga release, Oakestra utilises the resource abstractor at the root **and** cluster.
+Since the Conga release, Oakestra utilizes the resource abstractor at the root **and** cluster.
 
 {{< /callout >}}
 

@@ -95,7 +95,7 @@ Then, follow the installation instructions from scratch.
 {{< tab "current version >=0.4.410" >}}
 
 You're currently on the latest version!
-Future version will include a `oak update` command. Stay tuned.
+Future versions will include an `oak update` command. Stay tuned.
 
 {{< /tab >}}
 {{< /tabs >}}

@@ -53,7 +53,7 @@ To deploy an MDP you have to send an API request to the FLOps manager with a fit
 The POST endpoint is: `/api/flops/mocks`
 
 {{< callout context="note" title="Make mocking data easy" icon="outline/info-circle" >}}
-  With the `oak-cli` you can deploy predefined MDP SLAs and can deploy them for you with a single [command](../../../../manuals/flops-addon/flops-project-workflow/stages/stage-0-preparation/).
+  The `oak-cli` provides predefined MDP SLAs and can deploy them for you with a single [command](../../../../manuals/flops-addon/flops-project-workflow/stages/stage-0-preparation/).
 {{< /callout >}}
 
 ## Architecture

@@ -31,7 +31,7 @@ The repository needs a dedicated file that lists all necessary dependencies to t
   To avoid issues, you must provide and check these dependencies as part of your ML repository.
 
   We recommend using [mlflow's auto-logging feature](https://mlflow.org/docs/latest/tracking/autolog.html?highlight=autologging%20dependencies) to extract those dependencies.
-  For this you can temporarily and effortlessly wrap your code with mlflow and use examplary data to run a single training and evaluation cycle for your ML model.
+  For this you can temporarily and effortlessly wrap your code with mlflow and use exemplary data to run a single training and evaluation cycle for your ML model.
 
   Always verify if your provided dependency list is correct and in itself compatible. (Even mlflow's extracted dependencies can be erroneous!)
 {{< /callout >}}

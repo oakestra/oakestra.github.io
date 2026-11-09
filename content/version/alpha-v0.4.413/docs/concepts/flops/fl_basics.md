@@ -72,7 +72,7 @@ After/during training, the client's data remains on the server and is exposed to
   FL components can transmit and share weights and biases instead of the entire trained model.
   We call model relevant data sent between the learners and aggregators (model) parameters and depict it with (P).
   <br><br>
-  The learners extract their model parameters and sent them to the aggregator.
+  The learners extract their model parameters and send them to the aggregator.
   The aggregator now has access to these parameters but not the sensitive data used to train them.
   That is how FL can profit from sensitive data while maintaining its privacy.
 {{< /svg-paragraph >}}

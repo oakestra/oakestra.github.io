@@ -15,7 +15,7 @@ Having one root orchestrator and one cluster orchestrator on one device is a gre
 
 ## Install Root, Cluster and Worker Components
 
-This guide will walk you through deploying the stand-alone Oakestra components so you can mix and match them to compose the infrastructure you need. Remember, for a valid Oakestra installation, you need at least: 1x Root Orchestrator 🌳, 1x Cluster Orchestrator 🪾 , and 1x Worker Node 🦾.
+This guide will walk you through deploying the stand-alone Oakestra components so you can mix and match them to compose the infrastructure you need. Remember, for a valid Oakestra installation, you need at least: 1x Root Orchestrator 🌳, 1x Cluster Orchestrator 🪾, and 1x Worker Node 🦾.
 
 Then, you can add additional Cluster Orchestrators and  Worker Nodes to extend the infrastructure as much as you need.
 
@@ -81,7 +81,7 @@ oak config set cluster_name <UNIQUE NAME FOR YOUR CLUSTER>
 oak install cluster
 ```
 
-**Be carefull:** this install script asks you to confirm the address, name and position of your cluster.
+**Be careful:** this install script asks you to confirm the address, name and position of your cluster.
 
 - The `cluster address` MUST be an address reachable from the root (by default the installation script uses the IP of the default network interface of the cluster machine).
 - The position is expressed with geographical coordinates in the format `latitude,longitude,radius`. The radius is in meters. By default it guesses your location but you can change it during installation.
@@ -124,7 +124,7 @@ At the end of the installation, it will ask you the following:
 - To select the cluster orchestrator where you want to attach this worker node
 - If you want to start up the worker node right away (y/N)
 
-If you decide to not start your worker node right away, you can run it in background later on running:
+If you decide to not start your worker node right away, you can run it in the background later by running:
 ```bash
 oak worker -d
 ```

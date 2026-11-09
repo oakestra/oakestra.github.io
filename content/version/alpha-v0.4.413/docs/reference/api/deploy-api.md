@@ -100,7 +100,7 @@ Save this description as `deploy_curl_application.yaml` and upload it to the sys
 
 This deployment descriptor example generates one application named *clientserver* with the `test` namespace and two microservices:
 - nginx server with test namespace, namely `clientsrvr.test.nginx.test`
-- curl client with test namespace, namely `clientrvr.test.curl.test`
+- curl client with test namespace, namely `clientsrvr.test.curl.test`
 
 {{< link-card title="Learn more about the SLA specifications" href="/docs/reference/app-sla">}}
 
@@ -145,7 +145,7 @@ Each call to this endpoint generates a new instance of the service
 
 ### Monitor the service status
 
-1. With `GET /api/aplications/<userid>` (or simply /api/aplications/ if you're admin) you can check the list of the deployed application.
+1. With `GET /api/applications/<userid>` (or simply /api/applications/ if you're admin) you can check the list of the deployed application.
 2. With `GET /api/services/<appid>` you can check the services attached to an application
 3. With `GET /api/service/<serviceid>` you can check the status for all the instances of `<serviceid>`
 
@@ -153,11 +153,11 @@ Each call to this endpoint generates a new instance of the service
 
 - Use `DELETE /api/service/<serviceid>` to delete all the instances of a service
 - Use `DELETE /api/service/<serviceid>/instance/<instance number>` to delete a specific instance of a service
-- Use `DELETE /api/application/<appid>` to delete all together an application with all the services and instances
+- Use `DELETE /api/application/<appid>` to delete an application together with all its services and instances
 
 ### Check if the service deployment succeeded
 
-Familiarize yourself with the API and discover for each one of the service the status and the public address.
+Familiarize yourself with the API and discover for each one of the services the status and the public address.
 
 If both services are **RUNNING**, check the logs of the `curl` service. If you see the `welcome page` of the nginx application it means they are communicating correctly.
 

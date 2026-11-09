@@ -31,7 +31,7 @@ The image-builder service does the following:
 - Checks the cloned repository if it satisfies the mandatory structural requirements
 - Checks for potential dependency issues and tries to resolve them if possible
 - Builds the FL-Actor images
-- Pushes the build images to the FLOps image registry
+- Pushes the built images to the FLOps image registry
 - Notifies the project observer and the FLOps manager about its success or possible errors
 
 The FLOps manager undeploys and removes the image builder service.
@@ -55,5 +55,5 @@ This demo shows this build process from the perspective of a privileged CLI user
 {{< asciinema key="flops_base_case_fl_actors_build" poster="0:08" idleTimeLimit="1.5" >}}
 
 {{< callout context="note" title="Want to know more about FLOps' image building process?" icon="outline/settings-question" >}}
-  Explore why and how container images are build in FLOps [here](../../../../../concepts/flops/internals/image-building-process).
+  Explore why and how container images are built in FLOps [here](../../../../../concepts/flops/internals/image-building-process).
 {{< /callout >}}

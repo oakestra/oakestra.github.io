@@ -128,7 +128,7 @@ seo:
                     {
                       "type":"direct",
                       "node":"cm",
-                      "cluster":"defalut_cluster"
+                      "cluster":"default_cluster"
                     }
                   ]
                 },

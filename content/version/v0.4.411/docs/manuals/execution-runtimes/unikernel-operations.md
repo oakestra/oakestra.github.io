@@ -17,7 +17,7 @@ Oakestra supports unikernel executions for applications built using Unikraft.
 {{< callout context="tip" title="What do you need?" icon="outline/rocket" >}}
 It's simple. All you need to start deploying unikernels is:
 
-1. A unikernel .tar.gz hosted in a repository accessible to the Oakestra
+1. A unikernel .tar.gz hosted in a repository accessible to the Oakestra worker nodes
 2. A service deployment descriptor 
 3. A worker machine with KVM Runtime enabled
 {{< /callout >}}
@@ -39,7 +39,7 @@ Your unikernel tarball MUST contain a file named `kernel`, which is the unikerne
 
 {{< link-card
   title="Looking for an example?"
-  description="Check out the Unikraft Nginx walkthrough in the Application Catalogue"
+  description="Check out the Unikraft Nginx walkthrough in the Application Catalog"
   href="/docs/manuals/app-catalog/nginx-server-unikraft/"
   target="_blank"
 >}}
@@ -112,7 +112,7 @@ If your node supports nested virtualization and you have KVM installed, you can 
 E.g., If your worker node uses an Ubuntu distro, you can follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM.
 {{< /callout >}}
 
-If your infrastrcuture fulfills all the requirements, all you need to do is:
+If your infrastructure fulfills all the requirements, all you need to do is:
 
 **1: Stop your worker node (if already running)**
 ```bash

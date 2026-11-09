@@ -91,30 +91,30 @@ You can now run the NodeEngine in Debug mode by choosing one of the 4 different 
 
 >This configuration starts the Node Engine in debug mode with the `-u` flag for unikernel compatibility. 
 >- ⚠️ This configuration expects the cluster orchestrator to run locally on the same machine.
->- ⚠️ This configuration expects the NetManager to be already up and running. Either use `systemctl start netmanager` or check [How do I debug the NetManager?](#how-do-i-debug-the-netmanager). If you're not interested in networking, you can also disable the networking from the NodeEngine config file.
+>- ⚠️ This configuration expects the NetManager to be already up and running. Either use `systemctl start netmanager` or check [How do I debug the NetManager?](#how-do-i-debug-the-netmanager-on-vscode). If you're not interested in networking, you can also disable the networking from the NodeEngine config file.
 
 #### Debug Node Engine locally - Container Only
 
->This configuration starts the Node Engine in debug mode wihout unikernel support. 
+>This configuration starts the Node Engine in debug mode without unikernel support. 
 >- ⚠️ This configuration expects the cluster orchestrator to run locally on the same machine.
->- ⚠️ This configuration expects the NetManager to be already up and running. Either use `systemctl start netmanager` or check [How do I debug the NetManager?](#how-do-i-debug-the-netmanager). If you're not interested in networking, you can also disable the networking from the NodeEngine config file.
+>- ⚠️ This configuration expects the NetManager to be already up and running. Either use `systemctl start netmanager` or check [How do I debug the NetManager?](#how-do-i-debug-the-netmanager-on-vscode). If you're not interested in networking, you can also disable the networking from the NodeEngine config file.
 
 #### Debug Node Engine remotely - Cluster Container Only
 
->This configuration starts the Node Engine in debug mode wihout unikernel support and with support for a remote cluster orchestrator.
+>This configuration starts the Node Engine in debug mode without unikernel support and with support for a remote cluster orchestrator.
 >- 🟠 You'll be prompted to neter the URL of a running Cluster Orchestrator
->- ⚠️ This configuration expects the NetManager to be already up and running. Either use `systemctl start netmanager` or check [How do I debug the NetManager?](#how-do-i-debug-the-netmanager). If you're not interested in networking, you can also disable the networking from the NodeEngine config file.
+>- ⚠️ This configuration expects the NetManager to be already up and running. Either use `systemctl start netmanager` or check [How do I debug the NetManager?](#how-do-i-debug-the-netmanager-on-vscode). If you're not interested in networking, you can also disable the networking from the NodeEngine config file.
 
 #### Debug Node Engine remotely - Cluster Unikernel support
 
 >This configuration starts the Node Engine in debug mode  with the `-u` flag for unikernel support and with support for a remote cluster orchestrator.
 >- 🟠 You'll be prompted to neter the URL of a running Cluster Orchestrator
->- ⚠️ This configuration expects the NetManager to be already up and running. Either use `systemctl start netmanager` or check [How do I debug the NetManager?](#how-do-i-debug-the-netmanager). If you're not interested in networking, you can also disable the networking from the NodeEngine config file.
+>- ⚠️ This configuration expects the NetManager to be already up and running. Either use `systemctl start netmanager` or check [How do I debug the NetManager?](#how-do-i-debug-the-netmanager-on-vscode). If you're not interested in networking, you can also disable the networking from the NodeEngine config file.
 
 
 ## How do I debug the NetManager on VSCode? 
 
-Similarly as the NodeEngine, here a sample [launch.json](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) config file for your NetManager 
+Similarly to the NodeEngine, here is a sample [launch.json](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) config file for your NetManager 
 
 ```json
 {
@@ -137,7 +137,7 @@ Similarly as the NodeEngine, here a sample [launch.json](https://code.visualstud
 }
 ```
 
-** The NetManager still expects your netconfig file to be correctly placed and configured under `/etc/netmanager/netcfg.json`. **
+**The NetManager still expects your netconfig file to be correctly placed and configured under `/etc/netmanager/netcfg.json`.**
 
 
 

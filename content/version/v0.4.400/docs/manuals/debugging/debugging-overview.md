@@ -42,7 +42,7 @@ Then simply run `docker logs <container name>` to check its logs.
 
 ![](control-plane-docker-logs-2.png)
 
-The logs are your best friend in identifying the root cause of the issue. Specially check for runtime errors, warnings, and exceptions.
+The logs are your best friend in identifying the root cause of the issue. Especially check for runtime errors, warnings, and exceptions.
 
 ## Run diagnostics commands
 

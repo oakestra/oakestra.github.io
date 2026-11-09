@@ -34,7 +34,7 @@ The cornerstone of this release is the brand-new "Available Clusters" section, a
 This new section transforms how you monitor your available resources. It's no longer just about knowing what resources you have, but where they are, how they're performing, and what their current status is. This holistic view is essential for informed decision-making, proactive resource management, and ultimately, maximizing the efficiency and reliability of your Oakestra infrastructure.
 
 {{< callout context="note" icon="outline/packages" >}}
-What are you waiting for? Try out the new dashboard and deploy the latest Oakestra release now! [Read our getting started guide](/docs/getting-started/oak-environment/create-your-first-oakestra-orchestrator/)
+What are you waiting for? Try out the new dashboard and deploy the latest Oakestra release now! [Read our getting started guide](/docs/getting-started/oak-environment/your-first-orchestrator/)
 {{< /callout >}}
 
 
@@ -44,7 +44,7 @@ What are you waiting for? Try out the new dashboard and deploy the latest Oakest
 Beyond the exciting new cluster view, `v0.4.207` also delivers a series of important bug fixes and general improvements, further enhancing the stability and usability of the Oakestra Dashboard. We've paid particular attention to:
 
 - **Account Management**: We've addressed some of the issues you may have encountered when managing your user accounts and passwords.
-- **Application Selection**: Fixes for the application selection process in the service management panel. Ensuring a more seamless and reliable experience when deploying and managing your services across different applications.
+- **Application Selection**: Fixes for the application selection process in the service management panel, ensuring a more seamless and reliable experience when deploying and managing your services across different applications.
 
 These refinements, while perhaps less visually prominent, contribute significantly to a more robust and enjoyable user experience, making your daily interactions with the dashboard more efficient and error-free.
 

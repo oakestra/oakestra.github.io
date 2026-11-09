@@ -65,6 +65,6 @@ Output:
   mnist.d7f78c168fd86758155f7365ae28205b.parquet
 ```
 
-{{< callout context="note" title="Curious about FLOp's ML data management?" icon="outline/settings-question" >}}
+{{< callout context="note" title="Curious about FLOps' ML data management?" icon="outline/settings-question" >}}
   Explore how FLOps manages ML data for local training [here](../../../../../concepts/flops/internals/ml-data-management/)
 {{< /callout >}}

@@ -30,12 +30,12 @@ Install ruff via `pip install ruff`.
 Use `ruff format` and `ruff check --fix` to keep your code compliant.
 
 ## Local Development
-For local development we recommend to clone the FLOps addon repository and to ensure Oakestra and its CLI is running on your machine.
+For local development we recommend to clone the FLOps addon repository and to ensure Oakestra and its CLI are running on your machine.
 
 ## Development Considerations + Tips & Tricks
 
-### FlOps' Repository Images
-FLOps uses multiple different pre-build images to power its features.
+### FLOps' Repository Images
+FLOps uses multiple different pre-built images to power its features.
 These images are available in its [GitHub image/package registry](https://github.com/orgs/oakestra/packages?repo_name=addon-FLOps).
 When modifying these images ensure to build and push them for `linux/amd64` and `linux/arm64`.
 

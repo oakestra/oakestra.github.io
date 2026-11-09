@@ -99,7 +99,7 @@ Worker:
 
 Additionally, the NetManager component, responsible for the worker nodes' P2P tunnel, must be configured. Therefore, follow these steps on every **Worker Node**:
 
-1) Shutdown your worker node components using
+1) Shut down your worker node components using
 ```bash
 sudo worker stop
 ````

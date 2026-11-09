@@ -47,7 +47,7 @@ seo:
       % If no data tags are provided the learner will notify watchers that it cannot find any data.
       "data_tags": ["mnist"],
       % Training cycles only apply to the hierarchical mode.
-      "training_cycles: 1, % default=1, optional
+      "training_cycles": 1, % default=1, optional
       % This key tells learners the number of training and evaluation rounds to perform.
       "training_rounds": 3, % default=3, optional
       % Clients mean learners in this context.

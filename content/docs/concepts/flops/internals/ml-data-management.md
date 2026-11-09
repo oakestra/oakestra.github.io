@@ -28,7 +28,7 @@ This learner node will collect and store data from different sources.
 
 {{<svg "data-management-architecture">}}
 
-Once training starts, the deployed leaner service will request data that matches the data tags that were part of its SLA.
+Once training starts, the deployed learner service will request data that matches the data tags that were part of its SLA.
 The matching data partitions will be fetched, squashed into a single dataset, and delegated to the user-specified data preprocessing.
 Lastly, the data will be forwarded to the ML model for training.
 

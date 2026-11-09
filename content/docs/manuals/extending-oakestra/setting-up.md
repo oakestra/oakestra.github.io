@@ -31,7 +31,7 @@ While sharing an instance of the addons marketplace, which is deployed at the ro
 
 ## Visiting the Dashboard
 
-The addons manager and marketplace both expose API endpoints by which they can be controlled. For a user-firendly experience the addons dashboard is recommended.
+The addons manager and marketplace both expose API endpoints by which they can be controlled. For a user-friendly experience the addons dashboard is recommended.
 
 {{< callout context="tip" title="The Addons Dashboard" icon="outline/rocket" >}}
 Since the release of Conga the addons system provides an intuitive UI in the form of the Dashboard
@@ -39,8 +39,8 @@ Since the release of Conga the addons system provides an intuitive UI in the for
 
 After starting the orchestrator the dashboard is reachable at (replace localhost with address of hosting machine):
 
-**Root:** [localhost:11103](localhost:11103)  
-**Cluster:** [localhost:11203](localhost:11203)
+**Root:** [localhost:11103](http://localhost:11103)  
+**Cluster:** [localhost:11203](http://localhost:11203)
 
 {{< callout context="note" title="Do you prefer to use the API?" icon="outline/info-circle" >}}
 
@@ -52,7 +52,7 @@ You can find a detailed outline of all the API endpoints at:
 
 ### Configuration
 
-The dashboard intefaces with the addons marketplace, addons engine and the resource abstractor. To configure where the dashboard reaches these components use the configuration menu.
+The dashboard interfaces with the addons marketplace, addons engine and the resource abstractor. To configure where the dashboard reaches these components use the configuration menu.
 
 ![configuration](pngs/configuration.png)
 
@@ -60,7 +60,7 @@ The dashboard intefaces with the addons marketplace, addons engine and the resou
 
 | | Root | Cluster |
 |:---| :--- | :--- |
-| Marktetplace | 11102 | - |
+| Marketplace | 11102 | - |
 | Addons Engine | 11101 | 11201 |
 | Resource Abstractor | 11011 | 11012 |
 

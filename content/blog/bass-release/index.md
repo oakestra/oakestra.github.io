@@ -32,7 +32,7 @@ Here are the new features introduced in this version!
 
 {{< card-grid >}}
 {{< link-card description="Add Oakestra capabilities with addons" href="#oakestra-addons" >}}
-{{< link-card description="Run applications within priviledged containers" href="#priviledged-containers" >}}
+{{< link-card description="Run applications within privileged containers" href="#privileged-containers" >}}
 {{< link-card description="Bug fixes and improvements" href="#fixes-and-improvements" >}}
 {{< link-card description="Community Activities" href="#community-activities" >}}
 {{< /card-grid >}}
@@ -115,7 +115,7 @@ For example, you can register an asynchronous `post_update` hook to trigger aler
 For more details, visit our [wiki](https://www.oakestra.io/docs/concepts/oakestra-extensions/hooks/).
 {{< /callout >}}
 
-## Priviledged Containers
+## Privileged Containers
 
 For advanced use cases requiring elevated system access, the new privileged containers feature is a game changer. By setting the `"privileged": true` flag in your SLA microservice description, you can deploy containers with full system privileges—ideal for scenarios demanding direct hardware access or specialized kernel operations. This feature remains securely disabled by default and is enabled only when explicitly needed.
 
@@ -135,7 +135,7 @@ Privileged containers unlock enhanced functionality but must be used with care d
 Read our [release notes](https://github.com/oakestra/oakestra/releases/tag/v0.4.400) for further details. Or simply [get started](https://www.oakestra.io/docs/getting-started/oak-environment/high-level-setup-overview/) with your new Oakestra setup following our detailed guide!
 {{< /callout >}}
 
-## Community Activites
+## Community Activities
 
 ### Celebrate Christmas in Style with Oakestra-Powered Edge Gaming
 
@@ -147,7 +147,7 @@ On Christmas 🎄, we inaugurated the Bass release with an Edge Gaming deploymen
 </p>
 
 {{< callout context="tip" icon="outline/info-circle" >}}
-Instructions to replicate this deployment is available [here](https://www.oakestra.io/docs/manuals/app-catalog/example-applications/).
+Instructions to replicate this deployment are available [here](https://www.oakestra.io/docs/manuals/app-catalog/example-applications/).
 {{< /callout >}}
 
 ### Oakestra Becomes Social on X and YouTube

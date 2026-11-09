@@ -142,7 +142,7 @@ FLOps’ architecture/workflow consists of the following parts:
 
 {{< link-card
   title="Image Building Process"
-  description="Learn why and how container images are build in FLOps"
+  description="Learn why and how container images are built in FLOps"
   href="../internals/image-building-process"
 >}}
 

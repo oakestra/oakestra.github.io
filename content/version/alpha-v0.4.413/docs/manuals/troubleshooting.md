@@ -20,7 +20,7 @@ On each machine where you installed oakestra you can run:
 oak doctor <component>
 ```
 
-where **<component>** can be either: `root` for Root Orchestrator, `cluster` for Cluster Orchestrator, `worker`for the Worker Node or `all` if all the components are installed in the current machine.
+where **<component>** can be either: `root` for Root Orchestrator, `cluster` for Cluster Orchestrator, `worker` for the Worker Node or `all` if all the components are installed in the current machine.
 
 E.g.: `oak doctor root`
 
@@ -32,7 +32,7 @@ With such command, you can either check the status of the root, cluster or worke
 {{< tabs "Troubleshoot" >}}
 {{< tab "🤖 Troubleshoot with AI" >}}
 
-You can use Claude AI to pinpoint your problem and help you fix your innfrastructure configuration
+You can use Claude AI to pinpoint your problem and help you fix your infrastructure configuration
 
 First you need to install Claude CLI. Then you can run
 ```bash
@@ -51,19 +51,19 @@ oak doctor <component> --ai-troubleshoot
 You can either perform a general check or describe a specific issue.
 
 <div style="background:#FAE251;padding-top:3px;padding-bottom:3px;padding-right:3px;padding-left:3px">
-<h3> Be Carefull 💸 </h3>
+<h3> Be Careful 💸 </h3>
 
 Oak doctor with the `-ai-troubleshoot` flag uses Claude CLI. It requires either an active subscription or a payment method configured for your token consumptions. Check the pricing <a href=https://claude.com/pricing>here</a>.
 </div>
 
 ### You don't like Claude? Use your preferred AI instead
-If you want to use your own AI agent to help you troubleshoot your Oakestra deployment, you can request assistence to you agent by manually installing the [troubleshoot oakestra skill](https://raw.githubusercontent.com/oakestra/oakestra/refs/heads/develop/SKILLS/troubleshoot-oakestra.md).
+If you want to use your own AI agent to help you troubleshoot your Oakestra deployment, you can request assistance from your agent by manually installing the [troubleshoot oakestra skill](https://raw.githubusercontent.com/oakestra/oakestra/refs/heads/develop/SKILLS/troubleshoot-oakestra.md).
 
 
 {{< /tab >}}
 {{< tab "👾 Manual Troubleshooting" >}}
 
-Here a quick reference of the commands you can run to manually troubleshoot your Oakestra installation.
+Here is a quick reference of the commands you can run to manually troubleshoot your Oakestra installation.
 
 ## 0. Identify what's running
 

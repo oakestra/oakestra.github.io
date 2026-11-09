@@ -15,7 +15,7 @@ seo:
 
 [MLflow](https://mlflow.org/) is a broad open-source MLOps platform that enriches and unifies common ML tasks.
 It provides automatic solutions for ML challenges.
-It supports various popular ML tools and frameworks such as [Keras](https://keras.io/) and [Pytorch](https://pytorch.org/).
+It supports various popular ML tools and frameworks such as [Keras](https://keras.io/) and [PyTorch](https://pytorch.org/).
 MLflow is highly flexible, customizable, and extendable.
 It supports ML workflow loops from conception to re-deployment.
 MLflow does not explicitly focus on orchestration or FL.
@@ -23,7 +23,7 @@ MLflow does not explicitly focus on orchestration or FL.
 ### Selection of critical MLFlow components
 
 MLflow divides its core features into multiple different interconnected components.
-These components are rather conceptual groupings of functionalities rather than concrete isolated interfaces.
+These components are conceptual groupings of functionalities rather than concrete isolated interfaces.
 
 {{< details "**Tracking**">}}
 
@@ -50,7 +50,7 @@ These components are rather conceptual groupings of functionalities rather than 
   By default, these artifacts are recorded in a local directory.
   These tracked records can also be stored and managed by a dedicated local or remote scalable tracking server, enabling users to easily share their tracked results.
   An MLflow tracking server comes with its own sophisticated and feature-rich web-based GUI.
-  This GUI lets users to inspect, compare, and manage their recorded findings.
+  This GUI lets users inspect, compare, and manage their recorded findings.
 
   FLOps uses MLflow's tracking server and GUI, by deploying it as an Oakestra service to keep the control plane lightweight.
   The aggregator communicates with this tracking server to log its training rounds, results, and system metrics.
@@ -61,7 +61,7 @@ These components are rather conceptual groupings of functionalities rather than 
 {{< details "**Models**">}}
 
   MLflow can record and store (trained) ML models in uniform and popular formats.
-  Popular formats are called "flavors, " including pickle formats, python functions, and ML framework-specific solutions.
+  Popular formats are called "flavors," including pickle formats, python functions, and ML framework-specific solutions.
   Models can be stored with exemplary input data, ML code, metadata, and a list of necessary dependencies for replication.
   MLflow differentiates between storing lightweight parameters, meta-information, and models.
   Model signatures can also be specified.

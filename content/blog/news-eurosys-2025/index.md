@@ -26,13 +26,13 @@ Oakestra has truly made its mark at **ACM EuroSys + ASPLOS 2025**—the largest 
 {{< link-card description="Best Poster Award" href="#best-poster-award" >}}
 {{< /card-grid >}}
 
-## ACM EdgeSys 2025 Keynote: "The Edge is Near"
+## ACM EdgeSys 2025 Keynote: "The Edge is Near" {#acm-edgesys-keynote}
 
 At ACM EdgeSys 2025, **Prof. Dr. Jörg Ott** delivered the keynote talk, **"The Edge is Near"**, emphasizing that the core challenges in edge computing come down to effective orchestration. His insights highlighted that solutions like Oakestra are best suited to alleviate these challenges and drive the future of connected edge systems.
 
 ![Keynote Talk](oakestra-keynote.jpg)
 
-## Best Paper Award: "Supporting Hybrid Virtualization Orchestration for Edge Computing"
+## Best Paper Award: "Supporting Hybrid Virtualization Orchestration for Edge Computing" {#best-paper-award}
 
 Oakestra's innovative research shined bright when its paper, **"Supporting Hybrid Virtualization Orchestration for Edge Computing"**, won the Best Paper Award at ACM EdgeSys 2025. This work demonstrates Oakestra’s integral solution in supporting both Unikraft unikernel and container virtualization -- a capability that has been part of Oakestra since the [Accordion release](/blog/oakestra-releases-v0.4.301-accordion/).
 
@@ -46,12 +46,12 @@ Oakestra's innovative research shined bright when its paper, **"Supporting Hybri
 </div>
 
 {{< callout context="note" icon="outline/packages" >}}
-Do you also want to leverage Unikraft unikernel and container virtualization in your edge computing environment? [Read our detailed guide](/docs/manuals/execution-runtimes/unikernel-deployment/)!
+Do you also want to leverage Unikraft unikernel and container virtualization in your edge computing environment? [Read our detailed guide](/docs/manuals/execution-runtimes/unikernel-operations/)!
 {{< /callout >}}
 
-## Best Poster Award at ACM EuroSys 2025
+## Best Poster Award at ACM EuroSys 2025 {#best-poster-award}
 
-In the ACM EuroSys 2025 main conference program, the Oakestra team presented an innovative poster/demo its upcoming OCI-compatible TDFS packaging solution. Their poster showcased an innovative solution for accelerating the packaging and deployment of machine learning models on heterogeneous edge devices.
+In the ACM EuroSys 2025 main conference program, the Oakestra team presented an innovative poster/demo of its upcoming OCI-compatible TDFS packaging solution. Their poster showcased an innovative solution for accelerating the packaging and deployment of machine learning models on heterogeneous edge devices.
 
 {{< video src="poster-working" autoplay="true" muted="true" width="50%" >}}
 

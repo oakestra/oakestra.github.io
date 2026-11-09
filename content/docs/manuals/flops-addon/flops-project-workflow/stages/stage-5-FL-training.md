@@ -72,7 +72,7 @@ It shows that the model’s accuracy improved, and its loss decreased over time.
 
 The left folder shows the different aspects that were recorded.
 The model requirements, conda environment, and model (pkl) file are all present.
-MLflow's GUI directly supports in-build techniques to compare, analyze, and visualize these logged results.
+MLflow's GUI built-in techniques to compare, analyze, and visualize these logged results.
 All of these recorded properties can be exported and shared with other people.
 
 {{< callout context="note" title="How exactly does FLOps use MLflow for elevating its MLOps capabilities?" icon="outline/settings-question" >}}

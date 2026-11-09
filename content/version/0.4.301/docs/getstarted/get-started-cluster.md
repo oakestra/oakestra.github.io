@@ -67,7 +67,7 @@ sudo NetManager -p 6000
 
 
 **5)** start the NodeEngine. 
-On a different shell, start the NodeEngine with the -n 6000 paramenter to connect to the NetManager. 
+On a different shell, start the NodeEngine with the -n 6000 parameter to connect to the NetManager. 
 
 ```Shell
 sudo NodeEngine -n 6000 -p 10100  -a <Cluster Orchestrator IP Address>
@@ -93,7 +93,7 @@ The deployment of this kind of cluster is similar to 1-DOC. We first need to sta
 
 **2)** Now, we need to prepare all the worker nodes. On each worker node, execute the following:
 
-2.1) Downlaod and unpack both the NodeEngine and NetManager
+2.1) Download and unpack both the NodeEngine and NetManager
 
 ```Shell
 curl -sfL oakestra.io/install-worker.sh | sh - 
@@ -151,7 +151,7 @@ curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/alpha-v0.4.302/scr
 
 >> **(Optional)**: Before running the startup command, you can expose the following variables to setup custom overrides or a custom branch for the repository:
 >> - Setup a repository branch e.g., `export OAKESTRA_BRANCH=develop`, default branch is `main`. This branch will be used to download the startup scripts.
->>- Setup comma-separated list of custom override files for docker compose e.g., `export OVERRIDE_FILES=override-alpha-versions.yaml`. The availble overrides are:
+>>- Setup comma-separated list of custom override files for docker compose e.g., `export OVERRIDE_FILES=override-alpha-versions.yaml`. The available overrides are:
 >>    - `override-alpha-versions.yaml` - Use this override to deploy the alpha versions of the pre-built components.
 >>    - `override-no-dashboard.yml` - Use this override to remove the dashboard component from the deployment.
 >>    - `override-ipv6-enablesyml` - Use this override if you need IPv6 support for the control plane components.
@@ -189,7 +189,7 @@ curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/alpha-v0.4.302/scr
 
 >> **(Optional)**: Before running the startup command, you can expose the following variables to setup custom overrides or a custom branch for the repository:
 >> - Setup a repository branch e.g., `export OAKESTRA_BRANCH=develop`, default branch is `main`. This branch will be used to download the startup scripts.
->>- Setup comma-separated list of custom override files for docker compose e.g., `export OVERRIDE_FILES=override-alpha-versions.yaml`. The availble overrides are:
+>>- Setup comma-separated list of custom override files for docker compose e.g., `export OVERRIDE_FILES=override-alpha-versions.yaml`. The available overrides are:
 >>    - `override-alpha-versions.yaml` - Use this override to deploy the alpha versions of the pre-built components.
 >>    - `override-no-dashboard.yml` - Use this override to remove the dashboard component from the deployment.
 >>    - `override-ipv6-enablesyml` - Use this override if you need IPv6 support for the control plane components.

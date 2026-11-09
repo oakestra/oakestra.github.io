@@ -24,7 +24,7 @@ The network abstraction enabling service-to-service communication within Oakestr
 At the very bottom of the hierarchy, we have the physical layer, where we address machines rather than microservices
 or containers.
 In this layer, an IP address is an address that can be used to **uniquely identify a machine** to reach it. In Oakestra,
-we keep track of physical layer by pairing each service with a **Node IP** and **Port**. This `IP:PORT` pair allows us to
+we keep track of the physical layer by pairing each service with a **Node IP** and **Port**. This `IP:PORT` pair allows us to
 reach multiple devices sharing the same IP address (e.g. behind a NAT).
 Each worker node exposes the network stack required to enable the upper layers of the overlay at the assigned port.
 
@@ -38,7 +38,7 @@ for the node subnetwork from the private `10.18.0.0/16` / `fc00::/7` network, al
 each supporting 64 containers, for a maximum of 65536 containers.
 
 Support for more devices and bigger subnetworks can be achieved by
-changing the default subnetwork to, i.e., 10.0.0.0/8 or even further transitioning to full virtual IPv6 networking.
+changing the default subnetwork to, e.g., 10.0.0.0/8 or even further transitioning to full virtual IPv6 networking.
 
 {{< link-card
   title="IPv6 Addressing in Oakestra"

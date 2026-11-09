@@ -178,5 +178,5 @@ If you wish to manually start and connect to a custom NetManager build (e.g. for
     ```
 
 {{< callout context="note" title="Build the NetManager" icon="outline/info-circle" >}}
-The NetManager can be built and run manually from it's [source code](https://github.com/oakestra/oakestra-net)
+The NetManager can be built and run manually from its [source code](https://github.com/oakestra/oakestra-net)
 {{< /callout >}}

@@ -69,7 +69,7 @@ Oakestra has appeared in world-class scientific conferences and journals. Check 
 
 ## Contribute
 
-Oakestra is open source with `Apache 2.0` licence. Contributions are welcome! If you want to open an issue, contribute some code or simply take a look under the hood then head over to our [GitHub](https://github.com/oakestra/). We recommend linking up with the Oakestra community over [Discord](https://discord.gg/7F8EhYCJDf).
+Oakestra is open source with `Apache 2.0` license. Contributions are welcome! If you want to open an issue, contribute some code or simply take a look under the hood then head over to our [GitHub](https://github.com/oakestra/). We recommend linking up with the Oakestra community over [Discord](https://discord.gg/7F8EhYCJDf).
 
 Whether you're a beginner or advanced user, joining our community is the best way to connect with like-minded people who build great products.
 

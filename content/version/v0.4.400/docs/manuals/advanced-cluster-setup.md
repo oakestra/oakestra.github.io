@@ -69,7 +69,7 @@ The root orchestrator has to be reachable by the cluster orchestrator. When not 
 address!
 {{< /callout >}}
 
-You can register as many cluster orchestrators with the root orchestrator as you would like. Repeat the above commmand on a new device and specify
+You can register as many cluster orchestrators with the root orchestrator as you would like. Repeat the above command on a new device and specify
 a unique `Cluster Name` and `Cluster Location`.
 
 {{< link-card
@@ -114,7 +114,7 @@ export OVERRIDE_FILES=override-alpha-versions.yaml
 ```
 
 {{< details "*Click to see overview of Root Orchestrator overrides*" >}}
-* `override-addons.yml`: Eanble the [addons](../extending-oakestra/creating-addons) engine and marketplace
+* `override-addons.yml`: Enable the [addons](../extending-oakestra/creating-addons) engine and marketplace
 * `override-no-dashboard.yml`: Do not deploy the dashboard
 * `override-no-network.yml`: Exclude network components
 * `override-ipv6-enabled.yml`: Enable IPv6 for container deployments

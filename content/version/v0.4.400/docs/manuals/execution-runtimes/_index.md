@@ -1,6 +1,6 @@
 ---
 title: "Execution Runtimes"
-description: "Explore the runtimes you can deploy your applications within Oakestra"
+description: "Explore the runtimes you can use to deploy your applications in Oakestra"
 summary: ""
 date: 2023-09-07T16:06:50+02:00
 lastmod: 2023-09-07T16:06:50+02:00

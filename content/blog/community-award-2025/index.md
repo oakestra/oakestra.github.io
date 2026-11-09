@@ -30,7 +30,7 @@ Therefore, let's take a moment to congratulate all the amazing contributors to t
 >[Tomas Agata](https://github.com/tomasagata),
 >[Patrick Sabanic](https://github.com/sabtf),
 >[Oliver Halu](https://github.com/oliverhalu),
->[Jackob Kempter](https://github.com/JakobKe),
+>[Jakob Kempter](https://github.com/JakobKe),
 >[Ivo Raimondi](https://github.com/Ivoraimar),
 >[Alexander Malyuk](https://github.com/Malyuk-A),
 >[Simon Zelenski](https://github.com/smnzlnsk),
@@ -39,7 +39,7 @@ Therefore, let's take a moment to congratulate all the amazing contributors to t
 >[Philipp Kleber](https://github.com/axiphi),
 >[Matthew Humphreys](https://github.com/Mjaethers),
 >[Giovanni Bartolomeo](https://github.com/giobart),
->[Jörg Ott](),
+>Jörg Ott,
 >[Nitinder Mohan](https://github.com/nitindermohan)
 
 

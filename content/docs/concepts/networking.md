@@ -54,7 +54,7 @@ network state, forward the request to the fastest responding webserver in order 
 
 {{< callout context="note" title="Note" icon="outline/info-circle" >}}
 It is important to understand, that the responding webserver at the time of request initiation can change, while the
-request in traversing the network.
+request is traversing the network.
 {{< /callout >}}
 
 Let us also assume that someone on the network of router 3 heard of this cool new networking feature and wants to try it

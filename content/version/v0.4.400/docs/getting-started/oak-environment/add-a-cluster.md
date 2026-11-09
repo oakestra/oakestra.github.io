@@ -13,7 +13,7 @@ seo:
 
 ### Add a New Cluster to your Infrastructure.
 
-If you want to create new Clusters to attatch to you Oakestra Root, on each Cluster Orchestrator machine you can run:
+If you want to create new Clusters to attach to your Oakestra Root, on each Cluster Orchestrator machine you can run:
 
 ```bash
 curl -sfL oakestra.io/install-cluster.sh | sh -
@@ -44,7 +44,7 @@ export OAKESTRA_BRANCH=develop
 {{< /callout >}}
 
 
-You can attatch new worker nodes to this cluster using the same procedure shown in [Setup Your First Cluster](#setup-your-first-cluster)
+You can attach new worker nodes to this cluster using the same procedure shown in [Setup Your First Cluster](#setup-your-first-cluster)
 
 ### Shutdown the Components
 

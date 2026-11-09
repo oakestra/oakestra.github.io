@@ -15,7 +15,7 @@ Git pipelines often fail because of linting issues, which then requires another 
 
 ## Why `pre-commit`
 
-Git hooks are not shared across the repo, and it's only available locally. This means every developer will need to implement their own hooks. Hence we use a tool called `pre-commit`. Through this tool, developers define a configuration file that is commited to the repository, ensuring that all contributors have access to the same hook configurations.
+Git hooks are not shared across the repo, and it's only available locally. This means every developer will need to implement their own hooks. Hence we use a tool called `pre-commit`. Through this tool, developers define a configuration file that is committed to the repository, ensuring that all contributors have access to the same hook configurations.
 
 *Note that the tool name, `pre-commit`, is misleading as it implies it only provides pre-commit hooks, however it also provides other stages/hooks such as `pre-push`.*
 More information on the tool can be found [here](https://pre-commit.com/)
