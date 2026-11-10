@@ -55,6 +55,26 @@ querying the available candidates. The resource abstractor will return the avail
 The concept of canonical and non-canonical resources is new to Oakestra since Conga. You can read more under [Resource Management](../resource-management/#canonical-resources)
 {{< /callout >}}
 
+### GPU requirements
+
+Container services can ask for NVIDIA GPUs with `vgpus` and `vram` in the [SLA](../../reference/app-sla/). Each worker reports the free VRAM of every GPU it has, taken from `nvidia-smi`. A worker fits if it has at least `vgpus` GPUs and the ones with the most free VRAM add up to `vram` or more.
+
+`vram` is the total across all requested GPUs, not the amount per GPU. If you only set `vram`, you get one GPU. This service needs two GPUs with 16000 MiB free between them:
+
+```json
+"virtualization": "container",
+"vgpus": 2,
+"vram": 16000
+```
+
+If the GPUs are the only reason the service doesn't fit anywhere, its status is `NoGpuCapacity`.
+
+{{< callout context="note" icon="outline/info-circle">}}
+The root scheduler only sees a summary of each cluster, so it can pick a cluster where no single worker has enough GPU memory. The cluster scheduler then rejects the service.
+{{< /callout >}}
+
+The check only applies to `container` services. For `crosvm` VMs, `vgpus` is the number of [virtio-GPU](../../manuals/execution-runtimes/crosvm-deployment/) devices. Those share the host GPU, so the scheduler doesn't check them.
+
 ### Constraints
 
 Constraints are requirements a service may have, that are not resource demands. Currently only direct mapping constraints are implemented.
