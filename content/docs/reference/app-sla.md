@@ -94,7 +94,7 @@ The file is composed of the following fields:
     - `cmd`: a list of the commands to be executed inside the container at startup.
     - `vcpu`: the minimum number of CPU vcores needed to run the container.
     - `vgpus`: the number of GPUs, default `0`. For containers these are NVIDIA GPUs, and the service only goes to workers with at least that many. For `crosvm` VMs it is the number of virtio-GPU devices, which the scheduler ignores.
-    - `vram`: free GPU memory in MiB, summed over all requested GPUs, default `0`. Only used for containers. Setting it without `vgpus` requests one GPU. See [GPU requirements](../../concepts/scheduling/#gpu-requirements).
+    - `vram`: free GPU memory in MiB that each requested GPU needs, default `0`. Only used for containers. Setting it without `vgpus` requests one GPU. See [GPU requirements](../../concepts/scheduling/#gpu-requirements).
     - `memory`: the minimum amount of memory needed to run the container.
     - `storage`: the minimum storage size required (currently, the scheduler does not take this value into account).
     - `environment`: a list of environment variables. E.g., `"environment":["VAR=foo"]`.
